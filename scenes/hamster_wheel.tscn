@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://dc0ybyr363rp4"]
+
+[ext_resource type="Script" uid="uid://b7mty7it7ts46" path="res://scripts/hamster_wheel.gd" id="1_5gvyt"]
+[ext_resource type="Texture2D" uid="uid://crvl2jo04bkny" path="res://assets/Wheel Animation.png" id="1_wsuee"]
+[ext_resource type="Texture2D" uid="uid://c2ej53k0nawec" path="res://assets/Hamster Run.png" id="3_qdbq5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gvyt"]
+atlas = ExtResource("1_wsuee")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdbq5"]
+atlas = ExtResource("1_wsuee")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lw7gp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gvyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdbq5")
+}],
+"loop": 2,
+"name": &"running",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ux2oi"]
+atlas = ExtResource("1_wsuee")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5ipm"]
+atlas = ExtResource("1_wsuee")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wnun6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ux2oi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5ipm")
+}],
+"loop": 1,
+"name": &"running",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4shkq"]
+atlas = ExtResource("3_qdbq5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqeqx"]
+atlas = ExtResource("3_qdbq5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gpj1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4shkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqeqx")
+}],
+"loop": 1,
+"name": &"running",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sabk"]
+atlas = ExtResource("1_wsuee")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijbx5"]
+atlas = ExtResource("1_wsuee")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgf6b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sabk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijbx5")
+}],
+"loop": 1,
+"name": &"running",
+"speed": 5.0
+}]
+
+[node name="Hamster Wheel" type="Node2D" unique_id=1968280101]
+script = ExtResource("1_5gvyt")
+
+[node name="BaseWheel" type="AnimatedSprite2D" parent="." unique_id=1251962314]
+sprite_frames = SubResource("SpriteFrames_lw7gp")
+animation = &"running"
+
+[node name="BackgroundWheel" type="AnimatedSprite2D" parent="." unique_id=565271409]
+sprite_frames = SubResource("SpriteFrames_wnun6")
+animation = &"running"
+
+[node name="Hamster" type="AnimatedSprite2D" parent="." unique_id=2137930246]
+sprite_frames = SubResource("SpriteFrames_4gpj1")
+animation = &"running"
+offset = Vector2(-0.5, 0)
+
+[node name="ForegroundWheel" type="AnimatedSprite2D" parent="." unique_id=1341059552]
+sprite_frames = SubResource("SpriteFrames_vgf6b")
+animation = &"running"
+frame_progress = 0.11029529
