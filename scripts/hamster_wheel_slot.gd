@@ -13,6 +13,7 @@ func reparent_hamster(hamster: HamsterUI) -> void:
 	_hamster = hamster
 	hamster.picked_up.connect(self.hamster_picked_up)
 	GScript.power_generated += hamster.stats.speed * 0.01
+
 	
 	
 # Stops the wheel animation
