@@ -29,6 +29,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(31, 28)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vfxu"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh6ys"]
+bg_color = Color(0.19607843, 0.81960785, 0.28627452, 1)
+
 [node name="HamsterUI" type="Node2D" unique_id=997477288 groups=["HamsterUI"]]
 script = ExtResource("1_apgft")
 
@@ -41,11 +47,13 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1949272873]
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=744683686]
-offset_left = 19.0
+[node name="StaminaBar" type="ProgressBar" parent="." unique_id=744683686]
+offset_left = 22.0
 offset_top = -15.0
-offset_right = 26.0
+offset_right = 29.0
 offset_bottom = 15.0
+theme_override_styles/background = SubResource("StyleBoxFlat_7vfxu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eh6ys")
 value = 100.0
 fill_mode = 3
 show_percentage = false

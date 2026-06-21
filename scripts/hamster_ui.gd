@@ -9,7 +9,8 @@ var amount: int = 0
 var drag_offset := Vector2.ZERO
 var slot_position := Vector2.ZERO
 var target: Area2D
-enum State {IDLE, RUNNING}
+enum State {IDLE, RUNNING, RESTING} #Hamster must always be in a State
+var hamster_state : State = State.IDLE
 
 func _process(delta):
 	if dragging:
@@ -59,14 +60,20 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
 
-func change_states(state) -> void:
-	if state == State.IDLE:
+# Whenever the hamster changes to a new slot or is picked up change states
+# Incorporate into all slot swaps
+func change_states() -> void:
+	if hamster_state == State.IDLE:
 		$AnimatedSprite2D.show()
-	
-	elif state == State.RUNNING:
+		$StaminaBar.hide()
+		$StaminaBar.stamina_change()
+	elif hamster_state == State.RUNNING:
 		$AnimatedSprite2D.hide()
-		GScript.power_generated += stats.speed * 0.01
-		GScript.hamster_watts_produced += stats.speed * 10
+		$StaminaBar.show()
+		$StaminaBar.stamina_change()
+	elif hamster_state == State.RESTING:
+		$StaminaBar.show()
+		$StaminaBar.stamina_change()
 
 	
 func check_child_type(node, type) -> bool:
