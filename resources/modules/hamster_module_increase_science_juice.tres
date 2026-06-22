@@ -1,7 +1,14 @@
 [gd_resource type="Resource" script_class="ScienceJuiceGeneratorModule" format=3 uid="uid://c5x8xpn0qdxmf"]
 
 [ext_resource type="Script" uid="uid://dluqhkxjfff1v" path="res://scripts/modules/science_juice_generator_module.gd" id="1_tcnsr"]
+[ext_resource type="Texture2D" uid="uid://copigqx2tlm4w" path="res://assets/redXs/redx3.png" id="2_2ojb0"]
 
 [resource]
 script = ExtResource("1_tcnsr")
+amount_to_increase = 10
+module_name = "Science Juicer"
+module_description = "Science juice production +10"
+power_cost = 300
+texture = ExtResource("2_2ojb0")
+min_power_increase = 10
 metadata/_custom_type_script = "uid://dluqhkxjfff1v"

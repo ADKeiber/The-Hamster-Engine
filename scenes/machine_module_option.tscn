@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c4air3bicpb0a" path="res://icon.svg" id="1_qboyq"]
 
 [node name="MachineModuleOption" type="HBoxContainer" unique_id=1107065799]
-custom_minimum_size = Vector2(200, 30)
+custom_minimum_size = Vector2(150, 30)
 custom_maximum_size = Vector2(200, 30)
 anchors_preset = -1
 anchor_left = -0.020000001

@@ -70,29 +70,32 @@ layout_mode = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="MachineModuleSlot" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=769799803 instance=ExtResource("1_r258f")]
+[node name="MachineModuleSlot" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=1838218151 instance=ExtResource("1_r258f")]
 layout_mode = 2
 
-[node name="MachineModuleSlot2" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=1934691684 instance=ExtResource("1_r258f")]
+[node name="MachineModuleSlot2" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=932786912 instance=ExtResource("1_r258f")]
 layout_mode = 2
 
-[node name="MachineModuleSlot3" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=168099881 instance=ExtResource("1_r258f")]
+[node name="MachineModuleSlot3" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=2066804554 instance=ExtResource("1_r258f")]
 layout_mode = 2
-
-[node name="Control" type="Control" parent="HBoxContainer/Panel/MachineRows" unique_id=252763631]
-layout_mode = 2
-mouse_filter = 2
 
 [node name="ProjectModuleRow1" type="HBoxContainer" parent="HBoxContainer/Panel/MachineRows" unique_id=1493681682]
-visible = false
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="HBoxContainer/Panel/MachineRows/ProjectModuleRow1" unique_id=1926702278]
+[node name="MachineModuleSlot" parent="HBoxContainer/Panel/MachineRows/ProjectModuleRow1" unique_id=769799803 instance=ExtResource("1_r258f")]
 layout_mode = 2
-text = "hello"
+is_project_module = true
+
+[node name="MachineModuleSlot2" parent="HBoxContainer/Panel/MachineRows/ProjectModuleRow1" unique_id=1934691684 instance=ExtResource("1_r258f")]
+layout_mode = 2
+is_project_module = true
+
+[node name="MachineModuleSlot3" parent="HBoxContainer/Panel/MachineRows/ProjectModuleRow1" unique_id=168099881 instance=ExtResource("1_r258f")]
+layout_mode = 2
+is_project_module = true
 
 [node name="ExcessPowerBar" type="ProgressBar" parent="HBoxContainer" unique_id=175485096]
 custom_minimum_size = Vector2(15, 0)

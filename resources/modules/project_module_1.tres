@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CompleteProjectModule1" format=3 uid="uid://d4fvryev4ss0q"]
+
+[ext_resource type="Script" uid="uid://cagt8kofgqx44" path="res://scripts/modules/complete_project_module_1.gd" id="1_ewoww"]
+[ext_resource type="Texture2D" uid="uid://dxudfxi044x52" path="res://assets/redXs/redx.png" id="2_cp5nu"]
+
+[resource]
+script = ExtResource("1_ewoww")
+module_name = "Project Module 1"
+module_description = "1/3 - Unlocks 2 module slots"
+power_cost = 100
+texture = ExtResource("2_cp5nu")
+min_power_increase = 10
+project_module = true
+metadata/_custom_type_script = "uid://cagt8kofgqx44"
