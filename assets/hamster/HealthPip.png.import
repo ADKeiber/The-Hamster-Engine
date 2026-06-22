@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djxbvutfhnbe3"
-path="res://.godot/imported/Hamster Idle.png-3fb0e0bf50fe88c06f299c102a6e7ae9.ctex"
+uid="uid://wdktagi5crqc"
+path="res://.godot/imported/HealthPip.png-8e5bc0b28875f29fbab1db65892759a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Hamster Idle.png"
-dest_files=["res://.godot/imported/Hamster Idle.png-3fb0e0bf50fe88c06f299c102a6e7ae9.ctex"]
+source_file="res://assets/hamster/HealthPip.png"
+dest_files=["res://.godot/imported/HealthPip.png-8e5bc0b28875f29fbab1db65892759a4.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dc0ybyr363rp4"]
 
-[ext_resource type="Script" uid="uid://b7mty7it7ts46" path="res://scripts/hamster_wheel.gd" id="1_5gvyt"]
-[ext_resource type="Texture2D" uid="uid://crvl2jo04bkny" path="res://assets/Wheel Animation.png" id="1_wsuee"]
-[ext_resource type="Texture2D" uid="uid://c2ej53k0nawec" path="res://assets/Hamster Run.png" id="3_qdbq5"]
+[ext_resource type="Script" uid="uid://b7mty7it7ts46" path="res://scripts/wheel/hamster_wheel.gd" id="1_5gvyt"]
+[ext_resource type="Texture2D" uid="uid://crvl2jo04bkny" path="res://assets/wheel/Wheel Animation.png" id="1_wsuee"]
+[ext_resource type="Texture2D" uid="uid://c2ej53k0nawec" path="res://assets/wheel/Hamster Run.png" id="3_qdbq5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gvyt"]
 atlas = ExtResource("1_wsuee")

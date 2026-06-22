@@ -1,9 +1,9 @@
 class_name HamsterCageScene
 extends Control
 
-const HAMSTER_CAGE_SLOT = preload("res://scenes/hamster_cage_slot.tscn")
+const HAMSTER_CAGE_SLOT = preload("res://scenes/cage/hamster_cage_slot.tscn")
 @onready var hamster_slots: HBoxContainer = %HamsterSlots
-const HAMSTER = preload("res://scenes/hamster.tscn")
+const HAMSTER = preload("res://scenes/hamster/hamster.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func generate_slots_and_hamsters() -> void:

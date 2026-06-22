@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://d4imtuv3rludy"]
 
-[ext_resource type="Script" uid="uid://chwqd0d2ttqnq" path="res://scripts/hamster_ui.gd" id="1_apgft"]
-[ext_resource type="Texture2D" uid="uid://djxbvutfhnbe3" path="res://assets/Hamster Idle.png" id="2_apgft"]
-[ext_resource type="Script" uid="uid://dpp72q2h1xghe" path="res://scripts/stamina_bar.gd" id="3_tpwgc"]
+[ext_resource type="Script" uid="uid://chwqd0d2ttqnq" path="res://scripts/hamster/hamster_ui.gd" id="1_m4iqr"]
+[ext_resource type="Texture2D" uid="uid://djxbvutfhnbe3" path="res://assets/hamster/Hamster Idle.png" id="2_m4iqr"]
+[ext_resource type="Script" uid="uid://dpp72q2h1xghe" path="res://scripts/hamster/stamina_bar.gd" id="3_ohn85"]
+[ext_resource type="Script" uid="uid://bf3ardapch0mn" path="res://scripts/hamster/health_pips_container.gd" id="4_vus7h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tpwgc"]
-atlas = ExtResource("2_apgft")
+atlas = ExtResource("2_m4iqr")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vfxu"]
-atlas = ExtResource("2_apgft")
+atlas = ExtResource("2_m4iqr")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vgf6b"]
@@ -36,7 +37,7 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0.19607843, 0.81960785, 0.28627452, 1)
 
 [node name="HamsterUI" type="Node2D" unique_id=997477288 groups=["HamsterUI"]]
-script = ExtResource("1_apgft")
+script = ExtResource("1_m4iqr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=472208585]
 sprite_frames = SubResource("SpriteFrames_vgf6b")
@@ -57,17 +58,23 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_eh6ys")
 value = 100.0
 fill_mode = 3
 show_percentage = false
-script = ExtResource("3_tpwgc")
+script = ExtResource("3_ohn85")
 
-[node name="HealthPips" type="HBoxContainer" parent="." unique_id=1458387267]
+[node name="Timer" type="Timer" parent="StaminaBar" unique_id=1141687689]
+wait_time = 2.0
+
+[node name="HealthPipsContainer" type="HBoxContainer" parent="." unique_id=1458387267]
 offset_left = -19.0
-offset_top = 18.0
+offset_top = 17.0
 offset_right = 19.0
-offset_bottom = 23.0
-
-[node name="TextureRect" type="TextureRect" parent="HealthPips" unique_id=1856735580]
-layout_mode = 2
+offset_bottom = 25.0
+mouse_filter = 2
+theme_override_constants/separation = 1
+alignment = 1
+script = ExtResource("4_vus7h")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="damage" from="StaminaBar" to="." method="_on_stamina_bar_damage"]
+[connection signal="timeout" from="StaminaBar/Timer" to="StaminaBar" method="_on_timer_timeout"]

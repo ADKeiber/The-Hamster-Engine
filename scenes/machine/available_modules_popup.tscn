@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bw4s34mn2pwis"]
 
-[ext_resource type="PackedScene" uid="uid://b064f2r4o1m4m" path="res://scenes/machine_module_option.tscn" id="1_840d8"]
+[ext_resource type="PackedScene" uid="uid://b064f2r4o1m4m" path="res://scenes/machine/machine_module_option.tscn" id="1_840d8"]
 
 [node name="AvailableModulesPopup" type="PanelContainer" unique_id=608306954]
 anchors_preset = -1

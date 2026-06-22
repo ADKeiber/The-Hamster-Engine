@@ -1,6 +1,6 @@
 class_name HamsterWheelSlot
 extends Control
-const HAMSTER = preload("res://scenes/hamster.tscn")
+const HAMSTER = preload("res://scenes/hamster/hamster.tscn")
 var _hamster : HamsterUI
 
 

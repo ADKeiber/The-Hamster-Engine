@@ -29,6 +29,27 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "red",
+"res://assets/cage/": "gray",
+"res://assets/hamster/": "orange",
+"res://assets/machine/": "blue",
+"res://assets/wheel/": "yellow",
+"res://scenes/": "teal",
+"res://scenes/cage/": "gray",
+"res://scenes/hamster/": "orange",
+"res://scenes/machine/": "blue",
+"res://scenes/wheel/": "yellow",
+"res://scripts/": "purple",
+"res://scripts/cage/": "gray",
+"res://scripts/hamster/": "orange",
+"res://scripts/machine/": "purple",
+"res://scripts/modules/": "blue",
+"res://scripts/wheel/": "yellow"
+}
+
 [global_group]
 
 CageSlot="Slot where the hamsters live"

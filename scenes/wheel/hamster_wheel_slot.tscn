@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chckn0djpx5b6"]
 
-[ext_resource type="Script" uid="uid://cfmtga7kpxwsk" path="res://scripts/hamster_wheel_slot.gd" id="1_d3qqk"]
-[ext_resource type="PackedScene" uid="uid://dc0ybyr363rp4" path="res://scenes/hamster_wheel.tscn" id="2_numr8"]
+[ext_resource type="Script" uid="uid://cfmtga7kpxwsk" path="res://scripts/wheel/hamster_wheel_slot.gd" id="1_d3qqk"]
+[ext_resource type="PackedScene" uid="uid://dc0ybyr363rp4" path="res://scenes/wheel/hamster_wheel.tscn" id="2_numr8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(65, 67)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cfa6g02i7uqa2"]
 
-[ext_resource type="Script" uid="uid://objjn5utpcpi" path="res://scripts/hamster_cage_slot.gd" id="1_2mkre"]
+[ext_resource type="Script" uid="uid://objjn5utpcpi" path="res://scripts/cage/hamster_cage_slot.gd" id="1_2mkre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(67, 67)

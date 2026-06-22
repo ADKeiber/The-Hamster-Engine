@@ -80,3 +80,7 @@ func check_child_type(node, type) -> bool:
 		if is_instance_of(child, type):
 			return true
 	return false
+
+
+func _on_stamina_bar_damage() -> void:
+	$HealthPipsContainer.take_damage()

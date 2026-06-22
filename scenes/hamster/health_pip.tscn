@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cyklxxna0tbhk"]
+
+[ext_resource type="Texture2D" uid="uid://wdktagi5crqc" path="res://assets/hamster/HealthPip.png" id="1_35k0q"]
+
+[node name="HealthPip" type="TextureRect" unique_id=1136778112]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("1_35k0q")
+expand_mode = 3

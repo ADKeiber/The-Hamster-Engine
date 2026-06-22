@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxfw2gq4y6cxy"]
 
-[ext_resource type="Script" uid="uid://co065w3eqk25r" path="res://scripts/hamster_cage_scene.gd" id="1_j6b20"]
+[ext_resource type="Script" uid="uid://co065w3eqk25r" path="res://scripts/cage/hamster_cage_scene.gd" id="1_j6b20"]
 
 [node name="HamsterCageScene" type="Control" unique_id=325820934]
 custom_minimum_size = Vector2(0, 70)

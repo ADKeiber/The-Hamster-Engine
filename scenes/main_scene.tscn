@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://2emas1q80pqm"]
 
 [ext_resource type="Script" uid="uid://5qhbgbcq8j17" path="res://scripts/main_scene.gd" id="1_pu3yx"]
-[ext_resource type="PackedScene" uid="uid://duon3nnllt7rg" path="res://scenes/machine_scene.tscn" id="1_w2twt"]
-[ext_resource type="PackedScene" uid="uid://dxfw2gq4y6cxy" path="res://scenes/hamster_cage_scene.tscn" id="2_7ykc4"]
-[ext_resource type="Script" uid="uid://bx11kyy4ssk1k" path="res://scripts/hamster_stats.gd" id="2_rt2n2"]
+[ext_resource type="PackedScene" uid="uid://duon3nnllt7rg" path="res://scenes/machine/machine_scene.tscn" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://dxfw2gq4y6cxy" path="res://scenes/cage/hamster_cage_scene.tscn" id="2_7ykc4"]
+[ext_resource type="Script" uid="uid://bx11kyy4ssk1k" path="res://scripts/hamster/hamster_stats.gd" id="2_rt2n2"]
 [ext_resource type="Resource" uid="uid://cuce203tkngfm" path="res://resources/basic_hamster.tres" id="3_c16ls"]
-[ext_resource type="PackedScene" uid="uid://bdf5xjgsxj4ea" path="res://scenes/hamster_wheel_scene.tscn" id="3_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://bdf5xjgsxj4ea" path="res://scenes/wheel/hamster_wheel_scene.tscn" id="3_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://bjecdyl5t35ma" path="res://scenes/hamster_watts_ui.tscn" id="7_c16ls"]
 
 [node name="MainScene" type="Control" unique_id=600585959]

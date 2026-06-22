@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="HamsterStats" format=3 uid="uid://cuce203tkngfm"]
 
-[ext_resource type="Script" uid="uid://bx11kyy4ssk1k" path="res://scripts/hamster_stats.gd" id="1_fc4jd"]
+[ext_resource type="Script" uid="uid://bx11kyy4ssk1k" path="res://scripts/hamster/hamster_stats.gd" id="1_fc4jd"]
 
 [resource]
 script = ExtResource("1_fc4jd")
 stamina = 2
 speed = 2
 health = 2
-chance_to_die_on_overwork = 0.5
+chance_to_take_damage = 0.5
 metadata/_custom_type_script = "uid://bx11kyy4ssk1k"

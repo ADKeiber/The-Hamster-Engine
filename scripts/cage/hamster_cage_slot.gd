@@ -1,6 +1,6 @@
 class_name HamsterCageSlot
 extends Control
-const HAMSTER = preload("res://scenes/hamster.tscn")
+const HAMSTER = preload("res://scenes/hamster/hamster.tscn")
 var _hamster : HamsterUI
 
 func add_hamster(stats:HamsterStats) -> void:
