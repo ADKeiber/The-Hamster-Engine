@@ -1,7 +1,7 @@
 class_name AvailableModulesPopup
 extends PanelContainer
 
-const MACHINE_MODULE_OPTION = preload("res://scenes/machine_module_option.tscn")
+const MACHINE_MODULE_OPTION = preload("res://scenes/machine/machine_module_option.tscn")
 @onready var options_container: VBoxContainer = %OptionsContainer
 
 # Called when the node enters the scene tree for the first time.

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SpaModule" format=3 uid="uid://om17syoayrnb"]
 
 [ext_resource type="Script" uid="uid://ctm75tktsh6it" path="res://scripts/modules/spa_module.gd" id="1_hinfj"]
-[ext_resource type="Texture2D" uid="uid://ch1b2ya1om1un" path="res://assets/redXs/redx6.png" id="2_cfjb4"]
+[ext_resource type="Texture2D" uid="uid://ch1b2ya1om1un" path="res://assets/machine/redXs/redx6.png" id="2_cfjb4"]
 
 [resource]
 script = ExtResource("1_hinfj")

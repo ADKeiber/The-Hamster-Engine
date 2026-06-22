@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://rhqem0bpk83i"]
 
-[ext_resource type="Script" uid="uid://dliy68j5110sa" path="res://scripts/machine_module_slot.gd" id="1_aqkmn"]
-[ext_resource type="Texture2D" uid="uid://dxudfxi044x52" path="res://assets/redXs/redx.png" id="2_2jdgv"]
-[ext_resource type="PackedScene" uid="uid://bw4s34mn2pwis" path="res://scenes/available_modules_popup.tscn" id="3_2jdgv"]
+[ext_resource type="Script" uid="uid://dliy68j5110sa" path="res://scripts/machine/machine_module_slot.gd" id="1_aqkmn"]
+[ext_resource type="Texture2D" uid="uid://dk8adiajthcgw" path="res://assets/machine/redXs/redx.png" id="2_2jdgv"]
+[ext_resource type="PackedScene" uid="uid://bw4s34mn2pwis" path="res://scenes/machine/available_modules_popup.tscn" id="3_2jdgv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujpuf"]
 size = Vector2(40.5, 39.5)

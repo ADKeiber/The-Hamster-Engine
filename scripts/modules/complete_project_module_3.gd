@@ -3,5 +3,6 @@ extends MachineModule
 
 
 func start_module() -> void:
-	# setup spa
+	print("Project Module 3 starting")
+	GScript.win_game.emit()
 	pass

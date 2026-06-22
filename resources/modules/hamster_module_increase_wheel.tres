@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="IncreaseRosterSizeModule" format=3 uid="uid://dgmqk285wk5dx"]
 
 [ext_resource type="Script" uid="uid://b86i36oqalt57" path="res://scripts/modules/increase_roster_size_module.gd" id="1_nspd5"]
-[ext_resource type="Texture2D" uid="uid://dxsk68sgkunho" path="res://assets/redXs/redx5.png" id="2_bsjps"]
+[ext_resource type="Texture2D" uid="uid://dxsk68sgkunho" path="res://assets/machine/redXs/redx5.png" id="2_bsjps"]
 
 [resource]
 script = ExtResource("1_nspd5")

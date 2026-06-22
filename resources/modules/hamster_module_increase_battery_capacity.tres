@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BatteryCapacityIncreaseModule" format=3 uid="uid://c5x8xpn0qdxmf"]
+
+[ext_resource type="Script" uid="uid://dluqhkxjfff1v" path="res://scripts/modules/battery_capacity_increase_module.gd" id="1_qkq4p"]
+[ext_resource type="Texture2D" uid="uid://copigqx2tlm4w" path="res://assets/machine/redXs/redx3.png" id="2_x0pai"]
+
+[resource]
+script = ExtResource("1_qkq4p")
+amount_to_increase = 500
+module_name = "Science Juicer"
+module_description = "Science juice production +10"
+power_cost = 300
+texture = ExtResource("2_x0pai")
+min_power_increase = 10
+metadata/_custom_type_script = "uid://dluqhkxjfff1v"

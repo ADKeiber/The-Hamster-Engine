@@ -8,5 +8,6 @@ extends Resource
 @export var min_power_increase: int
 @export var project_module: bool # maybe should be an enum... BUT there are only 2 options right now... Project and Hamster Modules
 @export var installed: bool
+
 func start_module() -> void:
 	pass

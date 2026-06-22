@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://do0bwxrbr8oxm" path="res://scripts/modules/machine_module.gd" id="4_r6p65"]
 [ext_resource type="Resource" uid="uid://taor37olr8nm" path="res://resources/modules/hamster_module_experimental_tank.tres" id="5_si52b"]
 [ext_resource type="Resource" uid="uid://dracau4wss6js" path="res://resources/modules/hamster_module_increase_roster.tres" id="6_01n6w"]
-[ext_resource type="Resource" uid="uid://c5x8xpn0qdxmf" path="res://resources/modules/hamster_module_increase_battery_capacity.tres" id="7_6u1mn"]
+[ext_resource type="Resource" uid="uid://c5x8xpn0qdxmf" path="res://resources/modules/hamster_module_increase_science_juice.tres" id="7_6u1mn"]
 [ext_resource type="PackedScene" uid="uid://bjecdyl5t35ma" path="res://scenes/hamster_watts_ui.tscn" id="7_c16ls"]
 [ext_resource type="Resource" uid="uid://bvx4eoipik58s" path="res://resources/modules/hamster_module_increase_stat.tres" id="8_bcnxi"]
 [ext_resource type="Resource" uid="uid://dgmqk285wk5dx" path="res://resources/modules/hamster_module_increase_wheel.tres" id="9_7nt27"]
