@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://rhqem0bpk83i"]
+
+[ext_resource type="Script" uid="uid://dliy68j5110sa" path="res://scripts/machine_module_slot.gd" id="1_aqkmn"]
+[ext_resource type="Texture2D" uid="uid://dxudfxi044x52" path="res://assets/redXs/redx.png" id="2_2jdgv"]
+[ext_resource type="PackedScene" uid="uid://bw4s34mn2pwis" path="res://scenes/available_modules_popup.tscn" id="3_2jdgv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujpuf"]
+size = Vector2(40.5, 39.5)
+
+[node name="MachineModuleSlot" type="Control" unique_id=231512727]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchor_right = 0.062000003
+anchor_bottom = 0.108
+offset_top = -0.5
+offset_right = 0.3199997
+offset_bottom = 0.61999893
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_aqkmn")
+
+[node name="Panel" type="Panel" parent="." unique_id=895588721]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.93000007
+anchor_bottom = 0.952
+offset_right = 2.7999954
+offset_bottom = 1.9199982
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=753501675]
+custom_minimum_size = Vector2(40, 40)
+custom_maximum_size = Vector2(40, 40)
+layout_mode = 0
+offset_right = 630.0
+offset_bottom = 630.0
+texture = ExtResource("2_2jdgv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1872734217]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=568949697]
+position = Vector2(19.75, 19.75)
+shape = SubResource("RectangleShape2D_ujpuf")
+
+[node name="AvailableModulesPopup" parent="." unique_id=608306954 instance=ExtResource("3_2jdgv")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -19.5
+offset_right = -1.0
+offset_bottom = 112.5
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

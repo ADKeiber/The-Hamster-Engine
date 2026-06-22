@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="CompleteProjectModule1" format=3 uid="uid://d3fm55mf6ga0o"]
+[gd_resource type="Resource" script_class="CompleteProjectModule3" format=3 uid="uid://d3fm55mf6ga0o"]
 
-[ext_resource type="Script" uid="uid://cagt8kofgqx44" path="res://scripts/modules/complete_project_module_1.gd" id="1_h750q"]
+[ext_resource type="Script" uid="uid://b76huobwhshp6" path="res://scripts/modules/complete_project_module_3.gd" id="1_jsgp5"]
 [ext_resource type="Texture2D" uid="uid://dxudfxi044x52" path="res://assets/redXs/redx.png" id="2_jsgp5"]
 
 [resource]
-script = ExtResource("1_h750q")
+script = ExtResource("1_jsgp5")
 module_name = "Project module 3"
 module_description = "3/3 - You win the game!"
 power_cost = 500

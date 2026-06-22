@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="CompleteProjectModule1" format=3 uid="uid://bqy2wqx1wy4jo"]
+[gd_resource type="Resource" script_class="CompleteProjectModule2" format=3 uid="uid://bqy2wqx1wy4jo"]
 
-[ext_resource type="Script" uid="uid://cagt8kofgqx44" path="res://scripts/modules/complete_project_module_1.gd" id="1_padow"]
+[ext_resource type="Script" uid="uid://di84v1ggua37y" path="res://scripts/modules/complete_project_module_2.gd" id="1_2j6vk"]
 [ext_resource type="Texture2D" uid="uid://dxudfxi044x52" path="res://assets/redXs/redx.png" id="2_2j6vk"]
 
 [resource]
-script = ExtResource("1_padow")
+script = ExtResource("1_2j6vk")
 module_name = "Project Module 2"
 module_description = "2/3 - Unlocks 2 modules"
 power_cost = 100

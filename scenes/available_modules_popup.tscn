@@ -2,7 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dtyflvuhw6d4u" path="res://scenes/available_modules_popup.gd" id="1_bjbx7"]
 
-[node name="AvailableModulesPopup" type="PanelContainer" unique_id=608306954]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67mk2"]
+bg_color = Color(0.2653605, 0.26536053, 0.26536041, 1)
+
+[sub_resource type="Theme" id="Theme_bjbx7"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_67mk2")
+
+[node name="AvailableModulesPopup" type="PanelContainer" unique_id=1144419191]
 anchors_preset = -1
 anchor_right = 0.312
 anchor_bottom = 0.367
@@ -10,6 +16,7 @@ offset_right = 0.31999207
 offset_bottom = -1.1200104
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_bjbx7")
 script = ExtResource("1_bjbx7")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=964225553]
