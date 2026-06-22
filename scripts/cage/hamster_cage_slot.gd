@@ -13,6 +13,7 @@ func reparent_hamster(hamster: HamsterUI) -> void:
 	print("Reparent")
 	hamster.reparent(self)
 	hamster.position = self.size / 2.0
+	hamster.z_index = 0 # Reparenting sets zindex to zero
 	_hamster = hamster
 	if _hamster.picked_up.is_connected(self.hamster_picked_up): #make sure connection is disconnected
 		_hamster.picked_up.disconnect(self.hamster_picked_up)

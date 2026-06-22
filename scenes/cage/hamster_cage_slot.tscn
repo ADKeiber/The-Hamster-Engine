@@ -17,12 +17,6 @@ size_flags_vertical = 4
 mouse_filter = 2
 script = ExtResource("1_2mkre")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=552204851]
-visible = false
-position = Vector2(19, 19.999998)
-scale = Vector2(1.022694, 0.9596988)
-texture = ExtResource("2_ypxp0")
-
 [node name="Area2D" type="Area2D" parent="." unique_id=13849582 groups=["CageSlot"]]
 input_pickable = false
 
@@ -38,3 +32,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=552204851]
+z_index = 1
+position = Vector2(19, 19.999998)
+scale = Vector2(1.022694, 0.9596988)
+texture = ExtResource("2_ypxp0")
