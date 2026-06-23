@@ -7,5 +7,5 @@ script = ExtResource("1_fc4jd")
 stamina = 2
 speed = 2
 health = 2
-chance_to_take_damage = 0.5
+chance_to_take_damage = 0.66
 metadata/_custom_type_script = "uid://bx11kyy4ssk1k"

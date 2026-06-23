@@ -5,12 +5,11 @@ extends Control
 @export var disabled: bool
 @export var slot_number: int
 @onready var module_option_popup: PanelContainer = %AvailableModulesPopup
-#@onready var texture: TextureRect = $Texture
-#@onready var mod_name: Label = $VBoxContainer/Name
-#@onready var description: RichTextLabel = $VBoxContainer/Description
 @onready var texture_rect: TextureRect = $TextureRect
 
 var current_module: MachineModule
+var allow_hamster_reparent: bool = false
+var _hamster: HamsterUI
 
 # Called when the node enters the scene tree for the first time.
 #
@@ -40,7 +39,6 @@ func _gui_input(event: InputEvent) -> void:
 				if module_option_popup.visible:
 					module_option_popup.reset_options(is_project_module)
 					z_index = 100
-				
 				accept_event()
 
 func close_popup() -> void:
@@ -48,6 +46,7 @@ func close_popup() -> void:
 	module_option_popup.visible = false
 
 func set_module(module:MachineModule) -> void:
+	allow_hamster_reparent = module.interactable
 	texture_rect.texture = module.texture
 	current_module = module
 	module.installed = true
@@ -62,3 +61,9 @@ func unlock(slot_to_unlock:int, is_project_slot: bool) -> void:
 		modulate = Color.BLACK
 	else:
 		modulate = Color.WHITE
+
+func reparent_hamster(hamster: HamsterUI) -> void:
+	print("Reparent")
+	hamster.reparent(self)
+	hamster.position = self.size / 2.0
+	# TODO set sprite 2D (look at hamster wheel), make it visible, and animate it
