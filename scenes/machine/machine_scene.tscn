@@ -1,13 +1,7 @@
 [gd_scene format=3 uid="uid://duon3nnllt7rg"]
 
-[ext_resource type="Script" uid="uid://cpajfmhxdu8bv" path="res://scripts/machine/power_bar.gd" id="1_cfiw6"]
 [ext_resource type="PackedScene" uid="uid://rhqem0bpk83i" path="res://scenes/machine/machine_module_slot.tscn" id="1_r258f"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgf6b"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnun6"]
-bg_color = Color(0.89043224, 0.85935754, 0.23542011, 1)
+[ext_resource type="Script" uid="uid://bncpggdmm0unb" path="res://scenes/machine_scene.gd" id="1_soh53"]
 
 [node name="MachineScene" type="Control" unique_id=1183329259]
 layout_mode = 3
@@ -18,6 +12,7 @@ offset_bottom = -0.6800232
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_soh53")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1811370278]
 layout_mode = 1
@@ -57,12 +52,16 @@ alignment = 1
 
 [node name="MachineModuleSlot" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow1" unique_id=231512727 instance=ExtResource("1_r258f")]
 layout_mode = 2
+slot_number = 1
 
 [node name="MachineModuleSlot2" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow1" unique_id=491092834 instance=ExtResource("1_r258f")]
 layout_mode = 2
+slot_number = 2
 
 [node name="MachineModuleSlot3" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow1" unique_id=1410786303 instance=ExtResource("1_r258f")]
 layout_mode = 2
+disabled = true
+slot_number = 3
 
 [node name="HamsterModuleRow2" type="HBoxContainer" parent="HBoxContainer/Panel/MachineRows" unique_id=927326451]
 custom_minimum_size = Vector2(30, 30)
@@ -70,38 +69,40 @@ layout_mode = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="MachineModuleSlot" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=769799803 instance=ExtResource("1_r258f")]
+[node name="MachineModuleSlot" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=1838218151 instance=ExtResource("1_r258f")]
 layout_mode = 2
+disabled = true
+slot_number = 4
 
-[node name="MachineModuleSlot2" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=1934691684 instance=ExtResource("1_r258f")]
+[node name="MachineModuleSlot2" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=932786912 instance=ExtResource("1_r258f")]
 layout_mode = 2
+disabled = true
+slot_number = 5
 
-[node name="MachineModuleSlot3" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=168099881 instance=ExtResource("1_r258f")]
+[node name="MachineModuleSlot3" parent="HBoxContainer/Panel/MachineRows/HamsterModuleRow2" unique_id=2066804554 instance=ExtResource("1_r258f")]
 layout_mode = 2
-
-[node name="Control" type="Control" parent="HBoxContainer/Panel/MachineRows" unique_id=252763631]
-layout_mode = 2
-mouse_filter = 2
+disabled = true
+slot_number = 6
 
 [node name="ProjectModuleRow1" type="HBoxContainer" parent="HBoxContainer/Panel/MachineRows" unique_id=1493681682]
-visible = false
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="HBoxContainer/Panel/MachineRows/ProjectModuleRow1" unique_id=1926702278]
+[node name="MachineModuleSlot" parent="HBoxContainer/Panel/MachineRows/ProjectModuleRow1" unique_id=769799803 instance=ExtResource("1_r258f")]
 layout_mode = 2
-text = "hello"
+is_project_module = true
+slot_number = 1
 
-[node name="ExcessPowerBar" type="ProgressBar" parent="HBoxContainer" unique_id=175485096]
-custom_minimum_size = Vector2(15, 0)
+[node name="MachineModuleSlot2" parent="HBoxContainer/Panel/MachineRows/ProjectModuleRow1" unique_id=1934691684 instance=ExtResource("1_r258f")]
 layout_mode = 2
-size_flags_vertical = 1
-mouse_filter = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_vgf6b")
-theme_override_styles/fill = SubResource("StyleBoxFlat_wnun6")
-value = 30.0
-fill_mode = 3
-show_percentage = false
-script = ExtResource("1_cfiw6")
+is_project_module = true
+disabled = true
+slot_number = 2
+
+[node name="MachineModuleSlot3" parent="HBoxContainer/Panel/MachineRows/ProjectModuleRow1" unique_id=168099881 instance=ExtResource("1_r258f")]
+layout_mode = 2
+is_project_module = true
+disabled = true
+slot_number = 3

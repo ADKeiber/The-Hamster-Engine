@@ -1,10 +1,17 @@
 class_name ExcessPowerBar
 extends ProgressBar
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	max_value = GScript.battery_capacity
+	$Timer.start()
 
 func _process(delta: float) -> void:
-	value -= GScript.power_drain
-	value += GScript.power_generated
+	$Label.text = str(int(value)) + " HW"
+	
+	
+
+
+
+func _on_timer_timeout() -> void:
+	GScript.power_stored = GScript.hamster_watts_produced - GScript.hamster_watts_min
+	value += GScript.power_stored

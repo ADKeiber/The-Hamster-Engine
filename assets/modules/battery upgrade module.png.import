@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxudfxi044x52"
-path="res://.godot/imported/redx.png-3b9a3b4de5ae96b60c22805d2891bce9.ctex"
+uid="uid://dkei1s8x75kp8"
+path="res://.godot/imported/battery upgrade module.png-de5ecdb6564c2866e88f7bf0ad8205dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/machine/redx.png"
-dest_files=["res://.godot/imported/redx.png-3b9a3b4de5ae96b60c22805d2891bce9.ctex"]
+source_file="res://assets/modules/battery upgrade module.png"
+dest_files=["res://.godot/imported/battery upgrade module.png-de5ecdb6564c2866e88f7bf0ad8205dd.ctex"]
 
 [params]
 

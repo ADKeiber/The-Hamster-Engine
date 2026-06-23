@@ -1,7 +1,13 @@
 [gd_resource type="Resource" script_class="ExperimentalTankModule" format=3 uid="uid://taor37olr8nm"]
 
 [ext_resource type="Script" uid="uid://iat32wvxnly2" path="res://scripts/modules/experimental_tank_module.gd" id="1_joc7s"]
+[ext_resource type="Texture2D" uid="uid://dk8adiajthcgw" path="res://assets/machine/redXs/redx.png" id="2_tm5ds"]
 
 [resource]
 script = ExtResource("1_joc7s")
+module_name = "Experimental Tank"
+module_description = "Drop a hamster in to upgrade random stat"
+power_cost = 100
+texture = ExtResource("2_tm5ds")
+min_power_increase = 10
 metadata/_custom_type_script = "uid://iat32wvxnly2"

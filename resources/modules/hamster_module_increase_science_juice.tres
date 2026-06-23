@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="ScienceJuiceGeneratorModule" format=3 uid="uid://c5x8xpn0qdxmf"]
-
-[ext_resource type="Script" uid="uid://dluqhkxjfff1v" path="res://scripts/modules/science_juice_generator_module.gd" id="1_tcnsr"]
-
-[resource]
-script = ExtResource("1_tcnsr")
-metadata/_custom_type_script = "uid://dluqhkxjfff1v"

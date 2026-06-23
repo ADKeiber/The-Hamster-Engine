@@ -35,12 +35,13 @@ folder_colors={
 "res://assets/": "red",
 "res://assets/cage/": "gray",
 "res://assets/hamster/": "orange",
-"res://assets/machine/": "blue",
+"res://assets/machine/": "purple",
+"res://assets/modules/": "blue",
 "res://assets/wheel/": "yellow",
 "res://scenes/": "teal",
 "res://scenes/cage/": "gray",
 "res://scenes/hamster/": "orange",
-"res://scenes/machine/": "blue",
+"res://scenes/machine/": "purple",
 "res://scenes/wheel/": "yellow",
 "res://scripts/": "purple",
 "res://scripts/cage/": "gray",
@@ -56,6 +57,11 @@ CageSlot="Slot where the hamsters live"
 HamsterUI=""
 Wheel=""
 ModuleSelectorPopup=""
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+theme/custom_font="uid://dihx7krh4ako0"
 
 [input]
 

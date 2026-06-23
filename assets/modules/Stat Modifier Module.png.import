@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://copigqx2tlm4w"
-path="res://.godot/imported/redx3.png-bf541fec1afb3927ae7ba65204850e2d.ctex"
+uid="uid://bclkqy7j4ms7k"
+path="res://.godot/imported/Stat Modifier Module.png-d2777db2389ce9cb76c0b31ce73b607e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/redx3.png"
-dest_files=["res://.godot/imported/redx3.png-bf541fec1afb3927ae7ba65204850e2d.ctex"]
+source_file="res://assets/modules/Stat Modifier Module.png"
+dest_files=["res://.godot/imported/Stat Modifier Module.png-d2777db2389ce9cb76c0b31ce73b607e.ctex"]
 
 [params]
 

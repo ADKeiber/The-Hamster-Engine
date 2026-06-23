@@ -1,7 +1,13 @@
 [gd_resource type="Resource" script_class="SpaModule" format=3 uid="uid://om17syoayrnb"]
 
 [ext_resource type="Script" uid="uid://ctm75tktsh6it" path="res://scripts/modules/spa_module.gd" id="1_hinfj"]
+[ext_resource type="Texture2D" uid="uid://ch1b2ya1om1un" path="res://assets/machine/redXs/redx6.png" id="2_cfjb4"]
 
 [resource]
 script = ExtResource("1_hinfj")
+module_name = "Hamster Spa"
+module_description = "Allows for hamster to regen health"
+power_cost = 400
+texture = ExtResource("2_cfjb4")
+min_power_increase = 10
 metadata/_custom_type_script = "uid://ctm75tktsh6it"
