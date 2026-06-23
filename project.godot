@@ -58,6 +58,11 @@ HamsterUI=""
 Wheel=""
 ModuleSelectorPopup=""
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+theme/custom_font="uid://dihx7krh4ako0"
+
 [input]
 
 right_click={

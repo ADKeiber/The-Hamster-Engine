@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://d4fvryev4ss0q" path="res://resources/modules/project_module_1.tres" id="11_6u1mn"]
 [ext_resource type="Resource" uid="uid://bqy2wqx1wy4jo" path="res://resources/modules/project_module_2.tres" id="12_bcnxi"]
 [ext_resource type="Resource" uid="uid://d3fm55mf6ga0o" path="res://resources/modules/project_module_3.tres" id="13_7nt27"]
+[ext_resource type="PackedScene" uid="uid://byh8jfcnyqs8m" path="res://scenes/machine/battery.tscn" id="18_bcnxi"]
 
 [node name="MainScene" type="Control" unique_id=600585959]
 layout_mode = 3
@@ -37,7 +38,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
 offset_left = -115.0
-offset_right = 115.0
+offset_right = 109.0
 offset_bottom = 125.0
 grow_vertical = 1
 
@@ -70,3 +71,7 @@ offset_left = 43.0
 offset_top = 26.0
 offset_right = 143.0
 offset_bottom = 85.945
+
+[node name="Battery" parent="." unique_id=1012486577 instance=ExtResource("18_bcnxi")]
+position = Vector2(421, 2)
+scale = Vector2(1.0042132, 1.0827338)

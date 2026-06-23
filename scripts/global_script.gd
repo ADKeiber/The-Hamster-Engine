@@ -7,9 +7,8 @@ signal win_game
 var roster_limit: int = 4
 var num_of_wheels: int
 var roster: Array[HamsterStats]
-var power_generated : float = 0
-var power_drain : float = 0.01
+var power_stored : int
 var hamster_watts_produced : int = 0
-var hamster_watts_min : int = 0
-var batter_capacity: int = 1000
+var hamster_watts_min : int = 10
+var battery_capacity: int = 1000
 var all_modules: Array[MachineModule] = []

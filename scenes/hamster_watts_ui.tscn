@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dm5cffeor5daa" path="res://scripts/hamster_watts_ui.gd" id="1_uebsc"]
 
-[sub_resource type="Theme" id="Theme_vgf6b"]
-
 [node name="HamsterWattsUI" type="Control" unique_id=113782197]
 custom_minimum_size = Vector2(100, 59.945)
 layout_mode = 3
@@ -26,5 +24,4 @@ text = "Current:"
 [node name="Minimum" type="Label" parent="VBoxContainer" unique_id=2074795514]
 layout_mode = 2
 size_flags_horizontal = 3
-theme = SubResource("Theme_vgf6b")
 text = "Min:"

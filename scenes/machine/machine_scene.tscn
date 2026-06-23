@@ -1,14 +1,7 @@
 [gd_scene format=3 uid="uid://duon3nnllt7rg"]
 
-[ext_resource type="Script" uid="uid://cpajfmhxdu8bv" path="res://scripts/power_bar.gd" id="1_cfiw6"]
-[ext_resource type="PackedScene" uid="uid://rhqem0bpk83i" path="res://scenes/machine_module_slot.tscn" id="1_r258f"]
+[ext_resource type="PackedScene" uid="uid://rhqem0bpk83i" path="res://scenes/machine/machine_module_slot.tscn" id="1_r258f"]
 [ext_resource type="Script" uid="uid://bncpggdmm0unb" path="res://scenes/machine_scene.gd" id="1_soh53"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgf6b"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnun6"]
-bg_color = Color(0.89043224, 0.85935754, 0.23542011, 1)
 
 [node name="MachineScene" type="Control" unique_id=1183329259]
 layout_mode = 3
@@ -113,15 +106,3 @@ layout_mode = 2
 is_project_module = true
 disabled = true
 slot_number = 3
-
-[node name="ExcessPowerBar" type="ProgressBar" parent="HBoxContainer" unique_id=175485096]
-custom_minimum_size = Vector2(15, 0)
-layout_mode = 2
-size_flags_vertical = 1
-mouse_filter = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_vgf6b")
-theme_override_styles/fill = SubResource("StyleBoxFlat_wnun6")
-value = 30.0
-fill_mode = 3
-show_percentage = false
-script = ExtResource("1_cfiw6")
