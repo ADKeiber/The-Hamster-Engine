@@ -3,7 +3,8 @@ extends Node
 signal close_popups
 signal unlock_module(slot_num:int, is_project_module:bool)
 signal win_game
-
+signal add_wheel
+signal add_hamster_slot
 var roster_limit: int = 4
 var num_of_wheels: int
 var roster: Array[HamsterStats]

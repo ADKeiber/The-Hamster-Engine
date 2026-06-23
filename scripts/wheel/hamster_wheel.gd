@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func _ready() -> void:
 	$Hamster.hide() #So the hamster isn't visible while wheel is idle
 	

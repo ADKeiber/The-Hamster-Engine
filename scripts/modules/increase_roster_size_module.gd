@@ -3,5 +3,5 @@ extends MachineModule
 
 
 func start_module() -> void:
-	# setup spa
-	pass
+	GScript.roster_limit = GScript.roster_limit + 1
+	GScript.add_hamster_slot.emit()

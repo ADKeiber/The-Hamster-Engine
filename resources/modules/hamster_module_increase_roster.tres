@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ExperimentalTankModule" format=3 uid="uid://dracau4wss6js"]
+[gd_resource type="Resource" script_class="IncreaseRosterSizeModule" format=3 uid="uid://dracau4wss6js"]
 
-[ext_resource type="Script" uid="uid://iat32wvxnly2" path="res://scripts/modules/experimental_tank_module.gd" id="1_8bfxj"]
+[ext_resource type="Script" uid="uid://b86i36oqalt57" path="res://scripts/modules/increase_roster_size_module.gd" id="1_b0pgs"]
 [ext_resource type="Texture2D" uid="uid://cyqdn064auobp" path="res://assets/machine/redXs/redx1.png" id="2_b0pgs"]
 
 [resource]
-script = ExtResource("1_8bfxj")
+script = ExtResource("1_b0pgs")
 module_name = "Cage Upgrades"
 module_description = "Increases roster max count"
 power_cost = 300
