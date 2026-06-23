@@ -26,6 +26,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 				dragging = true
 				slot_position = global_position
 				picked_up.emit()
+				$StatsMenu.hide()
 			else:
 				dragging = false
 				print(target)

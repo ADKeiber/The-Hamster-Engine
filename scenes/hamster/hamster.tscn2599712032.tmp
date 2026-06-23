@@ -146,11 +146,10 @@ visible = false
 z_index = 1
 layout_mode = 3
 anchors_preset = 0
-offset_left = -38.0
-offset_top = -134.0
-offset_right = 46.0
-offset_bottom = -20.0
-pivot_offset = Vector2(42, 57)
+offset_left = -125.0
+offset_top = -83.0
+offset_right = -41.0
+offset_bottom = 31.0
 mouse_filter = 2
 script = ExtResource("5_5rrcj")
 health_stat = NodePath("Background/MarginContainer/VBoxContainer/Health")
@@ -218,4 +217,3 @@ autowrap_mode = 2
 [connection signal="timeout" from="StaminaBar/Timer" to="StaminaBar" method="_on_timer_timeout"]
 [connection signal="death" from="HealthPipsContainer" to="." method="_on_health_pips_container_death"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="visibility_changed" from="StatsMenu" to="StatsMenu" method="_on_visibility_changed"]

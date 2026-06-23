@@ -11,4 +11,4 @@ func _ready() -> void:
 	health_stat.text = "Health: " + str(hamster.stats.health)
 	stamina_stat.text = "Stamina: " + str(hamster.stats.stamina)
 	speed_stat.text = "Speed: " + str(hamster.stats.speed)
-	trait_stat.text = "Trait: " + "insert trait description here."
+	trait_stat.text = "Trait: " + "Name " + "description"
