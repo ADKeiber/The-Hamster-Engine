@@ -8,7 +8,7 @@ var chance : float
 
 
 # Sets stamina based on stat
-func _ready() -> void:
+func setup_stamina() -> void:
 	max_value = hamster.stats.stamina * 100
 	value = max_value
 	chance = hamster.stats.chance_to_take_damage

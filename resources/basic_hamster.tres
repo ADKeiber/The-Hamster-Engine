@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bx11kyy4ssk1k" path="res://scripts/hamster/hamster_stats.gd" id="1_fc4jd"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_fc4jd")
 stamina = 2
 speed = 2

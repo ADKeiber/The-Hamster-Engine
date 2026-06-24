@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://chwqd0d2ttqnq" path="res://scripts/hamster/hamster_ui.gd" id="1_m4iqr"]
 [ext_resource type="Texture2D" uid="uid://djxbvutfhnbe3" path="res://assets/hamster/Hamster Idle.png" id="2_m4iqr"]
+[ext_resource type="Resource" uid="uid://ffggkpwnn7bu" path="res://resources/hamster_traits.tres" id="2_ohn85"]
+[ext_resource type="Resource" uid="uid://cuce203tkngfm" path="res://resources/basic_hamster.tres" id="2_vus7h"]
 [ext_resource type="Script" uid="uid://dpp72q2h1xghe" path="res://scripts/hamster/stamina_bar.gd" id="3_ohn85"]
 [ext_resource type="Script" uid="uid://bf3ardapch0mn" path="res://scripts/hamster/health_pips_container.gd" id="4_vus7h"]
 [ext_resource type="Script" uid="uid://bcdqswu5x0vj8" path="res://scripts/hamster/stats_menu.gd" id="5_5rrcj"]
@@ -100,6 +102,8 @@ _data = {
 [node name="HamsterUI" type="Node2D" unique_id=997477288 node_paths=PackedStringArray("stats_menu") groups=["HamsterUI"]]
 script = ExtResource("1_m4iqr")
 stats_menu = NodePath("StatsMenu")
+stats = ExtResource("2_vus7h")
+traits = ExtResource("2_ohn85")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=472208585]
 sprite_frames = SubResource("SpriteFrames_vgf6b")

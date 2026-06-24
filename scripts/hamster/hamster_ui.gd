@@ -5,7 +5,8 @@ signal picked_up
 
 @export var stats_menu : Control
 
-var stats: HamsterStats = preload("res://resources/basic_hamster.tres")
+@export var stats: HamsterStats
+@export var traits : HamsterTraits
 var dragging: bool
 var amount: int = 0
 var drag_offset := Vector2.ZERO
@@ -13,6 +14,7 @@ var slot_position := Vector2.ZERO
 var target: Area2D
 enum State {IDLE, RUNNING, RESTING} #Hamster must always be in a State
 var hamster_state : State = State.IDLE
+var hamster_trait : Dictionary
 
 func _process(delta):
 	if dragging:
@@ -63,6 +65,14 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle")
+	hamster_trait = traits.random_trait(stats)
+	setup()
+
+# Sets everything up once hamster is fully ready so nothing triggers too early
+func setup() -> void:
+	$StatsMenu.stat_setup()
+	$StaminaBar.setup_stamina()
+	$HealthPipsContainer.setup_health()
 
 # Whenever the hamster changes to a new slot or is picked up change states
 # Incorporate into all slot swaps

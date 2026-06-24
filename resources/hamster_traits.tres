@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HamsterTraits" format=3 uid="uid://ffggkpwnn7bu"]
+
+[ext_resource type="Script" uid="uid://bfxaknlwpncc3" path="res://scripts/hamster/hamster_traits.gd" id="1_ocsxm"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_ocsxm")
