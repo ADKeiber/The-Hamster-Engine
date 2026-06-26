@@ -9,6 +9,7 @@ signal update_battery_capacity
 signal complete_module_interaction(hamster:HamsterUI)
 signal restart_game
 signal lose_game
+signal complete_project_module(project_module_num: int)
 
 var global_tick_time: float = 1.0 # the global tick for timers 
 var roster_limit: int = 4
@@ -40,5 +41,6 @@ func reset_state() -> void:
 	hamster_watts_min = 10
 	battery_capacity = 1000
 	current_battery_value = 100
-	all_modules = []
+	for module in all_modules:
+		module.installed = false
 	

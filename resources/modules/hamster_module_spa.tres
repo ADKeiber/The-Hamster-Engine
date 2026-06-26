@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="SpaModule" format=3 uid="uid://om17syoayrnb"]
 
+[ext_resource type="Texture2D" uid="uid://bfhe3jsemg0fv" path="res://assets/modules/spa on.png" id="1_aoj78"]
 [ext_resource type="Script" uid="uid://ctm75tktsh6it" path="res://scripts/modules/spa_module.gd" id="1_hinfj"]
 [ext_resource type="Texture2D" uid="uid://btpw5ynxcy07m" path="res://assets/modules/spa.png" id="2_cfjb4"]
 
@@ -12,5 +13,7 @@ power_cost = 400
 texture = ExtResource("2_cfjb4")
 min_power_increase = 10
 interactable = true
+sprite_sheet = ExtResource("1_aoj78")
+fps = 6.0
 interact_power_cost = 10
 metadata/_custom_type_script = "uid://ctm75tktsh6it"

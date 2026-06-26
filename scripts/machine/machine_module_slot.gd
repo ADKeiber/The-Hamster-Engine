@@ -13,8 +13,6 @@ var _hamster: HamsterUI
 
 var remaining_interaction_ticks: int
 
-# Called when the node enters the scene tree for the first time.
-#
 func _ready():
 	GScript.close_popups.connect(close_popup)
 	z_index = 1

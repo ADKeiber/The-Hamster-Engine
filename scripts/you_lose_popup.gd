@@ -9,3 +9,4 @@ func _on_button_pressed() -> void:
 
 func _lose_game() -> void:
 	self.visible = true
+	GScript.close_popups.emit()
