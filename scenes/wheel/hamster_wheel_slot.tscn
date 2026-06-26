@@ -18,16 +18,7 @@ size_flags_vertical = 4
 mouse_filter = 2
 script = ExtResource("1_d3qqk")
 
-[node name="Panel" type="Panel" parent="." unique_id=1645221691]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Hamster Wheel" parent="Panel" unique_id=1968280101 instance=ExtResource("2_numr8")]
+[node name="Hamster Wheel" parent="." unique_id=1968280101 instance=ExtResource("2_numr8")]
 position = Vector2(35, 29)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=13849582 groups=["Wheel"]]

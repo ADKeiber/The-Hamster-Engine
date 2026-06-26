@@ -9,7 +9,7 @@ func reparent_hamster(hamster: HamsterUI) -> void:
 	print("Reparent")
 	hamster.reparent(self)
 	hamster.position = self.size / 2.0
-	$"Panel/Hamster Wheel".power_wheel() ##start wheel animation
+	$"Hamster Wheel".power_wheel() ##start wheel animation
 	_hamster = hamster
 	if _hamster.picked_up.is_connected(self.hamster_picked_up): 
 		_hamster.picked_up.disconnect(self.hamster_picked_up)
@@ -23,7 +23,7 @@ func reparent_hamster(hamster: HamsterUI) -> void:
 	
 # Stops the wheel animation
 func hamster_picked_up() -> void:
-	$"Panel/Hamster Wheel".power_off()
+	$"Hamster Wheel".power_off()
 	if _hamster.hamster_state != _hamster.State.IDLE:
 		_hamster.hamster_state = _hamster.State.IDLE
 		GScript.hamster_watts_produced -= _hamster.stats.speed * 10

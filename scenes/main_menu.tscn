@@ -1,0 +1,309 @@
+[gd_scene format=3 uid="uid://car0adofhymyn"]
+
+[ext_resource type="Script" uid="uid://5ro6jddqnj8b" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://djxbvutfhnbe3" path="res://assets/hamster/Hamster Idle.png" id="2_8ln24"]
+[ext_resource type="Texture2D" uid="uid://b32weeq21pn1n" path="res://assets/machine/Machine on.png" id="2_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://dc0ybyr363rp4" path="res://scenes/wheel/hamster_wheel.tscn" id="2_wu84c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lw7gp"]
+bg_color = Color(0.15487584, 0.15487605, 0.1548759, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.5649616, 0.5649617, 0.5649613, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpwgc"]
+atlas = ExtResource("2_8ln24")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vfxu"]
+atlas = ExtResource("2_8ln24")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rtw2f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpwgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vfxu")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu84c"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(0, 0, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ln24"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(0, 128, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtw2f"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(0, 256, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(0, 384, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbmy8"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(0, 512, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk1qb"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(0, 640, 300, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wnun6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu84c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ln24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtw2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa1go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbmy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jk1qb")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dd4i"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(300, 0, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgwnu"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(300, 128, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flqon"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(300, 256, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(300, 384, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ajci"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(300, 512, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7b55j"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(300, 640, 300, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lw7gp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dd4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgwnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flqon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcqid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ajci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7b55j")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pajh"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(600, 0, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7ex8"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(600, 128, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8gd2"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(600, 256, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hstxw"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(600, 384, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8egab"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(600, 512, 300, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw5y6"]
+atlas = ExtResource("2_bqqt6")
+region = Rect2(600, 640, 300, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gpj1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pajh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7ex8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8gd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hstxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8egab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw5y6")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 6.0
+}]
+
+[node name="MainMenu" type="Control" unique_id=620466314]
+z_index = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="Panel" type="Panel" parent="." unique_id=729081368]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lw7gp")
+
+[node name="H1" type="AnimatedSprite2D" parent="Panel" unique_id=828309351]
+position = Vector2(181, 296)
+sprite_frames = SubResource("SpriteFrames_rtw2f")
+animation = &"idle"
+autoplay = "idle"
+speed_scale = 0.5
+
+[node name="H2" type="AnimatedSprite2D" parent="Panel" unique_id=2131627195]
+position = Vector2(190, 201)
+sprite_frames = SubResource("SpriteFrames_rtw2f")
+animation = &"idle"
+autoplay = "idle"
+speed_scale = 0.5
+
+[node name="H3" type="AnimatedSprite2D" parent="Panel" unique_id=553881628]
+position = Vector2(187, 247)
+sprite_frames = SubResource("SpriteFrames_rtw2f")
+animation = &"idle"
+autoplay = "idle"
+speed_scale = 0.5
+
+[node name="H4" type="AnimatedSprite2D" parent="Panel" unique_id=390103043]
+position = Vector2(481, 291)
+sprite_frames = SubResource("SpriteFrames_rtw2f")
+animation = &"idle"
+autoplay = "idle"
+speed_scale = 0.5
+flip_h = true
+
+[node name="H5" type="AnimatedSprite2D" parent="Panel" unique_id=1088900231]
+position = Vector2(450, 200)
+sprite_frames = SubResource("SpriteFrames_rtw2f")
+animation = &"idle"
+autoplay = "idle"
+speed_scale = 0.5
+flip_h = true
+
+[node name="H6" type="AnimatedSprite2D" parent="Panel" unique_id=91535344]
+position = Vector2(468, 245)
+sprite_frames = SubResource("SpriteFrames_rtw2f")
+animation = &"idle"
+autoplay = "idle"
+speed_scale = 0.5
+flip_h = true
+
+[node name="Hamster Wheel" parent="Panel" unique_id=1968280101 instance=ExtResource("2_wu84c")]
+unique_name_in_owner = true
+position = Vector2(323, 249)
+
+[node name="Node2D" type="Node2D" parent="Panel" unique_id=172297449]
+position = Vector2(316, 68)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="Base" type="AnimatedSprite2D" parent="Panel/Node2D" unique_id=1803929385]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_wnun6")
+animation = &"on"
+autoplay = "on"
+frame = 4
+frame_progress = 0.29451314
+
+[node name="2ndLayer" type="AnimatedSprite2D" parent="Panel/Node2D" unique_id=1917759620]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_lw7gp")
+animation = &"on"
+autoplay = "on"
+frame = 5
+frame_progress = 0.6225481
+
+[node name="3rdLayer" type="AnimatedSprite2D" parent="Panel/Node2D" unique_id=1088718435]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_4gpj1")
+animation = &"on"
+autoplay = "on"
+frame = 5
+frame_progress = 0.65481716
+
+[node name="StartGame" type="Button" parent="Panel" unique_id=1025514049]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.52900004
+offset_left = -49.0
+offset_top = -8.0
+offset_right = 52.0
+offset_bottom = 5.5599823
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+
+[node name="Title" type="Label" parent="Panel" unique_id=770051320]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 79.0
+offset_right = 436.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 24
+text = "The Hamster Engine"
+
+[connection signal="pressed" from="Panel/StartGame" to="." method="_on_start_game_pressed"]

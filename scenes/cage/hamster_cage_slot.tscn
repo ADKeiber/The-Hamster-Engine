@@ -29,15 +29,6 @@ input_pickable = false
 position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="Panel" type="Panel" parent="." unique_id=1645221691]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=552204851]
 z_index = 1
 position = Vector2(19, 19.999998)

@@ -38,6 +38,9 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int):
 				slot_position = global_position
 				picked_up.emit()
 				$StatsMenu.hide()
+				$Squeak.pitch_scale = 1
+				$Squeak.pitch_scale += randf_range(-0.2, 0.2)
+				$Squeak.play()
 			else:
 				dragging = false
 				print(target)

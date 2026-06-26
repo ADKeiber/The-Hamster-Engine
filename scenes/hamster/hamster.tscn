@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dpp72q2h1xghe" path="res://scripts/hamster/stamina_bar.gd" id="3_ohn85"]
 [ext_resource type="Script" uid="uid://bf3ardapch0mn" path="res://scripts/hamster/health_pips_container.gd" id="4_vus7h"]
 [ext_resource type="Script" uid="uid://bcdqswu5x0vj8" path="res://scripts/hamster/stats_menu.gd" id="5_5rrcj"]
+[ext_resource type="AudioStream" uid="uid://bver30pf62lix" path="res://assets/hamster/hamster.wav" id="8_7g52f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tpwgc"]
 atlas = ExtResource("2_m4iqr")
@@ -215,6 +216,9 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 10
 autowrap_mode = 2
+
+[node name="Squeak" type="AudioStreamPlayer2D" parent="." unique_id=1730146679]
+stream = ExtResource("8_7g52f")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
