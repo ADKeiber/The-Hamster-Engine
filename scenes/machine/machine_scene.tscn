@@ -166,7 +166,7 @@ mouse_filter = 2
 script = ExtResource("1_soh53")
 
 [node name="Machine" type="Node2D" parent="." unique_id=457808074]
-position = Vector2(111.00001, 74)
+position = Vector2(117, 73)
 scale = Vector2(2.704, 2.6)
 metadata/_edit_group_ = true
 
