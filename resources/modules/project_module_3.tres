@@ -7,7 +7,7 @@
 script = ExtResource("1_jsgp5")
 module_name = "Project module 3"
 module_description = "3/3 - You win the game!"
-power_cost = 500
+power_cost = 50
 texture = ExtResource("2_jsgp5")
 min_power_increase = 100
 project_module = true

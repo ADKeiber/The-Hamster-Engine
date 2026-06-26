@@ -6,6 +6,8 @@ extends Control
 @onready var hamster_cage_scene: HamsterCageScene = %HamsterCageScene
 @onready var hamster_wheels_scene: HamsterWheelsScene = %HamsterWheelsScene
 var starting_hamsters: Array[HamsterStats]
+@onready var you_lose_popup: YouLosePopup = %YouLosePopup
+@onready var you_win_popup: YouWinPopup = %YouWinPopup
 
 func _ready() -> void:
 	GScript.hamster_options = hamster_options
@@ -15,7 +17,7 @@ func _ready() -> void:
 	hamster_wheels_scene.setup_wheels()
 	#hamster_wheels_scene.generate_wheels()
 	GScript.all_modules = all_modules
-	GScript.win_game.connect(win_game)
+	GScript.restart_game.connect(restart)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -26,5 +28,7 @@ func _unhandled_input(event):
 		print("Closing popups")
 		GScript.close_popups.emit()
 
-func win_game() -> void:
-	print("YOU WON!!")
+func restart() -> void:
+	GScript.reset_state()
+	get_tree().reload_current_scene()
+	print("RESET")

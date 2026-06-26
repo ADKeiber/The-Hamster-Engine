@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://clpas1gryqu2e"]
+
+[ext_resource type="Script" uid="uid://du2d75abob8h8" path="res://scripts/you_win_popup.gd" id="1_nw42b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nw42b"]
+bg_color = Color(0.4961214, 0.64489406, 0.51769114, 1)
+
+[node name="YouWinPopup" type="PanelContainer" unique_id=846421588]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nw42b")
+script = ExtResource("1_nw42b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1962865105]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=778578262]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "You Win :)"
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=972065689]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Restart"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
