@@ -12,5 +12,6 @@ power_cost = 500
 texture = ExtResource("2_58rth")
 min_power_increase = 10
 ticks_to_complete_interaction = 10
+interact_power_cost = 15
 module_to_upgrade = ExtResource("3_6e6mu")
 metadata/_custom_type_script = "uid://bfpeurr0lvwxo"

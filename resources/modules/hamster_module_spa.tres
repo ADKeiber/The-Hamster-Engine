@@ -12,4 +12,5 @@ power_cost = 400
 texture = ExtResource("2_cfjb4")
 min_power_increase = 10
 interactable = true
+interact_power_cost = 10
 metadata/_custom_type_script = "uid://ctm75tktsh6it"

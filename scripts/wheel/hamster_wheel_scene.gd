@@ -1,7 +1,6 @@
 class_name HamsterWheelsScene
 extends Control
-#@onready var hamster_wheel_slot: HamsterWheelSlot = $Panel/VBoxContainer/HamsterWheelSlots/MarginContainer6/HamsterWheelSlot
-@onready var wheel_slot_upgrade: MarginContainer = %WheelSlotUpgrade
+
 const HAMSTER_WHEEL_SLOT = preload("res://scenes/wheel/hamster_wheel_slot.tscn")
 @onready var hamster_wheel_slots: HBoxContainer = %HamsterWheelSlots
 

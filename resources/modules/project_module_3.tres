@@ -11,4 +11,5 @@ power_cost = 500
 texture = ExtResource("2_jsgp5")
 min_power_increase = 100
 project_module = true
+project_module_num = 3
 metadata/_custom_type_script = "uid://cagt8kofgqx44"

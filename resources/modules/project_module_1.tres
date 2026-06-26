@@ -11,4 +11,5 @@ power_cost = 100
 texture = ExtResource("2_cp5nu")
 min_power_increase = 10
 project_module = true
+project_module_num = 1
 metadata/_custom_type_script = "uid://cagt8kofgqx44"

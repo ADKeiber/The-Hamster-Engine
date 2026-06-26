@@ -13,6 +13,7 @@ func start_module() -> void:
 
 func interact_with_hamster(hamster:HamsterUI, timer: Timer, progress_bar: ProgressBar) -> void:
 	if not callables.is_empty():
+		timer.timeout.disconnect(_on_timeout)
 		callables[0].call(hamster, timer, progress_bar)
 		return # this process can be updated to interact diffrently but this works for here
 	hamster_ui = hamster

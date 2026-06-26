@@ -76,8 +76,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	print("Entered")
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	target = null
-	print("Exited: ", area)
+	if not $Area2D.has_overlapping_areas():
+		target = null
+		print("Exited: ", area)
+	else:
+		target = $Area2D.get_overlapping_areas()[0]
 
 # Sets everything up once hamster is fully ready so nothing triggers too early
 func setup() -> void:

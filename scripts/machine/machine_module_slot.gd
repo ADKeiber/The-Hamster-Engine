@@ -37,17 +37,12 @@ func _gui_input(event: InputEvent) -> void:
 				if module_option_popup.visible:
 					module_option_popup.visible = false
 				elif not module_option_popup.visible and current_module == null:
-					#var parent = hamster.get_parent()
-	#var center_x = parent.global_position.x + parent.size.x / 2.0
-	#var x = center_x - interactable_menu.size.x / 2.0
-	#var y = parent.global_position.y
 					#module_option_popup.
 					var center_x = self.global_position.x + self.size.x / 2.0
 					var x = center_x - module_option_popup.size.x / 2.0
 					var y = self.global_position.y + self.size.y
 					module_option_popup.position = Vector2(x, y)
 					module_option_popup.visible = true
-				#module_option_popup.visible = not module_option_popup.visible
 				if module_option_popup.visible:
 					module_option_popup.reset_options(is_project_module)
 					z_index = 100

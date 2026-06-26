@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://cdkjxlugjkrcs" path="res://scripts/machine_module_option.gd" id="1_7qfeb"]
 [ext_resource type="Texture2D" uid="uid://c4air3bicpb0a" path="res://icon.svg" id="1_qboyq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fufhu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycuyt"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -13,8 +16,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0.078431375)
 
 [node name="MachineModuleOption" type="Control" unique_id=1873184379]
-custom_minimum_size = Vector2(150, 30)
-custom_maximum_size = Vector2(200, 30)
+custom_minimum_size = Vector2(175, 30)
 layout_mode = 3
 anchor_left = -0.020000001
 anchor_top = -0.007
@@ -22,35 +24,67 @@ anchor_right = -0.020000001
 anchor_bottom = -0.007
 offset_left = 0.30000114
 offset_top = 0.01999998
-offset_right = 200.3
-offset_bottom = 30.02
+offset_right = 153.8
+offset_bottom = 39.52
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 script = ExtResource("1_7qfeb")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1443473232]
-custom_minimum_size = Vector2(150, 30)
-custom_maximum_size = Vector2(200, 30)
-layout_mode = 0
-offset_right = 150.0
-offset_bottom = 30.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Texture" type="TextureRect" parent="HBoxContainer" unique_id=1571814977]
-custom_maximum_size = Vector2(40, 40)
+custom_minimum_size = Vector2(30, 30)
+custom_maximum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("1_qboyq")
 expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=2002086136]
+custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
 size_flags_horizontal = 3
+alignment = 1
 
-[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1362567436]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1958137567]
 layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1362567436]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 8
 text = "Module Name"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=226346982]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_fufhu")
+
+[node name="Cost" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/HBoxContainer" unique_id=232014108]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
+bbcode_enabled = true
+text = "[b]200[/b]"
+fit_content = true
+horizontal_alignment = 2
 
 [node name="Description" type="RichTextLabel" parent="HBoxContainer/VBoxContainer" unique_id=349977508]
 layout_mode = 2
@@ -61,10 +95,12 @@ text = "This is sample text to describe the module"
 
 [node name="Button" type="Button" parent="." unique_id=21258824]
 custom_minimum_size = Vector2(150, 30)
-layout_mode = 0
-offset_left = -0.5
-offset_right = 162.0
-offset_bottom = 30.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_ycuyt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v660u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_48bqb")

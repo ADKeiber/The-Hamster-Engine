@@ -47,21 +47,7 @@ texture = ExtResource("2_2jdgv")
 [node name="AvailableModulesPopup" parent="." unique_id=608306954 instance=ExtResource("3_2jdgv")]
 unique_name_in_owner = true
 visible = false
-layout_mode = 1
-anchor_top = 0.5
-anchor_right = 0.0
-anchor_bottom = 0.5
-offset_left = -201.0
-offset_top = -19.5
-offset_right = -1.0
-offset_bottom = 112.5
-grow_horizontal = 1
-grow_vertical = 1
-mouse_filter = 1
 metadata/_edit_lock_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=383772167]
-visible = false
 
 [node name="Timer" type="Timer" parent="." unique_id=319548461]
 

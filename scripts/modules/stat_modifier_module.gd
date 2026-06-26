@@ -11,6 +11,7 @@ const STAT_MODIFY_POPUP = preload("res://scenes/machine/module_interactable_menu
 
 func start_module() -> void:
 	GScript.hamster_watts_min = GScript.hamster_watts_min + min_power_increase
+	module_to_upgrade.interact_power_cost = self.interact_power_cost
 	module_to_upgrade.callables.append(interact_with_hamster)
 
 func interact_with_hamster(hamster:HamsterUI, timer: Timer, progress_bar: ProgressBar) -> void:
