@@ -4,7 +4,6 @@ extends Control
 const HAMSTER_WHEEL_SLOT = preload("res://scenes/wheel/hamster_wheel_slot.tscn")
 @onready var hamster_wheel_slots: HBoxContainer = %HamsterWheelSlots
 
-
 func _ready() -> void:
 	GScript.add_wheel.connect(reveal_wheel)
 	# generate wheels
@@ -16,7 +15,7 @@ func setup_wheels() -> void:
 		margin_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		margin_container.add_child(slot)
 		hamster_wheel_slots.add_child(margin_container)
-		
+
 func reveal_wheel() -> void:
 	var margin_container := MarginContainer.new()
 	margin_container.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
