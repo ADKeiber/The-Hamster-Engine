@@ -172,6 +172,7 @@ metadata/_edit_group_ = true
 
 [node name="Base" type="AnimatedSprite2D" parent="Machine" unique_id=551311390]
 unique_name_in_owner = true
+position = Vector2(-0.36982727, 0)
 sprite_frames = SubResource("SpriteFrames_wuesh")
 animation = &"on"
 autoplay = "on"

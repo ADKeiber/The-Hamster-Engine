@@ -121,6 +121,9 @@ func _on_health_pips_container_death() -> void:
 	picked_up.emit()
 	$Area2D.hide()
 	$AnimationPlayer.play("death")
+	$Squeak.pitch_scale = 0.75
+	$Squeak.bus = "Reverb"
+	$Squeak.play()
 	await $AnimationPlayer.animation_finished
 	queue_free()
 

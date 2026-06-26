@@ -220,6 +220,8 @@ autowrap_mode = 2
 [node name="Squeak" type="AudioStreamPlayer2D" parent="." unique_id=1730146679]
 stream = ExtResource("8_7g52f")
 
+[node name="AudioBus" type="Node2D" parent="." unique_id=2103181659]
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
