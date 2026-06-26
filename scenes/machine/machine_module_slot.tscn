@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rhqem0bpk83i"]
 
 [ext_resource type="Script" uid="uid://dliy68j5110sa" path="res://scripts/machine/machine_module_slot.gd" id="1_aqkmn"]
-[ext_resource type="Texture2D" uid="uid://dk8adiajthcgw" path="res://assets/machine/redXs/redx.png" id="2_2jdgv"]
+[ext_resource type="Texture2D" uid="uid://ydvo87tk5xmv" path="res://assets/modules/redX.png" id="2_cti3b"]
 [ext_resource type="PackedScene" uid="uid://bw4s34mn2pwis" path="res://scenes/machine/available_modules_popup.tscn" id="3_2jdgv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujpuf"]
@@ -43,7 +43,7 @@ custom_maximum_size = Vector2(40, 40)
 layout_mode = 0
 offset_right = 630.0
 offset_bottom = 630.0
-texture = ExtResource("2_2jdgv")
+texture = ExtResource("2_cti3b")
 
 [node name="AvailableModulesPopup" parent="." unique_id=608306954 instance=ExtResource("3_2jdgv")]
 unique_name_in_owner = true

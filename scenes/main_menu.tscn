@@ -252,6 +252,7 @@ flip_h = true
 [node name="Hamster Wheel" parent="Panel" unique_id=1968280101 instance=ExtResource("2_wu84c")]
 unique_name_in_owner = true
 position = Vector2(323, 249)
+sound_active = false
 
 [node name="Node2D" type="Node2D" parent="Panel" unique_id=172297449]
 position = Vector2(316, 68)
