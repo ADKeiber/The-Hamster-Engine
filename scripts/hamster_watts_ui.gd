@@ -12,5 +12,7 @@ func _process(delta: float) -> void:
 	amount.text = str(GScript.power_stored)
 	if GScript.power_stored >= 0:
 		modifier.text = "Gaining"
+		amount.add_theme_color_override("font_color", Color.BLUE)
 	elif GScript.power_stored < 0:
 		modifier.text = "Losing"
+		amount.add_theme_color_override("font_color", Color.RED)

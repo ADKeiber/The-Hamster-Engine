@@ -15,8 +15,9 @@
 script = ExtResource("1_joc7s")
 module_name = "Experimental Tank"
 module_description = "Drop a hamster in to upgrade random stat"
-power_cost = 5
+power_cost = 300
 texture = ExtResource("2_tm5ds")
+min_power_increase = 10
 interactable = true
 sprite_frames = Array[AtlasTexture]([ExtResource("2_oux8c"), ExtResource("3_el53m"), ExtResource("4_2nu62"), ExtResource("5_k13oa"), ExtResource("6_2v7un"), ExtResource("7_t7qy6"), ExtResource("8_w3bay"), ExtResource("9_othoa")])
 ticks_to_complete_interaction = 7
