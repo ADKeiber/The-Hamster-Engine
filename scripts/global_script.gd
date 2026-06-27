@@ -52,4 +52,5 @@ func reset_state() -> void:
 	current_battery_value = 150
 	for module in all_modules:
 		module.installed = false
+		module.callables = []
 	

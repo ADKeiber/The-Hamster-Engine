@@ -9,6 +9,12 @@ var disabled: bool = false
 @onready var cost: RichTextLabel = %Cost
 @onready var minimum_power_increase: RichTextLabel = %MinimumPowerIncrease
 
+func _process(delta: float) -> void:
+	if GScript.current_battery_value < module.power_cost:
+		disable()
+	else:
+		enable()
+
 func set_option(module: MachineModule) -> void:
 	self.module = module
 	option_texture_rect.texture = module.texture
