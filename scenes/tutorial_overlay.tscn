@@ -2,38 +2,225 @@
 
 [ext_resource type="Script" uid="uid://yd3ux2gnsthd" path="res://scripts/tutorial_overlay.gd" id="1_3d8bu"]
 
-[node name="TutorialOverlay" type="Control" unique_id=1411785557]
-layout_mode = 3
-anchor_right = 0.15900001
-anchor_bottom = 0.28300002
-offset_right = -0.76000977
-offset_bottom = -0.8800049
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6p3nn"]
+bg_color = Color(0.6, 0.6, 0.5058824, 1)
+
+[node name="TutorialOverlay" type="PanelContainer" unique_id=1620250534]
+process_mode = 3
+z_index = 4096
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -159.0
+offset_right = 303.0
+offset_bottom = 162.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_6p3nn")
 script = ExtResource("1_3d8bu")
 
-[node name="Panel" type="Panel" parent="." unique_id=11175581]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 0
-offset_right = 100.0
-offset_bottom = 100.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=181457362]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 2
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1824203744]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2135724778]
 layout_mode = 2
-text = "Step # 1"
-horizontal_alignment = 1
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=1925290768]
+[node name="Part1" type="VBoxContainer" parent="MarginContainer" unique_id=1935174622]
 layout_mode = 2
-text = "Continue"
+alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Part1" unique_id=1493810343]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 8
+theme_override_font_sizes/italics_font_size = 8
+theme_override_font_sizes/mono_font_size = 8
+bbcode_enabled = true
+text = "[center][wave amp=25 freq=2][color=orange][font_size=26][b]Welcome to \"The Hamster Engine\"[/b][/font_size][/color][/wave][/center]
+
+A brilliant (and perhaps slightly unhinged) scientist has nearly completed his greatest invention: the [color=lime][b]Pollution-nator[/b][/color]. Unfortunately, creating world-ending pollution requires an incredible amount of energy...
+
+There was only one logical solution...
+
+[center][rainbow][font_size=30][b]HAMSTERS!!![/b][/font_size][/rainbow][/center]
+
+The first step is building a workforce. Hamsters can be purchased by clicking on an empty cage. Don't worry too much about where the starting energy came from... some questions are better left unanswered.
+"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Part1" unique_id=1250732430]
+layout_mode = 2
+
+[node name="part1" type="Button" parent="MarginContainer/Part1/MarginContainer" unique_id=1778484242]
+layout_mode = 2
+text = "Next"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1133926605]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Part2" type="VBoxContainer" parent="MarginContainer2" unique_id=69034771]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer2/Part2" unique_id=1465374795]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[center][color=yellow][b]Hamster Statistics[/b][/color][/center]
+
+Hovering over a hamster reveals three important attributes:
+
+[color=lightgreen][b]Stamina[/b][/color]
+Determines how long a hamster can keep running before becoming exhausted.
+
+[color=lightblue][b]Speed[/b][/color]
+Determines how much power the hamster generates while running.
+
+[color=tomato][b]Health[/b][/color]
+Once stamina has been depleted, the hamster begins taking damage. If its health reaches zero... well... science requires sacrifices.
+
+Hamsters can be dragged from their cages directly onto a wheel to begin generating power."
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/Part2" unique_id=63741122]
+layout_mode = 2
+
+[node name="part2" type="Button" parent="MarginContainer2/Part2/MarginContainer" unique_id=1387907599]
+layout_mode = 2
+text = "Next"
+
+[node name="MarginContainer3" type="MarginContainer" parent="." unique_id=1163198931]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Part3" type="VBoxContainer" parent="MarginContainer3" unique_id=2031953506]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer3/Part3" unique_id=280165055]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[center][color=yellow][b]Power Generation[/b][/color][/center]
+
+As a hamster runs, its stamina gradually decreases while power production increases.
+
+If your machine produces [color=lightgreen]more power than it consumes[/color], the excess energy is stored in the battery.
+
+If consumption exceeds production, the battery slowly drains.
+
+[color=red][b]If the battery is ever completely depleted, the Pollution-nator is destroyed, and the scientist's dreams go up in smoke.[/b][/color]
+"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer3/Part3" unique_id=1458484932]
+layout_mode = 2
+
+[node name="part3" type="Button" parent="MarginContainer3/Part3/MarginContainer" unique_id=1216023352]
+layout_mode = 2
+text = "Next"
+
+[node name="MarginContainer4" type="MarginContainer" parent="." unique_id=1238056095]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Part3" type="VBoxContainer" parent="MarginContainer4" unique_id=486480494]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer4/Part3" unique_id=1189528760]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[center][color=yellow][b]Machine Modules[/b][/color][/center]
+
+Victory is achieved by completing all three [color=orange][b]Project Modules[/b][/color] located near the bottom of the machine.
+
+Most modules in the first two rows provide new abilities or increase production, but every installed module also increases the machine's power requirements.
+
+Expanding too quickly can leave the machine unable to sustain itself.
+
+The first available module is the [color=cyan][b]Experimental Tank[/b][/color].
+
+Hamsters placed inside are temporarily unavailable while mysterious scientific \"improvements\" are performed. When the process finishes, the hamster returns to an empty cage with one of its attributes randomly increased.
+
+Whether those experiments are ethical is... outside the scope of this tutorial."
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer4/Part3" unique_id=513035588]
+layout_mode = 2
+
+[node name="part4" type="Button" parent="MarginContainer4/Part3/MarginContainer" unique_id=1547467288]
+layout_mode = 2
+text = "Next"
+
+[node name="MarginContainer5" type="MarginContainer" parent="." unique_id=209433165]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Part3" type="VBoxContainer" parent="MarginContainer5" unique_id=476513376]
+layout_mode = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer5/Part3" unique_id=125393866]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[center][color=lime][font_size=24][b]Good luck![/b][/font_size][/color][/center]
+
+Keep the hamsters healthy, expand the machine carefully, and generate enough power to complete the Pollution-nator.
+
+The fate of the scientist's masterpiece now rests in the tiny paws of some very hardworking rodents"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer5/Part3" unique_id=493957225]
+layout_mode = 2
+
+[node name="finish" type="Button" parent="MarginContainer5/Part3/MarginContainer" unique_id=148806571]
+layout_mode = 2
+text = "Next"
+
+[connection signal="pressed" from="MarginContainer/Part1/MarginContainer/part1" to="." method="_on_part_1_pressed"]
+[connection signal="pressed" from="MarginContainer2/Part2/MarginContainer/part2" to="." method="_on_part_2_pressed"]
+[connection signal="pressed" from="MarginContainer3/Part3/MarginContainer/part3" to="." method="_on_part_3_pressed"]
+[connection signal="pressed" from="MarginContainer4/Part3/MarginContainer/part4" to="." method="_on_part_4_pressed"]
+[connection signal="pressed" from="MarginContainer5/Part3/MarginContainer/finish" to="." method="_on_finish_pressed"]

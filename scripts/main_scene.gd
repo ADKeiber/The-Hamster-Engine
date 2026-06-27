@@ -1,6 +1,6 @@
 class_name MainScene
 extends Control
-
+signal start_tutorial
 @export var hamster_options: Array[HamsterStats]
 @export var all_modules: Array[MachineModule]
 @export var tutorial_1: TutorialStep
@@ -21,6 +21,7 @@ func _ready() -> void:
 	GScript.all_modules = all_modules
 	GScript.restart_game.connect(restart)
 	GScript.start_tutorial.connect(tutorial_setup)
+	start_tutorial.connect(show_tutorial)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -40,4 +41,6 @@ func tutorial_setup() -> void:
 	print("LETS GO TUTORIAL")
 	hamster_cage_scene.process_mode = Node.PROCESS_MODE_ALWAYS
 	#$Battery.process_mode = Node.PROCESS_MODE_ALWAYS
-	
+
+func show_tutorial() -> void:
+	$TutorialOverlay.visible = true

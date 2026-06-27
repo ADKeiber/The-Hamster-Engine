@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://d1yqj42rjsxh5" path="res://scenes/you_lose_popup.tscn" id="23_to7gp"]
 [ext_resource type="PackedScene" uid="uid://clpas1gryqu2e" path="res://scenes/you_win_popup.tscn" id="24_u0fll"]
 [ext_resource type="AudioStream" uid="uid://bhrmwy75owsr2" path="res://assets/nojisuma-going_on_foot-133469.mp3" id="25_u0fll"]
+[ext_resource type="PackedScene" uid="uid://bk8gcdrr5j61m" path="res://scenes/tutorial_overlay.tscn" id="26_6p3nn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6f3i"]
 texture = ExtResource("19_7nt27")
@@ -188,3 +189,7 @@ stream = ExtResource("25_u0fll")
 volume_db = -1.638
 autoplay = true
 parameters/looping = true
+
+[node name="TutorialOverlay" parent="." unique_id=1411785557 instance=ExtResource("26_6p3nn")]
+visible = false
+layout_mode = 1

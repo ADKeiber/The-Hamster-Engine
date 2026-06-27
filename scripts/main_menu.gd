@@ -14,7 +14,8 @@ func _ready() -> void:
 func _on_start_game_pressed() -> void:
 	self.hide()
 	#GScript.start_tutorial.emit()
-	get_tree().paused = false
+	#get_tree().paused = false
+	get_parent().start_tutorial.emit()
 	$Click.play()
 
 func reset_animation() -> void:
