@@ -129,7 +129,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ycuyt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v660u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_48bqb")
 
-[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1635240723]
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1950279131]
 stream = ExtResource("3_v660u")
+volume_db = -18.0
+pitch_scale = 0.4
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

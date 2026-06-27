@@ -66,8 +66,10 @@ value = 6.0
 fill_mode = 1
 show_percentage = false
 
-[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1355587930]
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1061312432]
 stream = ExtResource("4_wxpla")
+volume_db = -18.0
+pitch_scale = 0.4
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

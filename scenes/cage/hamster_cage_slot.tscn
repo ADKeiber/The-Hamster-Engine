@@ -90,8 +90,10 @@ theme_override_font_sizes/font_size = 6
 text = "Add Hamster
 Cost 100"
 
-[node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=1977947131]
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=749513906]
 stream = ExtResource("5_rbaa8")
+volume_db = -18.0
+pitch_scale = 0.4
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

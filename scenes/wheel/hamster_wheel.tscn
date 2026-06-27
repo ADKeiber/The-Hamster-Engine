@@ -116,6 +116,6 @@ frame_progress = 0.11029529
 
 [node name="RunningSound" type="AudioStreamPlayer2D" parent="." unique_id=1786133082]
 stream = ExtResource("4_sbnqh")
-volume_db = -15.0
+volume_db = 6.433
 
 [connection signal="finished" from="RunningSound" to="." method="_on_running_sound_finished"]

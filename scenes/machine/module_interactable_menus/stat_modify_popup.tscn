@@ -55,10 +55,12 @@ text = "Stamina"
 layout_mode = 2
 text = "Speed"
 
-[connection signal="popup_hide" from="." to="." method="_on_popup_hide"]
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=784570950]
 stream = ExtResource("3_cxf7u")
+volume_db = -18.0
+pitch_scale = 0.4
 
+[connection signal="popup_hide" from="." to="." method="_on_popup_hide"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Health" to="." method="_on_health_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Stamina" to="." method="_on_stamina_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Speed" to="." method="_on_speed_pressed"]

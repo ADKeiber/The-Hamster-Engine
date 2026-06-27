@@ -15,7 +15,7 @@
 script = ExtResource("1_joc7s")
 module_name = "Experimental Tank"
 module_description = "Drop a hamster in to upgrade random stat"
-power_cost = 100
+power_cost = 300
 texture = ExtResource("2_tm5ds")
 min_power_increase = 10
 interactable = true
