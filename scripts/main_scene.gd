@@ -22,7 +22,8 @@ func _ready() -> void:
 	GScript.restart_game.connect(restart)
 	GScript.start_tutorial.connect(tutorial_setup)
 	start_tutorial.connect(show_tutorial)
-
+	GScript.first_hamster_purchased.connect(close_instruction)
+	
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
@@ -43,7 +44,8 @@ func tutorial_setup() -> void:
 	#$Battery.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func show_tutorial() -> void:
-	$TutorialOverlay.visible = true
+	$TutorialVoiceOver.play()
+	$TutorialScientist.visible = true
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
@@ -53,3 +55,6 @@ func _input(event: InputEvent) -> void:
 		elif get_tree().paused and $MainMenu.visible == false:
 			get_tree().paused = false
 			$Paused.hide()
+
+func close_instruction() -> void:
+	$BuyHamsterContainer.visible = false

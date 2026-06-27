@@ -10,7 +10,7 @@ signal complete_module_interaction(hamster:HamsterUI)
 signal restart_game
 signal lose_game
 signal complete_project_module(project_module_num: int)
-
+signal first_hamster_purchased
 #tutorial signals
 signal start_tutorial
 signal end_tutorial
@@ -26,8 +26,10 @@ var power_stored : int
 var hamster_watts_produced : int = 0
 var hamster_watts_min : int = 10
 var battery_capacity: int = 1000
-var current_battery_value : int = 150:
+var current_battery_value : int = 250:
 	set(value): #keeps the value within range
+		if not purchased_hamster:
+			return
 		if value <= 0:
 			lose_game.emit()
 		current_battery_value = clamp(value, 0, battery_capacity)
@@ -49,7 +51,8 @@ func reset_state() -> void:
 	hamster_watts_produced = 0
 	hamster_watts_min = 10
 	battery_capacity = 1000
-	current_battery_value = 150
+	current_battery_value = 250
+	purchased_hamster = false
 	for module in all_modules:
 		module.installed = false
 		module.callables = []

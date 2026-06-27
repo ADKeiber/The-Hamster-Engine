@@ -5,6 +5,8 @@ extends Control
 @onready var layer2: AnimatedSprite2D = %"2ndLayer"
 @onready var layer3: AnimatedSprite2D = %"3rdLayer"
 
+var skip_tutorial: bool = false
+
 func _ready() -> void:
 	get_tree().paused = true
 	%"Hamster Wheel".power_wheel()
@@ -15,7 +17,9 @@ func _on_start_game_pressed() -> void:
 	self.hide()
 	#GScript.start_tutorial.emit()
 	#get_tree().paused = false
-	get_parent().start_tutorial.emit()
+	get_tree().paused = false
+	if not skip_tutorial:
+		get_parent().start_tutorial.emit()
 	$Click.play()
 
 func reset_animation() -> void:
@@ -29,4 +33,4 @@ func reset_animation() -> void:
 
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.
+	skip_tutorial = toggled_on

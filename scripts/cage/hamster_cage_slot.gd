@@ -55,7 +55,9 @@ const BASIC_HAMSTER = preload("res://resources/basic_hamster.tres")
 
 func _on_add_hamster_pressed() -> void:
 	if GScript.current_battery_value >= 100:
-		GScript.purchased_hamster = true
+		if not GScript.purchased_hamster:
+			GScript.purchased_hamster = true
+			GScript.first_hamster_purchased.emit()
 		if GScript.in_tutorial:
 			add_hamster(BASIC_HAMSTER.duplicate(true))
 		else:

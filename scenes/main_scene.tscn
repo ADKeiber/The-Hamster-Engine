@@ -27,6 +27,11 @@
 [ext_resource type="AudioStream" uid="uid://bhrmwy75owsr2" path="res://assets/nojisuma-going_on_foot-133469.mp3" id="25_u0fll"]
 [ext_resource type="PackedScene" uid="uid://bk8gcdrr5j61m" path="res://scenes/tutorial_overlay.tscn" id="26_6p3nn"]
 [ext_resource type="PackedScene" uid="uid://dj8wgxbtfm5bh" path="res://scenes/volume_bar.tscn" id="27_k67gn"]
+[ext_resource type="AudioStream" uid="uid://2gx7pch146m1" path="res://assets/voice over.wav" id="28_4bgka"]
+[ext_resource type="Texture2D" uid="uid://c7dljc62ljm44" path="res://assets/MadScientist.png" id="29_02d50"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.65250725, 0.65250725, 0.65250725, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6f3i"]
 texture = ExtResource("19_7nt27")
@@ -118,6 +123,25 @@ hamster_options = Array[ExtResource("2_rt2n2")]([ExtResource("3_c16ls")])
 all_modules = Array[ExtResource("4_r6p65")]([ExtResource("5_si52b"), ExtResource("6_01n6w"), ExtResource("7_6u1mn"), ExtResource("8_bcnxi"), ExtResource("9_7nt27"), ExtResource("10_k6f3i"), ExtResource("11_6u1mn"), ExtResource("12_bcnxi"), ExtResource("13_7nt27")])
 metadata/_edit_horizontal_guides_ = [386.0]
 
+[node name="BuyHamsterContainer" type="PanelContainer" parent="." unique_id=869256235]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 163.0
+offset_right = 477.0
+offset_bottom = 202.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="BuyHamsterContainer" unique_id=164728198]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BuyHamsterContainer/MarginContainer" unique_id=1154413349]
+layout_mode = 2
+text = "Click on a cage at the bottom and buy a hamster to begin game!"
+
 [node name="MainMenu" parent="." unique_id=620466314 instance=ExtResource("14_adb74")]
 process_mode = 3
 layout_mode = 1
@@ -193,6 +217,7 @@ layout_mode = 1
 
 [node name="Background Music" type="AudioStreamPlayer2D" parent="." unique_id=1893195999]
 process_mode = 3
+visible = false
 stream = ExtResource("25_u0fll")
 volume_db = -1.638
 autoplay = true
@@ -221,3 +246,13 @@ offset_left = 470.0
 offset_top = 6.0
 offset_right = -13.0
 offset_bottom = -338.0
+
+[node name="TutorialScientist" type="Sprite2D" parent="." unique_id=1945909802]
+visible = false
+position = Vector2(596, 238.99998)
+scale = Vector2(3, 3.093)
+texture = ExtResource("29_02d50")
+
+[node name="TutorialVoiceOver" type="AudioStreamPlayer" parent="." unique_id=2025495144]
+stream = ExtResource("28_4bgka")
+volume_db = 15.0
