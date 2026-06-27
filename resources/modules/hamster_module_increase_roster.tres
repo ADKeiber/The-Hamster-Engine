@@ -9,5 +9,5 @@ module_name = "Cage Upgrades"
 module_description = "Increases roster max count"
 power_cost = 300
 texture = ExtResource("2_b0pgs")
-min_power_increase = 10
+min_power_increase = 5
 metadata/_custom_type_script = "uid://iat32wvxnly2"

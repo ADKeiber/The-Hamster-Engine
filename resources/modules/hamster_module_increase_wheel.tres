@@ -9,5 +9,5 @@ module_name = "Wheel Creator"
 module_description = "Increases the amount of wheels"
 power_cost = 300
 texture = ExtResource("2_bsjps")
-min_power_increase = 10
+min_power_increase = 5
 metadata/_custom_type_script = "uid://b86i36oqalt57"

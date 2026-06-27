@@ -6,9 +6,11 @@
 custom_minimum_size = Vector2(100, 59.945)
 layout_mode = 3
 anchors_preset = 0
+offset_right = 221.0
+offset_bottom = 59.945
 script = ExtResource("1_uebsc")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2111006469]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1920917207]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,12 +18,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Current" type="Label" parent="VBoxContainer" unique_id=507072290]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=2111006469]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Current" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=507072290]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Current:"
 
-[node name="Minimum" type="Label" parent="VBoxContainer" unique_id=2074795514]
+[node name="Minimum" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=2074795514]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Min:"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=2138807869]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Modifier" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=967518359]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Gaining"
+horizontal_alignment = 1
+
+[node name="Amount" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=896946431]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+horizontal_alignment = 1

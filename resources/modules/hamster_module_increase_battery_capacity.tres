@@ -10,5 +10,5 @@ module_name = "Battery Increase"
 module_description = "Increase battery capacity by 500"
 power_cost = 300
 texture = ExtResource("2_x0pai")
-min_power_increase = 10
+min_power_increase = 5
 metadata/_custom_type_script = "uid://dluqhkxjfff1v"

@@ -153,10 +153,9 @@ grow_vertical = 0
 
 [node name="HamsterWattsUI" parent="." unique_id=113782197 instance=ExtResource("7_c16ls")]
 layout_mode = 0
-offset_left = 39.0
-offset_top = 131.0
-offset_right = 139.0
-offset_bottom = 190.945
+offset_left = 22.0
+offset_top = 110.0
+offset_bottom = 220.0
 
 [node name="Battery" parent="." unique_id=1012486577 instance=ExtResource("18_bcnxi")]
 position = Vector2(472.00003, 61)
