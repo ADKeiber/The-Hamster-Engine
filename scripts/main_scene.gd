@@ -44,3 +44,12 @@ func tutorial_setup() -> void:
 
 func show_tutorial() -> void:
 	$TutorialOverlay.visible = true
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		if not get_tree().paused and $MainMenu.visible == false:
+			get_tree().paused = true
+			$Paused.show()
+		elif get_tree().paused and $MainMenu.visible == false:
+			get_tree().paused = false
+			$Paused.hide()
