@@ -171,10 +171,12 @@ tile_map_data = PackedByteArray("AAAMAAsAAQACAAQAAAAZAAsAAQAEAAQAAAANAAsAAQADAAQ
 tile_set = SubResource("TileSet_5ke4o")
 
 [node name="YouLosePopup" parent="." unique_id=821253282 instance=ExtResource("23_to7gp")]
+process_mode = 3
 visible = false
 layout_mode = 1
 
 [node name="YouWinPopup" parent="." unique_id=846421588 instance=ExtResource("24_u0fll")]
+process_mode = 3
 visible = false
 z_index = 4000
 layout_mode = 1

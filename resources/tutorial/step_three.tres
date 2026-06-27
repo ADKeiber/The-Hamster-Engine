@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="TutorialStep" format=3 uid="uid://ce5kfbblqefqd"]
 
+[ext_resource type="Resource" uid="uid://mnsvtwmpwkx5" path="res://resources/tutorial/step_four.tres" id="1_vmrui"]
 [ext_resource type="Script" uid="uid://cwb3vuo1m787c" path="res://scripts/tutorial_step.gd" id="1_x6wsy"]
 
 [resource]
 script = ExtResource("1_x6wsy")
-text = "Now that we have someone to do our dirty work let's put them to work! \\nDrag and drop the hamster onto a wheel and PUT IT TO WORK! \\n"
+text = "Notice how the hamsters stamina slowly drains!\\nIf you let it drain too much its health will deplete and it will die... We need the work force healthy...\\nNotice how the current power being created is increased while your hamster is running.\\nIf there is more power being generated than consumed it will be stored in the batter.\\nOn the other hand if you don't generate enough power your battery will slowly drain.\\nIf your battery reaches 0 then you lose the game and the invention is DESTROYED!\\n"
 step_number = 3
+next_step = ExtResource("1_vmrui")
 metadata/_custom_type_script = "uid://cwb3vuo1m787c"

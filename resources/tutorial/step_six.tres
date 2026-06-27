@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TutorialStep" format=3 uid="uid://d05cluhd56igs"]
+
+[ext_resource type="Script" uid="uid://cwb3vuo1m787c" path="res://scripts/tutorial_step.gd" id="1_gunpa"]
+
+[resource]
+script = ExtResource("1_gunpa")
+text = "OK! Thats pretty much all you need to know! \\nLets get to work and get this Pollution-nator working"
+step_number = 6
+metadata/_custom_type_script = "uid://cwb3vuo1m787c"

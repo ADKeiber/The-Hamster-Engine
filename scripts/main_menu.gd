@@ -13,6 +13,7 @@ func _ready() -> void:
 
 func _on_start_game_pressed() -> void:
 	self.hide()
+	#GScript.start_tutorial.emit()
 	get_tree().paused = false
 
 func reset_animation() -> void:

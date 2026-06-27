@@ -17,7 +17,7 @@ signal end_tutorial
 signal complete_step(step_num: int)
 
 var global_tick_time: float = 1.0 # the global tick for timers 
-var roster_limit: int = 4
+var roster_limit: int = 3
 var num_of_wheels: int = 2
 var roster: Array[HamsterStats] #this is for the hamsters we actually have
 var roster_size: int = 2
@@ -26,13 +26,17 @@ var power_stored : int
 var hamster_watts_produced : int = 0
 var hamster_watts_min : int = 10
 var battery_capacity: int = 1000
-var current_battery_value : int = 100:
+var current_battery_value : int = 200:
 	set(value): #keeps the value within range
 		if value <= 0:
 			lose_game.emit()
 		current_battery_value = clamp(value, 0, battery_capacity)
 
 var all_modules: Array[MachineModule] = []
+
+#tutorial variables
+var in_tutorial: bool = false
+var purchased_hamster: bool = false
 
 func reset_state() -> void:
 	roster_limit = 4

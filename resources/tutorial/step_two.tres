@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="TutorialStep" format=3 uid="uid://tc6ha2ugba86"]
 
+[ext_resource type="Resource" uid="uid://ce5kfbblqefqd" path="res://resources/tutorial/step_three.tres" id="1_mamru"]
 [ext_resource type="Script" uid="uid://cwb3vuo1m787c" path="res://scripts/tutorial_step.gd" id="1_mk3jj"]
 
 [resource]
 script = ExtResource("1_mk3jj")
 text = "Now that we have someone to do our dirty work let's put them to work! \\nNotice when you hover over the hamster there are 3 stats \\n1) Stamina: This determines for how long this hamster can run before getting hurt \\n2) Speed: This is how much energy that hamster generates\\n3) Health: Once stamina is drained the hamster will start taking damage... Too much damage and they are done for!\\nDrag and drop the hamster onto a wheel and PUT IT TO WORK! \\n"
 step_number = 2
+next_step = ExtResource("1_mamru")
 metadata/_custom_type_script = "uid://cwb3vuo1m787c"

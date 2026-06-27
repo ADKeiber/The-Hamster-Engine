@@ -36,6 +36,11 @@ func _on_gui_input(event: InputEvent) -> void: #opens add hamster menu
 	if event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if check_child_type() == false:
+				#tutorial logic
+				if GScript.in_tutorial:
+					if not GScript.purchased_hamster:
+						$AddHamsterMenu.show()
+					return
 				if get_tree().get_node_count_in_group("HamsterUI") < GScript.roster_limit:
 					$AddHamsterMenu.show()
 
@@ -44,10 +49,17 @@ func check_child_type() -> bool:
 		if is_instance_of(child, HamsterUI):
 			return true
 	return false
+	
+#for tutorial
+const BASIC_HAMSTER = preload("res://resources/basic_hamster.tres")
 
 func _on_add_hamster_pressed() -> void:
 	if GScript.current_battery_value >= 100:
-		add_hamster(GScript.roster[0].duplicate(true))
+		GScript.purchased_hamster = true
+		if GScript.in_tutorial:
+			add_hamster(BASIC_HAMSTER.duplicate(true))
+		else:
+			add_hamster(GScript.hamster_options[0].duplicate(true))
 		GScript.current_battery_value -= 100
 		$AddHamsterMenu.hide()
 

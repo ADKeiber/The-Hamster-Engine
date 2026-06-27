@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TutorialStep" format=3 uid="uid://mnsvtwmpwkx5"]
+
+[ext_resource type="Resource" uid="uid://dsi7lt2rvskrt" path="res://resources/tutorial/step_five.tres" id="1_qflbh"]
+[ext_resource type="Script" uid="uid://cwb3vuo1m787c" path="res://scripts/tutorial_step.gd" id="1_yplcq"]
+
+[resource]
+script = ExtResource("1_yplcq")
+text = "In order to win the game you need to complete all 3 project modules that are located at the bottom of the machine!\\nAll modules in the first 2 rows give you additional functionality or power generating abilities; However, every time you install one it will cost you power and the new minimum requirement goes up!\\nLet's install your first module!\\nClick on the first red \"x\" located on the machine and select \"Experimental Tank\".\\nThis will install your first module where you can drag and drop your hamster to increase one of its stats randomly.\\nBe careful though because you might install too many modules and not be able to keep up with power consumption!\\nGo ahead and dunk your hamster in the tank!"
+step_number = 4
+next_step = ExtResource("1_qflbh")
+metadata/_custom_type_script = "uid://cwb3vuo1m787c"

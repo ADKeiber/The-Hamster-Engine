@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://duon3nnllt7rg"]
 
 [ext_resource type="PackedScene" uid="uid://rhqem0bpk83i" path="res://scenes/machine/machine_module_slot.tscn" id="1_r258f"]
-[ext_resource type="Script" uid="uid://bncpggdmm0unb" path="res://scenes/machine_scene.gd" id="1_soh53"]
+[ext_resource type="Script" uid="uid://bncpggdmm0unb" path="res://scripts/machine_scene.gd" id="1_soh53"]
 [ext_resource type="Texture2D" uid="uid://b32weeq21pn1n" path="res://assets/machine/Machine on.png" id="2_jolw7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wu84c"]

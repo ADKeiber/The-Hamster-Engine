@@ -3,12 +3,14 @@ extends Control
 
 @export var hamster_options: Array[HamsterStats]
 @export var all_modules: Array[MachineModule]
+@export var tutorial_1: TutorialStep
 @onready var hamster_cage_scene: HamsterCageScene = %HamsterCageScene
 @onready var hamster_wheels_scene: HamsterWheelsScene = %HamsterWheelsScene
 var starting_hamsters: Array[HamsterStats]
 @onready var you_lose_popup: YouLosePopup = %YouLosePopup
 @onready var you_win_popup: YouWinPopup = %YouWinPopup
 
+const STEP_ONE = preload("res://resources/tutorial/step_one.tres")
 func _ready() -> void:
 	GScript.hamster_options = hamster_options
 	for i in GScript.roster_size:
@@ -18,6 +20,7 @@ func _ready() -> void:
 	#hamster_wheels_scene.generate_wheels()
 	GScript.all_modules = all_modules
 	GScript.restart_game.connect(restart)
+	GScript.start_tutorial.connect(tutorial_setup)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -32,3 +35,9 @@ func restart() -> void:
 	GScript.reset_state()
 	get_tree().reload_current_scene()
 	print("RESET")
+
+func tutorial_setup() -> void:
+	print("LETS GO TUTORIAL")
+	hamster_cage_scene.process_mode = Node.PROCESS_MODE_ALWAYS
+	#$Battery.process_mode = Node.PROCESS_MODE_ALWAYS
+	
