@@ -12,6 +12,7 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_67mk2")
 bg_color = Color(0.56576157, 0.6060261, 0.6605525, 1)
 
 [node name="AvailableModulesPopup" type="PopupPanel" unique_id=1053730499]
+process_mode = 3
 oversampling_override = 1.0
 size = Vector2i(200, 100)
 visible = true
@@ -33,3 +34,5 @@ layout_mode = 2
 [node name="OptionsContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=926511199]
 unique_name_in_owner = true
 layout_mode = 2
+
+[connection signal="popup_hide" from="." to="." method="_on_popup_hide"]

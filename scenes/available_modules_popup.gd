@@ -25,3 +25,7 @@ func reset_options(is_project_module:bool) -> void:
 				option.disable()
 			else:
 				option.enable()
+
+
+func _on_popup_hide() -> void:
+	get_tree().paused = false

@@ -65,7 +65,7 @@ func choose_stat(hamster: HamsterUI) -> void:
 	var center_x = parent.global_position.x + parent.size.x / 2.0
 	var x = center_x - interactable_menu.size.x / 2.0
 	var y = parent.global_position.y
-
+	hamster.get_tree().paused = true
 	interactable_menu.position = Vector2(x, y)
 	interactable_menu.visible = true
 	hamster.visible = false

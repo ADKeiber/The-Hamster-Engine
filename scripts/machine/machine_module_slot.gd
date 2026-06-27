@@ -60,6 +60,7 @@ func _gui_input(event: InputEvent) -> void:
 					var y = self.global_position.y + self.size.y
 					module_option_popup.position = Vector2(x, y)
 					module_option_popup.visible = true
+					get_tree().paused = true
 				if module_option_popup.visible:
 					module_option_popup.reset_options(is_project_module)
 					z_index = 100

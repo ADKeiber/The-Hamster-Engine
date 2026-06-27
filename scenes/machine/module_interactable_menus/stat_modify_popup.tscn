@@ -14,6 +14,7 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_67mk2")
 bg_color = Color(0.6, 0.6, 0.7176471, 1)
 
 [node name="StatModifyPopup" type="PopupPanel" unique_id=1458865801]
+process_mode = 3
 oversampling_override = 1.0
 size = Vector2i(140, 154)
 visible = true
