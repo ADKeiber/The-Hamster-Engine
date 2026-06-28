@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(65, 67)
 
-[node name="HamsterWheelSlot" type="Control" unique_id=1976614969 groups=["Wheel"]]
+[node name="HamsterWheelSlot" type="Control" unique_id=1976614969 node_paths=PackedStringArray("wheel", "squeak") groups=["Wheel"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 3
 anchor_right = 0.104
@@ -18,6 +18,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 script = ExtResource("1_d3qqk")
+wheel = NodePath("Hamster Wheel")
+squeak = NodePath("Squeak")
 
 [node name="Hamster Wheel" parent="." unique_id=1968280101 instance=ExtResource("2_numr8")]
 position = Vector2(35, 29)

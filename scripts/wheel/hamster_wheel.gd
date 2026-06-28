@@ -1,4 +1,5 @@
 extends Node2D
+class_name HamsterWheel
 
 @export var sound_active: bool = true
 var wheel_on: bool = false
@@ -25,6 +26,17 @@ func power_off() -> void:
 	$Hamster.hide()
 	$RunningSound.stop()
 	wheel_on = false
+
+func damage() -> void:
+	$BaseWheel.self_modulate = Color.RED
+	$BackgroundWheel.self_modulate = Color.RED
+	$ForegroundWheel.self_modulate = Color.RED
+	$Hamster.self_modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	$BaseWheel.self_modulate = Color.WHITE
+	$BackgroundWheel.self_modulate = Color.WHITE
+	$ForegroundWheel.self_modulate = Color.WHITE
+	$Hamster.self_modulate = Color.WHITE
 
 #can loop if we want.. decided not to for now
 #func _on_running_sound_finished() -> void:
