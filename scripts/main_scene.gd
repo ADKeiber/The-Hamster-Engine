@@ -7,8 +7,7 @@ signal start_tutorial
 @onready var hamster_cage_scene: HamsterCageScene = %HamsterCageScene
 @onready var hamster_wheels_scene: HamsterWheelsScene = %HamsterWheelsScene
 var starting_hamsters: Array[HamsterStats]
-@onready var you_lose_popup: YouLosePopup = %YouLosePopup
-@onready var you_win_popup: YouWinPopup = %YouWinPopup
+
 
 const STEP_ONE = preload("res://resources/tutorial/step_one.tres")
 func _ready() -> void:
