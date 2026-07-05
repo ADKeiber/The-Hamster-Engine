@@ -40,7 +40,6 @@ func restart() -> void:
 func tutorial_setup() -> void:
 	print("LETS GO TUTORIAL")
 	hamster_cage_scene.process_mode = Node.PROCESS_MODE_ALWAYS
-	#$Battery.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func show_tutorial() -> void:
 	$TutorialVoiceOver.play()

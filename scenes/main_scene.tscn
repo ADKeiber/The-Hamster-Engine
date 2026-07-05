@@ -217,7 +217,6 @@ layout_mode = 1
 
 [node name="Background Music" type="AudioStreamPlayer2D" parent="." unique_id=1893195999]
 process_mode = 3
-visible = false
 stream = ExtResource("25_u0fll")
 volume_db = -1.638
 autoplay = true
