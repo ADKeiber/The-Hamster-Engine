@@ -3,20 +3,35 @@ Godot game for https://itch.io/jam/theveryseriousjuniperdevgamejam... Basically 
 
 # Project Structure
 
-This project follows a **feature-based composition architecture** rather than organizing code by inheritance or node type. The goal is to keep everything related to a feature together, reduce coupling, and make the project easier to navigate as it grows.
-
----
-
-# Root Structure
+The project is organized around **features** and **responsibilities** rather than inheritance. Every folder should have a clear purpose, and code should be loosely coupled through components, systems, and managers.
 
 ```text
-project/
+res://
 │
 ├── assets/
-├── scenes/
-├── scripts/
-├── resources/
+│   ├── art/
+│   ├── audio/
+│   └── fonts/
+│
 ├── autoload/
+│
+├── components/
+│
+├── resources/
+│
+├── scenes/
+│   ├── building/
+│   ├── hamster/
+│   ├── machine/
+│   ├── main/
+│   ├── modules/
+│   └── ui/
+│       ├── hud/
+│       ├── menus/
+│       └── popups/
+│
+├── scripts/
+│
 └── docs/
 ```
 
@@ -24,93 +39,201 @@ project/
 
 # assets/
 
-Contains raw assets used throughout the project.
+Contains raw project assets.
 
 ```
 assets/
 ├── art/
 ├── audio/
-├── fonts/
-├── shaders/
-├── particles/
-└── icons/
+└── fonts/
 ```
 
-### Examples
+Examples:
 
 - Sprites
 - Animations
-- Sound Effects
 - Music
+- Sound Effects
 - Fonts
-- Shader files
 - Icons
 
-**Do not place gameplay scripts or scenes here.**
+No scenes or gameplay scripts belong here.
+
+---
+
+# autoload/
+
+Global singleton managers that exist for the lifetime of the game.
+
+Examples
+
+```
+GameManager.gd
+AudioManager.gd
+PopupManager.gd
+SaveManager.gd
+SceneManager.gd
+SettingsManager.gd
+```
+
+Only systems that truly need global access should live here.
+
+---
+
+# components/
+
+Reusable gameplay components.
+
+Each component should have **one responsibility**.
+
+Examples
+
+```
+HealthComponent.gd
+StaminaComponent.gd
+PowerComponent.gd
+WorkerComponent.gd
+InventoryComponent.gd
+AnimationComponent.gd
+```
+
+Components should not know about UI or unrelated gameplay systems.
+
+---
+
+# resources/
+
+Contains all `.tres` and `.res` files.
+
+Example
+
+```
+resources/
+
+	hamsters/
+		BasicHamster.tres
+		SpeedHamster.tres
+
+	buildings/
+		Spa.tres
+		Laboratory.tres
+
+	modules/
+		BatteryModule.tres
+
+	upgrades/
+```
+
+These files contain configuration and serialized game data.
+
+Resource scripts should live in **scripts/** while the actual resource assets live here.
 
 ---
 
 # scenes/
 
-Contains every `.tscn` file in the project.
+Contains every scene in the project.
 
-Scenes should be organized by **feature**, not by node type.
+Scenes are grouped by feature.
+
+---
+
+## building/
+
+Contains everything related to buildings.
+
+Example
 
 ```
-scenes/
-├── main/
-├── ui/
-├── hamster/
-├── machine/
-├── building/
-├── modules/
-├── effects/
-└── shared/
+building/
+
+	Spa/
+		Spa.tscn
+		SpaUI.tscn
+
+	Cafeteria/
+	Laboratory/
 ```
 
 ---
 
-## scenes/main/
+## hamster/
 
-Contains the main game scenes.
+Everything related to hamsters.
 
-Example:
+Example
+
+```
+hamster/
+
+	Hamster.tscn
+	HamsterPortrait.tscn
+	HamsterWheel.tscn
+```
+
+---
+
+## machine/
+
+Contains the main machine and supporting scenes.
+
+Example
+
+```
+Machine.tscn
+ModuleSlot.tscn
+MachineUI.tscn
+```
+
+---
+
+## modules/
+
+Installable machine modules.
+
+Each module can have its own folder.
+
+```
+Battery/
+Cooling/
+Generator/
+```
+
+---
+
+## main/
+
+Contains the primary game scenes.
+
+Usually only a few scenes belong here.
 
 ```
 Main.tscn
-World.tscn
 Loading.tscn
+Splash.tscn
 ```
 
 ---
 
-## scenes/ui/
+## ui/
 
-Contains all user interface scenes.
+Everything user interface related.
 
-```
-ui/
-├── HUD/
-├── Menus/
-├── Popups/
-├── Widgets/
-├── Tooltips/
-└── Notifications/
-```
+### hud/
 
-### HUD
-
-Permanent game interface.
+Persistent gameplay interface.
 
 Examples
 
-- Resource Bar
-- Energy Display
-- Time Display
+- Resource bars
+- Energy display
+- Time display
 
-### Menus
+---
 
-Entire screen menus.
+### menus/
+
+Full-screen menus.
 
 Examples
 
@@ -119,7 +242,9 @@ Examples
 - Settings
 - Credits
 
-### Popups
+---
+
+### popups/
 
 Temporary windows.
 
@@ -128,220 +253,55 @@ Examples
 - Hamster Details
 - Confirmation Dialog
 - Building Upgrade
-- Module Selection
-
-### Widgets
-
-Reusable UI controls.
-
-Examples
-
-- Progress Bar
-- Inventory Slot
-- Resource Counter
-- Stat Display
-
-### Tooltips
-
-Small hover windows.
-
-### Notifications
-
-Toast notifications.
-
----
-
-## scenes/hamster/
-
-Everything related to hamsters.
-
-```
-hamster/
-├── Hamster.tscn
-├── HamsterUI.tscn
-└── components/
-```
-
-Examples
-
-- Hamster scene
-- UI representation
-- Animations
-- Special effects
-
----
-
-## scenes/building/
-
-Each building gets its own folder.
-
-```
-building/
-├── Spa/
-├── Cafeteria/
-├── Laboratory/
-└── PowerWheel/
-```
-
-Each folder may contain
-
-```
-Spa/
-├── Spa.tscn
-├── SpaUI.tscn
-└── SpaParticles.tscn
-```
-
----
-
-## scenes/machine/
-
-Machine related scenes.
-
-Examples
-
-- Pollution Machine
-- Machine Modules
-- Module Slots
-- Machine UI
-
----
-
-## scenes/modules/
-
-Scenes representing installable modules.
-
-Examples
-
-```
-BatteryModule
-CoolingModule
-GeneratorModule
-StorageModule
-```
-
----
-
-## scenes/effects/
-
-Visual effects.
-
-Examples
-
-- Smoke
-- Sparks
-- Floating Text
-- Explosions
-- Screen Shake Helpers
-
----
-
-## scenes/shared/
-
-Reusable scenes used by multiple systems.
-
-Examples
-
-- Generic Button
-- Confirmation Window
-- Health Bar
-- Progress Wheel
+- Tutorial Windows
 
 ---
 
 # scripts/
 
-Contains every gameplay script.
+Contains gameplay scripts that aren't components or autoloads.
 
-Scripts are grouped by responsibility.
+I recommend organizing this by responsibility.
 
 ```
 scripts/
-├── components/
-├── systems/
-├── managers/
-├── utilities/
-└── resources/
+
+    systems/
+    managers/
+    utilities/
+    resources/
 ```
-
----
-
-## components/
-
-Reusable behaviors.
-
-A component should have **one responsibility**.
-
-Examples
-
-```
-HealthComponent.gd
-PowerComponent.gd
-StaminaComponent.gd
-MoodComponent.gd
-WorkerComponent.gd
-AnimationComponent.gd
-InventoryComponent.gd
-```
-
-Components should never directly modify unrelated systems.
-
----
 
 ## systems/
 
-Coordinates gameplay.
-
-Systems own game rules.
+Own gameplay rules.
 
 Examples
 
 ```
 PowerSystem.gd
 ProductionSystem.gd
-BuildingSystem.gd
 TutorialSystem.gd
-EventSystem.gd
-SaveSystem.gd
+BuildingSystem.gd
 ```
 
-Systems communicate between entities.
-
-For example:
-
-```
-Hamster
-	↓
-
-PowerSystem
-
-	↓
-
-Machine
-```
-
-Rather than Hamsters directly controlling Machines.
+Systems coordinate gameplay objects rather than objects talking directly to each other.
 
 ---
 
 ## managers/
 
-Global services.
+Non-global managers.
 
-Usually loaded as Autoloads.
+These are helper classes that are instantiated when needed instead of being Autoloads.
 
 Examples
 
 ```
-GameManager.gd
-PopupManager.gd
-SceneManager.gd
-AudioManager.gd
 InputManager.gd
-SaveManager.gd
+RosterManager.gd
+EffectManager.gd
 ```
-
-Managers handle project-wide responsibilities.
 
 ---
 
@@ -356,16 +316,15 @@ MathUtils.gd
 StringUtils.gd
 RandomUtils.gd
 Extensions.gd
-SignalHelpers.gd
 ```
 
-Utilities should contain no gameplay state.
+Utilities should never contain gameplay state.
 
 ---
 
 ## resources/
 
-Custom Resource scripts.
+Scripts that define custom Resource classes.
 
 Examples
 
@@ -376,60 +335,7 @@ ModuleData.gd
 UpgradeData.gd
 ```
 
-These define data only.
-
----
-
-# resources/
-
-Contains `.tres` and `.res` files.
-
-```
-resources/
-├── hamsters/
-├── buildings/
-├── modules/
-├── upgrades/
-└── localization/
-```
-
-Examples
-
-```
-Hamsters/
-	CommonHamster.tres
-	FastHamster.tres
-
-Buildings/
-	Spa.tres
-	Cafeteria.tres
-
-Modules/
-	Battery.tres
-```
-
-Resources should contain **configuration**, not behavior.
-
----
-
-# autoload/
-
-Contains global singleton scripts.
-
-Examples
-
-```
-GameManager.gd
-PopupManager.gd
-AudioManager.gd
-SceneManager.gd
-SettingsManager.gd
-SaveManager.gd
-```
-
-Only systems that truly need global access belong here.
-
-Avoid creating unnecessary singletons.
+These define the structure of `.tres` files found under `res://resources`.
 
 ---
 
@@ -443,7 +349,6 @@ Examples
 Architecture.md
 CodingStandards.md
 Roadmap.md
-SaveFormat.md
 TutorialFlow.md
 ```
 
@@ -451,95 +356,30 @@ TutorialFlow.md
 
 # Composition Philosophy
 
-Objects are built from small reusable components.
+Game objects are assembled from reusable components.
 
-Example:
+Example
 
 ```
 Hamster
 │
-├── Sprite
+├── Sprite2D
 ├── AnimationPlayer
 ├── HealthComponent
 ├── StaminaComponent
 ├── WorkerComponent
-├── MoodComponent
-└── StatsComponent
+└── MoodComponent
 ```
 
-Each component is responsible for a single piece of functionality.
+Each component owns one responsibility.
 
----
+Systems coordinate interactions between game objects.
 
-# Feature Organization
+Managers provide shared services.
 
-Everything related to a feature should stay together.
+Resources define configurable data.
 
-Good
-
-```
-hamster/
-	Hamster.tscn
-	Hamster.gd
-	HamsterUI.tscn
-	HamsterData.gd
-```
-
-Avoid
-
-```
-Scenes/
-Scripts/
-Resources/
-UI/
-```
-
-Where files for one feature are scattered across the project.
-
----
-
-# General Guidelines
-
-## Components
-
-- Own one responsibility.
-- Reusable.
-- Independent.
-- Communicate through signals when possible.
-
----
-
-## Systems
-
-- Own gameplay rules.
-- Coordinate entities.
-- Avoid storing UI state.
-
----
-
-## Managers
-
-- Global responsibilities only.
-- Minimize dependencies.
-- Avoid becoming "God Objects."
-
----
-
-## Resources
-
-- Store configuration and data.
-- Never contain scene references unless necessary.
-- Easy to duplicate and save.
-
----
-
-## UI
-
-UI should observe game state.
-
-Avoid game logic inside UI scripts.
-
-UI should request actions from managers or systems rather than directly modifying gameplay objects.
+UI displays state and sends requests but should contain very little gameplay logic.
 
 ---
 
@@ -547,27 +387,25 @@ UI should request actions from managers or systems rather than directly modifyin
 
 ```
 UI
-	↓
+    ↓
 
 Managers
 
-	↓
+    ↓
 
 Systems
 
-	↓
+    ↓
 
 Gameplay Objects
 
-	↓
+    ↓
 
 Components
 
-	↓
+    ↓
 
 Resources
 ```
 
-Lower layers should never depend on higher layers.
-
-This keeps the project modular, testable, and easier to maintain.
+Lower layers should never depend on higher layers whenever possible.
