@@ -68,12 +68,8 @@ Global singleton managers that exist for the lifetime of the game.
 Examples
 
 ```
-GameManager.gd
+GlobalScript.gd
 AudioManager.gd
-PopupManager.gd
-SaveManager.gd
-SceneManager.gd
-SettingsManager.gd
 ```
 
 Only systems that truly need global access should live here.
@@ -91,9 +87,9 @@ Examples
 ```
 HealthComponent.gd
 StaminaComponent.gd
-PowerComponent.gd
-WorkerComponent.gd
-InventoryComponent.gd
+SizeComponent.gd
+DraggableComponent.gd
+InteractableComponent.gd
 AnimationComponent.gd
 ```
 
@@ -112,14 +108,14 @@ resources/
 
 	hamsters/
 		BasicHamster.tres
-		SpeedHamster.tres
+		DwarfHamster.tres
 
 	buildings/
 		Spa.tres
-		Laboratory.tres
+		Gym.tres
 
 	modules/
-		BatteryModule.tres
+		BatteryBuilding.tres
 
 	upgrades/
 ```
@@ -195,8 +191,8 @@ Each module can have its own folder.
 
 ```
 Battery/
-Cooling/
-Generator/
+Spa/
+Gym/
 ```
 
 ---
@@ -225,7 +221,6 @@ Persistent gameplay interface.
 
 Examples
 
-- Resource bars
 - Energy display
 - Time display
 
@@ -252,7 +247,7 @@ Examples
 
 - Hamster Details
 - Confirmation Dialog
-- Building Upgrade
+- Buildings/ modules selector
 - Tutorial Windows
 
 ---
@@ -261,49 +256,7 @@ Examples
 
 Contains gameplay scripts that aren't components or autoloads.
 
-I recommend organizing this by responsibility.
-
-```
-scripts/
-
-    systems/
-    managers/
-    utilities/
-    resources/
-```
-
-## systems/
-
-Own gameplay rules.
-
-Examples
-
-```
-PowerSystem.gd
-ProductionSystem.gd
-TutorialSystem.gd
-BuildingSystem.gd
-```
-
-Systems coordinate gameplay objects rather than objects talking directly to each other.
-
----
-
-## managers/
-
-Non-global managers.
-
-These are helper classes that are instantiated when needed instead of being Autoloads.
-
-Examples
-
-```
-InputManager.gd
-RosterManager.gd
-EffectManager.gd
-```
-
----
+Organized by responsibility.
 
 ## utilities/
 
@@ -364,11 +317,10 @@ Example
 Hamster
 │
 ├── Sprite2D
-├── AnimationPlayer
+├── AnimationComponent
 ├── HealthComponent
 ├── StaminaComponent
-├── WorkerComponent
-└── MoodComponent
+├── DraggableComponent
 ```
 
 Each component owns one responsibility.
