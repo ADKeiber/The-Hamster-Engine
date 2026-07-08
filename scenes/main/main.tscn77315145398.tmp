@@ -14,10 +14,17 @@ mouse_filter = 2
 
 [node name="BuildingsArea" parent="." unique_id=1218242002 instance=ExtResource("1_hyk8p")]
 
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=473309139]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 239.0
+offset_right = 638.0
+offset_bottom = 362.0
+
 [node name="Tester" parent="." unique_id=590711385 instance=ExtResource("2_iuonh")]
 modulate = Color(1, 1, 1, 0.19607843)
-position = Vector2(241, 330)
+position = Vector2(257, 273)
 
 [node name="Tester2" parent="." unique_id=410737479 instance=ExtResource("2_iuonh")]
 modulate = Color(1, 1, 1, 0.19607843)
-position = Vector2(404, 329)
+position = Vector2(345, 275)
