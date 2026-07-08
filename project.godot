@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Mad Scientist Hamster Farm"
+config/name="The Hamster Engine"
 run/main_scene="uid://bo32t2dj8ghll"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
