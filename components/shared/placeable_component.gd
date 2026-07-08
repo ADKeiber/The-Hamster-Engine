@@ -1,11 +1,11 @@
 class_name PlaceableComponent
 extends Node2D
 
-@export var collision_shape : CollisionShape2D
-@onready var draggable: DraggableComponent = get_parent().get_node("DraggableComponent")
+@export var area : Area2D
+@export var draggable: DraggableComponent #Placeables required a draggable component... For now... If we decide to have it click to place this won't be needed
+@export var footprint: FootprintComponent #Required to know how big something that is placeable is
 
 var grid: GridManager
-var area: Area2D
 var placed: bool = false
 
 # Called when the node enters the scene tree for the first time.

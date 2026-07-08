@@ -6,6 +6,7 @@ signal drag_updated(draggable: DraggableComponent)
 signal drag_ended(draggable: DraggableComponent)
 
 @export var area : Area2D
+@export var snap_back_on_fail: bool = true #If stopping drag doesn't "succeed" then it will snap back if == true
 
 #var area: Area2D
 var dragging := false
@@ -19,9 +20,9 @@ func _ready() -> void:
 
 func _process(_delta):
 	if dragging && draggable:
-		var previous_position = global_position
+		var previous_position = get_parent().global_position
 		get_parent().global_position = get_global_mouse_position() + drag_offset
-		var current_position = global_position
+		var current_position = get_parent().global_position
 		drag_updated.emit(self)
 
 func _on_area_input_event(_viewport, event, _shape_idx):
@@ -35,9 +36,9 @@ func _on_area_input_event(_viewport, event, _shape_idx):
 		else:
 			dragging = false
 			drag_ended.emit(self)
-			#draggable = false
 
-#returns to pickup position
+#returns to pickup position.. Procs if hamster either "fails to be placed" or "fails to interact" something along those lines
 func failed_to_drop() -> void:
-	get_parent().global_position = start_drag_location
+	if snap_back_on_fail:
+		get_parent().global_position = start_drag_location
 	draggable = true
