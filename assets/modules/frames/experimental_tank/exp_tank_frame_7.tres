@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" format=3 uid="uid://bst75rg8i56ts"]
-
-[ext_resource type="Texture2D" uid="uid://b4bc5iqqs0lc8" path="res://assets/modules/experimental tank on.png" id="1_1v55b"]
-
-[resource]
-atlas = ExtResource("1_1v55b")
-region = Rect2(448, 0, 64, 64)

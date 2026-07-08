@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dnb6xmqr4owhw"]
+
+[ext_resource type="Script" uid="uid://p1f8lag1yycy" path="res://components/shared/placeable_component.gd" id="1_elmuc"]
+
+[node name="PlaceableComponent" type="Node2D" unique_id=856017753]
+script = ExtResource("1_elmuc")

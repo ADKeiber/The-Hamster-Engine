@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mad Scientist Hamster Farm"
-run/main_scene="uid://2emas1q80pqm"
+run/main_scene="uid://bo32t2dj8ghll"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -36,10 +36,13 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
-"res://assets/": "red",
-"res://scenes/": "teal",
-"res://scripts/": "purple",
-"res://scripts/machine/": "purple"
+"res://assets/": "pink",
+"res://autoload/": "green",
+"res://components/": "red",
+"res://docs/": "orange",
+"res://resources/": "yellow",
+"res://scenes/": "purple",
+"res://scripts/": "blue"
 }
 
 [global_group]
@@ -49,11 +52,11 @@ HamsterUI=""
 Wheel=""
 ModuleSelectorPopup=""
 MachineModule=""
+GridManager=""
 
 [gui]
 
 theme/default_font_multichannel_signed_distance_field=true
-theme/custom_font="uid://dihx7krh4ako0"
 
 [input]
 

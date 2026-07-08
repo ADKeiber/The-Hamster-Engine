@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dxncdpsw0qdep"]
+
+[ext_resource type="Texture2D" uid="uid://c4air3bicpb0a" path="res://icon.svg" id="1_wnlt6"]
+[ext_resource type="PackedScene" uid="uid://bcpnd464yrb0f" path="res://components/shared/draggable_component.tscn" id="2_gfvqv"]
+[ext_resource type="Script" uid="uid://p1f8lag1yycy" path="res://components/shared/placeable_component.gd" id="3_c8lyt"]
+[ext_resource type="PackedScene" uid="uid://xhy24ce8fy6s" path="res://components/building/footprint_component.tscn" id="4_8d4ti"]
+[ext_resource type="Resource" uid="uid://d11u7m26j04lv" path="res://resources/building/footprint/2x2.tres" id="5_7srmo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujpuf"]
+size = Vector2(32, 32)
+
+[node name="Tester" type="Node2D" unique_id=590711385]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=715687749]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_wnlt6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1138214125]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2125849773]
+shape = SubResource("RectangleShape2D_ujpuf")
+
+[node name="DraggableComponent" parent="." unique_id=1960665793 node_paths=PackedStringArray("area") instance=ExtResource("2_gfvqv")]
+area = NodePath("../Area2D")
+
+[node name="PlaceableComponent" type="Node2D" parent="." unique_id=1034662428 node_paths=PackedStringArray("collision_shape")]
+script = ExtResource("3_c8lyt")
+collision_shape = NodePath("../Area2D/CollisionShape2D")
+metadata/_custom_type_script = "uid://p1f8lag1yycy"
+
+[node name="FootprintComponent" parent="." unique_id=1146142877 instance=ExtResource("4_8d4ti")]
+footprint = ExtResource("5_7srmo")
