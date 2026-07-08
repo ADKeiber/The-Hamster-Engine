@@ -52,6 +52,7 @@ HamsterUI=""
 Wheel=""
 ModuleSelectorPopup=""
 MachineModule=""
+GridManager=""
 
 [gui]
 

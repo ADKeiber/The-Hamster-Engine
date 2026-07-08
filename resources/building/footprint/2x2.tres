@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="Footprint" format=3 uid="uid://d11u7m26j04lv"]
+
+[ext_resource type="Script" uid="uid://d14826nre8pck" path="res://resources/building/footprint/footprint.gd" id="1_vu6kq"]
+
+[resource]
+script = ExtResource("1_vu6kq")

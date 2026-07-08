@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bcpnd464yrb0f"]
+
+[ext_resource type="Script" uid="uid://dpm8u5v46n4p3" path="res://components/shared/draggable_component.gd" id="1_jhtoj"]
+
+[node name="DraggableComponent" type="Node2D" unique_id=1960665793]
+script = ExtResource("1_jhtoj")

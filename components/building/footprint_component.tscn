@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cmda5dupt1t5g"]
+
+[ext_resource type="Script" uid="uid://q282vhoc3uiv" path="res://components/building/footprint_component.gd" id="1_vlpov"]
+
+[node name="FootprintComponent" type="Node2D" unique_id=1146142877]
+script = ExtResource("1_vlpov")
