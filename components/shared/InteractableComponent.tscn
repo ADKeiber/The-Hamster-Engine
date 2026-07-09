@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://babhijhxpgqs5"]
 
+[ext_resource type="Script" uid="uid://ex6okpcwondk" path="res://components/shared/interactable_component.gd" id="1_dd2c4"]
+
 [node name="InteractableComponent" type="Node2D" unique_id=1346976423]
+script = ExtResource("1_dd2c4")
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

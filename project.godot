@@ -21,7 +21,7 @@ buses/default_bus_layout="uid://bglpd37hppvw4"
 
 [autoload]
 
-GScript="*uid://bcptskl43tu3w"
+Global="*uid://41cd6kvj28l5"
 
 [display]
 

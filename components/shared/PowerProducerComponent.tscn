@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://bd6rnjpsgs4q7"]
 
+[ext_resource type="Script" uid="uid://blu1xqa5w8qn5" path="res://components/shared/power_producer_component.gd" id="1_j4m3g"]
+
 [node name="PowerProducerComponent" type="Node2D" unique_id=478325704]
+script = ExtResource("1_j4m3g")
