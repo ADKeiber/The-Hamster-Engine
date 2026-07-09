@@ -1,0 +1,45 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cl7oscqn5texg"]
+
+[ext_resource type="Texture2D" uid="uid://de3esuvqlimx" path="res://assets/art/hamster/Hamster Idle.png" id="1_s06tk"]
+[ext_resource type="Texture2D" uid="uid://b1w2qtfwo75c0" path="res://assets/art/hamster/Hamster Run.png" id="2_8jtf2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jtf2"]
+atlas = ExtResource("1_s06tk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpgwh"]
+atlas = ExtResource("1_s06tk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hywh"]
+atlas = ExtResource("2_8jtf2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igrrs"]
+atlas = ExtResource("2_8jtf2")
+region = Rect2(64, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jtf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpgwh")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hywh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igrrs")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 3.0
+}]

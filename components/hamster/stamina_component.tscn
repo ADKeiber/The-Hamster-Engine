@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://1m0vcg7kn2br"]
+
+[ext_resource type="Script" uid="uid://cjnhpad4rjjaa" path="res://components/hamster/stamina_component.gd" id="1_t477s"]
+
+[node name="StaminaComponent" type="Node" unique_id=484425107]
+script = ExtResource("1_t477s")

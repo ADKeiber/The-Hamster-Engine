@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://btx6kly08w6cy"]
+
+[ext_resource type="Script" uid="uid://buaeqgxqanom6" path="res://scenes/hamster/hamster.gd" id="1_chdbw"]
+[ext_resource type="Script" uid="uid://dpm8u5v46n4p3" path="res://components/shared/draggable_component.gd" id="2_m4iqr"]
+[ext_resource type="Texture2D" uid="uid://cvpclrmsx6w4b" path="res://assets/art/hamster/Hamster Still.png" id="2_ohn85"]
+[ext_resource type="PackedScene" uid="uid://ct0lo8c3wu4ci" path="res://components/hamster/hamster_stats_component.tscn" id="4_m4iqr"]
+[ext_resource type="PackedScene" uid="uid://cglmlr28may8t" path="res://components/hamster/traits_component.tscn" id="5_vus7h"]
+[ext_resource type="PackedScene" uid="uid://cq578w4m0v02c" path="res://components/shared/animation_component.tscn" id="6_ohn85"]
+[ext_resource type="PackedScene" uid="uid://itkai6yxkjjc" path="res://components/hamster/health_component.tscn" id="7_7g52f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(29, 26)
+
+[node name="Hamster" type="Node2D" unique_id=641634076]
+position = Vector2(100, 100)
+script = ExtResource("1_chdbw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2106127544]
+visible = false
+texture = ExtResource("2_ohn85")
+
+[node name="DraggableComponent" type="Node2D" parent="." unique_id=2080222477 node_paths=PackedStringArray("area")]
+script = ExtResource("2_m4iqr")
+area = NodePath("../Area2D")
+metadata/_custom_type_script = "uid://dpm8u5v46n4p3"
+
+[node name="HamsterStatsComponent" parent="." unique_id=357086209 instance=ExtResource("4_m4iqr")]
+
+[node name="TraitsComponent" parent="." unique_id=996135682 instance=ExtResource("5_vus7h")]
+
+[node name="AnimationComponent" parent="." unique_id=861472035 instance=ExtResource("6_ohn85")]
+
+[node name="HealthComponent" parent="." unique_id=75445665 instance=ExtResource("7_7g52f")]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1406993452]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=987090444]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Button" type="Button" parent="." unique_id=475753561]
+offset_left = 4.0
+offset_top = 21.0
+offset_right = 76.0
+offset_bottom = 52.0
+text = "Damage"
+
+[node name="Button2" type="Button" parent="." unique_id=793720967]
+offset_left = -53.0
+offset_top = 20.0
+offset_right = -10.0
+offset_bottom = 51.0
+text = "Heal"
+
+[node name="Button3" type="Button" parent="." unique_id=2036126297]
+offset_left = 6.0
+offset_top = 57.0
+offset_right = 76.0
+offset_bottom = 88.0
+text = "IDLE"
+
+[node name="Button4" type="Button" parent="." unique_id=1793704312]
+offset_left = -55.0
+offset_top = 56.0
+offset_right = -7.0
+offset_bottom = 87.0
+text = "RUN
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

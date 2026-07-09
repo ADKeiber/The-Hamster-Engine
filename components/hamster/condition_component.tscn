@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://np5o6t4ohjhv"]
+
+[ext_resource type="Script" uid="uid://xer7y5t1d1x8" path="res://components/hamster/condition_component.gd" id="1_mmyh6"]
+
+[node name="ConditionComponent" type="Node2D" unique_id=1763254441]
+script = ExtResource("1_mmyh6")
