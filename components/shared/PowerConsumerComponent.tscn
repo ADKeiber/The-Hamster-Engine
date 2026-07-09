@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://ch8is50ni4kn8"]
 
+[ext_resource type="Script" uid="uid://chkcbvbsvfpg" path="res://components/shared/power_consumer_component.gd" id="1_0iide"]
+
 [node name="PowerConsumerComponent" type="Node2D" unique_id=133540461]
+script = ExtResource("1_0iide")
