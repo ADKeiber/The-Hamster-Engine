@@ -21,7 +21,6 @@ bg_color = Color(0.6, 0.8980392, 0.6, 1)
 size = Vector2(29, 26)
 
 [node name="Hamster" type="Node2D" unique_id=641634076]
-position = Vector2(100, 100)
 script = ExtResource("1_chdbw")
 
 [node name="StaminaBar" type="ProgressBar" parent="." unique_id=1815293619]
@@ -80,61 +79,3 @@ stats = NodePath("../HamsterStatsComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=987090444]
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="Button" type="Button" parent="." unique_id=475753561]
-offset_left = 4.0
-offset_top = 21.0
-offset_right = 76.0
-offset_bottom = 52.0
-text = "Damage"
-
-[node name="Button2" type="Button" parent="." unique_id=793720967]
-offset_left = -53.0
-offset_top = 20.0
-offset_right = -10.0
-offset_bottom = 51.0
-text = "Heal"
-
-[node name="Button3" type="Button" parent="." unique_id=2036126297]
-offset_left = 6.0
-offset_top = 57.0
-offset_right = 76.0
-offset_bottom = 88.0
-text = "IDLE"
-
-[node name="Button4" type="Button" parent="." unique_id=1793704312]
-offset_left = -55.0
-offset_top = 56.0
-offset_right = -7.0
-offset_bottom = 87.0
-text = "RUN
-"
-
-[node name="Button5" type="Button" parent="." unique_id=76748779]
-offset_left = 44.0
-offset_top = -57.0
-offset_right = 162.0
-offset_bottom = -26.0
-text = "Drain stamina"
-
-[node name="Button6" type="Button" parent="." unique_id=1498312354]
-offset_left = -92.0
-offset_top = -57.0
-offset_right = 32.0
-offset_bottom = -26.0
-text = "Regen Stamina"
-
-[node name="Button7" type="Button" parent="." unique_id=192652296]
-offset_left = 80.0
-offset_top = -15.0
-offset_right = 149.0
-offset_bottom = 16.0
-text = "Squeak!"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]
-[connection signal="pressed" from="Button7" to="." method="_on_button_7_pressed"]
