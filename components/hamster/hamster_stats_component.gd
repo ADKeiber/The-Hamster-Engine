@@ -5,7 +5,7 @@ class_name HamsterStatsComponent extends Node
 signal stat_changed(stat: StatType, old_value: int, new_value: int)
 signal stats_initialized
 
-enum StatType {MAX_HEALTH, MAX_STAMINA, SPEED, STAMINA_BURN, HEALTH_BURN} # put more here later
+enum StatType {MAX_HEALTH, MAX_STAMINA, SPEED, STAMINA_BURN, HEALTH_BURN, STAMINA_GEN, HEALING} # put more here later
 
 func _ready() -> void:
 	assert(_stats != null)
@@ -31,6 +31,10 @@ func get_stat(type:StatType) -> int:
 			return _stats.max_stamina
 		StatType.SPEED:
 			return _stats.speed
+		StatType.HEALING:
+			return _stats.healing_rate
+		StatType.STAMINA_GEN:
+			return _stats.stamina_regen_rate
 	return 0
 
 func get_stats() -> HamsterStatsResource:

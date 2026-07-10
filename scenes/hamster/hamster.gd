@@ -1,16 +1,22 @@
 class_name Hamster extends Node2D
 
+const BURN_CONDITION = preload("uid://gcxqiowkjugl")
+const MAGICALLY_ENHANCED_CONDITION = preload("uid://bt1lfv6w8tuxw")
+const REST_CONDITION = preload("uid://cbfcjl0pgym4l")
+
 @onready var draggable_component: DraggableComponent = $DraggableComponent
 @onready var audio_component: AudioComponent = $AudioComponent
-
 @onready var hamster_stats_component: HamsterStatsComponent = $HamsterStatsComponent
 @onready var animation_component: AnimationComponent = $AnimationComponent
 @onready var traits_component: TraitsComponent = $TraitsComponent
 @onready var health_component: HealthComponent = $HealthComponent
-@onready var health_bar: ProgressBar = %HealthBar
-@onready var stamina_bar: ProgressBar = %StaminaBar
 @onready var hamster_type_component: HamsterTypeComponent = $HamsterTypeComponent
 @onready var stamina_component: StaminaComponent = $StaminaComponent
+@onready var condition_component: ConditionComponent = $ConditionComponent
+
+@onready var timer: Timer = $Timer
+@onready var health_bar: ProgressBar = %HealthBar
+@onready var stamina_bar: ProgressBar = %StaminaBar
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,7 +39,6 @@ func connect_stats() -> void:
 	update_stamina_bar(stamina,stamina)
 	audio_component.set_library(stats.audio_library)
 	print(hamster_stats_component.get_stats().to_string())
-	
 
 func update_health_bar(current: int, max: int) -> void:
 	health_bar.max_value = max
@@ -42,31 +47,6 @@ func update_health_bar(current: int, max: int) -> void:
 func update_stamina_bar(current: int, max: int) -> void:
 	stamina_bar.max_value = max
 	stamina_bar.value = current
-
-func _on_button_2_pressed() -> void:
-	print("Heal")
-	health_component.heal(5)
-	
-func _on_button_pressed() -> void:
-	print("Damage")
-	health_component.take_damage(5)
-
-func _on_button_3_pressed() -> void:
-	print("IDLE")
-	animation_component.update_animation(AnimationComponent.AnimationState.IDLE)
-
-func _on_button_4_pressed() -> void:
-	print("RUNNING")
-	animation_component.update_animation(AnimationComponent.AnimationState.RUNNING)
-
-func _on_button_5_pressed() -> void:
-	stamina_component.use_stamina(5)
-
-func _on_button_6_pressed() -> void:
-	stamina_component.rest(5)
-
-func _on_button_7_pressed() -> void:
-	audio_component.play("squeak")
 
 func activate_traits_and_type() -> void:
 	traits_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, {}))

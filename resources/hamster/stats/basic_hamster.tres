@@ -12,7 +12,7 @@
 script = ExtResource("1_55nn5")
 max_health = 100
 health_drain = 10
-healing_rate = 1
+healing_rate = 10
 max_stamina = 100
 stamina_drain = 10
 stamina_regen_rate = 10

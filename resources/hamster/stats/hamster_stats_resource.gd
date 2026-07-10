@@ -19,6 +19,7 @@ extends Resource
 @export var traits: Array[TraitResource]
 @export var hamster_type: HamsterTypeResource
 @export var audio_library: AudioLibraryResource
+@export var condition: Condition
 
 @export_group("Assets")
 @export var sprite_frames: SpriteFrames

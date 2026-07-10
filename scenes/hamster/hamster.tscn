@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://itkai6yxkjjc" path="res://components/hamster/health_component.tscn" id="7_7g52f"]
 [ext_resource type="PackedScene" uid="uid://1m0vcg7kn2br" path="res://components/hamster/stamina_component.tscn" id="8_7g52f"]
 [ext_resource type="PackedScene" uid="uid://bvggptlbuc5x8" path="res://components/shared/audio_component.tscn" id="10_g7kcv"]
+[ext_resource type="Script" uid="uid://xer7y5t1d1x8" path="res://components/hamster/condition_component.gd" id="11_m0doy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7g52f"]
 bg_color = Color(0.6, 0.6, 0.8901961, 1)
@@ -74,8 +75,15 @@ stats = NodePath("../HamsterStatsComponent")
 [node name="StaminaComponent" parent="." unique_id=484425107 node_paths=PackedStringArray("stats") instance=ExtResource("8_7g52f")]
 stats = NodePath("../HamsterStatsComponent")
 
+[node name="ConditionComponent" type="Node" parent="." unique_id=1816121024]
+script = ExtResource("11_m0doy")
+metadata/_custom_type_script = "uid://xer7y5t1d1x8"
+
 [node name="Area2D" type="Area2D" parent="." unique_id=1406993452]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=987090444]
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Timer" type="Timer" parent="." unique_id=2115075215]
+autostart = true
