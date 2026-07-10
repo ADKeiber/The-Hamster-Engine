@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://cglmlr28may8t"]
 
 [ext_resource type="Script" uid="uid://bk2aytincq3yb" path="res://components/hamster/traits_component.gd" id="1_dyatx"]
-[ext_resource type="Script" uid="uid://cyor7je75ty01" path="res://resources/hamster/traits/trait_resource.gd" id="2_vbqf8"]
 
 [node name="TraitsComponent" type="Node" unique_id=996135682]
 script = ExtResource("1_dyatx")
-traits = Array[ExtResource("2_vbqf8")]([null])

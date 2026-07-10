@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AudioLibraryResource" format=3 uid="uid://car4kweue088h"]
+
+[ext_resource type="Script" uid="uid://cxjl5k3nqdo04" path="res://resources/audio_library_resource.gd" id="1_dvms4"]
+[ext_resource type="Script" uid="uid://pll1dyh33mqb" path="res://resources/audio_clip_resource.gd" id="2_ljbqd"]
+[ext_resource type="Resource" uid="uid://by81gr7qhywvr" path="res://resources/hamster/audio/squeak.tres" id="3_ljbqd"]
+
+[resource]
+script = ExtResource("1_dvms4")
+sounds = Dictionary[StringName, ExtResource("2_ljbqd")]({
+&"squeak": ExtResource("3_ljbqd")
+})
+metadata/_custom_type_script = "uid://cxjl5k3nqdo04"

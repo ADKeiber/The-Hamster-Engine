@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ct0lo8c3wu4ci"]
 
 [ext_resource type="Script" uid="uid://ox3ll8afmawi" path="res://components/hamster/hamster_stats_component.gd" id="1_wo8pq"]
-[ext_resource type="Resource" uid="uid://c0plbqf1wavj0" path="res://resources/hamster/basic_hamster.tres" id="2_r0k7t"]
+[ext_resource type="Resource" uid="uid://c0plbqf1wavj0" path="res://resources/hamster/stats/basic_hamster.tres" id="2_r0k7t"]
 
 [node name="HamsterStatsComponent" type="Node" unique_id=1207232466]
 script = ExtResource("1_wo8pq")

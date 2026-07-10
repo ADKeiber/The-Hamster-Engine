@@ -1,1 +1,0 @@
-class_name HamsterTypeResource extends Resource

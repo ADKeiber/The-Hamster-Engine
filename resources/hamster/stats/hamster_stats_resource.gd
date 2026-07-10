@@ -18,10 +18,13 @@ extends Resource
 @export var max_traits: int
 @export var traits: Array[TraitResource]
 @export var hamster_type: HamsterTypeResource
+@export var audio_library: AudioLibraryResource
 
 @export_group("Assets")
 @export var sprite_frames: SpriteFrames
 @export var basic_sprite: CompressedTexture2D
+
+
 
 func _to_string() -> String:
 	return """

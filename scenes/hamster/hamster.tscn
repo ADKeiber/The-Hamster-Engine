@@ -5,9 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://cvpclrmsx6w4b" path="res://assets/art/hamster/Hamster Still.png" id="2_ohn85"]
 [ext_resource type="PackedScene" uid="uid://ct0lo8c3wu4ci" path="res://components/hamster/hamster_stats_component.tscn" id="4_m4iqr"]
 [ext_resource type="PackedScene" uid="uid://cglmlr28may8t" path="res://components/hamster/traits_component.tscn" id="5_vus7h"]
+[ext_resource type="PackedScene" uid="uid://or2ykmqvyvd7" path="res://components/hamster/hamster_type_component.tscn" id="6_3efsa"]
 [ext_resource type="PackedScene" uid="uid://cq578w4m0v02c" path="res://components/shared/animation_component.tscn" id="6_ohn85"]
 [ext_resource type="PackedScene" uid="uid://itkai6yxkjjc" path="res://components/hamster/health_component.tscn" id="7_7g52f"]
 [ext_resource type="PackedScene" uid="uid://1m0vcg7kn2br" path="res://components/hamster/stamina_component.tscn" id="8_7g52f"]
+[ext_resource type="PackedScene" uid="uid://bvggptlbuc5x8" path="res://components/shared/audio_component.tscn" id="10_g7kcv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7g52f"]
 bg_color = Color(0.6, 0.6, 0.8901961, 1)
@@ -57,11 +59,15 @@ script = ExtResource("2_m4iqr")
 area = NodePath("../Area2D")
 metadata/_custom_type_script = "uid://dpm8u5v46n4p3"
 
+[node name="AudioComponent" parent="." unique_id=1834874586 instance=ExtResource("10_g7kcv")]
+
+[node name="AnimationComponent" parent="." unique_id=861472035 instance=ExtResource("6_ohn85")]
+
 [node name="HamsterStatsComponent" parent="." unique_id=357086209 instance=ExtResource("4_m4iqr")]
 
 [node name="TraitsComponent" parent="." unique_id=996135682 instance=ExtResource("5_vus7h")]
 
-[node name="AnimationComponent" parent="." unique_id=861472035 instance=ExtResource("6_ohn85")]
+[node name="HamsterTypeComponent" parent="." unique_id=1877400546 instance=ExtResource("6_3efsa")]
 
 [node name="HealthComponent" parent="." unique_id=75445665 node_paths=PackedStringArray("stats") instance=ExtResource("7_7g52f")]
 stats = NodePath("../HamsterStatsComponent")
@@ -118,9 +124,17 @@ offset_right = 32.0
 offset_bottom = -26.0
 text = "Regen Stamina"
 
+[node name="Button7" type="Button" parent="." unique_id=192652296]
+offset_left = 80.0
+offset_top = -15.0
+offset_right = 149.0
+offset_bottom = 16.0
+text = "Squeak!"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Button7" to="." method="_on_button_7_pressed"]
