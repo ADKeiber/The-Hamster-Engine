@@ -3,6 +3,7 @@ class_name Hamster extends Node2D
 const BURN_CONDITION = preload("uid://gcxqiowkjugl")
 const MAGICALLY_ENHANCED_CONDITION = preload("uid://bt1lfv6w8tuxw")
 const REST_CONDITION = preload("uid://cbfcjl0pgym4l")
+@export var stats: HamsterStatsResource
 
 @onready var draggable_component: DraggableComponent = $DraggableComponent
 @onready var audio_component: AudioComponent = $AudioComponent
@@ -20,6 +21,7 @@ const REST_CONDITION = preload("uid://cbfcjl0pgym4l")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#hamster_stats_component.set_stats(stats)
 	connect_stats()
 
 func connect_stats() -> void:
