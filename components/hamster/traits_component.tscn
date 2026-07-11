@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cglmlr28may8t"]
+
+[ext_resource type="Script" uid="uid://bk2aytincq3yb" path="res://components/hamster/traits_component.gd" id="1_dyatx"]
+
+[node name="TraitsComponent" type="Node" unique_id=996135682]
+script = ExtResource("1_dyatx")

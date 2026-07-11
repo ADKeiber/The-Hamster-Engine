@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioClipResource" format=3 uid="uid://by81gr7qhywvr"]
+
+[ext_resource type="Script" uid="uid://pll1dyh33mqb" path="res://resources/audio_clip_resource.gd" id="1_mclio"]
+[ext_resource type="AudioStream" uid="uid://baxv6dtsx8hxf" path="res://assets/audio/hamster/hamster.wav" id="2_gqene"]
+
+[resource]
+script = ExtResource("1_mclio")
+stream = ExtResource("2_gqene")
+volume_db = 0.5
+metadata/_custom_type_script = "uid://pll1dyh33mqb"

@@ -1,9 +1,9 @@
 class_name DraggableComponent
 extends Node2D
 
-signal drag_started()
-signal drag_updated()
-signal drag_ended()
+signal drag_started
+signal drag_updated
+signal drag_ended
 
 @export var area : Area2D
 @export var snap_back_on_fail: bool = true #If stopping drag doesn't "succeed" then it will snap back if == true

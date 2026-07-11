@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://cyech8lovavoi"]
+[gd_scene format=3 uid="uid://or2ykmqvyvd7"]
 
-[node name="HamsterTypeComponent" type="Node2D" unique_id=347034842]
+[ext_resource type="Script" uid="uid://dpgd5xfgiia6p" path="res://components/hamster/hamster_type_component.gd" id="1_bmyyj"]
+
+[node name="HamsterTypeComponent" type="Node" unique_id=1877400546]
+script = ExtResource("1_bmyyj")

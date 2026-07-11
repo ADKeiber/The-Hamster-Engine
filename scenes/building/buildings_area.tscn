@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://dx5dmin8d3pcr"]
 
-[ext_resource type="Texture2D" uid="uid://v7yrsowf6cux" path="res://assets/tile_maps/wood_and_brick_tiles.png" id="1_gfdhv"]
-[ext_resource type="Texture2D" uid="uid://c55incvprhy11" path="res://assets/tile_maps/green_highlight.png" id="2_ssd7t"]
-[ext_resource type="Texture2D" uid="uid://da44i58lm5j4m" path="res://assets/tile_maps/red_highlight.png" id="3_42ycf"]
-[ext_resource type="Texture2D" uid="uid://bwbi7sha56gg0" path="res://assets/tile_maps/placeable_area_tiles.png" id="3_ssd7t"]
+[ext_resource type="Texture2D" uid="uid://v7yrsowf6cux" path="res://assets/art/tile_maps/wood_and_brick_tiles.png" id="1_gfdhv"]
+[ext_resource type="Texture2D" uid="uid://c55incvprhy11" path="res://assets/art/tile_maps/green_highlight.png" id="2_ssd7t"]
+[ext_resource type="Texture2D" uid="uid://da44i58lm5j4m" path="res://assets/art/tile_maps/red_highlight.png" id="3_42ycf"]
+[ext_resource type="Texture2D" uid="uid://bwbi7sha56gg0" path="res://assets/art/tile_maps/placeable_area_tiles.png" id="3_ssd7t"]
 [ext_resource type="PackedScene" uid="uid://df5vrbavsm0bf" path="res://scenes/manager/grid_manager.tscn" id="4_02skr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxck2"]

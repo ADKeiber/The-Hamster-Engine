@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dx5dmin8d3pcr" path="res://scenes/building/buildings_area.tscn" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://btx6kly08w6cy" path="res://scenes/hamster/hamster.tscn" id="1_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://dxncdpsw0qdep" path="res://scenes/building/tester.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://btx6kly08w6cy" path="res://scenes/hamster/hamster.tscn" id="3_k2fmo"]
 
 [node name="Main" type="Control" unique_id=305830555]
 layout_mode = 3
@@ -27,5 +28,9 @@ position = Vector2(186, 270)
 [node name="Tester2" parent="BuildingsArea" unique_id=590711385 instance=ExtResource("2_iuonh")]
 position = Vector2(289, 315)
 
-[node name="Tester" parent="BuildingsArea" unique_id=1236676317 instance=ExtResource("2_iuonh")]
-position = Vector2(361, 313)
+[node name="Tester2" parent="." unique_id=410737479 instance=ExtResource("2_iuonh")]
+modulate = Color(1, 1, 1, 0.19607843)
+position = Vector2(404, 329)
+
+[node name="Hamster" parent="." unique_id=641634076 instance=ExtResource("3_k2fmo")]
+position = Vector2(321, 331)

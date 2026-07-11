@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://itkai6yxkjjc"]
 
-[node name="HealthComponent" type="Node2D" unique_id=75445665]
+[ext_resource type="Script" uid="uid://dgu4i0a13bw8m" path="res://components/hamster/health_component.gd" id="1_w60gu"]
+
+[node name="HealthComponent" type="Node" unique_id=484425107]
+script = ExtResource("1_w60gu")

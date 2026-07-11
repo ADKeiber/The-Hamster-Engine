@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="HamsterStatsResource" format=3 uid="uid://c0plbqf1wavj0"]
+
+[ext_resource type="Texture2D" uid="uid://cvpclrmsx6w4b" path="res://assets/art/hamster/Hamster Still.png" id="1_0xv07"]
+[ext_resource type="Resource" uid="uid://car4kweue088h" path="res://resources/hamster/audio/basic_hamster_audio_library.tres" id="1_5rq4d"]
+[ext_resource type="Script" uid="uid://c86xdmpekf7nk" path="res://resources/hamster/stats/hamster_stats_resource.gd" id="1_55nn5"]
+[ext_resource type="SpriteFrames" uid="uid://cl7oscqn5texg" path="res://resources/hamster/sprite_frames/basic_hamster_frames.tres" id="2_axxgo"]
+[ext_resource type="Resource" uid="uid://dk1ltcdiut1we" path="res://resources/hamster/types/basic_hamster_type.tres" id="2_uuwt2"]
+[ext_resource type="Script" uid="uid://cyor7je75ty01" path="res://resources/hamster/traits/trait_resource.gd" id="4_m7v6t"]
+[ext_resource type="Resource" uid="uid://u07pejunv57l" path="res://resources/hamster/traits/basic/basic_1_trait.tres" id="5_ftrnc"]
+
+[resource]
+script = ExtResource("1_55nn5")
+max_health = 100
+health_drain = 10
+healing_rate = 10
+max_stamina = 100
+stamina_drain = 10
+stamina_regen_rate = 10
+speed = 10
+max_traits = 3
+traits = Array[ExtResource("4_m7v6t")]([ExtResource("5_ftrnc")])
+hamster_type = ExtResource("2_uuwt2")
+audio_library = ExtResource("1_5rq4d")
+sprite_frames = ExtResource("2_axxgo")
+basic_sprite = ExtResource("1_0xv07")
+metadata/_custom_type_script = "uid://c86xdmpekf7nk"
