@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Burn" format=3 uid="uid://gcxqiowkjugl"]
+
+[ext_resource type="Script" uid="uid://dlsx735st5y8k" path="res://resources/hamster/condition/burn/burn.gd" id="1_5l07e"]
+
+[resource]
+script = ExtResource("1_5l07e")
+amount = 10
+name = "Burn"
+description = "Ouchy"
+metadata/_custom_type_script = "uid://dlsx735st5y8k"

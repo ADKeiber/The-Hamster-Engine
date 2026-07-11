@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Basic3Trait" format=3 uid="uid://cvfaqwvstk563"]
+
+[ext_resource type="Script" uid="uid://dn1q2kq3g5n2j" path="res://resources/hamster/traits/basic/basic_3_trait.gd" id="1_mc58k"]
+
+[resource]
+script = ExtResource("1_mc58k")
+increase = 15
+metadata/_custom_type_script = "uid://dn1q2kq3g5n2j"

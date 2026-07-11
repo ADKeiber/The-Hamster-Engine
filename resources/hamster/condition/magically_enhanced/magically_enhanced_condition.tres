@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MagicallyEnhanced" format=3 uid="uid://bt1lfv6w8tuxw"]
+
+[ext_resource type="Script" uid="uid://bmmrdj8on22yq" path="res://resources/hamster/condition/magically_enhanced/magically_enhanced.gd" id="1_y8ute"]
+
+[resource]
+script = ExtResource("1_y8ute")
+speed_increase = 100
+health_increase = 100
+stamina_increase = 100
+name = "Magically Enhanced"
+description = "A magic wizard put a spell on you"
+metadata/_custom_type_script = "uid://bmmrdj8on22yq"

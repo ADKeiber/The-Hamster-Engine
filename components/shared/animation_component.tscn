@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cq578w4m0v02c"]
+
+[ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="1_iunla"]
+[ext_resource type="SpriteFrames" uid="uid://cl7oscqn5texg" path="res://resources/hamster/sprite_frames/basic_hamster_frames.tres" id="1_ls2l5"]
+
+[node name="AnimationComponent" type="Node2D" unique_id=861472035]
+script = ExtResource("1_iunla")
+sprite_frame = ExtResource("1_ls2l5")
+
+[node name="Animation" type="AnimatedSprite2D" parent="." unique_id=1168439307]
+unique_name_in_owner = true
+sprite_frames = ExtResource("1_ls2l5")
+animation = &"run"

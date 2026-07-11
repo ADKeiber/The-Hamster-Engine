@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HamsterTypeResource" format=3 uid="uid://dk1ltcdiut1we"]
+
+[ext_resource type="Resource" uid="uid://dx1jjn3pyv5sd" path="res://resources/hamster/traits/basic/basic_2_trait.tres" id="1_b7vma"]
+[ext_resource type="Script" uid="uid://cuiddmy54cmdd" path="res://resources/hamster/types/hamster_type_resource.gd" id="1_iqukj"]
+
+[resource]
+script = ExtResource("1_iqukj")
+name = "Basic Hamster"
+description = "Nothing special here..."
+hamster_trait = ExtResource("1_b7vma")
+metadata/_custom_type_script = "uid://cuiddmy54cmdd"
