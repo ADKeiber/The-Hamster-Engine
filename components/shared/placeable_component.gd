@@ -15,14 +15,14 @@ func _ready() -> void:
 	draggable.drag_updated.connect(_on_drag_updated)
 	draggable.drag_ended.connect(_on_drag_ended)
 
-func _on_drag_started(draggable:DraggableComponent) -> void:
+func _on_drag_started() -> void:
 	grid.register(self)
 
-func _on_drag_updated(draggable:DraggableComponent) -> void:
+func _on_drag_updated() -> void:
 	if not placed:
 		grid.update_hover(get_global_mouse_position())
 
-func _on_drag_ended(draggable:DraggableComponent) -> void:
+func _on_drag_ended() -> void:
 	var valid_placement = grid.is_valid_placement()
 	if valid_placement:
 		placed = true

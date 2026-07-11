@@ -1,7 +1,7 @@
 extends Node2D
-class_name Power_Producer_Component
+class_name PowerProducerComponent
 
-@export var interactable : Interactable_Component
+@export var interactable : InteractableComponent
 @export var power : int 
 var original_speed
 

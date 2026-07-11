@@ -1,6 +1,48 @@
 [gd_scene format=3 uid="uid://btx6kly08w6cy"]
 
 [ext_resource type="Script" uid="uid://buaeqgxqanom6" path="res://scenes/hamster/hamster.gd" id="1_v5iii"]
+[ext_resource type="PackedScene" uid="uid://bcpnd464yrb0f" path="res://components/shared/draggable_component.tscn" id="3_chdbw"]
+[ext_resource type="Texture2D" uid="uid://dm3x5xqx253le" path="res://assets/hamster/Hamster Idle.png" id="3_m4iqr"]
 
-[node name="hamster" type="Node2D" unique_id=1966105851]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rrcj"]
+atlas = ExtResource("3_m4iqr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohn85"]
+atlas = ExtResource("3_m4iqr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgf6b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rrcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohn85")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgf6b"]
+size = Vector2(30, 27)
+
+[node name="hamster" type="Node2D" unique_id=1966105851 node_paths=PackedStringArray("draggable_component")]
+z_index = 2
 script = ExtResource("1_v5iii")
+draggable_component = NodePath("draggable_component")
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=249628052]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_vgf6b")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1017471038]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1166545414]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_vgf6b")
+
+[node name="draggable_component" parent="." unique_id=1960665793 node_paths=PackedStringArray("area") instance=ExtResource("3_chdbw")]
+area = NodePath("../Area2D")

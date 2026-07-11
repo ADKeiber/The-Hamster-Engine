@@ -5,11 +5,13 @@
 [ext_resource type="Script" uid="uid://p1f8lag1yycy" path="res://components/shared/placeable_component.gd" id="3_c8lyt"]
 [ext_resource type="Script" uid="uid://q282vhoc3uiv" path="res://components/building/footprint_component.gd" id="4_8d4ti"]
 [ext_resource type="Resource" uid="uid://d11u7m26j04lv" path="res://resources/building/footprint/2x2.tres" id="5_7srmo"]
+[ext_resource type="PackedScene" uid="uid://babhijhxpgqs5" path="res://components/shared/interactable_component.tscn" id="6_g0vdu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujpuf"]
 size = Vector2(32, 32)
 
 [node name="Tester" type="Node2D" unique_id=590711385]
+z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=715687749]
 scale = Vector2(0.25, 0.25)
@@ -36,3 +38,6 @@ metadata/_custom_type_script = "uid://p1f8lag1yycy"
 script = ExtResource("4_8d4ti")
 footprint = ExtResource("5_7srmo")
 metadata/_custom_type_script = "uid://q282vhoc3uiv"
+
+[node name="InteractableComponent" parent="." unique_id=1346976423 node_paths=PackedStringArray("area") instance=ExtResource("6_g0vdu")]
+area = NodePath("../Area2D")
