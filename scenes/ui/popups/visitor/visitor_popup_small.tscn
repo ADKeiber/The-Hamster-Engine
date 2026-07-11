@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cpjuye6722rab"]
+
+[ext_resource type="Script" uid="uid://dc08k4u1vpfst" path="res://scenes/ui/popups/visitor/visitor_popup_small.gd" id="1_j3xdv"]
+[ext_resource type="Texture2D" uid="uid://ctdrluqjqy2eq" path="res://assets/art/misc/speech_box3.png" id="1_o41hu"]
+[ext_resource type="Texture2D" uid="uid://d0vda0n55cwch" path="res://assets/art/misc/speech_box_entry_small.png" id="2_o41hu"]
+[ext_resource type="Texture2D" uid="uid://0tvdgt1hc3c7" path="res://assets/art/character/scientist.png" id="3_gypt1"]
+
+[node name="VisitorPopupSmall" type="Node2D" unique_id=1157858556]
+script = ExtResource("1_j3xdv")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=779798237]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -15.0
+offset_right = 27.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_o41hu")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="PopupContents" type="MarginContainer" parent="NinePatchRect" unique_id=2042704379]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.739
+anchor_top = 1.0
+anchor_right = 0.739
+anchor_bottom = 1.0
+offset_left = -40.645
+offset_top = -30.0
+offset_right = 14.355
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/PopupContents" unique_id=1179623392]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 2
+
+[node name="TimeLeftLabel" type="Label" parent="NinePatchRect/PopupContents/VBoxContainer" unique_id=1652043503]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.24000001, 0.24000001, 1)
+theme_override_font_sizes/font_size = 4
+text = "1:00 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BlankTextLabel" type="RichTextLabel" parent="NinePatchRect/PopupContents/VBoxContainer" unique_id=1325978856]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 4
+theme_override_font_sizes/bold_font_size = 4
+theme_override_font_sizes/bold_italics_font_size = 4
+theme_override_font_sizes/italics_font_size = 4
+theme_override_font_sizes/mono_font_size = 4
+bbcode_enabled = true
+text = "3/5"
+fit_content = true
+autowrap_trim_flags = 128
+horizontal_alignment = 1
+
+[node name="VisitorNameLabel" type="RichTextLabel" parent="NinePatchRect/PopupContents/VBoxContainer" unique_id=624233605]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 4
+theme_override_font_sizes/bold_font_size = 4
+theme_override_font_sizes/bold_italics_font_size = 4
+theme_override_font_sizes/italics_font_size = 4
+theme_override_font_sizes/mono_font_size = 4
+text = "All Purpose Merchant"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1256711912]
+anchors_preset = -1
+anchor_left = 0.76400006
+anchor_top = 1.491
+anchor_right = 0.76400006
+anchor_bottom = 1.491
+offset_left = 6.0
+offset_top = 14.0
+offset_right = 24.0
+offset_bottom = 32.0
+texture = ExtResource("2_o41hu")
+expand_mode = 2
+stretch_mode = 2
+flip_h = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1332452308]
+visible = false
+position = Vector2(42, 61)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_gypt1")
