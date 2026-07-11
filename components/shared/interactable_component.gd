@@ -14,18 +14,16 @@ func _ready() -> void:
 	area.area_entered.connect(area_entered)
 	area.area_exited.connect(area_exited)
 
-	
+	#get hovered hamsters info
 func area_entered(hamster_area : Area2D) -> void:
 	if occupied == false:
 		hamster = hamster_area.get_parent()
 		if hamster.draggable_component.drag_ended.is_connected(reparent_hamster):
 			hamster.draggable_component.drag_ended.disconnect(reparent_hamster)
 		hamster.draggable_component.drag_ended.connect(reparent_hamster)
-		
 	if area.area_exited.is_connected(area_exited):
 		area.area_exited.disconnect(area_exited)
 	area.area_exited.connect(area_exited)
-	#else: hamster.draggable_component.failed_to_drop()
 
 func area_exited(hamster_area : Area2D) -> void:
 	if hamster_area.get_parent() is Hamster:
@@ -34,26 +32,25 @@ func area_exited(hamster_area : Area2D) -> void:
 
 
 
-
+#reaparent hamster
 func reparent_hamster() -> void:
 	hamster.reparent(self)
-	hamster.invisible()
+	hamster.animation_component.invisible()
 	hamster.global_position = self.global_position
 	on.emit()
 	occupied = true
-	#get_parent().building_resource.interact(hamster)
+	#get_parent().building_resource.interact(hamster) For future building trigger use 
 	if locked_in == false:
 		if hamster.draggable_component.drag_started.is_connected(power_off):
 			hamster.draggable_component.drag_started.disconnect(power_off)
 		hamster.draggable_component.drag_started.connect(power_off)
-	elif locked_in == true:
+	elif locked_in == true: # lockes hamster into machine
 		hamster.draggable_component.draggable = false
 	
 
-func power_off() -> void:
+func power_off() -> void: #when hamster is removed
 	off.emit()
-	hamster.visible()
+	hamster.animation_component.visible()
 	occupied = false
 	if area.area_exited.is_connected(area_exited):
 		area.area_exited.disconnect(area_exited)
-		

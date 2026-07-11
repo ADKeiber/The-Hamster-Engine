@@ -25,3 +25,9 @@ func update_animation(newState: AnimationState) -> void:
 
 func set_sprite_frames(frames: SpriteFrames) -> void:
 	animation.set_sprite_frames(frames)
+
+func invisible() -> void:
+	animation.self_modulate.a = 0
+
+func visible() -> void:
+	animation.self_modulate.a = 1
