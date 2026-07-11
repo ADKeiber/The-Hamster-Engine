@@ -1,6 +1,8 @@
 class_name PlaceableComponent
 extends Node2D
 
+signal sig_placed
+
 @export var area : Area2D
 @export var draggable: DraggableComponent #Placeables required a draggable component... For now... If we decide to have it click to place this won't be needed
 @export var footprint: FootprintComponent #Required to know how big something that is placeable is
@@ -27,6 +29,7 @@ func _on_drag_ended() -> void:
 	if valid_placement:
 		placed = true
 		draggable.draggable = false
+		sig_placed.emit()
 	else:
 		placed = false
 		draggable.failed_to_drop()

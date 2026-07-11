@@ -1,11 +1,24 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
+@export var interactable : InteractableComponent
+@export var placeable : PlaceableComponent
+@export var power : int 
+var original_speed
+@export var min_power_increase = 0
+@export var on_min_power_increase = 0
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	interactable.on.connect(on_conusumption)
+	interactable.off.connect(base_consumption)
+	placeable.sig_placed.connect(placed)
+	
+func placed() -> void:
+	Global.min_power += min_power_increase
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func base_consumption() -> void:
+	Global.min_power -= on_min_power_increase
+	
+func on_conusumption() -> void:
+	Global.min_power += on_min_power_increase
