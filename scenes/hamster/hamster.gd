@@ -3,7 +3,6 @@ class_name Hamster extends Node2D
 const BURN_CONDITION = preload("uid://gcxqiowkjugl")
 const MAGICALLY_ENHANCED_CONDITION = preload("uid://bt1lfv6w8tuxw")
 const REST_CONDITION = preload("uid://cbfcjl0pgym4l")
-@export var stats: HamsterStatsResource
 
 @onready var draggable_component: DraggableComponent = $DraggableComponent
 @onready var audio_component: AudioComponent = $AudioComponent
@@ -14,7 +13,7 @@ const REST_CONDITION = preload("uid://cbfcjl0pgym4l")
 @onready var hamster_type_component: HamsterTypeComponent = $HamsterTypeComponent
 @onready var stamina_component: StaminaComponent = $StaminaComponent
 @onready var condition_component: ConditionComponent = $ConditionComponent
-
+@onready var stats: HamsterStatsResource
 
 @onready var timer: Timer = $Timer
 @onready var health_bar: ProgressBar = %HealthBar
@@ -26,7 +25,7 @@ func _ready() -> void:
 	connect_stats()
 
 func connect_stats() -> void:
-	var stats: HamsterStatsResource = hamster_stats_component.get_stats()
+	stats = hamster_stats_component.get_stats()
 	#connect stat information to other components
 	traits_component.stats_component = hamster_stats_component
 	hamster_type_component.stats_component = hamster_stats_component

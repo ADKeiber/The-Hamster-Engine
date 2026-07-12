@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b1mw55yoxyetf"]
+
+[ext_resource type="Script" uid="uid://b3os4c0mgu755" path="res://components/hamster/character_component.gd" id="1_jjgl2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dc8p"]
+
+[node name="CharacterComponent" type="CharacterBody2D" unique_id=58035509]
+script = ExtResource("1_jjgl2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=604232579]
+shape = SubResource("RectangleShape2D_6dc8p")
