@@ -36,23 +36,15 @@ func _on_area_input_event(_viewport, event, _shape_idx):
 			drag_started.emit(self)
 			drag_offset = global_position - get_global_mouse_position()
 		else:
-			dragging = false
-			drag_ended.emit(self)
-			hamster_check()
+			if draggable == true:
+				dragging = false
+				drag_ended.emit(self)
+			if draggable == false:
+				return
+
 
 #returns to pickup position.. Procs if hamster either "fails to be placed" or "fails to interact" something along those lines
 func failed_to_drop() -> void:
 	if snap_back_on_fail:
 		get_parent().global_position = start_drag_location
 	draggable = true
-
-func hamster_check() -> void:
-	var hamster = get_parent()
-	if hamster is Hamster:
-		var ovelapped = area.get_overlapping_areas()
-		if area.get_overlapping_areas().is_empty():
-			failed_to_drop()
-		for areas in ovelapped:
-			if not area.is_in_group("Building"):
-				failed_to_drop()
-	else: return
