@@ -13,15 +13,19 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Tester2" parent="." unique_id=590711385 instance=ExtResource("2_iuonh")]
+position = Vector2(397, 310)
+
+[node name="Tester" parent="." unique_id=1258192808 instance=ExtResource("2_iuonh")]
+position = Vector2(264, 313)
+
 [node name="BuildingsArea" parent="." unique_id=1218242002 instance=ExtResource("1_hyk8p")]
 
-[node name="Tester" parent="." unique_id=590711385 instance=ExtResource("2_iuonh")]
-modulate = Color(1, 1, 1, 0.19607843)
-position = Vector2(241, 330)
-
-[node name="Tester2" parent="." unique_id=410737479 instance=ExtResource("2_iuonh")]
-modulate = Color(1, 1, 1, 0.19607843)
-position = Vector2(404, 329)
-
 [node name="Hamster" parent="." unique_id=641634076 instance=ExtResource("3_k2fmo")]
-position = Vector2(321, 331)
+position = Vector2(448, 305)
+
+[node name="Hamster2" parent="." unique_id=2062278838 instance=ExtResource("3_k2fmo")]
+position = Vector2(336, 311)
+
+[node name="Hamster3" parent="." unique_id=1661663384 instance=ExtResource("3_k2fmo")]
+position = Vector2(185, 302)

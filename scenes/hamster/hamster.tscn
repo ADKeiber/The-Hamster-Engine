@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://buaeqgxqanom6" path="res://scenes/hamster/hamster.gd" id="1_chdbw"]
 [ext_resource type="Script" uid="uid://dpm8u5v46n4p3" path="res://components/shared/draggable_component.gd" id="2_m4iqr"]
 [ext_resource type="Texture2D" uid="uid://cvpclrmsx6w4b" path="res://assets/art/hamster/Hamster Still.png" id="2_ohn85"]
+[ext_resource type="PackedScene" uid="uid://br6p6kl4dtu26" path="res://components/hamster/interactor_component.tscn" id="4_66ruk"]
 [ext_resource type="PackedScene" uid="uid://ct0lo8c3wu4ci" path="res://components/hamster/hamster_stats_component.tscn" id="4_m4iqr"]
 [ext_resource type="PackedScene" uid="uid://cglmlr28may8t" path="res://components/hamster/traits_component.tscn" id="5_vus7h"]
 [ext_resource type="PackedScene" uid="uid://or2ykmqvyvd7" path="res://components/hamster/hamster_type_component.tscn" id="6_3efsa"]
@@ -22,6 +23,7 @@ bg_color = Color(0.6, 0.8980392, 0.6, 1)
 size = Vector2(29, 26)
 
 [node name="Hamster" type="Node2D" unique_id=641634076]
+z_index = 1
 script = ExtResource("1_chdbw")
 
 [node name="StaminaBar" type="ProgressBar" parent="." unique_id=1815293619]
@@ -57,7 +59,13 @@ texture = ExtResource("2_ohn85")
 [node name="DraggableComponent" type="Node2D" parent="." unique_id=2080222477 node_paths=PackedStringArray("area")]
 script = ExtResource("2_m4iqr")
 area = NodePath("../Area2D")
+required_area_to_drop = true
 metadata/_custom_type_script = "uid://dpm8u5v46n4p3"
+
+[node name="InteracterComponent" parent="." unique_id=52338702 node_paths=PackedStringArray("area", "draggable", "animation") instance=ExtResource("4_66ruk")]
+area = NodePath("../Area2D")
+draggable = NodePath("../DraggableComponent")
+animation = NodePath("../AnimationComponent")
 
 [node name="AudioComponent" parent="." unique_id=1834874586 instance=ExtResource("10_g7kcv")]
 

@@ -21,13 +21,14 @@ buses/default_bus_layout="uid://bglpd37hppvw4"
 
 [autoload]
 
-GScript="*uid://bcptskl43tu3w"
+Power="*uid://41cd6kvj28l5"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
 window/size/initial_position_type=0
+window/size/always_on_top=true
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
@@ -53,6 +54,7 @@ Wheel=""
 ModuleSelectorPopup=""
 MachineModule=""
 GridManager=""
+Building=""
 
 [gui]
 

@@ -1,6 +1,8 @@
 class_name PlaceableComponent
 extends Node2D
 
+signal sig_placed
+
 @export var area : Area2D
 @export var draggable: DraggableComponent #Placeables required a draggable component... For now... If we decide to have it click to place this won't be needed
 @export var footprint: FootprintComponent #Required to know how big something that is placeable is
@@ -15,18 +17,19 @@ func _ready() -> void:
 	draggable.drag_updated.connect(_on_drag_updated)
 	draggable.drag_ended.connect(_on_drag_ended)
 
-func _on_drag_started() -> void:
+func _on_drag_started(draggable_component:DraggableComponent) -> void:
 	grid.register(self)
 
-func _on_drag_updated() -> void:
+func _on_drag_updated(draggable_component:DraggableComponent) -> void:
 	if not placed:
 		grid.update_hover(get_global_mouse_position())
 
-func _on_drag_ended() -> void:
+func _on_drag_ended(draggable_component:DraggableComponent) -> void:
 	var valid_placement = grid.is_valid_placement()
 	if valid_placement:
 		placed = true
 		draggable.draggable = false
+		sig_placed.emit()
 	else:
 		placed = false
 		draggable.failed_to_drop()
