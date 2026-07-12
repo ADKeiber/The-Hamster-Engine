@@ -54,6 +54,7 @@ Wheel=""
 ModuleSelectorPopup=""
 MachineModule=""
 GridManager=""
+Building=""
 
 [gui]
 

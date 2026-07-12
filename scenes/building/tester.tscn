@@ -10,16 +10,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujpuf"]
 size = Vector2(32, 32)
 
-[node name="Tester" type="Node2D" unique_id=590711385]
+[node name="Tester" type="Node2D" unique_id=590711385 groups=["Building"]]
 z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=715687749]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_wnlt6")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1138214125]
+[node name="Area2D" type="Area2D" parent="." unique_id=1138214125 groups=["Building"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2125849773]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2125849773 groups=["Building"]]
 shape = SubResource("RectangleShape2D_ujpuf")
 
 [node name="DraggableComponent" type="Node2D" parent="." unique_id=232874698 node_paths=PackedStringArray("area")]

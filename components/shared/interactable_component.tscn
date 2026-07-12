@@ -4,5 +4,3 @@
 
 [node name="InteractableComponent" type="Node2D" unique_id=1346976423]
 script = ExtResource("1_dd2c4")
-
-[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
