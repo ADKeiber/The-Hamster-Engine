@@ -41,3 +41,4 @@ metadata/_custom_type_script = "uid://q282vhoc3uiv"
 
 [node name="InteractableComponent" parent="." unique_id=1346976423 node_paths=PackedStringArray("area") instance=ExtResource("6_g0vdu")]
 area = NodePath("../Area2D")
+locked_in = null

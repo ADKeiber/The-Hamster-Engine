@@ -21,7 +21,7 @@ buses/default_bus_layout="uid://bglpd37hppvw4"
 
 [autoload]
 
-Global="*uid://41cd6kvj28l5"
+Power="*uid://41cd6kvj28l5"
 
 [display]
 

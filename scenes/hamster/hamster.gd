@@ -15,6 +15,7 @@ const REST_CONDITION = preload("uid://cbfcjl0pgym4l")
 @onready var stamina_component: StaminaComponent = $StaminaComponent
 @onready var condition_component: ConditionComponent = $ConditionComponent
 
+
 @onready var timer: Timer = $Timer
 @onready var health_bar: ProgressBar = %HealthBar
 @onready var stamina_bar: ProgressBar = %StaminaBar
