@@ -8,9 +8,9 @@ var start_pos
 var end_pos
 
 func _ready() -> void:
-	var rect = collision_shape.shape.get_rect()
-	start_pos = collision_shape.global_position - collision_shape.position
-	end_pos = rect.end + collision_shape.global_position
+	var half : Vector2 = collision_shape.shape.extents
+	start_pos = collision_shape.global_position - half
+	end_pos = collision_shape.global_position + half
 	print(start_pos, end_pos)
 	
 
