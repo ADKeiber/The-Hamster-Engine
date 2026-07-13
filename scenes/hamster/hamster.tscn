@@ -64,10 +64,11 @@ area = NodePath("../Area2D")
 required_area_to_drop = true
 metadata/_custom_type_script = "uid://dpm8u5v46n4p3"
 
-[node name="InteractorComponent" parent="." unique_id=52338702 node_paths=PackedStringArray("area", "draggable", "animation") instance=ExtResource("4_66ruk")]
+[node name="InteractorComponent" parent="." unique_id=52338702 node_paths=PackedStringArray("area", "draggable", "animation", "character") instance=ExtResource("4_66ruk")]
 area = NodePath("../Area2D")
 draggable = NodePath("../DraggableComponent")
 animation = NodePath("../AnimationComponent")
+character = NodePath("../CharacterComponent")
 
 [node name="AudioComponent" parent="." unique_id=1834874586 instance=ExtResource("10_g7kcv")]
 
@@ -97,10 +98,12 @@ metadata/_custom_type_script = "uid://xer7y5t1d1x8"
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="CharacterComponent" parent="." unique_id=58035509 node_paths=PackedStringArray("interactor", "hamster") instance=ExtResource("14_5civw")]
+[node name="CharacterComponent" parent="." unique_id=58035509 node_paths=PackedStringArray("interactor", "hamster", "draggable") instance=ExtResource("14_5civw")]
 motion_mode = 1
+platform_on_leave = 2
 interactor = NodePath("../InteractorComponent")
 hamster = NodePath("..")
+draggable = NodePath("../DraggableComponent")
 
 [node name="Timer" type="Timer" parent="." unique_id=2115075215]
 autostart = true

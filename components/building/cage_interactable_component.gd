@@ -9,8 +9,9 @@ var end_pos
 
 func _ready() -> void:
 	var rect = collision_shape.shape.get_rect()
-	start_pos = collision_shape.global_position
+	start_pos = collision_shape.global_position - collision_shape.position
 	end_pos = rect.end + collision_shape.global_position
+	print(start_pos, end_pos)
 	
 
 func _on_child_entered_tree(node: Node) -> void:

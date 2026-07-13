@@ -4,12 +4,16 @@ class_name InteractorComponent
 @export var area : Area2D
 @export var draggable : DraggableComponent
 @export var animation : AnimationComponent
+@export var character : CharacterComponent
 @onready var hamster : Hamster = self.get_parent()
 var interactable : InteractableComponent
+var cage : CageInteractableComponent
+
 
 func _ready() -> void:
 	draggable.drag_ended.connect(check_building)
 	draggable.drag_started.connect(picked_up)
+	cage = get_node("/root/Main/Cage/InteractableComponent")
 
 
 func check_building(draggable : DraggableComponent) -> void:
@@ -23,11 +27,12 @@ func check_building(draggable : DraggableComponent) -> void:
 				if temp < size:
 					size = temp
 					building = b_areas
-	if building != null:
+	if building != null and building.get_parent().interactable_component is InteractableComponent:
 		interactable = building.get_parent().interactable_component
 		reparent_hamster(interactable)
-	if building == null and hamster.get_parent() is InteractableComponent:
+	elif building == null and hamster.get_parent() is InteractableComponent:
 		reparent_hamster(hamster.get_parent())
+	else: reparent_hamster(cage)
 
 
 func reparent_hamster(interactable) -> void:
@@ -36,9 +41,14 @@ func reparent_hamster(interactable) -> void:
 		animation.invisible()
 		hamster.global_position = interactable.global_position
 		interactable.entered()
+		character.velocity = Vector2.ZERO
 	elif interactable.is_in_group("Cage"):
-		hamster.reparent(interactable)
-		hamster.global_position = Vector2(randf_range(interactable.start_pos.x, interactable.end_pos.x), randf_range(interactable.start_pos.y, interactable.end_pos.y))
+		hamster.reparent(cage)
+		hamster.global_position = Vector2(
+			randf_range(cage.start_pos.x, cage.end_pos.x),
+		 randf_range(cage.start_pos.y, cage.end_pos.y))
+		interactable.entered()
+		character.velocity = Vector2.ZERO
 
 func merge_rect2(h_area : Area2D, building_area) -> Vector2:
 	var h_shape = h_area.get_node("CollisionShape2D")
