@@ -55,6 +55,7 @@ ModuleSelectorPopup=""
 MachineModule=""
 GridManager=""
 Building=""
+Cage=""
 
 [gui]
 

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bqjuwnvj2wu5g"]
+
+[ext_resource type="Script" uid="uid://be0iiky8lt3ee" path="res://scenes/building/cage.gd" id="1_iqsty"]
+[ext_resource type="PackedScene" uid="uid://babhijhxpgqs5" path="res://components/shared/interactable_component.tscn" id="1_uruuv"]
+[ext_resource type="Script" uid="uid://dnxh6ppbcf7fn" path="res://components/building/cage_interactable_component.gd" id="3_10k36"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgf6b"]
+size = Vector2(302, 86)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vgf6b"]
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lw7gp"]
+a = Vector2(0, -12)
+b = Vector2(1, 98)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_10k36"]
+a = Vector2(2, -10)
+b = Vector2(2, 102)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gvfbu"]
+a = Vector2(-309, 94)
+b = Vector2(15, 94)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gtkua"]
+a = Vector2(2, -1)
+b = Vector2(327, -1)
+
+[node name="Cage" type="Node2D" unique_id=480036686 node_paths=PackedStringArray("interactable_component") groups=["Building", "Cage"]]
+z_index = 1
+script = ExtResource("1_iqsty")
+interactable_component = NodePath("InteractableComponent")
+
+[node name="InteractableComponent" parent="." unique_id=1346976423 node_paths=PackedStringArray("cage_area", "collision_shape", "area") groups=["Cage"] instance=ExtResource("1_uruuv")]
+position = Vector2(137, 46)
+script = ExtResource("3_10k36")
+cage_area = NodePath("../Area2D")
+collision_shape = NodePath("../Area2D/CollisionShape2D")
+area = NodePath("../Area2D")
+
+[node name="Panel" type="Panel" parent="." unique_id=2085531294]
+offset_right = 311.0
+offset_bottom = 95.0
+mouse_filter = 2
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1517224970 groups=["Building", "Cage"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2000394842 groups=["Building", "Cage"]]
+position = Vector2(155, 47)
+shape = SubResource("RectangleShape2D_vgf6b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1187513150]
+physics_material_override = SubResource("PhysicsMaterial_vgf6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=945665937]
+position = Vector2(-8, 3)
+shape = SubResource("SegmentShape2D_lw7gp")
+one_way_collision_direction = Vector2(0.7744057, 0.6326894)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=334895173]
+position = Vector2(314, 2)
+shape = SubResource("SegmentShape2D_10k36")
+one_way_collision_direction = Vector2(0.7744057, 0.6326894)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1552312986]
+position = Vector2(301, 7)
+shape = SubResource("SegmentShape2D_gvfbu")
+one_way_collision_direction = Vector2(0.7744057, 0.6326894)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=511175648]
+position = Vector2(-9, -7)
+shape = SubResource("SegmentShape2D_gtkua")
+one_way_collision_direction = Vector2(0.7744057, 0.6326894)

@@ -9,6 +9,7 @@ signal drag_ended(draggable_component: DraggableComponent)
 @export var snap_back_on_fail: bool = true #If stopping drag doesn't "succeed" then it will snap back if == true
 @export var required_area_to_drop: bool = false
 
+
 #var area: Area2D
 var dragging := false
 var drag_offset := Vector2.ZERO
@@ -35,10 +36,16 @@ func _on_area_input_event(_viewport, event, _shape_idx):
 			get_parent().global_position = get_global_mouse_position()
 			drag_started.emit(self)
 			drag_offset = global_position - get_global_mouse_position()
+			get_parent().scale = Vector2(1.5, 1.5)
+			get_parent().set_z_index(15)
+			get_viewport().set_input_as_handled()
 		else:
 			if draggable == true:
 				dragging = false
 				drag_ended.emit(self)
+				get_parent().scale = Vector2(1, 1)
+				get_parent().set_z_index(1)
+
 			if draggable == false:
 				return
 

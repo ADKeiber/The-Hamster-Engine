@@ -3,7 +3,6 @@ extends Node2D
 
 @export var interactable : InteractableComponent
 @export var placeable : PlaceableComponent
-@export var power : int 
 var original_speed
 @export var min_power_increase = 0
 @export var on_min_power_increase = 0
@@ -15,10 +14,10 @@ func _ready() -> void:
 	placeable.sig_placed.connect(placed)
 	
 func placed() -> void:
-	Global.min_power += min_power_increase
+	Power.min_power += min_power_increase
 
 func base_consumption() -> void:
-	Global.min_power -= on_min_power_increase
+	Power.min_power -= on_min_power_increase
 	
 func on_conusumption() -> void:
-	Global.min_power += on_min_power_increase
+	Power.min_power += on_min_power_increase
