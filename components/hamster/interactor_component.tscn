@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://br6p6kl4dtu26"]
+
+[ext_resource type="Script" uid="uid://bjv0rmv7um77t" path="res://components/hamster/interactor_component.gd" id="1_nio7r"]
+
+[node name="InteractorComponent" type="Node2D" unique_id=52338702]
+script = ExtResource("1_nio7r")
