@@ -35,6 +35,39 @@ position = Vector2(335, 212)
 [node name="Hamster3" parent="." unique_id=1661663384 instance=ExtResource("3_k2fmo")]
 position = Vector2(181, 238)
 
+[node name="Hamster4" parent="." unique_id=1701552658 instance=ExtResource("3_k2fmo")]
+position = Vector2(181, 238)
+
+[node name="Hamster5" parent="." unique_id=920795092 instance=ExtResource("3_k2fmo")]
+position = Vector2(181, 238)
+
+[node name="Hamster6" parent="." unique_id=2143022244 instance=ExtResource("3_k2fmo")]
+position = Vector2(181, 238)
+
+[node name="Hamster7" parent="." unique_id=2045650752 instance=ExtResource("3_k2fmo")]
+position = Vector2(181, 238)
+
+[node name="Hamster8" parent="." unique_id=1863986506 instance=ExtResource("3_k2fmo")]
+position = Vector2(181, 238)
+
+[node name="Hamster9" parent="." unique_id=1605372458 instance=ExtResource("3_k2fmo")]
+position = Vector2(181, 238)
+
+[node name="Hamster10" parent="." unique_id=381426035 instance=ExtResource("3_k2fmo")]
+position = Vector2(181, 238)
+
+[node name="Hamster11" parent="." unique_id=856052941 instance=ExtResource("3_k2fmo")]
+position = Vector2(181, 238)
+
+[node name="Hamster12" parent="." unique_id=628057384 instance=ExtResource("3_k2fmo")]
+position = Vector2(181, 238)
+
+[node name="Hamster13" parent="." unique_id=1413935327 instance=ExtResource("3_k2fmo")]
+position = Vector2(181, 238)
+
+[node name="Hamster14" parent="." unique_id=7327373 instance=ExtResource("3_k2fmo")]
+position = Vector2(181, 238)
+
 [node name="Control" type="Control" parent="." unique_id=1915303001 node_paths=PackedStringArray("produced", "min", "total")]
 anchors_preset = 0
 offset_left = 66.0

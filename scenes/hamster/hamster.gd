@@ -1,5 +1,5 @@
-class_name Hamster extends Node2D
-
+extends CharacterBody2D
+class_name Hamster 
 const BURN_CONDITION = preload("uid://gcxqiowkjugl")
 const MAGICALLY_ENHANCED_CONDITION = preload("uid://bt1lfv6w8tuxw")
 const REST_CONDITION = preload("uid://cbfcjl0pgym4l")
@@ -53,3 +53,73 @@ func update_stamina_bar(current: int, max: int) -> void:
 func activate_traits_and_type() -> void:
 	traits_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, {}))
 	hamster_type_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, {}))
+
+
+
+@onready var interactor : InteractorComponent = $InteractorComponent
+var target_pos : Vector2
+var move : bool = false
+const MAX_SPEED = 0.1
+const SPEED = 0.1
+const ARRIVAL_DISTANCE = 1
+enum State {IDLE, WANDER, DRAGGED}
+var current_state : State = State.DRAGGED
+var timer_start = false
+
+
+
+func _physics_process(delta: float) -> void:
+	if interactor.interactable is CageInteractableComponent:
+		
+		if draggable_component.dragging == true:
+			current_state = State.DRAGGED
+
+			
+		match current_state:
+			State.DRAGGED:
+				$CharacterCollision.disabled = true
+				if draggable_component.dragging == false:
+					current_state = State.IDLE
+				timer_start = false
+				return
+			
+			State.IDLE:
+				if timer_start == true:
+					return
+				pick_new_target()
+				timer_start = true
+			
+			State.WANDER:
+				$CharacterCollision.disabled = false
+				move_toward_target(delta)
+
+
+
+
+func pick_new_target() -> void:
+	$Timer.start(randf_range(1, 3))
+	await $Timer.timeout
+	if current_state == State.IDLE:
+		var cage = interactor.interactable
+		target_pos = Vector2(
+					randf_range(cage.start_pos.x, cage.end_pos.x), 
+					randf_range(cage.start_pos.y, cage.end_pos.y))
+		print(target_pos)
+		timer_start = false
+		current_state = State.WANDER
+
+func move_toward_target(delta) -> void:
+	if global_position.distance_to(target_pos) < ARRIVAL_DISTANCE:
+		current_state = State.IDLE
+		print("Target reached!")
+		velocity = Vector2.ZERO
+		return
+
+	var direction = global_position.direction_to(target_pos)
+	var target_velocity = direction * MAX_SPEED
+	
+	velocity = velocity.move_toward(target_velocity, delta * SPEED)
+	
+	var collision = move_and_collide(velocity)
+	if collision:
+		current_state = State.IDLE

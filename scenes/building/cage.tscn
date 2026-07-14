@@ -32,9 +32,10 @@ z_index = 1
 script = ExtResource("1_iqsty")
 interactable_component = NodePath("InteractableComponent")
 
-[node name="InteractableComponent" parent="." unique_id=1346976423 node_paths=PackedStringArray("collision_shape", "area") groups=["Cage"] instance=ExtResource("1_uruuv")]
+[node name="InteractableComponent" parent="." unique_id=1346976423 node_paths=PackedStringArray("cage_area", "collision_shape", "area") groups=["Cage"] instance=ExtResource("1_uruuv")]
 position = Vector2(137, 46)
 script = ExtResource("3_10k36")
+cage_area = NodePath("../Area2D")
 collision_shape = NodePath("../Area2D/CollisionShape2D")
 area = NodePath("../Area2D")
 

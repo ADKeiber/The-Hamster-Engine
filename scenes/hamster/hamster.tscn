@@ -13,7 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://1m0vcg7kn2br" path="res://components/hamster/stamina_component.tscn" id="8_7g52f"]
 [ext_resource type="PackedScene" uid="uid://bvggptlbuc5x8" path="res://components/shared/audio_component.tscn" id="10_g7kcv"]
 [ext_resource type="Script" uid="uid://xer7y5t1d1x8" path="res://components/hamster/condition_component.gd" id="11_m0doy"]
-[ext_resource type="PackedScene" uid="uid://b1mw55yoxyetf" path="res://components/hamster/character_component.tscn" id="14_5civw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5civw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7g52f"]
 bg_color = Color(0.6, 0.6, 0.8901961, 1)
@@ -24,9 +25,16 @@ bg_color = Color(0.6, 0.8980392, 0.6, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(29, 26)
 
-[node name="Hamster" type="Node2D" unique_id=641634076]
+[node name="Hamster" type="CharacterBody2D" unique_id=1701552658]
+light_mask = 2
+visibility_layer = 2
 z_index = 1
 script = ExtResource("1_chdbw")
+metadata/_custom_type_script = "uid://b3os4c0mgu755"
+
+[node name="CharacterCollision" type="CollisionShape2D" parent="." unique_id=624377826]
+z_index = 1
+shape = SubResource("CircleShape2D_5civw")
 
 [node name="StaminaBar" type="ProgressBar" parent="." unique_id=1815293619]
 unique_name_in_owner = true
@@ -64,11 +72,10 @@ area = NodePath("../Area2D")
 required_area_to_drop = true
 metadata/_custom_type_script = "uid://dpm8u5v46n4p3"
 
-[node name="InteractorComponent" parent="." unique_id=52338702 node_paths=PackedStringArray("area", "draggable", "animation", "character") instance=ExtResource("4_66ruk")]
+[node name="InteractorComponent" parent="." unique_id=52338702 node_paths=PackedStringArray("area", "draggable", "animation") instance=ExtResource("4_66ruk")]
 area = NodePath("../Area2D")
 draggable = NodePath("../DraggableComponent")
 animation = NodePath("../AnimationComponent")
-character = NodePath("../CharacterComponent")
 
 [node name="AudioComponent" parent="." unique_id=1834874586 instance=ExtResource("10_g7kcv")]
 
@@ -95,15 +102,9 @@ metadata/_custom_type_script = "uid://xer7y5t1d1x8"
 [node name="Area2D" type="Area2D" parent="." unique_id=1406993452]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=987090444]
+visibility_layer = 4
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="CharacterComponent" parent="." unique_id=58035509 node_paths=PackedStringArray("interactor", "hamster", "draggable") instance=ExtResource("14_5civw")]
-motion_mode = 1
-platform_on_leave = 2
-interactor = NodePath("../InteractorComponent")
-hamster = NodePath("..")
-draggable = NodePath("../DraggableComponent")
-
 [node name="Timer" type="Timer" parent="." unique_id=2115075215]
-autostart = true
+one_shot = true
