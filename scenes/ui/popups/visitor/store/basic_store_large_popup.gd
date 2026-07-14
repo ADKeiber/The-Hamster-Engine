@@ -35,4 +35,3 @@ func get_random_items(amt: int, type: StoreVisitor.ItemTypes) -> Array[Node2D]:
 			for i in range(amt):
 				var index:int = randi_range(0, visitor.possible_modules.size() - 1)
 	return items
-	
