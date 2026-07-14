@@ -51,7 +51,6 @@ fill_mode = 3
 show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2106127544]
-visible = false
 texture = ExtResource("2_ohn85")
 
 [node name="DraggableComponent" type="Node2D" parent="." unique_id=2080222477 node_paths=PackedStringArray("area")]

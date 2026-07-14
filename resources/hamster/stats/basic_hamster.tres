@@ -21,6 +21,7 @@ max_traits = 3
 traits = Array[ExtResource("4_m7v6t")]([ExtResource("5_ftrnc")])
 hamster_type = ExtResource("2_uuwt2")
 audio_library = ExtResource("1_5rq4d")
+cost_to_buy = 100
 sprite_frames = ExtResource("2_axxgo")
 basic_sprite = ExtResource("1_0xv07")
 metadata/_custom_type_script = "uid://c86xdmpekf7nk"

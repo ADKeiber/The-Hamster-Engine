@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c0nbyexsiw7jv"]
+
+[ext_resource type="Script" uid="uid://c7722f2lobelw" path="res://scenes/ui/popups/visitor/store_slot.gd" id="1_glfpd"]
+[ext_resource type="PackedScene" uid="uid://qub7e5f8xsa7" path="res://scenes/ui/menus/Badge.tscn" id="2_c6b0h"]
+
+[node name="StoreSlot" type="PanelContainer" unique_id=29628779]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -608.0
+offset_bottom = -328.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_glfpd")
+
+[node name="Wrapper" type="Control" parent="." unique_id=525447862]
+layout_mode = 2
+
+[node name="Badge" parent="Wrapper" unique_id=814261269 instance=ExtResource("2_c6b0h")]
+custom_minimum_size = Vector2(5, 5)
+clip_contents = true
+layout_mode = 1

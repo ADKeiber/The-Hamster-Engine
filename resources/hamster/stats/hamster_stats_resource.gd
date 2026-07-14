@@ -20,7 +20,7 @@ extends Resource
 @export var hamster_type: HamsterTypeResource
 @export var audio_library: AudioLibraryResource
 @export var condition: Condition
-
+@export var cost_to_buy: int
 @export_group("Assets")
 @export var sprite_frames: SpriteFrames
 @export var basic_sprite: CompressedTexture2D

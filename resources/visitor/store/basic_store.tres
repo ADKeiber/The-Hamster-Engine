@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="StoreVisitor" format=3 uid="uid://d2xunjkruqawl"]
+
+[ext_resource type="PackedScene" uid="uid://b3sl4dgkf3nvk" path="res://scenes/ui/popups/visitor/store/basic_store_large_popup.tscn" id="1_0abjs"]
+[ext_resource type="Script" uid="uid://c3o6q4tw5wdpg" path="res://resources/building/building_resource.gd" id="1_bydvf"]
+[ext_resource type="Script" uid="uid://dyfeu8e1cpxua" path="res://resources/visitor/store/store_visitor.gd" id="1_r1sil"]
+[ext_resource type="Texture2D" uid="uid://c81mufkyo7xkk" path="res://assets/art/character/scientist2_head.png" id="2_4eknx"]
+[ext_resource type="Script" uid="uid://c86xdmpekf7nk" path="res://resources/hamster/stats/hamster_stats_resource.gd" id="2_hse70"]
+[ext_resource type="Resource" uid="uid://c0plbqf1wavj0" path="res://resources/hamster/stats/basic_hamster.tres" id="3_0abjs"]
+[ext_resource type="Script" uid="uid://bnbn1t32707jh" path="res://resources/module/module_resource.gd" id="3_cq5mg"]
+[ext_resource type="Texture2D" uid="uid://0tvdgt1hc3c7" path="res://assets/art/character/scientist.png" id="5_0abjs"]
+
+[resource]
+script = ExtResource("1_r1sil")
+type_of_item_by_row = Dictionary[int, int]({
+1: 1,
+2: 1,
+3: 1
+})
+amt_in_row = Array[int]([5, 5, 5])
+possible_hamsters = Array[ExtResource("2_hse70")]([ExtResource("3_0abjs")])
+sprite = ExtResource("5_0abjs")
+visitor_name = "Steve Hamsterton"
+stick_around = true
+time_to_complete = 1.0
+waiting_position = Vector2(573, 115)
+small_information_text = "Do you want to buy something?"
+embedded_large_popup = ExtResource("1_0abjs")
+large_information_text = "Welcome to my store! Take a look around!"
+large_popup_art = ExtResource("2_4eknx")
+metadata/_custom_type_script = "uid://dyfeu8e1cpxua"

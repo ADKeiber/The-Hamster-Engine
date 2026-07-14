@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cq8vohrq04mts"]
+
+[ext_resource type="Script" uid="uid://ld2aasxyuocv" path="res://scenes/ui/popups/visitor/drop_off_row.gd" id="1_bxgvr"]
+[ext_resource type="PackedScene" uid="uid://ddcswwl2jxf2s" path="res://scenes/ui/popups/visitor/hamster_dropoff.tscn" id="1_q18eb"]
+
+[node name="DropOffRow" type="HBoxContainer" unique_id=167183488]
+alignment = 1
+script = ExtResource("1_bxgvr")
+
+[node name="HamsterDropoff" parent="." unique_id=1901599187 instance=ExtResource("1_q18eb")]
+layout_mode = 2
+
+[node name="HamsterDropoff2" parent="." unique_id=683095765 instance=ExtResource("1_q18eb")]
+layout_mode = 2
+
+[node name="HamsterDropoff3" parent="." unique_id=2069974228 instance=ExtResource("1_q18eb")]
+layout_mode = 2
