@@ -11,6 +11,8 @@ func _ready() -> void:
 
 func produce_power() -> void:
 	original_speed = interactable.hamster.stats.speed
+	if interactable.hamster.hamster_stats_component.stat_changed.is_connected(stat_change):
+		interactable.hamster.hamster_stats_component.stat_changed.disconnect(stat_change)
 	interactable.hamster.hamster_stats_component.stat_changed.connect(stat_change)
 	Power.power_produced += power * interactable.hamster.stats.speed
 

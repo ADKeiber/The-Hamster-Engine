@@ -69,11 +69,11 @@ var timer_start = false
 
 
 func _physics_process(delta: float) -> void:
+	if draggable_component.dragging == true:
+		$CharacterCollision.disabled = true
+		current_state = State.DRAGGED
+	
 	if interactor.interactable is CageInteractableComponent:
-		
-		if draggable_component.dragging == true:
-			current_state = State.DRAGGED
-
 			
 		match current_state:
 			State.DRAGGED:
@@ -84,13 +84,14 @@ func _physics_process(delta: float) -> void:
 				return
 			
 			State.IDLE:
+				$CharacterCollision.disabled = false
 				if timer_start == true:
 					return
 				pick_new_target()
 				timer_start = true
 			
 			State.WANDER:
-				$CharacterCollision.disabled = false
+				
 				move_toward_target(delta)
 
 
@@ -122,4 +123,17 @@ func move_toward_target(delta) -> void:
 	
 	var collision = move_and_collide(velocity)
 	if collision:
-		current_state = State.IDLE
+		if collision.get_collider() is Hamster:
+			var body = collision.get_collider()
+			if global_position.x < body.global_position.x:
+				if global_position.y < body.global_position.y:
+					target_pos = global_position + Vector2(-20, -20)
+				if global_position.y > body.global_position.y:
+					target_pos = global_position + Vector2(-20, 20)
+			elif global_position.x > body.global_position.x:
+				if global_position.y < body.global_position.y:
+					target_pos = global_position + Vector2(20, -20)
+				if global_position.y > body.global_position.y:
+					target_pos = global_position + Vector2(20, 20)
+		else:
+			current_state = State.IDLE
