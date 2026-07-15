@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://0qrfbkm826hj" path="res://scenes/visitor/visitor_manager.gd" id="1_4i717"]
 [ext_resource type="Texture2D" uid="uid://q00oiu1reqah" path="res://assets/art/building/wood_door.png" id="2_knlp5"]
 [ext_resource type="PackedScene" uid="uid://cufdcjxmqqsui" path="res://scenes/ui/popups/visitor/visitor_popup_expanded.tscn" id="2_mpjc4"]
+[ext_resource type="PackedScene" uid="uid://bkowbvt4v88sc" path="res://scenes/visitor/visitor_scene.tscn" id="3_22y6y"]
 
 [node name="VisitorManager" type="Node2D" unique_id=1358367874]
 script = ExtResource("1_4i717")
@@ -15,6 +16,12 @@ texture = ExtResource("2_knlp5")
 
 [node name="ActiveVisitors" type="Node2D" parent="." unique_id=264993485]
 position = Vector2(573, 84)
+
+[node name="VisitorScene" parent="ActiveVisitors" unique_id=1418911356 instance=ExtResource("3_22y6y")]
+position = Vector2(29, -10)
+
+[node name="VisitorScene2" parent="ActiveVisitors" unique_id=2120523208 instance=ExtResource("3_22y6y")]
+position = Vector2(-30, -9)
 
 [node name="VisitorPopupExpanded" parent="." unique_id=1371242909 instance=ExtResource("2_mpjc4")]
 visible = false

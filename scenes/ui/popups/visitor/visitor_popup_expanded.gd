@@ -4,8 +4,10 @@ extends Control
 @onready var header_art: TextureRect = %HeaderArt
 @onready var popup_info_holder: Control = %PopupInfoHolder
 @onready var sticking_around_text: RichTextLabel = %StickingAroundText
+var vis: VisitorResource
 
 func set_popup_info(visitor: VisitorResource) -> void:
+	vis = visitor
 	visitor_name_text.text = visitor.visitor_name
 	header_art.texture = visitor.large_popup_art
 	if visitor.embedded_large_popup != null:
@@ -18,4 +20,4 @@ func set_popup_info(visitor: VisitorResource) -> void:
 		sticking_around_text.text = "I'll be around if you need me!"
 
 func _on_close_button_pressed() -> void:
-	get_parent().switch_popup.emit()
+	get_parent().start_timer_for_visitor.emit(vis)

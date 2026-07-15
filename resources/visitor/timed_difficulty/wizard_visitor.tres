@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="WizardVisitor" format=3 uid="uid://44v42uuevygw"]
+
+[ext_resource type="Script" uid="uid://12hqp0vquk37" path="res://resources/visitor/timed_difficulty/wizard_visitor.gd" id="1_q8yk1"]
+
+[resource]
+script = ExtResource("1_q8yk1")
+metadata/_custom_type_script = "uid://12hqp0vquk37"

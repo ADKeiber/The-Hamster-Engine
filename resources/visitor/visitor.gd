@@ -4,7 +4,7 @@ class_name VisitorResource extends Resource
 @export var sprite: CompressedTexture2D
 @export var visitor_name: String
 @export var stick_around: bool
-@export var time_to_complete: float = 0.0 ## this is in minutes... Make sure to convert from decimal to base 60... Its stored as a decimal
+@export var time_to_complete: float = 0.0 ## this is in seconds
 @export var type: VisitorType
 @export var waiting_position: Vector2
 

@@ -36,5 +36,5 @@ func set_items() -> void:
 	for slot in slots.get_children():
 		if i < items.size():
 			var slot_container: StoreSlot = slot.get_child(0)
-			slot_container.set_item(items[i], 100) # need to get cost somehow
+			slot_container.set_item(items[i], randi_range(1,300)) # need to get cost somehow
 			i += 1

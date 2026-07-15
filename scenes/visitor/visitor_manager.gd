@@ -1,28 +1,41 @@
 class_name VisitorManager
 extends Node2D
-var visitor:VisitorResource
-var started: bool = false
+
+signal start_timer_for_visitor(visitor: VisitorResource)
+
 @onready var visitor_popup_expanded: VisitorPopupExpanded = $VisitorPopupExpanded
-@onready var visitor_popup_small: VisitorPopupSmall = $VisitorPopupSmall
-@onready var visitor_sprite: Sprite2D = $"VisitorScene(MakeItsOwnThingLater)/VisitorSprite"
 @onready var timer: Timer = $Timer
+@onready var active_visitors: Node2D = $ActiveVisitors
 
-signal switch_popup
+const VISITOR_SCENE = preload("uid://bkowbvt4v88sc")
+const BASIC_STORE = preload("uid://d2xunjkruqawl")
 
-func _ready() -> void:
-	switch_popup.connect(switch_popup_visible)
+func start_event() -> void:
+	var visitor := VISITOR_SCENE.instantiate()
+	var vis_resource := BASIC_STORE.duplicate(true)
+	active_visitors.add_child(visitor)
+	visitor.setup_visitor(vis_resource)
+	
+	start_timer_for_visitor.connect(start_timer)
+	visitor.open_large_popup.connect(set_visitor)
+	set_visitor(vis_resource)
 
 func set_visitor(visitor: VisitorResource) -> void: 
-	self.visitor = visitor
-	visitor_sprite.global_position = visitor.waiting_position
+	var visitor_node:VisitorScene = find_visitor_using_resource(visitor)
+	if visitor_node != null:
+		visitor_node.visitor_popup_small.visible = false
+		visitor_node.visitor_popup_tiny.visible = false
 	visitor_popup_expanded.set_popup_info(visitor)
-	visitor_popup_small.set_popup_info(visitor)
-	visitor_sprite.texture = visitor.sprite
-	visitor_popup_small.visible = false
+	visitor_popup_expanded.visible = true
 
-func switch_popup_visible() -> void:
-	if not started:
-		started = true
-		timer.start(visitor.time_to_complete * 60)
-	visitor_popup_small.visible = not visitor_popup_small.visible
-	visitor_popup_expanded.visible = not visitor_popup_expanded.visible
+func start_timer(visitor: VisitorResource) -> void:
+	var visitor_node := find_visitor_using_resource(visitor)
+	visitor_node.start_timer()
+	visitor_node.visitor_popup_tiny.visible = true
+	visitor_popup_expanded.visible = false
+
+func find_visitor_using_resource(visitor_resource: VisitorResource) -> VisitorScene:
+	for child in active_visitors.get_children():
+		if visitor_resource == child.visitor:
+			return child
+	return null

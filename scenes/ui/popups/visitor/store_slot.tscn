@@ -2,46 +2,102 @@
 
 [ext_resource type="Script" uid="uid://c7722f2lobelw" path="res://scenes/ui/popups/visitor/store_slot.gd" id="1_glfpd"]
 [ext_resource type="PackedScene" uid="uid://qub7e5f8xsa7" path="res://scenes/ui/menus/Badge.tscn" id="2_c6b0h"]
-[ext_resource type="Script" uid="uid://bd4n0soljla84" path="res://components/shared/popup_component.gd" id="3_8ct7o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ct7o"]
+bg_color = Color(0.62, 0.62, 0.62, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(32, 32)
 
 [node name="StoreSlot" type="PanelContainer" unique_id=29628779]
 custom_minimum_size = Vector2(32, 32)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -608.0
-offset_bottom = -328.0
+anchors_preset = -1
+anchor_right = 0.05
+anchor_bottom = 0.089
+offset_bottom = -0.040000916
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_glfpd")
 
 [node name="Wrapper" type="Control" parent="." unique_id=525447862]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Badge" parent="Wrapper" unique_id=814261269 instance=ExtResource("2_c6b0h")]
 custom_minimum_size = Vector2(5, 5)
 clip_contents = true
 layout_mode = 1
 
-[node name="PopupComponent" type="Node" parent="." unique_id=30165901]
-script = ExtResource("3_8ct7o")
+[node name="PurchasePopup" type="Node2D" parent="." unique_id=398854302]
+unique_name_in_owner = true
+position = Vector2(16, 16)
 
-[node name="Control" type="Control" parent="PopupComponent" unique_id=862791411]
-layout_mode = 3
-anchor_left = 0.025
-anchor_top = 0.020000001
-anchor_right = 0.025
-anchor_bottom = 0.020000001
-offset_left = -21.0
-offset_top = -40.2
-offset_right = 21.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="PopupComponent/Control" unique_id=241627519]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+[node name="PanelContainer" type="PanelContainer" parent="PurchasePopup" unique_id=910969005]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ct7o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PurchasePopup/PanelContainer" unique_id=1894478887]
+layout_mode = 2
+alignment = 1
+
+[node name="ConfirmText" type="MarginContainer" parent="PurchasePopup/PanelContainer/VBoxContainer" unique_id=798663844]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="PurchasePopup/PanelContainer/VBoxContainer/ConfirmText" unique_id=879931278]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Purchase?"
+
+[node name="Control" type="Control" parent="PurchasePopup/PanelContainer/VBoxContainer" unique_id=300846477]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="Buttons" type="MarginContainer" parent="PurchasePopup/PanelContainer/VBoxContainer" unique_id=127173282]
+layout_mode = 2
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PurchasePopup/PanelContainer/VBoxContainer/Buttons" unique_id=1684951494]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="PurchasePopup/PanelContainer/VBoxContainer/Buttons/HBoxContainer" unique_id=1583253269]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="Button2" type="Button" parent="PurchasePopup/PanelContainer/VBoxContainer/Buttons/HBoxContainer" unique_id=1883566273]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2112336397]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=456530934]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="pressed" from="PurchasePopup/PanelContainer/VBoxContainer/Buttons/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PurchasePopup/PanelContainer/VBoxContainer/Buttons/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

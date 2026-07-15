@@ -1,7 +1,6 @@
 class_name AnimationComponent
 extends AnimatedSprite2D
 
-
 const ANIMATIONS := {
 	AnimationState.IDLE: "idle",
 	AnimationState.RUNNING: "run",

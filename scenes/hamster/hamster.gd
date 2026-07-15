@@ -60,6 +60,9 @@ func activate_traits_and_type() -> void:
 	traits_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, {}))
 	hamster_type_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, {}))
 
+func hide_bars() -> void:
+	stamina_bar.visible = false
+	health_bar.visible = false
 
 
 @onready var interactor : InteractorComponent = $InteractorComponent

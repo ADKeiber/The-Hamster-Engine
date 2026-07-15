@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bkowbvt4v88sc"]
+
+[ext_resource type="Script" uid="uid://b3n2a5f4vscaj" path="res://scenes/visitor/visitor_scene.gd" id="1_hsolc"]
+[ext_resource type="Texture2D" uid="uid://0tvdgt1hc3c7" path="res://assets/art/character/scientist.png" id="2_1iukj"]
+[ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="3_y8uh8"]
+[ext_resource type="PackedScene" uid="uid://cpjuye6722rab" path="res://scenes/ui/popups/visitor/visitor_popup_small.tscn" id="4_jhe2l"]
+[ext_resource type="PackedScene" uid="uid://18gqsrcf74wr" path="res://scenes/ui/popups/visitor/visitor_popup_tiny.tscn" id="5_1iukj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1iukj")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(20, 32)
+
+[node name="VisitorScene" type="Node2D" unique_id=1418911356]
+script = ExtResource("1_hsolc")
+metadata/_custom_type_script = "uid://b3n2a5f4vscaj"
+
+[node name="AnimationComponent" type="AnimatedSprite2D" parent="." unique_id=2006125240]
+position = Vector2(1.8189894e-12, 15.999999)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+animation = &"idle"
+frame_progress = 0.04413793
+script = ExtResource("3_y8uh8")
+metadata/_custom_type_script = "uid://bkdxvbhn1krow"
+
+[node name="VisitorPopupSmall" parent="." unique_id=956766461 instance=ExtResource("4_jhe2l")]
+visible = false
+offset_left = -32.0
+offset_top = -31.0
+offset_right = -32.0
+offset_bottom = -31.0
+
+[node name="VisitorPopupTiny" parent="." unique_id=1283529055 instance=ExtResource("5_1iukj")]
+unique_name_in_owner = true
+offset_left = -18.0
+offset_top = -54.0
+offset_right = 22.0
+offset_bottom = -14.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1293442681]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1205542137]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="TimeRemaining" type="Timer" parent="." unique_id=1482153277]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

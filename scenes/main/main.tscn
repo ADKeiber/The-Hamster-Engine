@@ -80,9 +80,19 @@ text = "total"
 
 [node name="VisitorManager" parent="." unique_id=1358367874 instance=ExtResource("7_hujxm")]
 unique_name_in_owner = true
-visible = false
 z_index = 500
 
 [node name="WorldTimer" type="Timer" parent="." unique_id=243912178]
 unique_name_in_owner = true
 autostart = true
+
+[node name="Button" type="Button" parent="." unique_id=2079174763]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 77.0
+offset_right = 361.0
+offset_bottom = 108.0
+text = "Start Event
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
