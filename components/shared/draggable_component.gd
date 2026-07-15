@@ -1,9 +1,9 @@
 class_name DraggableComponent
 extends Node2D
 
-signal drag_started(draggable_component: DraggableComponent)
-signal drag_updated(draggable_component: DraggableComponent)
-signal drag_ended(draggable_component: DraggableComponent)
+signal drag_started
+signal drag_updated
+signal drag_ended
 
 @export var area : Area2D
 @export var snap_back_on_fail: bool = true #If stopping drag doesn't "succeed" then it will snap back if == true
@@ -23,10 +23,8 @@ func _ready() -> void:
 
 func _process(_delta):
 	if dragging && draggable:
-		var previous_position = get_parent().global_position
 		get_parent().global_position = get_global_mouse_position() + drag_offset
-		var current_position = get_parent().global_position
-		drag_updated.emit(self)
+		drag_updated.emit()
 
 func _on_area_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -34,7 +32,7 @@ func _on_area_input_event(_viewport, event, _shape_idx):
 			dragging = true
 			start_drag_location = get_parent().global_position
 			get_parent().global_position = get_global_mouse_position()
-			drag_started.emit(self)
+			drag_started.emit()
 			drag_offset = global_position - get_global_mouse_position()
 			get_parent().scale = Vector2(1.5, 1.5)
 			get_parent().set_z_index(15)
@@ -42,7 +40,7 @@ func _on_area_input_event(_viewport, event, _shape_idx):
 		else:
 			if draggable == true:
 				dragging = false
-				drag_ended.emit(self)
+				drag_ended.emit()
 				get_parent().scale = Vector2(1, 1)
 				get_parent().set_z_index(1)
 

@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name PowerConsumerComponent
 
 @export var interactable : InteractableComponent
 @export var placeable : PlaceableComponent
