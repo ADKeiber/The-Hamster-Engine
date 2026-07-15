@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://buaeqgxqanom6" path="res://scenes/hamster/hamster.gd" id="1_chdbw"]
 [ext_resource type="Script" uid="uid://dpm8u5v46n4p3" path="res://components/shared/draggable_component.gd" id="2_m4iqr"]
-[ext_resource type="Texture2D" uid="uid://cvpclrmsx6w4b" path="res://assets/art/hamster/Hamster Still.png" id="2_ohn85"]
 [ext_resource type="PackedScene" uid="uid://br6p6kl4dtu26" path="res://components/hamster/interactor_component.tscn" id="4_66ruk"]
 [ext_resource type="PackedScene" uid="uid://ct0lo8c3wu4ci" path="res://components/hamster/hamster_stats_component.tscn" id="4_m4iqr"]
 [ext_resource type="PackedScene" uid="uid://cglmlr28may8t" path="res://components/hamster/traits_component.tscn" id="5_vus7h"]
@@ -61,10 +60,6 @@ value = 90.0
 rounded = true
 fill_mode = 3
 show_percentage = false
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2106127544]
-visible = false
-texture = ExtResource("2_ohn85")
 
 [node name="DraggableComponent" type="Node2D" parent="." unique_id=2080222477 node_paths=PackedStringArray("area")]
 script = ExtResource("2_m4iqr")
