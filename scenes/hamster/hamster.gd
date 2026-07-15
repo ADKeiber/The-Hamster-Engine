@@ -24,9 +24,9 @@ func _ready() -> void:
 	#hamster_stats_component.set_stats(stats)
 	connect_stats()
 
-func setup_hamster(new_stats: HamsterStatsResource) -> void:
-	stats = new_stats
-	connect_stats()
+#func setup_hamster(new_stats: HamsterStatsResource) -> void:
+	#stats = new_stats
+	#connect_stats()
 
 func connect_stats() -> void:
 	stats = hamster_stats_component.get_stats()
@@ -45,8 +45,8 @@ func connect_stats() -> void:
 	update_stamina_bar(stamina,stamina)
 	audio_component.set_library(stats.audio_library)
 	print(hamster_stats_component.get_stats().to_string())
-	stamina_bar.visible = false
-	health_bar.visible = false
+	#stamina_bar.visible = false
+	#health_bar.visible = false
 
 func update_health_bar(current: int, max: int) -> void:
 	health_bar.max_value = max
@@ -71,8 +71,6 @@ const ARRIVAL_DISTANCE = 1
 enum State {IDLE, WANDER, DRAGGED}
 var current_state : State = State.DRAGGED
 var timer_start = false
-
-
 
 func _physics_process(delta: float) -> void:
 	if draggable_component.dragging == true:
@@ -99,9 +97,6 @@ func _physics_process(delta: float) -> void:
 			State.WANDER:
 				
 				move_toward_target(delta)
-
-
-
 
 func pick_new_target() -> void:
 	$Timer.start(randf_range(1, 3))

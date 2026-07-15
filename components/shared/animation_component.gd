@@ -12,17 +12,13 @@ const ANIMATIONS := {
 enum AnimationState {IDLE, RUNNING, INTERACTING, BUILT} 
 #NOTE these are all possible states for all animations :) Add them as required
 
-
-
 func update_animation(newState: AnimationState) -> void:
 	var animation_name: String = ANIMATIONS[newState]
 	if sprite_frames.has_animation(animation_name):
 		play(animation_name)
 
-
-
 func invisible() -> void:
-	self_modulate.a = 0
+	self.modulate.a = 0
 
 func visible() -> void:
-	self_modulate.a = 1
+	self.modulate.a = 1

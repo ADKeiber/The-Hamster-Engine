@@ -8,9 +8,10 @@ extends Control
 func set_popup_info(visitor: VisitorResource) -> void:
 	visitor_name_text.text = visitor.visitor_name
 	header_art.texture = visitor.large_popup_art
-	var dynamic_popup_portion := visitor.embedded_large_popup.instantiate()
-	dynamic_popup_portion.setup_popup(visitor)
-	popup_info_holder.add_child(dynamic_popup_portion)
+	if visitor.embedded_large_popup != null:
+		var dynamic_popup_portion := visitor.embedded_large_popup.instantiate()
+		dynamic_popup_portion.setup_popup(visitor)
+		popup_info_holder.add_child(dynamic_popup_portion)
 	if visitor.stick_around == false:
 		sticking_around_text.text = "Alright I'll be back eventually..."
 	else:
