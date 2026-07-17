@@ -34,14 +34,14 @@ func _on_area_input_event(_viewport, event, _shape_idx):
 			get_parent().global_position = get_global_mouse_position()
 			drag_started.emit()
 			drag_offset = global_position - get_global_mouse_position()
-			get_parent().scale = Vector2(1.5, 1.5)
+			#get_parent().scale = Vector2(1.5, 1.5)
 			get_parent().set_z_index(15)
 			get_viewport().set_input_as_handled()
 		else:
 			if draggable == true:
 				dragging = false
 				drag_ended.emit()
-				get_parent().scale = Vector2(1, 1)
+				#get_parent().scale = Vector2(1, 1)
 				get_parent().set_z_index(1)
 
 			if draggable == false:

@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://dxncdpsw0qdep"]
+
+[ext_resource type="Script" uid="uid://dgxs0mqy52po7" path="res://scenes/building/building.gd" id="1_e34q8"]
+[ext_resource type="PackedScene" uid="uid://bd6rnjpsgs4q7" path="res://components/shared/power_producer_component.tscn" id="2_71wjv"]
+[ext_resource type="Resource" uid="uid://qglpckrf7gf1" path="res://resources/building/buidling/wheel.tres" id="2_xutv0"]
+[ext_resource type="PackedScene" uid="uid://ch8is50ni4kn8" path="res://components/shared/power_consumer_component.tscn" id="3_xutv0"]
+[ext_resource type="Script" uid="uid://dpm8u5v46n4p3" path="res://components/shared/draggable_component.gd" id="4_7v4ee"]
+[ext_resource type="Script" uid="uid://cklvu88yqga2o" path="res://scenes/building/buidling_area_2d.gd" id="4_71wjv"]
+[ext_resource type="Script" uid="uid://p1f8lag1yycy" path="res://components/shared/placeable_component.gd" id="5_6h72n"]
+[ext_resource type="Script" uid="uid://q282vhoc3uiv" path="res://components/building/footprint_component.gd" id="6_2o7vp"]
+[ext_resource type="Resource" uid="uid://bw6q1wyq80eou" path="res://resources/building/footprint/4x4.tres" id="7_e34q8"]
+[ext_resource type="PackedScene" uid="uid://babhijhxpgqs5" path="res://components/shared/interactable_component.tscn" id="8_n73ok"]
+[ext_resource type="PackedScene" uid="uid://cq578w4m0v02c" path="res://components/shared/animation_component.tscn" id="9_b73rx"]
+[ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="11_fl5g4"]
+[ext_resource type="Texture2D" uid="uid://cddd8jdl4jaui" path="res://assets/art/building/Feeder.png" id="11_xutv0"]
+[ext_resource type="PackedScene" uid="uid://bvggptlbuc5x8" path="res://components/shared/audio_component.tscn" id="12_jh2vu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujpuf"]
+resource_local_to_scene = true
+size = Vector2(30, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eflg"]
+atlas = ExtResource("11_xutv0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7v4ee"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eflg")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgf6b"]
+
+[node name="Building" type="Node2D" unique_id=590711385 groups=["Building"]]
+z_index = 1
+script = ExtResource("1_e34q8")
+resource = ExtResource("2_xutv0")
+
+[node name="PowerProducerComponent" parent="." unique_id=478325704 node_paths=PackedStringArray("interactable") instance=ExtResource("2_71wjv")]
+interactable = NodePath("../InteractableComponent")
+
+[node name="PowerConsumerComponent" parent="." unique_id=133540461 node_paths=PackedStringArray("interactable", "placeable") instance=ExtResource("3_xutv0")]
+interactable = NodePath("../InteractableComponent")
+placeable = NodePath("../PlaceableComponent")
+min_power_increase = 10
+on_min_power_increase = 10
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1138214125 node_paths=PackedStringArray("foorprint", "placeable") groups=["Building"]]
+script = ExtResource("4_71wjv")
+foorprint = NodePath("../FootprintComponent")
+placeable = NodePath("../PlaceableComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2125849773 groups=["Building"]]
+shape = SubResource("RectangleShape2D_ujpuf")
+
+[node name="DraggableComponent" type="Node2D" parent="." unique_id=232874698 node_paths=PackedStringArray("area")]
+script = ExtResource("4_7v4ee")
+area = NodePath("../Area2D")
+metadata/_custom_type_script = "uid://dpm8u5v46n4p3"
+
+[node name="PlaceableComponent" type="Node2D" parent="." unique_id=1250548645 node_paths=PackedStringArray("area", "draggable", "footprint")]
+script = ExtResource("5_6h72n")
+area = NodePath("../Area2D")
+draggable = NodePath("../DraggableComponent")
+footprint = NodePath("../FootprintComponent")
+metadata/_custom_type_script = "uid://p1f8lag1yycy"
+
+[node name="FootprintComponent" type="Node2D" parent="." unique_id=1484731241]
+script = ExtResource("6_2o7vp")
+footprint = ExtResource("7_e34q8")
+metadata/_custom_type_script = "uid://q282vhoc3uiv"
+
+[node name="InteractableComponent" parent="." unique_id=1346976423 node_paths=PackedStringArray("area") groups=["Building"] instance=ExtResource("8_n73ok")]
+area = NodePath("../Area2D")
+
+[node name="BackgroundAnimationComponent" parent="." unique_id=563077589 instance=ExtResource("9_b73rx")]
+modulate = Color(1, 1, 1, 0.38431373)
+sprite_frames = SubResource("SpriteFrames_7v4ee")
+
+[node name="ForegroundAnimationComponent" type="AnimatedSprite2D" parent="." unique_id=1741045018]
+sprite_frames = SubResource("SpriteFrames_vgf6b")
+script = ExtResource("11_fl5g4")
+metadata/_custom_type_script = "uid://bkdxvbhn1krow"
+
+[node name="AudioComponent" parent="." unique_id=1834874586 instance=ExtResource("12_jh2vu")]

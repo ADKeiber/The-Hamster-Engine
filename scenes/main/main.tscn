@@ -2,9 +2,144 @@
 
 [ext_resource type="PackedScene" uid="uid://bqjuwnvj2wu5g" path="res://scenes/building/cage.tscn" id="1_6q06x"]
 [ext_resource type="PackedScene" uid="uid://dx5dmin8d3pcr" path="res://scenes/building/buildings_area.tscn" id="1_hyk8p"]
-[ext_resource type="PackedScene" uid="uid://dxncdpsw0qdep" path="res://scenes/building/tester.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://dxncdpsw0qdep" path="res://scenes/building/building.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://btx6kly08w6cy" path="res://scenes/hamster/hamster.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://cmkb25oqwd8vk" path="res://scenes/main/power_produced.gd" id="4_l3cfh"]
+[ext_resource type="Resource" uid="uid://bqvre6p2n6jeh" path="res://resources/building/buidling/spa_resource.tres" id="4_yyfjg"]
+[ext_resource type="Resource" uid="uid://cq3751vy6sjao" path="res://resources/building/buidling/gym_resource.tres" id="5_b1x3f"]
+[ext_resource type="Resource" uid="uid://8st2x53cqxhd" path="res://resources/building/buidling/experimental_tank_resource.tres" id="6_a8run"]
+
+[sub_resource type="GDScript" id="GDScript_ouso4"]
+resource_local_to_scene = true
+script/source = "extends Node2D
+
+
+@onready var interactable_component : InteractableComponent = $InteractableComponent
+@onready var power_producer_component : PowerProducerComponent = $PowerProducerComponent
+@onready var power_consumer_component : PowerConsumerComponent = $PowerConsumerComponent
+@onready var area : Area2D = $Area2D
+@onready var draggable_component : DraggableComponent = $DraggableComponent
+@onready var placeable_component : PlaceableComponent = $PlaceableComponent
+@onready var footprint_component : FootprintComponent = $FootprintComponent
+@onready var background_animation_component : AnimationComponent = $BackgroundAnimationComponent
+@onready var foreground_animation_component : AnimationComponent = $ForegroundAnimationComponent
+@onready var audio_component : AudioComponent = $AudioComponent
+
+@export var resource : Building
+
+func _ready() -> void:
+	footprint_component.footprint = resource.footprint
+	background_animation_component.sprite_frames = resource.background_sprite_frames
+	foreground_animation_component.sprite_frames = resource.foreground_sprite_frames
+	power_producer_component.power = resource.power
+	power_consumer_component.min_power_increase = resource.min_power_increase
+	power_consumer_component.on_min_power_increase = resource.on_min_power_increase
+	if resource.interactable_on == false:
+		interactable_component.process_mode = Node.PROCESS_MODE_DISABLED
+	if resource.power_producer_on == false:
+		power_producer_component.process_mode = Node.PROCESS_MODE_DISABLED
+	if resource.power_consumer_on == false:
+		power_consumer_component.process_mode = Node.PROCESS_MODE_DISABLED
+"
+
+[sub_resource type="GDScript" id="GDScript_blune"]
+resource_local_to_scene = true
+script/source = "extends Node2D
+
+
+@onready var interactable_component : InteractableComponent = $InteractableComponent
+@onready var power_producer_component : PowerProducerComponent = $PowerProducerComponent
+@onready var power_consumer_component : PowerConsumerComponent = $PowerConsumerComponent
+@onready var area : Area2D = $Area2D
+@onready var draggable_component : DraggableComponent = $DraggableComponent
+@onready var placeable_component : PlaceableComponent = $PlaceableComponent
+@onready var footprint_component : FootprintComponent = $FootprintComponent
+@onready var background_animation_component : AnimationComponent = $BackgroundAnimationComponent
+@onready var foreground_animation_component : AnimationComponent = $ForegroundAnimationComponent
+@onready var audio_component : AudioComponent = $AudioComponent
+
+@export var resource : Building
+
+func _ready() -> void:
+	footprint_component.footprint = resource.footprint
+	background_animation_component.sprite_frames = resource.background_sprite_frames
+	foreground_animation_component.sprite_frames = resource.foreground_sprite_frames
+	power_producer_component.power = resource.power
+	power_consumer_component.min_power_increase = resource.min_power_increase
+	power_consumer_component.on_min_power_increase = resource.on_min_power_increase
+	if resource.interactable_on == false:
+		interactable_component.process_mode = Node.PROCESS_MODE_DISABLED
+	if resource.power_producer_on == false:
+		power_producer_component.process_mode = Node.PROCESS_MODE_DISABLED
+	if resource.power_consumer_on == false:
+		power_consumer_component.process_mode = Node.PROCESS_MODE_DISABLED
+"
+
+[sub_resource type="GDScript" id="GDScript_th5th"]
+resource_local_to_scene = true
+script/source = "extends Node2D
+
+
+@onready var interactable_component : InteractableComponent = $InteractableComponent
+@onready var power_producer_component : PowerProducerComponent = $PowerProducerComponent
+@onready var power_consumer_component : PowerConsumerComponent = $PowerConsumerComponent
+@onready var area : Area2D = $Area2D
+@onready var draggable_component : DraggableComponent = $DraggableComponent
+@onready var placeable_component : PlaceableComponent = $PlaceableComponent
+@onready var footprint_component : FootprintComponent = $FootprintComponent
+@onready var background_animation_component : AnimationComponent = $BackgroundAnimationComponent
+@onready var foreground_animation_component : AnimationComponent = $ForegroundAnimationComponent
+@onready var audio_component : AudioComponent = $AudioComponent
+
+@export var resource : Building
+
+func _ready() -> void:
+	footprint_component.footprint = resource.footprint
+	background_animation_component.sprite_frames = resource.background_sprite_frames
+	foreground_animation_component.sprite_frames = resource.foreground_sprite_frames
+	power_producer_component.power = resource.power
+	power_consumer_component.min_power_increase = resource.min_power_increase
+	power_consumer_component.on_min_power_increase = resource.on_min_power_increase
+	if resource.interactable_on == false:
+		interactable_component.process_mode = Node.PROCESS_MODE_DISABLED
+	if resource.power_producer_on == false:
+		power_producer_component.process_mode = Node.PROCESS_MODE_DISABLED
+	if resource.power_consumer_on == false:
+		power_consumer_component.process_mode = Node.PROCESS_MODE_DISABLED
+"
+
+[sub_resource type="GDScript" id="GDScript_7smn1"]
+resource_local_to_scene = true
+script/source = "extends Node2D
+
+
+@onready var interactable_component : InteractableComponent = $InteractableComponent
+@onready var power_producer_component : PowerProducerComponent = $PowerProducerComponent
+@onready var power_consumer_component : PowerConsumerComponent = $PowerConsumerComponent
+@onready var area : Area2D = $Area2D
+@onready var draggable_component : DraggableComponent = $DraggableComponent
+@onready var placeable_component : PlaceableComponent = $PlaceableComponent
+@onready var footprint_component : FootprintComponent = $FootprintComponent
+@onready var background_animation_component : AnimationComponent = $BackgroundAnimationComponent
+@onready var foreground_animation_component : AnimationComponent = $ForegroundAnimationComponent
+@onready var audio_component : AudioComponent = $AudioComponent
+
+@export var resource : Building
+
+func _ready() -> void:
+	footprint_component.footprint = resource.footprint
+	background_animation_component.sprite_frames = resource.background_sprite_frames
+	foreground_animation_component.sprite_frames = resource.foreground_sprite_frames
+	power_producer_component.power = resource.power
+	power_consumer_component.min_power_increase = resource.min_power_increase
+	power_consumer_component.on_min_power_increase = resource.on_min_power_increase
+	if resource.interactable_on == false:
+		interactable_component.process_mode = Node.PROCESS_MODE_DISABLED
+	if resource.power_producer_on == false:
+		power_producer_component.process_mode = Node.PROCESS_MODE_DISABLED
+	if resource.power_consumer_on == false:
+		power_consumer_component.process_mode = Node.PROCESS_MODE_DISABLED
+"
 
 [node name="Main" type="Control" unique_id=305830555]
 layout_mode = 3
@@ -18,28 +153,47 @@ mouse_filter = 2
 [node name="Cage" parent="." unique_id=480036686 instance=ExtResource("1_6q06x")]
 position = Vector2(166, 262)
 
-[node name="Tester2" parent="." unique_id=590711385 instance=ExtResource("2_iuonh")]
-position = Vector2(412, 207)
-
-[node name="Tester" parent="." unique_id=1258192808 instance=ExtResource("2_iuonh")]
-position = Vector2(267, 206)
-
 [node name="BuildingsArea" parent="." unique_id=1218242002 instance=ExtResource("1_hyk8p")]
+
+[node name="Building" parent="." unique_id=590711385 instance=ExtResource("2_iuonh")]
+position = Vector2(395, 153)
+
+[node name="Building2" parent="." unique_id=483320550 instance=ExtResource("2_iuonh")]
+position = Vector2(281, 113)
+
+[node name="Building3" parent="." unique_id=1159261099 instance=ExtResource("2_iuonh")]
+position = Vector2(549, 258)
+script = SubResource("GDScript_ouso4")
+
+[node name="Building4" parent="." unique_id=323801827 instance=ExtResource("2_iuonh")]
+position = Vector2(529, 127)
+script = SubResource("GDScript_blune")
+resource = ExtResource("4_yyfjg")
+
+[node name="Building5" parent="." unique_id=927064479 instance=ExtResource("2_iuonh")]
+position = Vector2(103, 194)
+script = SubResource("GDScript_th5th")
+resource = ExtResource("5_b1x3f")
+
+[node name="Building6" parent="." unique_id=1666550549 instance=ExtResource("2_iuonh")]
+position = Vector2(122, 128)
+script = SubResource("GDScript_7smn1")
+resource = ExtResource("6_a8run")
 
 [node name="Hamster" parent="." unique_id=641634076 instance=ExtResource("3_k2fmo")]
 position = Vector2(497, 209)
 
 [node name="Hamster2" parent="." unique_id=2062278838 instance=ExtResource("3_k2fmo")]
-position = Vector2(335, 212)
+position = Vector2(319, 218)
 
 [node name="Hamster3" parent="." unique_id=1661663384 instance=ExtResource("3_k2fmo")]
 position = Vector2(181, 238)
 
 [node name="Hamster4" parent="." unique_id=1701552658 instance=ExtResource("3_k2fmo")]
-position = Vector2(181, 238)
+position = Vector2(187, 207)
 
 [node name="Hamster5" parent="." unique_id=920795092 instance=ExtResource("3_k2fmo")]
-position = Vector2(181, 238)
+position = Vector2(230, 203)
 
 [node name="Control" type="Control" parent="." unique_id=1915303001 node_paths=PackedStringArray("produced", "min", "total")]
 anchors_preset = 0
@@ -47,6 +201,7 @@ offset_left = 66.0
 offset_top = 73.0
 offset_right = 193.0
 offset_bottom = 199.0
+mouse_filter = 2
 script = ExtResource("4_l3cfh")
 produced = NodePath("VBoxContainer/PowerProduced")
 min = NodePath("VBoxContainer/PowerMin")
@@ -59,6 +214,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="PowerProduced" type="Label" parent="Control/VBoxContainer" unique_id=1874886666]
 layout_mode = 2

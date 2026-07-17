@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu22r6kb3p41i"
-path="res://.godot/imported/Wheel Animation.png-07f68f7579947eb72fcae8f151f1a168.ctex"
+uid="uid://bbefy1kxod0er"
+path="res://.godot/imported/Wheel.png-d2e3c1cdd78b1aeebb3d07bf7cec6d8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/building/Wheel Animation.png"
-dest_files=["res://.godot/imported/Wheel Animation.png-07f68f7579947eb72fcae8f151f1a168.ctex"]
+source_file="res://assets/art/building/Wheel.png"
+dest_files=["res://.godot/imported/Wheel.png-d2e3c1cdd78b1aeebb3d07bf7cec6d8c.ctex"]
 
 [params]
 

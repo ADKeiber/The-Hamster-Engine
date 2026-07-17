@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3 uid="uid://cq3751vy6sjao"]
+
+[ext_resource type="SpriteFrames" uid="uid://bi10gjvao2nx7" path="res://resources/building/sprite_frames/gym_sprite_frames.tres" id="1_8qvgj"]
+[ext_resource type="Resource" uid="uid://bw6q1wyq80eou" path="res://resources/building/footprint/4x4.tres" id="2_tr3db"]
+[ext_resource type="Script" uid="uid://cp5ylrqfthv3j" path="res://resources/building/buidling/gym_resource.gd" id="3_8qvgj"]
+
+[resource]
+script = ExtResource("3_8qvgj")
+building_name = "Gym"
+description = "This is used to upgrade hamster stats."
+footprint = ExtResource("2_tr3db")
+background_sprite_frames = ExtResource("1_8qvgj")
+interactable_on = true
+power_consumer_on = true
+min_power_increase = 10
+on_min_power_increase = 10
+metadata/_custom_type_script = "uid://b84vak4mpqa2m"
