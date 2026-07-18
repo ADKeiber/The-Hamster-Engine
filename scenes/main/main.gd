@@ -8,9 +8,8 @@ const BASIC_STORE = preload("uid://d2xunjkruqawl")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	Power.set_timer(world_timer)
-
+	Visitor.set_timer(world_timer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -21,11 +21,13 @@ extends Resource
 @export var audio_library: AudioLibraryResource
 @export var condition: Condition
 @export var cost_to_buy: int
+
 @export_group("Assets")
 @export var sprite_frames: SpriteFrames
 @export var basic_sprite: CompressedTexture2D
 
-
+func interact(hamster:Hamster) -> void:
+	pass
 
 func _to_string() -> String:
 	return """

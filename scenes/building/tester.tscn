@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dxncdpsw0qdep"]
 
-[ext_resource type="Texture2D" uid="uid://c4air3bicpb0a" path="res://icon.svg" id="1_wnlt6"]
 [ext_resource type="Script" uid="uid://dgxs0mqy52po7" path="res://scenes/building/tester.gd" id="1_yijdk"]
 [ext_resource type="PackedScene" uid="uid://bd6rnjpsgs4q7" path="res://components/shared/power_producer_component.tscn" id="2_37r5a"]
 [ext_resource type="Script" uid="uid://dpm8u5v46n4p3" path="res://components/shared/draggable_component.gd" id="2_gfvqv"]
 [ext_resource type="Script" uid="uid://p1f8lag1yycy" path="res://components/shared/placeable_component.gd" id="3_c8lyt"]
 [ext_resource type="PackedScene" uid="uid://ch8is50ni4kn8" path="res://components/shared/power_consumer_component.tscn" id="3_msor0"]
 [ext_resource type="Script" uid="uid://q282vhoc3uiv" path="res://components/building/footprint_component.gd" id="4_8d4ti"]
+[ext_resource type="Texture2D" uid="uid://cddd8jdl4jaui" path="res://assets/art/building/Feeder.png" id="4_37r5a"]
 [ext_resource type="Resource" uid="uid://d11u7m26j04lv" path="res://resources/building/footprint/2x2.tres" id="5_7srmo"]
 [ext_resource type="PackedScene" uid="uid://babhijhxpgqs5" path="res://components/shared/interactable_component.tscn" id="6_g0vdu"]
 
@@ -28,8 +28,8 @@ min_power_increase = 10
 on_min_power_increase = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=715687749]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_wnlt6")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_37r5a")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1138214125 groups=["Building"]]
 

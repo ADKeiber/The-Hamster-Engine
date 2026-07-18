@@ -1,20 +1,131 @@
 [gd_scene format=3 uid="uid://c4jxi4kmf16j5"]
 
 [ext_resource type="Script" uid="uid://0qrfbkm826hj" path="res://scenes/visitor/visitor_manager.gd" id="1_4i717"]
-[ext_resource type="Texture2D" uid="uid://q00oiu1reqah" path="res://assets/art/building/wood_door.png" id="2_knlp5"]
-[ext_resource type="PackedScene" uid="uid://cufdcjxmqqsui" path="res://scenes/ui/popups/visitor/visitor_popup_expanded.tscn" id="2_mpjc4"]
+[ext_resource type="SpriteFrames" uid="uid://cw27oci17gf8s" path="res://assets/art/building/sprite_frames/wood_door_frames.tres" id="2_22y6y"]
+[ext_resource type="PackedScene" uid="uid://cufdcjxmqqsui" path="res://scenes/ui/popups/visitor/popup/visitor_popup_expanded.tscn" id="2_mpjc4"]
+[ext_resource type="Script" uid="uid://cvsvbdwnmv02e" path="res://components/shared/audio_component.gd" id="4_xavc3"]
+[ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="5_6k8mm"]
+[ext_resource type="Resource" uid="uid://car4kweue088h" path="res://resources/hamster/audio/basic_hamster_audio_library.tres" id="5_knlp5"]
+[ext_resource type="Texture2D" uid="uid://bxxotc7ei1kay" path="res://assets/art/misc/Exclamation.png" id="6_6k8mm"]
 
-[node name="VisitorManager" type="Node2D" unique_id=1358367874]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyfnl"]
+atlas = ExtResource("6_6k8mm")
+region = Rect2(0, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aro8f"]
+atlas = ExtResource("6_6k8mm")
+region = Rect2(1984, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctil1"]
+atlas = ExtResource("6_6k8mm")
+region = Rect2(3968, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d5qh"]
+atlas = ExtResource("6_6k8mm")
+region = Rect2(5952, 0, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyyos"]
+atlas = ExtResource("6_6k8mm")
+region = Rect2(0, 1984, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8dqy"]
+atlas = ExtResource("6_6k8mm")
+region = Rect2(1984, 1984, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hnc1"]
+atlas = ExtResource("6_6k8mm")
+region = Rect2(3968, 1984, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6wkt"]
+atlas = ExtResource("6_6k8mm")
+region = Rect2(5952, 1984, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubcso"]
+atlas = ExtResource("6_6k8mm")
+region = Rect2(0, 3968, 1984, 1984)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vscc2"]
+atlas = ExtResource("6_6k8mm")
+region = Rect2(1984, 3968, 1984, 1984)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_knlp5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyfnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aro8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctil1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d5qh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyyos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8dqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hnc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6wkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubcso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vscc2")
+}],
+"loop": 1,
+"name": &"exclamation",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(20, 85)
+
+[node name="VisitorManager" type="Node2D" unique_id=1358367874 groups=["FocusedVisitor"]]
 script = ExtResource("1_4i717")
 
 [node name="Door" type="Node2D" parent="." unique_id=1542401554]
+position = Vector2(573, 90)
 
-[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=303827183]
-position = Vector2(573, 71)
-texture = ExtResource("2_knlp5")
+[node name="AudioComponent" type="Node2D" parent="Door" unique_id=1262203919]
+script = ExtResource("4_xavc3")
+audio_library = ExtResource("5_knlp5")
+metadata/_custom_type_script = "uid://cvsvbdwnmv02e"
+
+[node name="DoorAnimation" type="AnimatedSprite2D" parent="Door" unique_id=158776016]
+unique_name_in_owner = true
+position = Vector2(0, -16)
+sprite_frames = ExtResource("2_22y6y")
+animation = &"opening"
+script = ExtResource("5_6k8mm")
+metadata/_custom_type_script = "uid://bkdxvbhn1krow"
+
+[node name="ExclamationAnimation" type="AnimatedSprite2D" parent="Door" unique_id=2011652915]
+unique_name_in_owner = true
+position = Vector2(7.6293945e-06, -60.749992)
+scale = Vector2(0.026083698, 0.025453636)
+sprite_frames = SubResource("SpriteFrames_knlp5")
+animation = &"exclamation"
+script = ExtResource("5_6k8mm")
+metadata/_custom_type_script = "uid://bkdxvbhn1krow"
+
+[node name="Area2D" type="Area2D" parent="Door" unique_id=1604838871]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D" unique_id=1894051384]
+position = Vector2(0, -26.5)
+shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="ActiveVisitors" type="Node2D" parent="." unique_id=264993485]
-position = Vector2(573, 84)
+position = Vector2(573, 90)
 
 [node name="VisitorPopupExpanded" parent="." unique_id=1371242909 instance=ExtResource("2_mpjc4")]
 visible = false
@@ -24,3 +135,10 @@ offset_right = 640.0
 offset_bottom = 358.0
 
 [node name="Timer" type="Timer" parent="." unique_id=246713199]
+
+[node name="KnockTimer" type="Timer" parent="." unique_id=1494527958]
+wait_time = 5.0
+
+[connection signal="animation_finished" from="Door/DoorAnimation" to="Door/DoorAnimation" method="_on_animation_finished"]
+[connection signal="animation_finished" from="Door/ExclamationAnimation" to="Door/ExclamationAnimation" method="_on_animation_finished"]
+[connection signal="input_event" from="Door/Area2D" to="." method="door_click_input"]

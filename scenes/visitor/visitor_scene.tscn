@@ -1,19 +1,63 @@
 [gd_scene format=3 uid="uid://bkowbvt4v88sc"]
 
 [ext_resource type="Script" uid="uid://b3n2a5f4vscaj" path="res://scenes/visitor/visitor_scene.gd" id="1_hsolc"]
-[ext_resource type="Texture2D" uid="uid://0tvdgt1hc3c7" path="res://assets/art/character/scientist.png" id="2_1iukj"]
+[ext_resource type="Texture2D" uid="uid://m236k7s27t8b" path="res://assets/art/character/witch_walk-Sheet.png" id="2_1iukj"]
 [ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="3_y8uh8"]
-[ext_resource type="PackedScene" uid="uid://cpjuye6722rab" path="res://scenes/ui/popups/visitor/visitor_popup_small.tscn" id="4_jhe2l"]
-[ext_resource type="PackedScene" uid="uid://18gqsrcf74wr" path="res://scenes/ui/popups/visitor/visitor_popup_tiny.tscn" id="5_1iukj"]
+[ext_resource type="PackedScene" uid="uid://cpjuye6722rab" path="res://scenes/ui/popups/visitor/popup/visitor_popup_small.tscn" id="4_jhe2l"]
+[ext_resource type="PackedScene" uid="uid://18gqsrcf74wr" path="res://scenes/ui/popups/visitor/popup/visitor_popup_tiny.tscn" id="5_1iukj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rbih"]
+atlas = ExtResource("2_1iukj")
+region = Rect2(0, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iukj"]
+atlas = ExtResource("2_1iukj")
+region = Rect2(0, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8uh8"]
+atlas = ExtResource("2_1iukj")
+region = Rect2(64, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhe2l"]
+atlas = ExtResource("2_1iukj")
+region = Rect2(128, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7bit"]
+atlas = ExtResource("2_1iukj")
+region = Rect2(192, 0, 64, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgtu0"]
+atlas = ExtResource("2_1iukj")
+region = Rect2(256, 0, 64, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_1iukj")
+"texture": SubResource("AtlasTexture_8rbih")
 }],
 "loop": 1,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iukj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8uh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhe2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7bit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgtu0")
+}],
+"loop": 1,
+"name": &"walking",
 "speed": 4.0
 }]
 
@@ -25,35 +69,36 @@ script = ExtResource("1_hsolc")
 metadata/_custom_type_script = "uid://b3n2a5f4vscaj"
 
 [node name="AnimationComponent" type="AnimatedSprite2D" parent="." unique_id=2006125240]
-position = Vector2(1.8189894e-12, 15.999999)
-scale = Vector2(0.1, 0.1)
+position = Vector2(0, -16)
+scale = Vector2(0.43749997, 0.4848485)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 animation = &"idle"
-frame_progress = 0.04413793
 script = ExtResource("3_y8uh8")
 metadata/_custom_type_script = "uid://bkdxvbhn1krow"
 
 [node name="VisitorPopupSmall" parent="." unique_id=956766461 instance=ExtResource("4_jhe2l")]
-visible = false
 offset_left = -32.0
-offset_top = -31.0
+offset_top = -62.0
 offset_right = -32.0
-offset_bottom = -31.0
+offset_bottom = -62.0
 
 [node name="VisitorPopupTiny" parent="." unique_id=1283529055 instance=ExtResource("5_1iukj")]
 unique_name_in_owner = true
-offset_left = -18.0
-offset_top = -54.0
-offset_right = 22.0
-offset_bottom = -14.0
+offset_left = -12.0
+offset_top = -72.0
+offset_right = 13.0
+offset_bottom = -47.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1293442681]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1205542137]
-position = Vector2(0, 16)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="TimeRemaining" type="Timer" parent="." unique_id=1482153277]
+[node name="Mouth" type="Node2D" parent="." unique_id=1918086409]
+unique_name_in_owner = true
+position = Vector2(0, -15)
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

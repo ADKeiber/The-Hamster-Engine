@@ -1,10 +1,10 @@
 class_name WizardVisitor extends TimedDifficulty
 
 func apply_difficulty() -> void:
-	pass
+	effect.apply_effect()
 
 func remove_difficulty() -> void:
-	pass
+	effect.remove_effect()
 
 func give_reward() -> void:
-	pass
+	print("Reward given!")

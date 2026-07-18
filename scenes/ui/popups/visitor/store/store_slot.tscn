@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0nbyexsiw7jv"]
 
-[ext_resource type="Script" uid="uid://c7722f2lobelw" path="res://scenes/ui/popups/visitor/store_slot.gd" id="1_glfpd"]
+[ext_resource type="Script" uid="uid://c7722f2lobelw" path="res://scenes/ui/popups/visitor/store/store_slot.gd" id="1_glfpd"]
 [ext_resource type="PackedScene" uid="uid://qub7e5f8xsa7" path="res://scenes/ui/menus/Badge.tscn" id="2_c6b0h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ct7o"]

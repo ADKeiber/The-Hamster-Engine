@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://cufdcjxmqqsui"]
 
-[ext_resource type="Script" uid="uid://dk1hwewec3gia" path="res://scenes/ui/popups/visitor/visitor_popup_expanded.gd" id="1_omxbw"]
-[ext_resource type="Texture2D" uid="uid://ctdrluqjqy2eq" path="res://assets/art/misc/speech_box3.png" id="1_saymb"]
-[ext_resource type="Texture2D" uid="uid://25vmprumjib0" path="res://assets/art/misc/speech_box_entry.png" id="2_7jqbo"]
-[ext_resource type="Texture2D" uid="uid://c81mufkyo7xkk" path="res://assets/art/character/scientist2_head.png" id="2_hcx3h"]
+[ext_resource type="Script" uid="uid://dk1hwewec3gia" path="res://scenes/ui/popups/visitor/popup/visitor_popup_expanded.gd" id="1_bc751"]
+[ext_resource type="Texture2D" uid="uid://ctdrluqjqy2eq" path="res://assets/art/misc/speech_box3.png" id="2_i1vxl"]
+[ext_resource type="Texture2D" uid="uid://25vmprumjib0" path="res://assets/art/misc/speech_box_entry.png" id="3_1bxps"]
+[ext_resource type="Texture2D" uid="uid://c81mufkyo7xkk" path="res://assets/art/character/scientist2_head.png" id="4_mo8a3"]
 
-[node name="VisitorPopupExpanded" type="Control" unique_id=1371242909]
+[node name="VisitorPopupExpanded" type="Control" unique_id=1371242909 groups=["VisitorPopup"]]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -2.0
 offset_right = 638.0
 offset_bottom = 360.0
 mouse_filter = 1
-script = ExtResource("1_omxbw")
+script = ExtResource("1_bc751")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=779798237]
 layout_mode = 1
@@ -27,20 +27,21 @@ offset_right = 213.0
 offset_bottom = 165.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_saymb")
+texture = ExtResource("2_i1vxl")
 patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="TextureRect" type="TextureRect" parent="NinePatchRect" unique_id=1256711912]
+[node name="SpeechBubbleEntry" type="TextureRect" parent="NinePatchRect" unique_id=1256711912]
 layout_mode = 0
 offset_left = 425.0
 offset_top = 115.0
 offset_right = 457.0
 offset_bottom = 147.0
 rotation = -1.5707964
-texture = ExtResource("2_7jqbo")
+texture = ExtResource("3_1bxps")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=1056318567]
 layout_mode = 1
@@ -70,7 +71,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture = ExtResource("2_hcx3h")
+texture = ExtResource("4_mo8a3")
 expand_mode = 3
 stretch_mode = 5
 
@@ -86,7 +87,7 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(0.3, 0.3, 0.3, 1)
 theme_override_font_sizes/normal_font_size = 12
-text = "I'll be around if you need me!"
+text = "I'll be around..."
 fit_content = true
 horizontal_alignment = 1
 

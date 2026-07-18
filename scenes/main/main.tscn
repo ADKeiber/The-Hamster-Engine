@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://btx6kly08w6cy" path="res://scenes/hamster/hamster.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://cmkb25oqwd8vk" path="res://scenes/main/power_produced.gd" id="4_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://c4jxi4kmf16j5" path="res://scenes/visitor/visitor_manager.tscn" id="7_hujxm"]
+[ext_resource type="Script" uid="uid://fl7diixfe4mv" path="res://scripts/global/blackout.gd" id="8_yyfjg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyfjg"]
+bg_color = Color(0.19, 0.19, 0.19, 0.9137255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 
 [node name="Main" type="Control" unique_id=305830555]
 layout_mode = 3
@@ -18,44 +24,44 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_hujxm")
 
+[node name="BlackoutPanel" type="PanelContainer" parent="." unique_id=1686160267 groups=["Blackout"]]
+unique_name_in_owner = true
+visible = false
+z_index = 4000
+layout_mode = 0
+offset_left = -30.0
+offset_top = -29.0
+offset_right = 676.0
+offset_bottom = 386.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yyfjg")
+script = ExtResource("8_yyfjg")
+
 [node name="Cage" parent="." unique_id=480036686 instance=ExtResource("1_6q06x")]
 position = Vector2(166, 262)
 
 [node name="Tester2" parent="." unique_id=590711385 instance=ExtResource("2_iuonh")]
 position = Vector2(412, 207)
 
-[node name="Tester" parent="." unique_id=1258192808 instance=ExtResource("2_iuonh")]
-position = Vector2(267, 206)
+[node name="Battery" parent="." unique_id=1258192808 groups=["Battery"] instance=ExtResource("2_iuonh")]
+position = Vector2(561, 313)
 
 [node name="BuildingsArea" parent="." unique_id=1218242002 instance=ExtResource("1_hyk8p")]
 
 [node name="Hamster" parent="." unique_id=641634076 instance=ExtResource("3_k2fmo")]
 position = Vector2(303, 331)
 
-[node name="Hamster2" parent="." unique_id=2062278838 instance=ExtResource("3_k2fmo")]
-position = Vector2(335, 212)
-
-[node name="Hamster3" parent="." unique_id=1661663384 instance=ExtResource("3_k2fmo")]
-position = Vector2(181, 238)
-
-[node name="Hamster4" parent="." unique_id=1701552658 instance=ExtResource("3_k2fmo")]
-position = Vector2(181, 238)
-
-[node name="Hamster5" parent="." unique_id=920795092 instance=ExtResource("3_k2fmo")]
-position = Vector2(181, 238)
-
-[node name="Control" type="Control" parent="." unique_id=1915303001 node_paths=PackedStringArray("produced", "min", "total")]
+[node name="PowerOutput" type="Control" parent="." unique_id=1915303001 node_paths=PackedStringArray("produced", "min", "total")]
 anchors_preset = 0
-offset_left = 66.0
-offset_top = 73.0
-offset_right = 193.0
-offset_bottom = 199.0
+offset_left = 19.0
+offset_top = 94.0
+offset_right = 146.0
+offset_bottom = 220.0
 script = ExtResource("4_l3cfh")
 produced = NodePath("VBoxContainer/PowerProduced")
 min = NodePath("VBoxContainer/PowerMin")
 total = NodePath("VBoxContainer/TotalPower")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=524259318]
+[node name="VBoxContainer" type="VBoxContainer" parent="PowerOutput" unique_id=524259318]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,17 +69,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PowerProduced" type="Label" parent="Control/VBoxContainer" unique_id=1874886666]
+[node name="PowerProduced" type="Label" parent="PowerOutput/VBoxContainer" unique_id=1874886666]
 layout_mode = 2
 size_flags_vertical = 3
 text = "pro"
 
-[node name="PowerMin" type="Label" parent="Control/VBoxContainer" unique_id=1530478295]
+[node name="PowerMin" type="Label" parent="PowerOutput/VBoxContainer" unique_id=1530478295]
 layout_mode = 2
 size_flags_vertical = 3
 text = "min"
 
-[node name="TotalPower" type="Label" parent="Control/VBoxContainer" unique_id=1127726245]
+[node name="TotalPower" type="Label" parent="PowerOutput/VBoxContainer" unique_id=1127726245]
 layout_mode = 2
 size_flags_vertical = 3
 text = "total"
@@ -81,6 +87,7 @@ text = "total"
 [node name="VisitorManager" parent="." unique_id=1358367874 instance=ExtResource("7_hujxm")]
 unique_name_in_owner = true
 z_index = 500
+visitor_anchors = Array[Vector2]([Vector2(-25, 30), Vector2(10, 30), Vector2(45, 30)])
 
 [node name="WorldTimer" type="Timer" parent="." unique_id=243912178]
 unique_name_in_owner = true
@@ -94,5 +101,18 @@ offset_right = 361.0
 offset_bottom = 108.0
 text = "Start Event
 "
+
+[node name="Machine Effect Placeholder" type="PanelContainer" parent="." unique_id=724347354 groups=["MachineEffects"]]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 87.0
+offset_bottom = 81.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
+
+[node name="Label" type="Label" parent="Machine Effect Placeholder" unique_id=1873370277]
+layout_mode = 2
+text = "Current Machine Effect"
+autowrap_mode = 3
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

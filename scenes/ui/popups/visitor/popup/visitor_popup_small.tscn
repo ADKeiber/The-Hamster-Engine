@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cpjuye6722rab"]
 
-[ext_resource type="Script" uid="uid://dc08k4u1vpfst" path="res://scenes/ui/popups/visitor/visitor_popup_small.gd" id="1_j3xdv"]
+[ext_resource type="Script" uid="uid://dc08k4u1vpfst" path="res://scenes/ui/popups/visitor/popup/visitor_popup_small.gd" id="1_j3xdv"]
 [ext_resource type="Texture2D" uid="uid://ctdrluqjqy2eq" path="res://assets/art/misc/speech_box3.png" id="1_o41hu"]
 [ext_resource type="Texture2D" uid="uid://d0vda0n55cwch" path="res://assets/art/misc/speech_box_entry_small.png" id="2_o41hu"]
 

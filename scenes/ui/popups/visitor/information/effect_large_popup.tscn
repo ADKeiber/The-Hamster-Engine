@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bmybutfbgvr06"]
+
+[ext_resource type="Script" uid="uid://ivxjvmt3fj08" path="res://scenes/ui/popups/visitor/information/basic_text_large_embedded_popup.gd" id="1_bsxk4"]
+
+[node name="BasicTextLargeEmbeddedPopup" type="VBoxContainer" unique_id=931337899]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bsxk4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1333621521]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.13, 0.13, 0.13, 1)
+text = "Hello! My name is %s. 
+I'm so sorry to bother you but I will be using your facilities to power one of my machines... 
+Don't worry! I'll give you something in return!"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=937261520]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer" unique_id=229793472]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "This would be the effect text...."
+fit_content = true

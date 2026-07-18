@@ -56,6 +56,11 @@ MachineModule=""
 GridManager=""
 Building=""
 Cage=""
+Battery="This is for the battery :)"
+Blackout="blackout screen"
+MachineEffects=""
+FocusedVisitor=""
+VisitorPopup=""
 
 [gui]
 

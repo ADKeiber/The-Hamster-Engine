@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://byea7dq2prjf4"]
 
-[ext_resource type="Script" uid="uid://dcdtr3lw8jcn8" path="res://scenes/ui/popups/visitor/store_row.gd" id="1_b8iy0"]
+[ext_resource type="Script" uid="uid://dcdtr3lw8jcn8" path="res://scenes/ui/popups/visitor/store/store_row.gd" id="1_b8iy0"]
 
 [node name="StoreRow" type="HBoxContainer" unique_id=1517396593]
 script = ExtResource("1_b8iy0")
