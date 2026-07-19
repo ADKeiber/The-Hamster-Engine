@@ -87,7 +87,6 @@ text = "total"
 [node name="VisitorManager" parent="." unique_id=1358367874 instance=ExtResource("7_hujxm")]
 unique_name_in_owner = true
 z_index = 500
-visitor_anchors = Array[Vector2]([Vector2(-25, 30), Vector2(10, 30), Vector2(45, 30)])
 
 [node name="WorldTimer" type="Timer" parent="." unique_id=243912178]
 unique_name_in_owner = true

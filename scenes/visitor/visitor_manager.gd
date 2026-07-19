@@ -4,6 +4,10 @@ extends Node2D
 signal start_timer_for_visitor(visitor: VisitorResource)
 signal leave(visitor: VisitorScene)
 
+@export var max_visitors: int = 3
+@export var visitor_anchors: Array[Vector2] ## this is relative to where the door exists :)
+@export var potential_visitors: Array[VisitorResource]
+
 @onready var door_animation: AnimationComponent = %DoorAnimation
 @onready var exclamation_animation: AnimationComponent = %ExclamationAnimation
 @onready var visitor_popup_expanded: VisitorPopupExpanded = $VisitorPopupExpanded
@@ -11,15 +15,12 @@ signal leave(visitor: VisitorScene)
 @onready var active_visitors: Node2D = $ActiveVisitors
 @onready var knock_timer: Timer = $KnockTimer
 
-@export var max_visitors: int = 3
-@export var visitor_anchors: Array[Vector2] ## this is relative to where the door exists :)
 var space_occupied: Array[bool] = []## this isn't probably the best way to do this but it will determine which slots are filled
 var visitor_in_space: Dictionary ## Dictionary[VisitorScene, int]
 var visitors: VisitorScene
 var active_visitor_scene: VisitorScene
 var event_waiting: bool = false
 const VISITOR_SCENE = preload("uid://bkowbvt4v88sc")
-const BASIC_STORE = preload("uid://d2xunjkruqawl")
 
 func _ready() -> void:
 	for i in range(max_visitors):
@@ -50,8 +51,8 @@ func set_visitor_large_popup(visitor: VisitorResource) -> void:
 	pause_visitors(true)
 
 func spawn_visitor() -> void:
-	var visitor :VisitorScene= VISITOR_SCENE.instantiate()
-	var vis_resource := BASIC_STORE.duplicate(true)
+	var visitor: VisitorScene= VISITOR_SCENE.instantiate()
+	var vis_resource:VisitorResource = potential_visitors[randi_range(0, potential_visitors.size() - 1)].duplicate(true)
 	active_visitors.add_child(visitor)
 	visitor.setup_visitor(vis_resource)
 	start_timer_for_visitor.connect(start_timer)

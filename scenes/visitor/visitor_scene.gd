@@ -19,6 +19,7 @@ func _ready() -> void:
 
 func setup_visitor(visitor: VisitorResource) -> void:
 	self.visitor = visitor
+	animation_component.sprite_frames = visitor.sprite_frames
 	visitor_popup_small.set_popup_info(visitor)
 	visitor_popup_small.visible = false
 	visitor_popup_tiny.visible = false
@@ -53,10 +54,13 @@ func pause_timer(paused: bool) -> void:
 	
 func end_encounter() -> void:
 	queue_free()
+	
 
 func get_mouth_position() -> Vector2: 
 	return mouth.global_position
 
 func exit() -> void:
 	visitor_popup_tiny.visible = false
+	if visitor is TimedDifficulty:
+		visitor.remove_difficulty()
 	get_parent().get_parent().leave.emit(self)

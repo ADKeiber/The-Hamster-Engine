@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_q2vkb")
-amount_to_drain = 15
-effect_name = "Power Drain!"
-description = "The amount of power required is increased"
+amount = 5
+effect_name = "Borrowing your grid!"
+description = "Minimum power required is increased by %s for %s seconds"
 metadata/_custom_type_script = "uid://d3rjgcjuc8ty3"

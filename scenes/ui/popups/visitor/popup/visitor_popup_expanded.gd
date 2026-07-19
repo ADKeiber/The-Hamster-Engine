@@ -13,14 +13,16 @@ func set_popup_info(visitor_scene: VisitorScene) -> void:
 	vis = visitor_scene.visitor
 	visitor_name_text.text = vis.visitor_name
 	header_art.texture = vis.large_popup_art
+	for child in popup_info_holder.get_children():
+		child.queue_free()
 	if vis.embedded_large_popup != null:
 		var dynamic_popup_portion := vis.embedded_large_popup.instantiate()
-		dynamic_popup_portion.setup_popup(vis)
 		popup_info_holder.add_child(dynamic_popup_portion)
+		dynamic_popup_portion.setup_popup(vis)
 	if vis.stick_around == false:
 		sticking_around_text.text = "Alright I'll be back eventually..."
 	else:
-		sticking_around_text.text = "I'll be around if you need me!"
+		sticking_around_text.text = "I'll be around..."
 	adjust_speech_bubble_entry(visitor_scene)
 
 func adjust_speech_bubble_entry(visitor_scene: Node2D) -> void:
@@ -38,8 +40,10 @@ func get_distance_from_edge_to_mouth(visitor_scene: Node2D) -> float:
 
 func _on_close_button_pressed() -> void:
 	get_parent().start_timer_for_visitor.emit(vis)
-	var blackout_curtain:Blackout = get_tree().get_nodes_in_group("Blackout")[0]
+	var blackout_curtain: Blackout = get_tree().get_nodes_in_group("Blackout")[0]
 	blackout_curtain.hide_dark_overlay()
 	for node in get_tree().get_nodes_in_group("FocusedVisitor"):
 		node.remove_from_group("FocusedVisitor")
+	if vis is TimedDifficulty: # might not be the most effective... update later possibly
+		vis.apply_difficulty()
 	get_parent().pause_visitors(false)

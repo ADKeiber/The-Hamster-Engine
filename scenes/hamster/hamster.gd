@@ -64,7 +64,6 @@ func hide_bars() -> void:
 	stamina_bar.visible = false
 	health_bar.visible = false
 
-
 @onready var interactor : InteractorComponent = $InteractorComponent
 var target_pos : Vector2
 var move : bool = false

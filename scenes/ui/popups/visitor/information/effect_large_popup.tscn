@@ -10,7 +10,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bsxk4")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1333621521]
+[node name="FlavorTextField" type="RichTextLabel" parent="." unique_id=1333621521]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/default_color = Color(0.13, 0.13, 0.13, 1)
 text = "Hello! My name is %s. 
@@ -23,9 +24,22 @@ layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer" unique_id=229793472]
+[node name="EffectName" type="Label" parent="HBoxContainer" unique_id=1850185090]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.947, 0.47000003, 1)
+text = "Power UP!"
+
+[node name="EffectInformation" type="RichTextLabel" parent="HBoxContainer" unique_id=229793472]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.12, 0.12, 0.12, 1)
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
+theme_override_font_sizes/bold_italics_font_size = 8
+theme_override_font_sizes/italics_font_size = 8
+theme_override_font_sizes/mono_font_size = 8
 text = "This would be the effect text...."
 fit_content = true

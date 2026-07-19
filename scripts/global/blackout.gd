@@ -4,8 +4,7 @@ extends PanelContainer
 @export var resource: VisitorResource
 
 var original_z_indexes: Dictionary = {}
-func _process(delta: float) -> void:
-	pass
+
 
 func _ready() -> void:
 	self.mouse_filter = Control.MOUSE_FILTER_STOP

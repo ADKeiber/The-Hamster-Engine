@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://c86xdmpekf7nk" path="res://resources/hamster/stats/hamster_stats_resource.gd" id="2_hse70"]
 [ext_resource type="Resource" uid="uid://c0plbqf1wavj0" path="res://resources/hamster/stats/basic_hamster.tres" id="3_0abjs"]
 [ext_resource type="Script" uid="uid://bnbn1t32707jh" path="res://resources/module/module_resource.gd" id="3_cq5mg"]
-[ext_resource type="Texture2D" uid="uid://rsh6draj5hci" path="res://assets/art/character/witch1.png" id="8_u6bmd"]
+[ext_resource type="SpriteFrames" uid="uid://dc1betbb7565f" path="res://resources/visitor/sprite_frames/witch_sprite_frames.tres" id="8_4eknx"]
 
 [resource]
 script = ExtResource("1_r1sil")
@@ -18,10 +18,10 @@ type_of_item_by_row = Dictionary[int, int]({
 })
 amt_in_row = Array[int]([5, 5, 5])
 possible_hamsters = Array[ExtResource("2_hse70")]([ExtResource("3_0abjs")])
-sprite = ExtResource("8_u6bmd")
+sprite_frames = ExtResource("8_4eknx")
 visitor_name = "Steve Hamsterton"
 stick_around = true
-time_to_complete = 30.0
+time_to_complete = 15.0
 waiting_position = Vector2(573, 115)
 small_information_text = "Do you want to buy something?"
 embedded_large_popup = ExtResource("1_0abjs")

@@ -1,7 +1,7 @@
 class_name VisitorResource extends Resource
 
 @export_group("General")
-@export var sprite: CompressedTexture2D
+@export var sprite_frames: SpriteFrames
 @export var visitor_name: String
 @export var stick_around: bool
 @export var time_to_complete: float = 0.0 ## this is in seconds

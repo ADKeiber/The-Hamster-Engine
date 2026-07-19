@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://0qrfbkm826hj" path="res://scenes/visitor/visitor_manager.gd" id="1_4i717"]
 [ext_resource type="SpriteFrames" uid="uid://cw27oci17gf8s" path="res://assets/art/building/sprite_frames/wood_door_frames.tres" id="2_22y6y"]
+[ext_resource type="Script" uid="uid://bn182sargnkg" path="res://resources/visitor/visitor.gd" id="2_ctil1"]
 [ext_resource type="PackedScene" uid="uid://cufdcjxmqqsui" path="res://scenes/ui/popups/visitor/popup/visitor_popup_expanded.tscn" id="2_mpjc4"]
+[ext_resource type="Resource" uid="uid://44v42uuevygw" path="res://resources/visitor/timed_difficulty/wizard_visitor.tres" id="3_8d5qh"]
+[ext_resource type="Resource" uid="uid://d2xunjkruqawl" path="res://resources/visitor/store/basic_store.tres" id="4_tyyos"]
 [ext_resource type="Script" uid="uid://cvsvbdwnmv02e" path="res://components/shared/audio_component.gd" id="4_xavc3"]
 [ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="5_6k8mm"]
 [ext_resource type="Resource" uid="uid://car4kweue088h" path="res://resources/hamster/audio/basic_hamster_audio_library.tres" id="5_knlp5"]
@@ -91,6 +94,8 @@ size = Vector2(20, 85)
 
 [node name="VisitorManager" type="Node2D" unique_id=1358367874 groups=["FocusedVisitor"]]
 script = ExtResource("1_4i717")
+visitor_anchors = Array[Vector2]([Vector2(-25, 30), Vector2(10, 30), Vector2(45, 30)])
+potential_visitors = Array[ExtResource("2_ctil1")]([ExtResource("3_8d5qh"), ExtResource("4_tyyos")])
 
 [node name="Door" type="Node2D" parent="." unique_id=1542401554]
 position = Vector2(573, 90)
