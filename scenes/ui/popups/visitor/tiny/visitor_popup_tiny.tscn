@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://18gqsrcf74wr"]
+
+[ext_resource type="Script" uid="uid://c3rtkx4ruko2f" path="res://scenes/ui/popups/visitor/tiny/visitor_popup_tiny.gd" id="1_egih1"]
+[ext_resource type="Texture2D" uid="uid://ctdrluqjqy2eq" path="res://assets/art/misc/speech_box3.png" id="1_muln6"]
+[ext_resource type="Texture2D" uid="uid://d0vda0n55cwch" path="res://assets/art/misc/speech_box_entry_small.png" id="2_egih1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(25, 24.5)
+
+[node name="VisitorPopupTiny" type="Control" unique_id=1283529055]
+custom_minimum_size = Vector2(25, 25)
+custom_maximum_size = Vector2(25, 25)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 25.0
+offset_bottom = 25.0
+mouse_filter = 1
+script = ExtResource("1_egih1")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1549556970]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_muln6")
+
+[node name="Label" type="Label" parent="NinePatchRect" unique_id=455516540]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.110000014, 0.110000014, 1)
+theme_override_font_sizes/font_size = 8
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2045853152]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48000002
+anchor_top = 1.6
+anchor_right = 0.48000002
+anchor_bottom = 1.6
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 8.0
+texture = ExtResource("2_egih1")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=37673454]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1177935875]
+position = Vector2(12.5, 11.75)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

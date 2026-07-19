@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ddcswwl2jxf2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(25, 25)
+
+[node name="HamsterDropoff" type="Control" unique_id=1901599187]
+custom_minimum_size = Vector2(25, 25)
+custom_maximum_size = Vector2(25, 25)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 25.0
+offset_bottom = 25.0
+
+[node name="Panel" type="Panel" parent="." unique_id=929842959]
+custom_minimum_size = Vector2(25, 25)
+custom_maximum_size = Vector2(25, 25)
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 35.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=54081858]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1672590347]
+position = Vector2(12.5, 12.5)
+shape = SubResource("RectangleShape2D_g4v7s")

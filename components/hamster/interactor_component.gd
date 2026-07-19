@@ -1,5 +1,6 @@
-extends Node2D
 class_name InteractorComponent
+extends Node2D
+
 
 @export var area : Area2D
 @export var draggable : DraggableComponent
