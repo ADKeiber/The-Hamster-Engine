@@ -2,13 +2,12 @@
 
 [ext_resource type="Script" uid="uid://0qrfbkm826hj" path="res://scenes/visitor/visitor_manager.gd" id="1_4i717"]
 [ext_resource type="SpriteFrames" uid="uid://cw27oci17gf8s" path="res://assets/art/building/sprite_frames/wood_door_frames.tres" id="2_22y6y"]
-[ext_resource type="Script" uid="uid://bn182sargnkg" path="res://resources/visitor/visitor.gd" id="2_ctil1"]
-[ext_resource type="PackedScene" uid="uid://cufdcjxmqqsui" path="res://scenes/ui/popups/visitor/popup/visitor_popup_expanded.tscn" id="2_mpjc4"]
-[ext_resource type="Resource" uid="uid://44v42uuevygw" path="res://resources/visitor/timed_difficulty/wizard_visitor.tres" id="3_8d5qh"]
-[ext_resource type="Resource" uid="uid://d2xunjkruqawl" path="res://resources/visitor/store/basic_store.tres" id="4_tyyos"]
-[ext_resource type="Script" uid="uid://cvsvbdwnmv02e" path="res://components/shared/audio_component.gd" id="4_xavc3"]
+[ext_resource type="Script" uid="uid://bn182sargnkg" path="res://resources/visitor/visitor_resource.gd" id="2_ctil1"]
+[ext_resource type="PackedScene" uid="uid://cufdcjxmqqsui" path="res://scenes/ui/popups/visitor/large_popup/visitor_popup_large.tscn" id="2_mpjc4"]
+[ext_resource type="Resource" uid="uid://44v42uuevygw" path="res://resources/visitor/timed_difficulty/wizard_visitor.tres" id="3_pyfnl"]
+[ext_resource type="Script" uid="uid://c7os8kwwyi3e7" path="res://scenes/visitor/visitor_spawner.gd" id="4_pyfnl"]
+[ext_resource type="Resource" uid="uid://d2xunjkruqawl" path="res://resources/visitor/store/basic_store_visitor.tres" id="4_tyyos"]
 [ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="5_6k8mm"]
-[ext_resource type="Resource" uid="uid://car4kweue088h" path="res://resources/hamster/audio/basic_hamster_audio_library.tres" id="5_knlp5"]
 [ext_resource type="Texture2D" uid="uid://bxxotc7ei1kay" path="res://assets/art/misc/Exclamation.png" id="6_6k8mm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyfnl"]
@@ -95,15 +94,13 @@ size = Vector2(20, 85)
 [node name="VisitorManager" type="Node2D" unique_id=1358367874 groups=["FocusedVisitor"]]
 script = ExtResource("1_4i717")
 visitor_anchors = Array[Vector2]([Vector2(-25, 30), Vector2(10, 30), Vector2(45, 30)])
-potential_visitors = Array[ExtResource("2_ctil1")]([ExtResource("3_8d5qh"), ExtResource("4_tyyos")])
+potential_visitors = Array[ExtResource("2_ctil1")]([ExtResource("3_pyfnl"), ExtResource("4_tyyos")])
+
+[node name="VisitorSpawner" type="Node" parent="." unique_id=932692764]
+script = ExtResource("4_pyfnl")
 
 [node name="Door" type="Node2D" parent="." unique_id=1542401554]
 position = Vector2(573, 90)
-
-[node name="AudioComponent" type="Node2D" parent="Door" unique_id=1262203919]
-script = ExtResource("4_xavc3")
-audio_library = ExtResource("5_knlp5")
-metadata/_custom_type_script = "uid://cvsvbdwnmv02e"
 
 [node name="DoorAnimation" type="AnimatedSprite2D" parent="Door" unique_id=158776016]
 unique_name_in_owner = true
@@ -132,17 +129,10 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="ActiveVisitors" type="Node2D" parent="." unique_id=264993485]
 position = Vector2(573, 90)
 
-[node name="VisitorPopupExpanded" parent="." unique_id=1371242909 instance=ExtResource("2_mpjc4")]
+[node name="VisitorPopupLarge" parent="." unique_id=1371242909 instance=ExtResource("2_mpjc4")]
 visible = false
-offset_left = 0.0
-offset_top = -2.0
-offset_right = 640.0
-offset_bottom = 358.0
 
 [node name="Timer" type="Timer" parent="." unique_id=246713199]
-
-[node name="KnockTimer" type="Timer" parent="." unique_id=1494527958]
-wait_time = 5.0
 
 [connection signal="animation_finished" from="Door/DoorAnimation" to="Door/DoorAnimation" method="_on_animation_finished"]
 [connection signal="animation_finished" from="Door/ExclamationAnimation" to="Door/ExclamationAnimation" method="_on_animation_finished"]

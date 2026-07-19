@@ -1,6 +1,8 @@
 class_name StoreRow
 extends HBoxContainer
 
+const STORE_SLOT = preload("uid://c0nbyexsiw7jv")
+
 @export var items_for_sale: Array[Node2D] = []
 
 @onready var slots: HBoxContainer = %Slots
@@ -9,7 +11,7 @@ extends HBoxContainer
 var row_name: String
 var num_of_slots: int
 var items: Array[Node2D]
-const STORE_SLOT = preload("uid://c0nbyexsiw7jv")
+
 func _ready() -> void:
 	set_row_without_items()
 	set_items()

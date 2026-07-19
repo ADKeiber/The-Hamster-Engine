@@ -1,4 +1,4 @@
-class_name BasicStoreVisitor extends VisitorResource
+class_name StoreVisitor extends VisitorResource
 
 @export var type_of_item_by_row: Dictionary[int, ItemTypes] ## this tells us the type of item it is in each row. The key == row number
 

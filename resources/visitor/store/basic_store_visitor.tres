@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="StoreVisitor" format=3 uid="uid://d2xunjkruqawl"]
 
-[ext_resource type="PackedScene" uid="uid://b3sl4dgkf3nvk" path="res://scenes/ui/popups/visitor/store/basic_store_large_popup.tscn" id="1_0abjs"]
+[ext_resource type="PackedScene" uid="uid://b3sl4dgkf3nvk" path="res://scenes/ui/popups/visitor/large_popup/basic_store/embedded_basic_store_large.tscn" id="1_4eknx"]
 [ext_resource type="Script" uid="uid://c3o6q4tw5wdpg" path="res://resources/building/building_resource.gd" id="1_bydvf"]
-[ext_resource type="Script" uid="uid://dyfeu8e1cpxua" path="res://resources/visitor/store/store_visitor.gd" id="1_r1sil"]
+[ext_resource type="Script" uid="uid://dyfeu8e1cpxua" path="res://resources/visitor/store/basic_store_visitor.gd" id="1_r1sil"]
 [ext_resource type="Texture2D" uid="uid://fsg2dxhjtom3" path="res://assets/art/character/witch_head1.png" id="2_4eknx"]
 [ext_resource type="Script" uid="uid://c86xdmpekf7nk" path="res://resources/hamster/stats/hamster_stats_resource.gd" id="2_hse70"]
 [ext_resource type="Resource" uid="uid://c0plbqf1wavj0" path="res://resources/hamster/stats/basic_hamster.tres" id="3_0abjs"]
@@ -24,7 +24,7 @@ stick_around = true
 time_to_complete = 15.0
 waiting_position = Vector2(573, 115)
 small_information_text = "Do you want to buy something?"
-embedded_large_popup = ExtResource("1_0abjs")
+embedded_large_popup = ExtResource("1_4eknx")
 large_information_text = "Welcome to my store! Take a look around!"
 large_popup_art = ExtResource("2_4eknx")
 metadata/_custom_type_script = "uid://dyfeu8e1cpxua"

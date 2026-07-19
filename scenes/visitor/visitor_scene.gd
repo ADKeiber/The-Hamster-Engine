@@ -51,10 +51,9 @@ func format_time(total_seconds: int) -> String:
 
 func pause_timer(paused: bool) -> void:
 	is_pasued = paused
-	
+
 func end_encounter() -> void:
 	queue_free()
-	
 
 func get_mouth_position() -> Vector2: 
 	return mouth.global_position
@@ -63,4 +62,4 @@ func exit() -> void:
 	visitor_popup_tiny.visible = false
 	if visitor is TimedDifficulty:
 		visitor.remove_difficulty()
-	get_parent().get_parent().leave.emit(self)
+	get_parent().get_parent().leave.emit(self) ## yuck (maybe change later)

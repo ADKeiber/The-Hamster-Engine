@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b3n2a5f4vscaj" path="res://scenes/visitor/visitor_scene.gd" id="1_hsolc"]
 [ext_resource type="SpriteFrames" uid="uid://dbnej63mege1j" path="res://resources/visitor/sprite_frames/scientist_sprite_frames.tres" id="2_1iukj"]
 [ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="3_y8uh8"]
-[ext_resource type="PackedScene" uid="uid://cpjuye6722rab" path="res://scenes/ui/popups/visitor/popup/visitor_popup_small.tscn" id="4_jhe2l"]
-[ext_resource type="PackedScene" uid="uid://18gqsrcf74wr" path="res://scenes/ui/popups/visitor/popup/visitor_popup_tiny.tscn" id="5_1iukj"]
+[ext_resource type="PackedScene" uid="uid://cpjuye6722rab" path="res://scenes/ui/popups/visitor/small_popup/visitor_popup_small.tscn" id="4_jhe2l"]
+[ext_resource type="PackedScene" uid="uid://18gqsrcf74wr" path="res://scenes/ui/popups/visitor/tiny/visitor_popup_tiny.tscn" id="5_1iukj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(20, 32)
@@ -22,10 +22,17 @@ script = ExtResource("3_y8uh8")
 metadata/_custom_type_script = "uid://bkdxvbhn1krow"
 
 [node name="VisitorPopupSmall" parent="." unique_id=956766461 instance=ExtResource("4_jhe2l")]
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = -32.0
 offset_top = -62.0
 offset_right = -32.0
 offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VisitorPopupTiny" parent="." unique_id=1283529055 instance=ExtResource("5_1iukj")]
 unique_name_in_owner = true

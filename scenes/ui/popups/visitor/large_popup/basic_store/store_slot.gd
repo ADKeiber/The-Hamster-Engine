@@ -41,7 +41,7 @@ func buy_item() -> void:
 
 func disable_slot() -> void:
 	self.modulate = Color.GRAY
-	badge.modulate.a = 0
+	badge.modulate.a = .5
 	purchase_popup.visible = false
 	enabled = false
 

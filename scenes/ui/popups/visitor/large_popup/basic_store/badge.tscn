@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://qub7e5f8xsa7"]
 
-[ext_resource type="Script" uid="uid://xowatbq8lqqf" path="res://scenes/ui/menus/badge.gd" id="1_4itsf"]
+[ext_resource type="Script" uid="uid://xowatbq8lqqf" path="res://scenes/ui/popups/visitor/large_popup/basic_store/badge.gd" id="1_mqkfc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_242x2"]
 bg_color = Color(0.45377272, 0.64492476, 0.6116143, 1)
@@ -23,7 +23,7 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_4itsf")
+script = ExtResource("1_mqkfc")
 
 [node name="Label" type="Label" parent="." unique_id=421108881]
 layout_mode = 2

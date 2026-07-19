@@ -1,14 +1,12 @@
-class_name BasicStoreLargePopup extends VBoxContainer
+class_name EmbeddedBasicStoreLarge extends VBoxContainer
 
 const HAMSTER = preload("res://scenes/hamster/hamster.tscn")
 const STORE_ROW = preload("uid://byea7dq2prjf4")
 
 var visitor: StoreVisitor
 
-func setup_popup(visitor: VisitorResource) -> void:
-	if not visitor is StoreVisitor:
-		return
-	self.visitor = visitor as StoreVisitor
+func setup_popup(visitor_resource: VisitorResource) -> void:
+	self.visitor = visitor_resource as StoreVisitor
 	for i in range(visitor.type_of_item_by_row.size()):
 		var row_num = i + 1
 		var margin_container := MarginContainer.new()

@@ -1,7 +1,7 @@
 class_name VisitorManager
 extends Node2D
 
-signal start_timer_for_visitor(visitor: VisitorResource)
+signal start_timer_for_visitor(visitor: VisitorScene)
 signal leave(visitor: VisitorScene)
 
 @export var max_visitors: int = 3
@@ -10,7 +10,7 @@ signal leave(visitor: VisitorScene)
 
 @onready var door_animation: AnimationComponent = %DoorAnimation
 @onready var exclamation_animation: AnimationComponent = %ExclamationAnimation
-@onready var visitor_popup_expanded: VisitorPopupExpanded = $VisitorPopupExpanded
+@onready var visitor_popup_expanded: VisitorPopupLarge = $VisitorPopupLarge
 @onready var timer: Timer = $Timer
 @onready var active_visitors: Node2D = $ActiveVisitors
 @onready var knock_timer: Timer = $KnockTimer
@@ -51,7 +51,7 @@ func set_visitor_large_popup(visitor: VisitorResource) -> void:
 	pause_visitors(true)
 
 func spawn_visitor() -> void:
-	var visitor: VisitorScene= VISITOR_SCENE.instantiate()
+	var visitor: VisitorScene = VISITOR_SCENE.instantiate()
 	var vis_resource:VisitorResource = potential_visitors[randi_range(0, potential_visitors.size() - 1)].duplicate(true)
 	active_visitors.add_child(visitor)
 	visitor.setup_visitor(vis_resource)
@@ -61,11 +61,10 @@ func spawn_visitor() -> void:
 	visitor_in_space[visitor] = get_first_non_occupied_anchor() ## sets the visitor and their anchors
 	animate_to_position(visitor, get_first_non_occupied_anchor(), false)
 
-func start_timer(visitor: VisitorResource) -> void:
-	var visitor_node := find_visitor_using_resource(visitor)
-	visitor_node.popups_disabled = false
-	visitor_node.start_timer()
-	visitor_node.visitor_popup_tiny.visible = true
+func start_timer(visitor_scene: VisitorScene) -> void:
+	visitor_scene.popups_disabled = false
+	visitor_scene.start_timer()
+	visitor_scene.visitor_popup_tiny.visible = true
 	visitor_popup_expanded.visible = false
 	expand_tiny_for_all()
 
