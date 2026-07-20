@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://u07pejunv57l" path="res://resources/hamster/traits/basic/basic_1_trait.tres" id="5_ftrnc"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_55nn5")
 max_health = 100
 health_drain = 10

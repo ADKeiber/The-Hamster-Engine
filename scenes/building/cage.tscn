@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://be0iiky8lt3ee" path="res://scenes/building/cage.gd" id="1_iqsty"]
 [ext_resource type="PackedScene" uid="uid://babhijhxpgqs5" path="res://components/shared/interactable_component.tscn" id="1_uruuv"]
 [ext_resource type="Script" uid="uid://dnxh6ppbcf7fn" path="res://components/building/cage_interactable_component.gd" id="3_10k36"]
+[ext_resource type="PackedScene" uid="uid://ch8is50ni4kn8" path="res://components/shared/power_consumer_component.tscn" id="4_gvfbu"]
+[ext_resource type="Script" uid="uid://dpv8dyefd0wpa" path="res://components/building/cage_power_consumer_component.gd" id="5_gtkua"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgf6b"]
 size = Vector2(302, 86)
@@ -72,3 +74,8 @@ one_way_collision_direction = Vector2(0.7744057, 0.6326894)
 position = Vector2(-9, -1)
 shape = SubResource("SegmentShape2D_gtkua")
 one_way_collision_direction = Vector2(0.7744057, 0.6326894)
+
+[node name="CagePowerConsumerComponent" parent="." unique_id=133540461 node_paths=PackedStringArray("interactable") instance=ExtResource("4_gvfbu")]
+script = ExtResource("5_gtkua")
+interactable = NodePath("../InteractableComponent")
+on_min_power_increase = 5

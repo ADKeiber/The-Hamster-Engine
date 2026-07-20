@@ -5,4 +5,7 @@
 [resource]
 script = ExtResource("1_5843x")
 increase = 10
+name = "Basic Hamster"
+description = "Increase a random stat."
+rank = 2
 metadata/_custom_type_script = "uid://xo38y7rgjhcu"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" format=3 uid="uid://cq3751vy6sjao"]
+[gd_resource type="Resource" script_class="GymResource" format=3 uid="uid://cq3751vy6sjao"]
 
 [ext_resource type="SpriteFrames" uid="uid://bi10gjvao2nx7" path="res://resources/building/sprite_frames/gym_sprite_frames.tres" id="1_8qvgj"]
 [ext_resource type="Resource" uid="uid://bw6q1wyq80eou" path="res://resources/building/footprint/4x4.tres" id="2_tr3db"]
@@ -6,11 +6,14 @@
 
 [resource]
 script = ExtResource("3_8qvgj")
+stat_upgrade = 10
 building_name = "Gym"
 description = "This is used to upgrade hamster stats."
 footprint = ExtResource("2_tr3db")
 background_sprite_frames = ExtResource("1_8qvgj")
 interactable_on = true
+interactale_locked = true
+locked_in_time = 3.0
 power_consumer_on = true
 min_power_increase = 10
 on_min_power_increase = 10

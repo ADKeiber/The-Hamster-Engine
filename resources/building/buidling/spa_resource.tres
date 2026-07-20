@@ -1,4 +1,4 @@
-[gd_resource type="Resource" format=3 uid="uid://bqvre6p2n6jeh"]
+[gd_resource type="Resource" script_class="SpaResource" format=3 uid="uid://bqvre6p2n6jeh"]
 
 [ext_resource type="SpriteFrames" uid="uid://d4ifymjc6aw4w" path="res://resources/building/sprite_frames/spa_sprite_frames.tres" id="1_2w2hh"]
 [ext_resource type="Script" uid="uid://bclxtjifh4uul" path="res://resources/building/buidling/spa_resource.gd" id="1_l1m8i"]
@@ -11,6 +11,8 @@ description = "This is used for healing hurt hamsters."
 footprint = ExtResource("2_qnuyc")
 background_sprite_frames = ExtResource("1_2w2hh")
 interactable_on = true
+interactale_locked = true
+locked_in_time = 3
 power_consumer_on = true
 min_power_increase = 10
 on_min_power_increase = 10

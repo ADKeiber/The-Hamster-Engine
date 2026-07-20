@@ -1,7 +1,6 @@
-extends Building
+extends BuildingResource
+class_name WheelResource
 
-func turn_on() -> void:
+func turn_on(hamster : Hamster, cage : CageInteractableComponent) -> void:
 	pass
 	
-func turn_off() -> void:
-	pass

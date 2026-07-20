@@ -30,8 +30,11 @@ func check_building() -> void:
 		interactable = building.get_parent().interactable_component
 		reparent_hamster(interactable)
 	elif building == null and hamster.get_parent() is InteractableComponent:
-		reparent_hamster(hamster.get_parent())
-	else: reparent_hamster(cage)
+		interactable = hamster.get_parent()
+		reparent_hamster(interactable)
+	else: 
+		interactable = cage
+		reparent_hamster(interactable)
 
 
 func reparent_hamster(parent) -> void:
@@ -39,19 +42,19 @@ func reparent_hamster(parent) -> void:
 		hamster.reparent(parent)
 		animation.invisible()
 		hamster.global_position = parent.global_position
-		parent.entered()
+		#parent.entered()
 		hamster.velocity = Vector2.ZERO
 	elif parent.is_in_group("Cage") && cage.cage_hovered == false:
 		hamster.reparent(cage)
 		hamster.global_position = Vector2(
 			randf_range(cage.start_pos.x, cage.end_pos.x),
 		 randf_range(cage.start_pos.y, cage.end_pos.y))
-		parent.entered()
+		#parent.entered()
 		hamster.velocity = Vector2.ZERO
 	elif parent.is_in_group("Cage") && cage.cage_hovered == true:
 		hamster.reparent(cage)
 		hamster.global_position = get_global_mouse_position()
-		parent.entered()
+		#parent.entered()
 		hamster.velocity = Vector2.ZERO
 
 func merge_rect2(h_area : Area2D, building_area) -> Vector2:
@@ -70,5 +73,4 @@ func merge_rect2(h_area : Area2D, building_area) -> Vector2:
 	
 func picked_up() -> void:
 	animation.visible()
-	if hamster.get_parent() is InteractableComponent:
-		hamster.get_parent().exited()
+	draggable.draggable = true

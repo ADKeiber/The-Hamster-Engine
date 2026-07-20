@@ -1,4 +1,4 @@
-[gd_resource type="Resource" format=3 uid="uid://8st2x53cqxhd"]
+[gd_resource type="Resource" script_class="ExperimentalTankResource" format=3 uid="uid://8st2x53cqxhd"]
 
 [ext_resource type="SpriteFrames" uid="uid://bl8sywru6qh7d" path="res://resources/building/sprite_frames/experimental_tank_sprite_frames.tres" id="1_lnba7"]
 [ext_resource type="Resource" uid="uid://bw6q1wyq80eou" path="res://resources/building/footprint/4x4.tres" id="2_52c5i"]
@@ -11,6 +11,10 @@ description = "This is used to add traits to hamsters."
 footprint = ExtResource("2_52c5i")
 background_sprite_frames = ExtResource("1_lnba7")
 interactable_on = true
+interactale_locked = true
+locked_in_time = 3.0
+power_producer_on = null
+power = null
 power_consumer_on = true
 min_power_increase = 10
 on_min_power_increase = 10
