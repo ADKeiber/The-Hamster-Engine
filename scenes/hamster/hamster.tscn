@@ -18,8 +18,11 @@
 [ext_resource type="Script" uid="uid://xer7y5t1d1x8" path="res://components/hamster/condition_component.gd" id="11_m0doy"]
 [ext_resource type="Script" uid="uid://cyor7je75ty01" path="res://resources/hamster/traits/trait_resource.gd" id="12_pqg2e"]
 [ext_resource type="Resource" uid="uid://u07pejunv57l" path="res://resources/hamster/traits/basic/basic_1_trait.tres" id="13_0uqxs"]
+[ext_resource type="Texture2D" uid="uid://fqy45xigmhd3" path="res://assets/art/bars/Inner Circle Bar Filled.png" id="19_dvy73"]
+[ext_resource type="Texture2D" uid="uid://ddyu4nlj64tsw" path="res://assets/art/bars/Over Circle Bar filled.png" id="20_aowhe"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5civw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvy73"]
+size = Vector2(29, 36)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7g52f"]
 bg_color = Color(0.6, 0.6, 0.8901961, 1)
@@ -57,10 +60,12 @@ metadata/_custom_type_script = "uid://b3os4c0mgu755"
 
 [node name="CharacterCollision" type="CollisionShape2D" parent="." unique_id=624377826]
 z_index = 1
-shape = SubResource("CircleShape2D_5civw")
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_dvy73")
 
 [node name="StaminaBar" type="ProgressBar" parent="." unique_id=1815293619]
 unique_name_in_owner = true
+visible = false
 offset_left = 16.0
 offset_top = -12.0
 offset_right = 20.0
@@ -74,6 +79,7 @@ show_percentage = false
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=1039874142]
 unique_name_in_owner = true
+visible = false
 offset_left = 21.0
 offset_top = -12.0
 offset_right = 25.0
@@ -128,3 +134,55 @@ shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Timer" type="Timer" parent="." unique_id=2115075215]
 one_shot = true
+
+[node name="HealthBar2" type="TextureProgressBar" parent="." unique_id=573331642]
+offset_left = -15.0
+offset_top = -21.0
+offset_right = -6.0
+offset_bottom = -13.0
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("19_dvy73")
+texture_over = ExtResource("20_aowhe")
+texture_progress = ExtResource("19_dvy73")
+tint_under = Color(0.20871013, 0.20871016, 0.20871013, 1)
+tint_progress = Color(0.8531263, 0.31182808, 0.32117912, 1)
+
+[node name="StaminaBar2" type="TextureProgressBar" parent="." unique_id=1602077174]
+offset_left = -5.0
+offset_top = -21.0
+offset_right = 4.0
+offset_bottom = -13.0
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("19_dvy73")
+texture_over = ExtResource("20_aowhe")
+texture_progress = ExtResource("19_dvy73")
+tint_under = Color(0.2231029, 0.2231029, 0.22310287, 1)
+tint_progress = Color(0.15362877, 0.5046718, 0.6898888, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=952132033]
+offset_left = 5.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -13.0
+color = Color(0, 0, 0, 0.11372549)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=2126078457]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.99999905
+offset_bottom = 2.166668
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ui" type="CanvasLayer" parent="." unique_id=435066725]
+layer = 100
