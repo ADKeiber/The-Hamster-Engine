@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://b0itp83je22bl" path="res://scenes/main/main.gd" id="1_hujxm"]
 [ext_resource type="PackedScene" uid="uid://dx5dmin8d3pcr" path="res://scenes/building/buildings_area.tscn" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://dxncdpsw0qdep" path="res://scenes/building/tester.tscn" id="2_iuonh"]
-[ext_resource type="PackedScene" uid="uid://btx6kly08w6cy" path="res://scenes/hamster/hamster.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://cmkb25oqwd8vk" path="res://scenes/main/power_produced.gd" id="4_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://c4jxi4kmf16j5" path="res://scenes/visitor/visitor_manager.tscn" id="7_hujxm"]
 [ext_resource type="Script" uid="uid://fl7diixfe4mv" path="res://scripts/global/blackout.gd" id="8_yyfjg"]
@@ -46,9 +45,6 @@ position = Vector2(412, 207)
 position = Vector2(561, 313)
 
 [node name="BuildingsArea" parent="." unique_id=1218242002 instance=ExtResource("1_hyk8p")]
-
-[node name="Hamster" parent="." unique_id=641634076 instance=ExtResource("3_k2fmo")]
-position = Vector2(303, 331)
 
 [node name="PowerOutput" type="Control" parent="." unique_id=1915303001 node_paths=PackedStringArray("produced", "min", "total")]
 anchors_preset = 0
