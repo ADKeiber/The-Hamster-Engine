@@ -13,7 +13,7 @@ signal drag_ended
 #var area: Area2D
 var dragging := false
 var drag_offset := Vector2.ZERO
-var draggable := true
+var draggable: bool = true
 var start_drag_location : Vector2i 
 
 # Called when the node enters the scene tree for the first time.

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bdbay17n2fnpq"]
+
+[ext_resource type="Script" uid="uid://cggvb25vs8pi" path="res://scenes/ui/popups/visitor/small_popup/embedded_timed_difficulty_small.gd" id="1_k1tk2"]
+
+[node name="EmbeddedTimedDifficultySmall" type="VBoxContainer" unique_id=1085383822]
+size_flags_vertical = 4
+theme_override_constants/separation = 2
+alignment = 1
+script = ExtResource("1_k1tk2")
+
+[node name="DifficultyName" type="Label" parent="." unique_id=1810438237]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Power"
+horizontal_alignment = 1
+
+[node name="DifficultyDescription" type="RichTextLabel" parent="." unique_id=1142080891]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 4
+theme_override_font_sizes/bold_font_size = 4
+theme_override_font_sizes/bold_italics_font_size = 4
+theme_override_font_sizes/italics_font_size = 4
+theme_override_font_sizes/mono_font_size = 4
+text = "Hello there"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,7 +1,7 @@
 class_name AudioComponent
 extends Node2D
 
-var audio_library: AudioLibraryResource
+@export var audio_library: AudioLibraryResource
 @onready var player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 

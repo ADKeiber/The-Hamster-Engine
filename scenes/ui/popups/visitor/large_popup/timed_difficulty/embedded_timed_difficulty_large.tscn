@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bmybutfbgvr06"]
+
+[ext_resource type="Script" uid="uid://ivxjvmt3fj08" path="res://scenes/ui/popups/visitor/large_popup/timed_difficulty/embedded_timed_difficulty_large.gd" id="1_ihs21"]
+[ext_resource type="PackedScene" uid="uid://bwrcbcmkqdmd8" path="res://scenes/ui/popups/visitor/large_popup/timed_difficulty/effect_information_panel.tscn" id="2_1p6qv"]
+
+[node name="BasicTextLargeEmbeddedPopup" type="VBoxContainer" unique_id=931337899]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ihs21")
+
+[node name="FlavorTextField" type="RichTextLabel" parent="." unique_id=1333621521]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.13, 0.13, 0.13, 1)
+text = "Hello! My name is %s. 
+I'm so sorry to bother you but I will be using your facilities to power one of my machines... 
+Don't worry! I'll give you something in return!"
+fit_content = true
+
+[node name="EffectInformation" parent="." unique_id=961085669 instance=ExtResource("2_1p6qv")]
+layout_mode = 2

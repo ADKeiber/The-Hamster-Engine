@@ -21,6 +21,7 @@ buses/default_bus_layout="uid://bglpd37hppvw4"
 
 [autoload]
 
+Visitor="*uid://dvsfkhnerye3a"
 Power="*uid://41cd6kvj28l5"
 Database="*uid://ddltf2oldmgim"
 
@@ -39,7 +40,6 @@ window/stretch/aspect="expand"
 
 folder_colors={
 "res://assets/": "pink",
-"res://autoload/": "green",
 "res://components/": "red",
 "res://docs/": "orange",
 "res://resources/": "yellow",
@@ -57,6 +57,11 @@ MachineModule=""
 GridManager=""
 Building=""
 Cage=""
+Battery="This is for the battery :)"
+Blackout="blackout screen"
+MachineEffects=""
+FocusedVisitor=""
+VisitorPopup=""
 
 [gui]
 
