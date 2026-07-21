@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bl5exi6jkxldu"]
+
+[ext_resource type="Script" uid="uid://b47ejqe3g4aw1" path="res://scenes/ui/popups/visitor/large_popup/basic_store/embedded_basic_salesman_large.gd" id="1_ojcm3"]
+[ext_resource type="Texture2D" uid="uid://6pf04dm7qs8d" path="res://assets/art/character/basic_salesman_store.PNG" id="2_05yo8"]
+[ext_resource type="PackedScene" uid="uid://c0nbyexsiw7jv" path="res://scenes/ui/popups/visitor/large_popup/basic_store/store_slot.tscn" id="3_0cxag"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujpuf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="EmbeddedBasicSalesmanLarge" type="PanelContainer" unique_id=1314870165]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ujpuf")
+script = ExtResource("1_ojcm3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1475149892]
+layout_mode = 2
+texture = ExtResource("2_05yo8")
+expand_mode = 5
+
+[node name="Control" type="Control" parent="." unique_id=1785965925]
+layout_mode = 2
+
+[node name="HamsterSlot" parent="Control" unique_id=29628779 instance=ExtResource("3_0cxag")]
+layout_mode = 1
+offset_left = 157.0
+offset_top = 108.6875
+offset_right = 168.7
+offset_bottom = 120.36212
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="WheelSlot" parent="Control" unique_id=2008791605 instance=ExtResource("3_0cxag")]
+layout_mode = 1
+offset_left = 215.0
+offset_top = 108.6875
+offset_right = 226.7
+offset_bottom = 120.36212
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="ModuleSlot" parent="Control" unique_id=1351916823 instance=ExtResource("3_0cxag")]
+layout_mode = 1
+offset_left = 151.0
+offset_top = 153.6875
+offset_right = 162.7
+offset_bottom = 165.36212
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.75, 0.75)
+
+[node name="ModuleSlot2" parent="Control" unique_id=98980252 instance=ExtResource("3_0cxag")]
+layout_mode = 1
+offset_left = 178.0
+offset_top = 153.6875
+offset_right = 189.7
+offset_bottom = 165.36212
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.75, 0.75)
+
+[node name="ModuleSlot3" parent="Control" unique_id=1965094086 instance=ExtResource("3_0cxag")]
+layout_mode = 1
+offset_left = 204.0
+offset_top = 153.6875
+offset_right = 215.7
+offset_bottom = 165.36212
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.75, 0.75)
+
+[node name="ModuleSlot4" parent="Control" unique_id=1402818405 instance=ExtResource("3_0cxag")]
+layout_mode = 1
+offset_left = 231.0
+offset_top = 153.6875
+offset_right = 242.7
+offset_bottom = 165.36212
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.75, 0.75)

@@ -16,6 +16,8 @@ func set_popup_info(visitor_scene: VisitorScene) -> void:
 	visitor_name_text.text = visitor_resource.visitor_name
 	if visitor_resource.large_popup_art != null:
 		header_art.texture = visitor_resource.large_popup_art
+	else:
+		header_art.texture = null
 	for child in popup_info_holder.get_children():
 		child.queue_free()
 	if visitor_resource.embedded_large_popup != null:

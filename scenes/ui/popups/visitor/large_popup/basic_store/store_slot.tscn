@@ -13,8 +13,8 @@ corner_radius_bottom_left = 8
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(32, 32)
 
-[node name="StoreSlot" type="PanelContainer" unique_id=29628779]
-custom_minimum_size = Vector2(32, 32)
+[node name="StoreSlot" type="PanelContainer" unique_id=29628779 node_paths=PackedStringArray("area")]
+custom_minimum_size = Vector2(16, 16)
 anchors_preset = -1
 anchor_right = 0.05
 anchor_bottom = 0.089
@@ -23,6 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_glfpd")
+area = NodePath("Area2D")
 
 [node name="Wrapper" type="Control" parent="." unique_id=525447862]
 layout_mode = 2
@@ -35,6 +36,7 @@ layout_mode = 1
 
 [node name="PurchasePopup" type="Node2D" parent="." unique_id=398854302]
 unique_name_in_owner = true
+visible = false
 position = Vector2(16, 16)
 
 [node name="PanelContainer" type="PanelContainer" parent="PurchasePopup" unique_id=910969005]
@@ -93,9 +95,9 @@ theme_override_font_sizes/font_size = 6
 text = "No"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2112336397]
+position = Vector2(16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=456530934]
-position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [connection signal="pressed" from="PurchasePopup/PanelContainer/VBoxContainer/Buttons/HBoxContainer/Button" to="." method="_on_button_pressed"]

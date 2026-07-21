@@ -1,12 +1,8 @@
-class_name StoreVisitor extends VisitorResource
+class_name BasicStoreVisitor extends VisitorResource
 
-@export var type_of_item_by_row: Dictionary[int, ItemTypes] ## this tells us the type of item it is in each row. The key == row number
-
-@export var amt_in_row: Array[int] ## index is the row value is the amount
-@export var possible_buildings: Array[BuildingResource]
-@export var possible_hamsters: Array[HamsterStatsResource]
+@export var wheel_building: BuildingResource
+@export var hamster: HamsterStatsResource
 @export var possible_modules: Array[ModuleResource]
-#@export var effects: #TODO ADD LATER... ADD THE POSSIBLITY TO ADD EFFECTS
 
 enum ItemTypes {BUILDING, HAMSTER, MODULE}
 

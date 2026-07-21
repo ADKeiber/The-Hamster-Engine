@@ -1,5 +1,6 @@
-extends CharacterBody2D
 class_name Hamster 
+extends CharacterBody2D
+
 const BURN_CONDITION = preload("uid://gcxqiowkjugl")
 const MAGICALLY_ENHANCED_CONDITION = preload("uid://bt1lfv6w8tuxw")
 const REST_CONDITION = preload("uid://cbfcjl0pgym4l")
