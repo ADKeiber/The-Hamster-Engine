@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://xer7y5t1d1x8" path="res://components/hamster/condition_component.gd" id="11_m0doy"]
 [ext_resource type="Script" uid="uid://cyor7je75ty01" path="res://resources/hamster/traits/trait_resource.gd" id="12_pqg2e"]
 [ext_resource type="Resource" uid="uid://u07pejunv57l" path="res://resources/hamster/traits/basic/basic_1_trait.tres" id="13_0uqxs"]
+[ext_resource type="Script" uid="uid://delko0wlnrvkg" path="res://scenes/hamster/hamster_ui.gd" id="19_aowhe"]
 [ext_resource type="Texture2D" uid="uid://fqy45xigmhd3" path="res://assets/art/bars/Inner Circle Bar Filled.png" id="19_dvy73"]
 [ext_resource type="Texture2D" uid="uid://ddyu4nlj64tsw" path="res://assets/art/bars/Over Circle Bar filled.png" id="20_aowhe"]
 
@@ -30,7 +31,7 @@ bg_color = Color(0.6, 0.6, 0.8901961, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vus7h"]
 bg_color = Color(0.6, 0.8980392, 0.6, 1)
 
-[sub_resource type="Resource" id="Resource_h1ogy"]
+[sub_resource type="Resource" id="Resource_pqg2e"]
 resource_local_to_scene = true
 script = ExtResource("11_aowhe")
 max_health = 100
@@ -111,7 +112,7 @@ script = ExtResource("7_5civw")
 metadata/_custom_type_script = "uid://bkdxvbhn1krow"
 
 [node name="HamsterStatsComponent" parent="." unique_id=357086209 instance=ExtResource("4_m4iqr")]
-_stats = SubResource("Resource_h1ogy")
+_stats = SubResource("Resource_pqg2e")
 
 [node name="TraitsComponent" parent="." unique_id=996135682 instance=ExtResource("5_vus7h")]
 
@@ -138,7 +139,13 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="Timer" type="Timer" parent="." unique_id=2115075215]
 one_shot = true
 
-[node name="HealthBar2" type="TextureProgressBar" parent="." unique_id=573331642]
+[node name="Ui" type="Control" parent="." unique_id=1398491235]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("19_aowhe")
+
+[node name="HealthBar" type="TextureProgressBar" parent="Ui" unique_id=573331642]
+layout_mode = 0
 offset_left = -15.0
 offset_top = -21.0
 offset_right = -6.0
@@ -152,7 +159,17 @@ texture_progress = ExtResource("19_dvy73")
 tint_under = Color(0.20871013, 0.20871016, 0.20871013, 1)
 tint_progress = Color(0.8531263, 0.31182808, 0.32117912, 1)
 
-[node name="StaminaBar2" type="TextureProgressBar" parent="." unique_id=1602077174]
+[node name="current" type="Label" parent="Ui/HealthBar" unique_id=869404257]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 9.0
+offset_bottom = 7.0
+theme_override_font_sizes/font_size = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaminaBar" type="TextureProgressBar" parent="Ui" unique_id=1602077174]
+layout_mode = 0
 offset_left = -5.0
 offset_top = -21.0
 offset_right = 4.0
@@ -166,14 +183,24 @@ texture_progress = ExtResource("19_dvy73")
 tint_under = Color(0.2231029, 0.2231029, 0.22310287, 1)
 tint_progress = Color(0.15362877, 0.5046718, 0.6898888, 1)
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=952132033]
+[node name="current" type="Label" parent="Ui/StaminaBar" unique_id=1344868331]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 10.0
+offset_bottom = 7.0
+theme_override_font_sizes/font_size = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Ui" unique_id=952132033]
+layout_mode = 0
 offset_left = 5.0
 offset_top = -21.0
 offset_right = 15.0
 offset_bottom = -13.0
 color = Color(0, 0, 0, 0.11372549)
 
-[node name="Label" type="Label" parent="ColorRect" unique_id=2126078457]
+[node name="Speed" type="Label" parent="Ui/ColorRect" unique_id=2126078457]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -186,6 +213,3 @@ theme_override_font_sizes/font_size = 8
 text = "50"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Ui" type="CanvasLayer" parent="." unique_id=435066725]
-layer = 100
