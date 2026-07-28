@@ -10,15 +10,20 @@
 [ext_resource type="SpriteFrames" uid="uid://cl7oscqn5texg" path="res://resources/hamster/sprite_frames/basic_hamster_frames.tres" id="7_6dc8p"]
 [ext_resource type="PackedScene" uid="uid://itkai6yxkjjc" path="res://components/hamster/health_component.tscn" id="7_7g52f"]
 [ext_resource type="PackedScene" uid="uid://1m0vcg7kn2br" path="res://components/hamster/stamina_component.tscn" id="8_7g52f"]
-[ext_resource type="Resource" uid="uid://car4kweue088h" path="res://resources/hamster/audio/basic_hamster_audio_library.tres" id="9_xfbyt"]
-[ext_resource type="Resource" uid="uid://dk1ltcdiut1we" path="res://resources/hamster/types/basic_hamster_type.tres" id="10_ahadr"]
+[ext_resource type="Resource" uid="uid://car4kweue088h" path="res://resources/hamster/audio/basic_hamster_audio_library.tres" id="8_xfbyt"]
+[ext_resource type="Texture2D" uid="uid://cvpclrmsx6w4b" path="res://assets/art/hamster/Hamster Still.png" id="9_ahadr"]
+[ext_resource type="Resource" uid="uid://dk1ltcdiut1we" path="res://resources/hamster/types/basic_hamster_type.tres" id="10_dvy73"]
 [ext_resource type="PackedScene" uid="uid://bvggptlbuc5x8" path="res://components/shared/audio_component.tscn" id="10_g7kcv"]
-[ext_resource type="Script" uid="uid://c86xdmpekf7nk" path="res://resources/hamster/stats/hamster_stats_resource.gd" id="11_dvy73"]
+[ext_resource type="Script" uid="uid://c86xdmpekf7nk" path="res://resources/hamster/stats/hamster_stats_resource.gd" id="11_aowhe"]
 [ext_resource type="Script" uid="uid://xer7y5t1d1x8" path="res://components/hamster/condition_component.gd" id="11_m0doy"]
-[ext_resource type="Script" uid="uid://cyor7je75ty01" path="res://resources/hamster/traits/trait_resource.gd" id="12_aowhe"]
-[ext_resource type="Resource" uid="uid://u07pejunv57l" path="res://resources/hamster/traits/basic/basic_1_trait.tres" id="13_pqg2e"]
+[ext_resource type="Script" uid="uid://cyor7je75ty01" path="res://resources/hamster/traits/trait_resource.gd" id="12_pqg2e"]
+[ext_resource type="Resource" uid="uid://u07pejunv57l" path="res://resources/hamster/traits/basic/basic_1_trait.tres" id="13_0uqxs"]
+[ext_resource type="Script" uid="uid://delko0wlnrvkg" path="res://scenes/hamster/hamster_ui.gd" id="19_aowhe"]
+[ext_resource type="Texture2D" uid="uid://fqy45xigmhd3" path="res://assets/art/bars/Inner Circle Bar Filled.png" id="19_dvy73"]
+[ext_resource type="Texture2D" uid="uid://ddyu4nlj64tsw" path="res://assets/art/bars/Over Circle Bar filled.png" id="20_aowhe"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5civw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvy73"]
+size = Vector2(29, 36)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7g52f"]
 bg_color = Color(0.6, 0.6, 0.8901961, 1)
@@ -26,9 +31,9 @@ bg_color = Color(0.6, 0.6, 0.8901961, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vus7h"]
 bg_color = Color(0.6, 0.8980392, 0.6, 1)
 
-[sub_resource type="Resource" id="Resource_xfbyt"]
+[sub_resource type="Resource" id="Resource_pqg2e"]
 resource_local_to_scene = true
-script = ExtResource("11_dvy73")
+script = ExtResource("11_aowhe")
 max_health = 100
 health_drain = 10
 healing_rate = 10
@@ -37,12 +42,11 @@ stamina_drain = 10
 stamina_regen_rate = 10
 speed = 10
 max_traits = 3
-traits = Array[ExtResource("12_aowhe")]([ExtResource("13_pqg2e")])
-hamster_type = ExtResource("10_ahadr")
-audio_library = ExtResource("9_xfbyt")
-cost_to_buy = 100
+traits = Array[ExtResource("12_pqg2e")]([ExtResource("13_0uqxs")])
+hamster_type = ExtResource("10_dvy73")
+audio_library = ExtResource("8_xfbyt")
 sprite_frames = ExtResource("7_6dc8p")
-basic_sprite = ExtResource("2_ohn85")
+basic_sprite = ExtResource("9_ahadr")
 metadata/_custom_type_script = "uid://c86xdmpekf7nk"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
@@ -57,10 +61,12 @@ metadata/_custom_type_script = "uid://b3os4c0mgu755"
 
 [node name="CharacterCollision" type="CollisionShape2D" parent="." unique_id=624377826]
 z_index = 1
-shape = SubResource("CircleShape2D_5civw")
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_dvy73")
 
 [node name="StaminaBar" type="ProgressBar" parent="." unique_id=1815293619]
 unique_name_in_owner = true
+visible = false
 offset_left = 16.0
 offset_top = -12.0
 offset_right = 20.0
@@ -74,6 +80,7 @@ show_percentage = false
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=1039874142]
 unique_name_in_owner = true
+visible = false
 offset_left = 21.0
 offset_top = -12.0
 offset_right = 25.0
@@ -105,7 +112,7 @@ script = ExtResource("7_5civw")
 metadata/_custom_type_script = "uid://bkdxvbhn1krow"
 
 [node name="HamsterStatsComponent" parent="." unique_id=357086209 instance=ExtResource("4_m4iqr")]
-_stats = SubResource("Resource_xfbyt")
+_stats = SubResource("Resource_pqg2e")
 
 [node name="TraitsComponent" parent="." unique_id=996135682 instance=ExtResource("5_vus7h")]
 
@@ -131,3 +138,78 @@ shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Timer" type="Timer" parent="." unique_id=2115075215]
 one_shot = true
+
+[node name="Ui" type="Control" parent="." unique_id=1398491235]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("19_aowhe")
+
+[node name="HealthBar" type="TextureProgressBar" parent="Ui" unique_id=573331642]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -21.0
+offset_right = -6.0
+offset_bottom = -13.0
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("19_dvy73")
+texture_over = ExtResource("20_aowhe")
+texture_progress = ExtResource("19_dvy73")
+tint_under = Color(0.20871013, 0.20871016, 0.20871013, 1)
+tint_progress = Color(0.8531263, 0.31182808, 0.32117912, 1)
+
+[node name="current" type="Label" parent="Ui/HealthBar" unique_id=869404257]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 9.0
+offset_bottom = 7.0
+theme_override_font_sizes/font_size = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaminaBar" type="TextureProgressBar" parent="Ui" unique_id=1602077174]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -21.0
+offset_right = 4.0
+offset_bottom = -13.0
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("19_dvy73")
+texture_over = ExtResource("20_aowhe")
+texture_progress = ExtResource("19_dvy73")
+tint_under = Color(0.2231029, 0.2231029, 0.22310287, 1)
+tint_progress = Color(0.15362877, 0.5046718, 0.6898888, 1)
+
+[node name="current" type="Label" parent="Ui/StaminaBar" unique_id=1344868331]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 10.0
+offset_bottom = 7.0
+theme_override_font_sizes/font_size = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Ui" unique_id=952132033]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -21.0
+offset_right = 15.0
+offset_bottom = -13.0
+color = Color(0, 0, 0, 0.11372549)
+
+[node name="Speed" type="Label" parent="Ui/ColorRect" unique_id=2126078457]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.99999905
+offset_bottom = 2.166668
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 8
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1

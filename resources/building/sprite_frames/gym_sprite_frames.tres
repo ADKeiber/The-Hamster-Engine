@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bi10gjvao2nx7"]
+
+[ext_resource type="Texture2D" uid="uid://dycsu8x6elwui" path="res://assets/art/building/Gym.png" id="1_og7yj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okoov"]
+atlas = ExtResource("1_og7yj")
+region = Rect2(0, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okoov")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]

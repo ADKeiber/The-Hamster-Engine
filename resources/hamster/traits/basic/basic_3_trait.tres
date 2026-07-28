@@ -5,4 +5,7 @@
 [resource]
 script = ExtResource("1_mc58k")
 increase = 15
+name = "Stat Upgrade"
+description = "Upgrades a random stat."
+rank = 3
 metadata/_custom_type_script = "uid://dn1q2kq3g5n2j"

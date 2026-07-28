@@ -4,3 +4,5 @@
 
 [resource]
 script = ExtResource("1_vu6kq")
+x = 32
+y = 32

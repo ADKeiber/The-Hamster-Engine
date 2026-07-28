@@ -1,9 +1,8 @@
 extends Node2D
-
+class_name PowerConsumerComponent
 
 @export var interactable : InteractableComponent
 @export var placeable : PlaceableComponent
-var original_speed
 @export var min_power_increase = 0
 @export var on_min_power_increase = 0
 

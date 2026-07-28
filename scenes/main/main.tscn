@@ -3,9 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://bqjuwnvj2wu5g" path="res://scenes/building/cage.tscn" id="1_6q06x"]
 [ext_resource type="Script" uid="uid://b0itp83je22bl" path="res://scenes/main/main.gd" id="1_hujxm"]
 [ext_resource type="PackedScene" uid="uid://dx5dmin8d3pcr" path="res://scenes/building/buildings_area.tscn" id="1_hyk8p"]
-[ext_resource type="PackedScene" uid="uid://dxncdpsw0qdep" path="res://scenes/building/tester.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://dxncdpsw0qdep" path="res://scenes/building/building.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://btx6kly08w6cy" path="res://scenes/hamster/hamster.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://cmkb25oqwd8vk" path="res://scenes/main/power_produced.gd" id="4_l3cfh"]
+[ext_resource type="Resource" uid="uid://qglpckrf7gf1" path="res://resources/building/buidling/wheel.tres" id="4_ow5a4"]
+[ext_resource type="Resource" uid="uid://8st2x53cqxhd" path="res://resources/building/buidling/experimental_tank_resource.tres" id="5_hujxm"]
 [ext_resource type="PackedScene" uid="uid://c4jxi4kmf16j5" path="res://scenes/visitor/visitor_manager.tscn" id="7_hujxm"]
 [ext_resource type="Script" uid="uid://fl7diixfe4mv" path="res://scripts/global/blackout.gd" id="8_yyfjg"]
 
@@ -47,9 +49,39 @@ position = Vector2(561, 313)
 
 [node name="BuildingsArea" parent="." unique_id=1218242002 instance=ExtResource("1_hyk8p")]
 
+[node name="Building" parent="." unique_id=590711385 instance=ExtResource("2_iuonh")]
+position = Vector2(186, 118)
+
+[node name="Building2" parent="." unique_id=1231596859 instance=ExtResource("2_iuonh")]
+position = Vector2(384, 135)
+resource = ExtResource("4_ow5a4")
+
+[node name="Building3" parent="." unique_id=1534136842 instance=ExtResource("2_iuonh")]
+position = Vector2(278, 123)
+resource = ExtResource("5_hujxm")
+
 [node name="Hamster" parent="." unique_id=641634076 instance=ExtResource("3_k2fmo")]
 position = Vector2(303, 331)
 
+[node name="Hamster2" parent="." unique_id=2062278838 instance=ExtResource("3_k2fmo")]
+position = Vector2(319, 218)
+
+[node name="Hamster3" parent="." unique_id=1661663384 instance=ExtResource("3_k2fmo")]
+position = Vector2(181, 238)
+
+[node name="Hamster4" parent="." unique_id=1701552658 instance=ExtResource("3_k2fmo")]
+position = Vector2(187, 207)
+
+[node name="Hamster5" parent="." unique_id=920795092 instance=ExtResource("3_k2fmo")]
+position = Vector2(230, 203)
+
+[node name="Control" type="Control" parent="." unique_id=1915303001 node_paths=PackedStringArray("produced", "min", "total")]
+anchors_preset = 0
+offset_left = 66.0
+offset_top = 73.0
+offset_right = 193.0
+offset_bottom = 199.0
+mouse_filter = 2
 [node name="PowerOutput" type="Control" parent="." unique_id=1915303001 node_paths=PackedStringArray("produced", "min", "total")]
 anchors_preset = 0
 offset_left = 19.0
@@ -68,6 +100,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="PowerProduced" type="Label" parent="PowerOutput/VBoxContainer" unique_id=1874886666]
 layout_mode = 2

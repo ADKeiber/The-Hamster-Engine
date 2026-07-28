@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bl8sywru6qh7d"]
+
+[ext_resource type="Texture2D" uid="uid://cp3wm2rbi03o3" path="res://assets/art/building/Experimental Tank.png" id="1_avilj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr7n8"]
+atlas = ExtResource("1_avilj")
+region = Rect2(0, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr7n8")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]

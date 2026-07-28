@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://qex7akexviq4"]
+
+[ext_resource type="SpriteFrames" uid="uid://smrkk0k50mcn" path="res://resources/building/sprite_frames/feeder_sprite_frames.tres" id="1_60bw4"]
+[ext_resource type="Resource" uid="uid://bw6q1wyq80eou" path="res://resources/building/footprint/4x4.tres" id="2_jwklg"]
+[ext_resource type="Script" uid="uid://bjcvu86maoqlj" path="res://resources/building/buidling/feeder_resource.gd" id="3_60bw4"]
+
+[resource]
+script = ExtResource("3_60bw4")
+building_name = "Feeder"
+description = "This handles the cage stuff."
+footprint = ExtResource("2_jwklg")
+background_sprite_frames = ExtResource("1_60bw4")
+power_consumer_on = true
+metadata/_custom_type_script = "uid://b84vak4mpqa2m"
