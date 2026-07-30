@@ -8,6 +8,7 @@ extends Control
 @onready var machine_reward: PanelContainer = %MachineReward
 @onready var machines_holder: Node2D = %MachinesHolder
 @onready var machine_zone: PanelContainer = $MachineZone
+@onready var global_effects: GlobalEffectsDisplay = %GlobalEffects
 
 var current_effects: Array[GlobalEffect]
 var current_time_remaining: int = 10
@@ -89,6 +90,7 @@ func add_global_effect(effect: GlobalEffect) -> void:
 	current_effects.append(effect)
 	effect.apply_effect()
 	var timer: Timer = get_tree().get_first_node_in_group("WorldTimer")
+	global_effects.set_current_effect(effect)
 	timer.timeout.connect(effect.apply_effect)
 
 func remove_global_effect(effect: GlobalEffect) -> void:
@@ -108,7 +110,9 @@ func has_effect(effect: GlobalEffect) -> bool:
 ##Should add 2 positive effects AND maintain the negative effect
 func reward_1_pressed() -> void:
 	var machine: MachineResource = machines[current_machine_index]
+	global_effects.add_effect_to_other(machine.initial_effect)
 	for effect in machine.reward_1_effects:
+		global_effects.add_effect_to_other(effect)
 		add_global_effect(effect)
 	current_machine_index += 1
 	current_time_remaining = machine_durations[current_machine_index]
@@ -117,12 +121,14 @@ func reward_1_pressed() -> void:
 	get_tree().paused = false
 	var blackout_curtain: Blackout = get_tree().get_first_node_in_group("Blackout")
 	blackout_curtain.hide_dark_overlay()
+	
 	spawn_next_machine()
 
 ##Should add a single positive effect and remove the negative one
 func reward_2_pressed() -> void:
 	var machine: MachineResource = machines[current_machine_index]
 	for effect in machine.reward_2_effects:
+		global_effects.add_effect_to_other(effect)
 		add_global_effect(effect)
 	remove_global_effect(machine.initial_effect)
 	current_machine_index += 1

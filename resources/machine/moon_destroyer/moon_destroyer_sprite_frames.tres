@@ -1,0 +1,15 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ll8ltbooj8hx"]
+
+[ext_resource type="Texture2D" uid="uid://bn7cw6ohwutv2" path="res://assets/art/machine/major/MoonDestroyer.png" id="1_7rckk"]
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7rckk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

@@ -1,0 +1,15 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://d3n2hrodwsc6v"]
+
+[ext_resource type="Texture2D" uid="uid://bae5kj2jdu4x4" path="res://assets/art/machine/minor/CropCircler.png" id="1_gdkqw"]
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gdkqw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

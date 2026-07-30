@@ -115,7 +115,6 @@ func _physics_process(delta: float) -> void:
 				timer_start = true
 			
 			State.WANDER:
-				
 				move_toward_target(delta)
 
 func pick_new_target() -> void:

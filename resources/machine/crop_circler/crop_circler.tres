@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MachineResource" format=3 uid="uid://d3x2kgach3x07"]
+
+[ext_resource type="Resource" uid="uid://b0ai1axw7x26p" path="res://resources/global_effects/tainted_crop/tainted_crop_effect.tres" id="1_kg5xa"]
+[ext_resource type="Script" uid="uid://bsgow25vpw36t" path="res://resources/global_effects/global_effect.gd" id="1_o31ao"]
+[ext_resource type="Script" uid="uid://bny6rwla56o4u" path="res://resources/machine/machine_resource.gd" id="2_u3vyx"]
+[ext_resource type="Resource" uid="uid://dxa2jv88uum7x" path="res://resources/global_effects/food_mutation/food_mutation_effect.tres" id="3_t1lfq"]
+[ext_resource type="SpriteFrames" uid="uid://d3n2hrodwsc6v" path="res://resources/machine/crop_circler/crop_circler_sprite_frames.tres" id="3_u3vyx"]
+
+[resource]
+script = ExtResource("2_u3vyx")
+machine_name = "Crop Circler"
+description = "Create intricate crop circles in farmer's fields causing confusion and food destruction"
+sprite = ExtResource("3_u3vyx")
+initial_effect = ExtResource("1_kg5xa")
+reward_1_effects = Array[ExtResource("1_o31ao")]([ExtResource("3_t1lfq"), ExtResource("3_t1lfq")])
+reward_2_effects = Array[ExtResource("1_o31ao")]([ExtResource("3_t1lfq")])
+metadata/_custom_type_script = "uid://bny6rwla56o4u"

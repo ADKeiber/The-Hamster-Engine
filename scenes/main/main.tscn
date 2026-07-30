@@ -11,12 +11,31 @@
 [ext_resource type="Script" uid="uid://fl7diixfe4mv" path="res://scripts/global/blackout.gd" id="8_yyfjg"]
 [ext_resource type="Script" uid="uid://bny6rwla56o4u" path="res://resources/machine/machine_resource.gd" id="10_raeie"]
 [ext_resource type="Resource" uid="uid://1iihypqidlvq" path="res://resources/machine/pullutinator/pollutinator_machine.tres" id="11_hxu8e"]
+[ext_resource type="Resource" uid="uid://d3x2kgach3x07" path="res://resources/machine/crop_circler/crop_circler.tres" id="12_7smn1"]
 [ext_resource type="PackedScene" uid="uid://uoqx4kxc1y8g" path="res://scenes/machine/machine_reward/machine_reward.tscn" id="12_blune"]
+[ext_resource type="PackedScene" uid="uid://bg0g0i0jsu7qw" path="res://scenes/main/global_effects.tscn" id="12_th5th"]
+[ext_resource type="Resource" uid="uid://wq1ou2qrnc4o" path="res://resources/machine/moon_destroyer/moon_destroyer.tres" id="13_raeie"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyfjg"]
 bg_color = Color(0.19, 0.19, 0.19, 0.9137255)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_th5th"]
+bg_color = Color(0.6, 0.6392157, 0.6, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.6, 0.6627451, 0.6, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Main" type="Control" unique_id=305830555]
 layout_mode = 3
@@ -112,8 +131,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("8_th5th")
-machines = Array[ExtResource("10_raeie")]([ExtResource("11_hxu8e"), ExtResource("11_hxu8e"), ExtResource("11_hxu8e")])
-machine_durations = Array[int]([5, 5, 5])
+machines = Array[ExtResource("10_raeie")]([ExtResource("11_hxu8e"), ExtResource("12_7smn1"), ExtResource("13_raeie")])
+machine_durations = Array[int]([15, 30, 45])
 
 [node name="MachineZone" type="PanelContainer" parent="MachineManager" unique_id=1848724559]
 visible = false
@@ -130,43 +149,14 @@ grow_vertical = 2
 unique_name_in_owner = true
 position = Vector2(450, -1)
 
-[node name="MachineEffects" type="PanelContainer" parent="MachineManager" unique_id=724347354 groups=["MachineEffects"]]
+[node name="GlobalEffects" parent="MachineManager" unique_id=1921158447 instance=ExtResource("12_th5th")]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 10.0
-offset_top = 8.0
-offset_right = 138.0
-offset_bottom = 62.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MachineManager/MachineEffects" unique_id=1315026205]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MachineManager/MachineEffects/VBoxContainer" unique_id=233039167]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 8
-theme_override_font_sizes/bold_font_size = 10
-theme_override_font_sizes/bold_italics_font_size = 12
-theme_override_font_sizes/italics_font_size = 12
-theme_override_font_sizes/mono_font_size = 12
-bbcode_enabled = true
-text = "[b]Current Effect:[/b]
-Something is happening
-"
-fit_content = true
-
-[node name="FoldableContainer" type="FoldableContainer" parent="MachineManager/MachineEffects/VBoxContainer" unique_id=1658708382]
-layout_mode = 2
-theme_override_font_sizes/font_size = 8
-folded = true
-title = "Other Effects"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MachineManager/MachineEffects/VBoxContainer/FoldableContainer" unique_id=1817296818]
-visible = false
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MachineManager/MachineEffects/VBoxContainer/FoldableContainer/VBoxContainer" unique_id=521692166]
-layout_mode = 2
-text = "Effect info"
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 103.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_th5th")
 
 [node name="CurrentMachineTime" type="PanelContainer" parent="MachineManager" unique_id=1726099020]
 layout_mode = 1
@@ -176,7 +166,7 @@ anchor_right = 0.5
 offset_left = -56.0
 offset_top = 9.0
 offset_right = 56.0
-offset_bottom = 44.0
+offset_bottom = 47.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 
