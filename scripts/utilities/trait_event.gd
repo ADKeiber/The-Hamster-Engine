@@ -13,9 +13,10 @@ enum EventType {
 	TICK,
 	BUILDING_ENTERED,
 	BUILDING_EXITED,
-	CREATED
+	CREATED,
+	ACTIVATE_NEW_TRAIT ## This is used for traits that either do something when new traits are added OR is a trigger for that newly added trait (see toxic resilience)
 	}
-	
+
 func _init(
 	event_type: EventType,
 	event_source: Node,

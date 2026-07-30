@@ -12,7 +12,8 @@ func add_condition(condition: Condition) -> void:
 	conditions.append(condition)
 	condition.apply(get_parent())
 	condition_added.emit(condition)
-	get_parent().timer.timeout.connect(condition.tick)
+	var timer: Timer = get_tree().get_first_node_in_group("WorldTimer")
+	timer.timeout.connect(condition.tick)
 
 func remove_condition(condition: Condition) -> void:
 	if not has_condition(condition):
@@ -20,7 +21,8 @@ func remove_condition(condition: Condition) -> void:
 	conditions.erase(condition)
 	condition.remove()
 	condition_removed.emit(condition)
-	get_parent().timer.timeout.disconnect(condition.tick)
+	var timer: Timer = get_tree().get_first_node_in_group("WorldTimer")
+	timer.timeout.disconnect(condition.tick)
 
 func has_condition(condition: Condition) -> bool:
 	for c in conditions:

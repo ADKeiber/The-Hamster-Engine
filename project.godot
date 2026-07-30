@@ -23,6 +23,8 @@ buses/default_bus_layout="uid://bglpd37hppvw4"
 
 Visitor="*uid://dvsfkhnerye3a"
 Power="*uid://41cd6kvj28l5"
+Hamsters="*uid://di318fuk3bq8g"
+Effects="*uid://cer1dn5hgofd3"
 
 [display]
 
@@ -61,6 +63,8 @@ Blackout="blackout screen"
 MachineEffects=""
 FocusedVisitor=""
 VisitorPopup=""
+MachineRewardPopup=""
+WorldTimer="This is the world timer.. It decides the beat of the game"
 
 [gui]
 

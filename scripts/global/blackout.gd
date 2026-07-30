@@ -17,7 +17,6 @@ func show_dark_overlay(groups_to_highlight: Array[String]) -> void:
 			if node is CanvasItem:
 				if not original_z_indexes.has(node):
 					original_z_indexes[node] = node.z_index
-
 				node.z_index = 4001
 
 

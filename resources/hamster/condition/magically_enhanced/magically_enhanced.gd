@@ -23,6 +23,3 @@ func remove() -> void:
 	stats.set_stat_value(HamsterStatsComponent.StatType.MAX_STAMINA, 
 		stats.get_stat(HamsterStatsComponent.StatType.MAX_STAMINA) - stamina_increase)
 	hamster = null
-
-func tick() -> void:
-	pass

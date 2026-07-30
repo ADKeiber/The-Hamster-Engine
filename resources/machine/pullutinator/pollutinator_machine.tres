@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MachineResource" format=3 uid="uid://1iihypqidlvq"]
+
+[ext_resource type="Resource" uid="uid://dmsfj6hyww0ab" path="res://resources/global_effects/pollution/base_pollution.tres" id="1_iskab"]
+[ext_resource type="Script" uid="uid://bsgow25vpw36t" path="res://resources/global_effects/global_effect.gd" id="2_mk5sg"]
+[ext_resource type="Resource" uid="uid://by5tj3ohl7ha5" path="res://resources/global_effects/healing_pollution/healing_pollution.tres" id="3_dvl76"]
+[ext_resource type="Resource" uid="uid://w3nhab1bgmqq" path="res://resources/global_effects/toxic_resilience/toxic_resilience_effect.tres" id="3_mk5sg"]
+[ext_resource type="Resource" uid="uid://b777f017p1g21" path="res://resources/global_effects/pollution_mutation/pollution_mutation.tres" id="4_qjrkw"]
+[ext_resource type="Script" uid="uid://bny6rwla56o4u" path="res://resources/machine/machine_resource.gd" id="5_gkmfw"]
+[ext_resource type="SpriteFrames" uid="uid://brpcjtp8hebxf" path="res://resources/machine/pullutinator/pullitinator_sprite_frames.tres" id="6_dlkii"]
+
+[resource]
+script = ExtResource("5_gkmfw")
+machine_name = "Pollutinator"
+description = "Machine that produces a large amount of pollution... for evil!"
+sprite = ExtResource("6_dlkii")
+initial_effect = ExtResource("1_iskab")
+reward_1_effects = Array[ExtResource("2_mk5sg")]([ExtResource("3_mk5sg"), ExtResource("3_dvl76")])
+reward_2_effects = Array[ExtResource("2_mk5sg")]([ExtResource("4_qjrkw")])
+metadata/_custom_type_script = "uid://bny6rwla56o4u"

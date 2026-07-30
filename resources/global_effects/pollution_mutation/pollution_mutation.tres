@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PollutionMutation" format=3 uid="uid://b777f017p1g21"]
+
+[ext_resource type="Resource" uid="uid://c0wq5ogexe6qw" path="res://resources/hamster/condition/pollution_touched/pollution_touched.tres" id="1_1854j"]
+[ext_resource type="Script" uid="uid://d3c286nlp562w" path="res://resources/global_effects/pollution_mutation/pollution_mutation.gd" id="1_cmtp3"]
+
+[resource]
+script = ExtResource("1_cmtp3")
+applied_condition = ExtResource("1_1854j")
+effect_name = "Pollution Mutation"
+short_description = "All hamsters with the 'polluted' condition gain the 'pollution touched' condition instead"
+description = "All current hamsters become \"Pollution Touched\" and gain permenant minor health  and stamina increase"
+metadata/_custom_type_script = "uid://d3c286nlp562w"

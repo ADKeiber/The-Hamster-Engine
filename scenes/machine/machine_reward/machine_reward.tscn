@@ -1,0 +1,240 @@
+[gd_scene format=3 uid="uid://uoqx4kxc1y8g"]
+
+[ext_resource type="Script" uid="uid://4er8pamegvnh" path="res://scenes/machine/machine_reward/machine_reward.gd" id="1_7yco1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="MachineReward" type="PanelContainer" unique_id=2124141432 groups=["MachineRewardPopup"]]
+process_mode = 3
+z_index = 3000
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -134.0
+offset_right = 141.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yf5fn")
+script = ExtResource("1_7yco1")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1574969613]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1300436220]
+layout_mode = 2
+
+[node name="Header" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=225303780]
+layout_mode = 2
+text = "Reward
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reward1" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=2116884856]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/Reward1" unique_id=7379445]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer" unique_id=903726823]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Effect" type="PanelContainer" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer/VBoxContainer" unique_id=1071142783]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer/VBoxContainer/Effect" unique_id=2000714241]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer/VBoxContainer/Effect/MarginContainer" unique_id=1685162930]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Reward1Effect1Label" type="Label" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer/VBoxContainer/Effect/MarginContainer/VBoxContainer" unique_id=1448620757]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.20689335, 0.55859095, 0.109714665, 1)
+theme_override_font_sizes/font_size = 12
+text = "+ Toxic Resilience"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer/VBoxContainer/Effect/MarginContainer/VBoxContainer" unique_id=1269306012]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+
+[node name="Reward1Effect1Description" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer/VBoxContainer/Effect/MarginContainer/VBoxContainer/MarginContainer" unique_id=1886800065]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+text = "Increase all hamster's health, who have the 'polluted' condition, by 50% "
+fit_content = true
+
+[node name="Effect2" type="PanelContainer" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer/VBoxContainer" unique_id=7926556]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer/VBoxContainer/Effect2" unique_id=1847150647]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer/VBoxContainer/Effect2/MarginContainer2" unique_id=943702640]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Reward1Effect2Label" type="Label" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer/VBoxContainer/Effect2/MarginContainer2/VBoxContainer" unique_id=1218679015]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.20689335, 0.55859095, 0.109714665, 1)
+theme_override_font_sizes/font_size = 12
+text = "+ Healing Pollution"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer/VBoxContainer/Effect2/MarginContainer2/VBoxContainer" unique_id=1596260287]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+
+[node name="Reward1Effect2Description" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Reward1/PanelContainer/VBoxContainer/Effect2/MarginContainer2/VBoxContainer/MarginContainer" unique_id=788130923]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+text = "Hamsters with the 'polluted' condition have a chance to heal every 5 seconds"
+fit_content = true
+
+[node name="Reward2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1650420293]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/Reward2" unique_id=865374384]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Reward2/PanelContainer" unique_id=862447746]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Reward2/PanelContainer/MarginContainer" unique_id=889297222]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Effect" type="PanelContainer" parent="MarginContainer/VBoxContainer/Reward2/PanelContainer/MarginContainer/VBoxContainer" unique_id=661630891]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Reward2/PanelContainer/MarginContainer/VBoxContainer/Effect" unique_id=614416624]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Reward2Effect1Label" type="Label" parent="MarginContainer/VBoxContainer/Reward2/PanelContainer/MarginContainer/VBoxContainer/Effect/VBoxContainer" unique_id=978112489]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.20689335, 0.55859095, 0.109714665, 1)
+theme_override_font_sizes/font_size = 12
+text = "+ Pollution Touched"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Reward2/PanelContainer/MarginContainer/VBoxContainer/Effect/VBoxContainer" unique_id=1470654496]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+
+[node name="Reward2Effect1Description" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Reward2/PanelContainer/MarginContainer/VBoxContainer/Effect/VBoxContainer/MarginContainer" unique_id=280510482]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+text = "All hamsters with the 'polluted' condition gain the 'pollution touched' condition instead"
+fit_content = true
+
+[node name="Effect2" type="PanelContainer" parent="MarginContainer/VBoxContainer/Reward2/PanelContainer/MarginContainer/VBoxContainer" unique_id=1362417442]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Reward2/PanelContainer/MarginContainer/VBoxContainer/Effect2" unique_id=389066782]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Reward2Effect2Label" type="Label" parent="MarginContainer/VBoxContainer/Reward2/PanelContainer/MarginContainer/VBoxContainer/Effect2/VBoxContainer" unique_id=320601606]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81451285, 0.21277577, 0.26412982, 1)
+theme_override_font_sizes/font_size = 12
+text = "- Machine Pollution"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Reward2/PanelContainer/MarginContainer/VBoxContainer/Effect2/VBoxContainer" unique_id=519955369]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+
+[node name="Reward2Effect2Description" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Reward2/PanelContainer/MarginContainer/VBoxContainer/Effect2/VBoxContainer/MarginContainer" unique_id=895855872]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+text = "Gives all hamsters the 'polluted' condition and hurts 5 random hamsters every 5 seconds"
+fit_content = true
+
+[connection signal="gui_input" from="MarginContainer/VBoxContainer/Reward1" to="." method="_on_reward_1_gui_input"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Reward1" to="." method="_on_reward_1_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/Reward1" to="." method="_on_reward_1_mouse_exited"]
+[connection signal="gui_input" from="MarginContainer/VBoxContainer/Reward2" to="." method="_on_reward_2_gui_input"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Reward2" to="." method="_on_reward_2_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/Reward2" to="." method="_on_reward_2_mouse_exited"]

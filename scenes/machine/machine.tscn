@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dfd1o456ncvt6"]
+
+[ext_resource type="Script" uid="uid://cw7rg4ikqcf8n" path="res://scenes/machine/machine.gd" id="1_u5opq"]
+[ext_resource type="Texture2D" uid="uid://h6auh7kqjr55" path="res://assets/art/machine/minor/Pollutionator.png" id="2_lqk0y"]
+[ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="3_yemkv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujpuf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lqk0y")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Machine" type="Node2D" unique_id=1233893257]
+script = ExtResource("1_u5opq")
+
+[node name="AnimationComponent" type="AnimatedSprite2D" parent="." unique_id=1023768298]
+sprite_frames = SubResource("SpriteFrames_ujpuf")
+script = ExtResource("3_yemkv")
+metadata/_custom_type_script = "uid://bkdxvbhn1krow"

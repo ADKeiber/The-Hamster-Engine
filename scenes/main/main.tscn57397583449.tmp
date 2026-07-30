@@ -3,18 +3,51 @@
 [ext_resource type="PackedScene" uid="uid://bqjuwnvj2wu5g" path="res://scenes/building/cage.tscn" id="1_6q06x"]
 [ext_resource type="Script" uid="uid://b0itp83je22bl" path="res://scenes/main/main.gd" id="1_hujxm"]
 [ext_resource type="PackedScene" uid="uid://dx5dmin8d3pcr" path="res://scenes/building/buildings_area.tscn" id="1_hyk8p"]
-[ext_resource type="PackedScene" uid="uid://btx6kly08w6cy" path="res://scenes/hamster/hamster.tscn" id="2_7smn1"]
 [ext_resource type="PackedScene" uid="uid://dxncdpsw0qdep" path="res://scenes/building/tester.tscn" id="2_iuonh"]
 [ext_resource type="Script" uid="uid://cmkb25oqwd8vk" path="res://scenes/main/power_produced.gd" id="4_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://c4jxi4kmf16j5" path="res://scenes/visitor/visitor_manager.tscn" id="7_hujxm"]
-[ext_resource type="Script" uid="uid://8rnh0lsiun3n" path="res://scenes/machine/machine_manager.gd" id="8_th5th"]
+[ext_resource type="Texture2D" uid="uid://h6auh7kqjr55" path="res://assets/art/machine/minor/Pollutionator.png" id="8_b1x3f"]
+[ext_resource type="Script" uid="uid://cw7rg4ikqcf8n" path="res://scenes/machine/machine.gd" id="8_blune"]
 [ext_resource type="Script" uid="uid://fl7diixfe4mv" path="res://scripts/global/blackout.gd" id="8_yyfjg"]
-[ext_resource type="Script" uid="uid://bny6rwla56o4u" path="res://resources/machine/machine_resource.gd" id="10_raeie"]
-[ext_resource type="Resource" uid="uid://1iihypqidlvq" path="res://resources/machine/pullutinator/pollutinator_machine.tres" id="11_hxu8e"]
-[ext_resource type="PackedScene" uid="uid://uoqx4kxc1y8g" path="res://scenes/machine/machine_reward/machine_reward.tscn" id="12_blune"]
+[ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="9_a8run"]
+[ext_resource type="Texture2D" uid="uid://bae5kj2jdu4x4" path="res://assets/art/machine/minor/CropCircler.png" id="10_ouso4"]
+[ext_resource type="Texture2D" uid="uid://bn7cw6ohwutv2" path="res://assets/art/machine/major/MoonDestroyer.png" id="11_blune"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyfjg"]
 bg_color = Color(0.19, 0.19, 0.19, 0.9137255)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujpuf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_b1x3f")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1f6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ouso4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1r3bj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_blune")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 
@@ -27,9 +60,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_hujxm")
-
-[node name="Hamster" parent="." unique_id=1701552658 instance=ExtResource("2_7smn1")]
-position = Vector2(291, 210)
 
 [node name="BlackoutPanel" type="PanelContainer" parent="." unique_id=1686160267 groups=["Blackout"]]
 unique_name_in_owner = true
@@ -92,6 +122,10 @@ text = "total"
 unique_name_in_owner = true
 z_index = 500
 
+[node name="WorldTimer" type="Timer" parent="." unique_id=243912178]
+unique_name_in_owner = true
+autostart = true
+
 [node name="Button" type="Button" parent="." unique_id=2079174763]
 visible = false
 layout_mode = 0
@@ -103,17 +137,12 @@ text = "Start Event
 "
 
 [node name="MachineManager" type="Control" parent="." unique_id=202693680]
-unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("8_th5th")
-machines = Array[ExtResource("10_raeie")]([ExtResource("11_hxu8e"), ExtResource("11_hxu8e"), ExtResource("11_hxu8e")])
-machine_durations = Array[int]([5, 5, 5])
 
 [node name="MachineZone" type="PanelContainer" parent="MachineManager" unique_id=1848724559]
 visible = false
@@ -126,22 +155,44 @@ offset_bottom = 1.199997
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MachinesHolder" type="Node2D" parent="MachineManager" unique_id=1479961744]
-unique_name_in_owner = true
-position = Vector2(450, -1)
+[node name="Machines" type="Node2D" parent="MachineManager" unique_id=1479961744]
 
-[node name="MachineEffects" type="PanelContainer" parent="MachineManager" unique_id=724347354 groups=["MachineEffects"]]
+[node name="Machine" type="Node2D" parent="MachineManager/Machines" unique_id=846644697]
+script = ExtResource("8_blune")
+
+[node name="AnimationComponent" type="AnimatedSprite2D" parent="MachineManager/Machines/Machine" unique_id=2081620924]
+position = Vector2(91, 85)
+sprite_frames = SubResource("SpriteFrames_ujpuf")
+script = ExtResource("9_a8run")
+metadata/_custom_type_script = "uid://bkdxvbhn1krow"
+
+[node name="Node" type="Node" parent="MachineManager/Machines/Machine" unique_id=1513573996]
+
+[node name="Machine2" type="Node2D" parent="MachineManager/Machines" unique_id=395583674]
+
+[node name="AnimationComponent" type="AnimatedSprite2D" parent="MachineManager/Machines/Machine2" unique_id=254973251]
+position = Vector2(260, 88)
+sprite_frames = SubResource("SpriteFrames_h1f6q")
+script = ExtResource("9_a8run")
+metadata/_custom_type_script = "uid://bkdxvbhn1krow"
+
+[node name="Machine3" type="Node2D" parent="MachineManager/Machines" unique_id=1277904655]
+
+[node name="AnimationComponent" type="AnimatedSprite2D" parent="MachineManager/Machines/Machine3" unique_id=1547345010]
+position = Vector2(418, 74)
+sprite_frames = SubResource("SpriteFrames_1r3bj")
+script = ExtResource("9_a8run")
+metadata/_custom_type_script = "uid://bkdxvbhn1krow"
+
+[node name="Machine Effect Placeholder" type="PanelContainer" parent="MachineManager" unique_id=724347354 groups=["MachineEffects"]]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 8.0
-offset_right = 138.0
-offset_bottom = 62.0
+offset_right = 105.0
+offset_bottom = 44.5
 theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MachineManager/MachineEffects" unique_id=1315026205]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="MachineManager/MachineEffects/VBoxContainer" unique_id=233039167]
+[node name="RichTextLabel" type="RichTextLabel" parent="MachineManager/Machine Effect Placeholder" unique_id=233039167]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 8
 theme_override_font_sizes/bold_font_size = 10
@@ -149,88 +200,8 @@ theme_override_font_sizes/bold_italics_font_size = 12
 theme_override_font_sizes/italics_font_size = 12
 theme_override_font_sizes/mono_font_size = 12
 bbcode_enabled = true
-text = "[b]Current Effect:[/b]
+text = "[b]Effect:[/b]
 Something is happening
 "
-fit_content = true
-
-[node name="FoldableContainer" type="FoldableContainer" parent="MachineManager/MachineEffects/VBoxContainer" unique_id=1658708382]
-layout_mode = 2
-theme_override_font_sizes/font_size = 8
-folded = true
-title = "Other Effects"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MachineManager/MachineEffects/VBoxContainer/FoldableContainer" unique_id=1817296818]
-visible = false
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MachineManager/MachineEffects/VBoxContainer/FoldableContainer/VBoxContainer" unique_id=521692166]
-layout_mode = 2
-text = "Effect info"
-
-[node name="CurrentMachineTime" type="PanelContainer" parent="MachineManager" unique_id=1726099020]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -56.0
-offset_top = 9.0
-offset_right = 56.0
-offset_bottom = 44.0
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
-
-[node name="RemainingTime" type="RichTextLabel" parent="MachineManager/CurrentMachineTime" unique_id=17475500]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 24
-theme_override_font_sizes/bold_font_size = 10
-theme_override_font_sizes/bold_italics_font_size = 12
-theme_override_font_sizes/italics_font_size = 12
-theme_override_font_sizes/mono_font_size = 12
-bbcode_enabled = true
-text = "5:00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MachineReward" parent="MachineManager" unique_id=2124141432 instance=ExtResource("12_blune")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-offset_left = -144.5
-offset_top = -144.0
-offset_right = 144.5
-offset_bottom = 144.0
-
-[node name="WorldTimer" type="Timer" parent="." unique_id=243912178 groups=["WorldTimer"]]
-unique_name_in_owner = true
-autostart = true
-
-[node name="StartMachine" type="Button" parent="." unique_id=1369879553]
-layout_mode = 0
-offset_left = 496.0
-offset_top = 193.0
-offset_right = 626.0
-offset_bottom = 224.0
-text = "Spawn Machine"
-
-[node name="YouWinScreen" type="PanelContainer" parent="." unique_id=1059531142]
-unique_name_in_owner = true
-visible = false
-z_index = 4096
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="YouWinScreen" unique_id=1195289960]
-layout_mode = 2
-size_flags_vertical = 1
-text = "You Win!"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="StartMachine" to="." method="_on_start_machine_pressed"]

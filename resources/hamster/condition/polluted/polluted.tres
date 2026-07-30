@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Polluted" format=3 uid="uid://iy5nj25uu31j"]
+
+[ext_resource type="Script" uid="uid://reur1qlnkp37" path="res://resources/hamster/condition/polluted/polluted.gd" id="1_4vwsi"]
+
+[resource]
+script = ExtResource("1_4vwsi")
+metadata/_custom_type_script = "uid://reur1qlnkp37"

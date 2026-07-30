@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToxicResilienceEffect" format=3 uid="uid://w3nhab1bgmqq"]
+
+[ext_resource type="Script" uid="uid://cbckclq4rxmj3" path="res://resources/global_effects/toxic_resilience/toxic_resilience_effect.gd" id="1_cohhe"]
+[ext_resource type="Resource" uid="uid://cjes66eowt5vv" path="res://resources/hamster/traits/toxic_resilience/toxic_resilience.tres" id="1_ucug2"]
+
+[resource]
+script = ExtResource("1_cohhe")
+applied_trait = ExtResource("1_ucug2")
+effect_name = "Toxic Resilience"
+short_description = "Increase all hamster's health, who have the 'polluted' condition, by 50% "
+metadata/_custom_type_script = "uid://cbckclq4rxmj3"
