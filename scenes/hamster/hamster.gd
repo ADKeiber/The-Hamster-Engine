@@ -60,8 +60,8 @@ func update_stamina_bar(current: int, max: int) -> void:
 	stamina_bar.value = current
 
 func activate_traits_and_type() -> void:
-	traits_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, {}))
-	hamster_type_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, {}))
+	traits_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, self, {}))
+	hamster_type_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, self, {}))
 
 func hide_bars() -> void:
 	stamina_bar.visible = false

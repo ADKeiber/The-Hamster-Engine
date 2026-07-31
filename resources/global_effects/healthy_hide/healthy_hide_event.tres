@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="HealthyHideEvent" format=3 uid="uid://mmrlrsny2wku"]
+
+[ext_resource type="Script" uid="uid://ck0kwt2m4vid" path="res://resources/global_effects/healthy_hide/healthy_hide.gd" id="1_ttb7u"]
+[ext_resource type="Resource" uid="uid://dlokxqvbkohyn" path="res://resources/hamster/condition/healthy_hide/health_hide_condition.tres" id="1_yku61"]
+
+[resource]
+script = ExtResource("1_ttb7u")
+condition = ExtResource("1_yku61")
+effect_name = "Healthy Hide"
+short_description = "Hamster's hides become stronger and they burn health slower"
+metadata/_custom_type_script = "uid://ck0kwt2m4vid"

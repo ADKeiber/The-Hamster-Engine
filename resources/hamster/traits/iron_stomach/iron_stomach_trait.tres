@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IronStomachTrait" format=3 uid="uid://bbprbhm4aqanx"]
+
+[ext_resource type="Script" uid="uid://vp5lmxa5fhgw" path="res://resources/hamster/traits/iron_stomach/iron_stomach.gd" id="1_oy3lc"]
+
+[resource]
+script = ExtResource("1_oy3lc")
+name = "Iron Stomach"
+description = "Prevents any negative food related conditions, and also increases regen from cage"
+metadata/_custom_type_script = "uid://vp5lmxa5fhgw"
