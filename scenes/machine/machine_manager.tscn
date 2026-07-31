@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://hjegh7ohnysf"]
+
+[ext_resource type="Script" uid="uid://8rnh0lsiun3n" path="res://scenes/machine/machine_manager.gd" id="1_hx8je"]
+[ext_resource type="Script" uid="uid://bny6rwla56o4u" path="res://resources/machine/machine_resource.gd" id="2_o5tk3"]
+[ext_resource type="Resource" uid="uid://1iihypqidlvq" path="res://resources/machine/pullutinator/pollutinator_machine.tres" id="3_7kav5"]
+[ext_resource type="Resource" uid="uid://d3x2kgach3x07" path="res://resources/machine/crop_circler/crop_circler.tres" id="4_3s8jj"]
+[ext_resource type="Resource" uid="uid://wq1ou2qrnc4o" path="res://resources/machine/moon_destroyer/moon_destroyer.tres" id="5_v3iua"]
+[ext_resource type="PackedScene" uid="uid://bg0g0i0jsu7qw" path="res://scenes/main/global_effects.tscn" id="6_clnx7"]
+[ext_resource type="PackedScene" uid="uid://uoqx4kxc1y8g" path="res://scenes/machine/machine_reward/machine_reward.tscn" id="7_cmnf7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_th5th"]
+bg_color = Color(0.6, 0.6392157, 0.6, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.6, 0.6627451, 0.6, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MachineManager" type="Control" unique_id=1852752555]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_hx8je")
+machines = Array[ExtResource("2_o5tk3")]([ExtResource("3_7kav5"), ExtResource("4_3s8jj"), ExtResource("5_v3iua")])
+machine_durations = Array[int]([15, 30, 45])
+
+[node name="MachineZone" type="PanelContainer" parent="." unique_id=193139141]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.81100005
+anchor_bottom = 0.35500002
+offset_right = 0.95996094
+offset_bottom = 1.199997
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MachinesHolder" type="Node2D" parent="." unique_id=1286491392]
+unique_name_in_owner = true
+position = Vector2(450, -1)
+
+[node name="GlobalEffects" parent="." unique_id=1921158447 instance=ExtResource("6_clnx7")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 103.0
+offset_bottom = 60.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_th5th")
+
+[node name="CurrentMachineTime" type="PanelContainer" parent="." unique_id=1980669427]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = 9.0
+offset_right = 56.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
+
+[node name="RemainingTime" type="RichTextLabel" parent="CurrentMachineTime" unique_id=255487194]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 10
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "5:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MachineReward" parent="." unique_id=2124141432 instance=ExtResource("7_cmnf7")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = -144.5
+offset_top = -144.0
+offset_right = 144.5
+offset_bottom = 144.0

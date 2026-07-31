@@ -28,7 +28,7 @@ func apply_effect() -> void:
 			for i in range(number_of_hamster):
 				var next_hamster:Hamster = Hamsters.get_random_hamster()
 				var missing_health: bool = next_hamster.health_component.get_max_health() > next_hamster.health_component.current_health
-				while not healed_hamsters[next_hamster] == null && missing_health: ## This will trigger if a hamster hasn't been added to heal and is missing health
+				while healed_hamsters.has(next_hamster) && missing_health: ## This will trigger if a hamster hasn't been added to heal and is missing health
 					next_hamster = Hamsters.get_random_hamster()
 					missing_health = next_hamster.health_component.get_max_health() > next_hamster.health_component.current_health
 				healed_hamsters[next_hamster] = true

@@ -24,6 +24,8 @@ buses/default_bus_layout="uid://bglpd37hppvw4"
 Visitor="*uid://dvsfkhnerye3a"
 Power="*uid://41cd6kvj28l5"
 Database="*uid://ddltf2oldmgim"
+Hamsters="*uid://di318fuk3bq8g"
+Effects="*uid://cer1dn5hgofd3"
 
 [display]
 

@@ -14,7 +14,7 @@ func apply_effect() -> void:
 		else:
 			for i in range(amt_to_give):
 				var next_hamster:Hamster = Hamsters.get_random_hamster()
-				while not hamsters_with_traits.has(next_hamster): ## This will trigger if a hamster hasn't been added to damage
+				while hamsters_with_traits.has(next_hamster): ## This will trigger if a hamster hasn't been added to damage
 					next_hamster = Hamsters.get_random_hamster()
 				hamsters_with_traits[next_hamster] = true
 		## NOTE THat this will apply the trait to hamsters that might already have it

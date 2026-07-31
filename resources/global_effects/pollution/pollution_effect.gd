@@ -31,7 +31,7 @@ func apply_effect() -> void:
 		else:
 			for i in range(number_of_hamster):
 				var next_hamster:Hamster = Hamsters.get_random_hamster()
-				while not damanged_hamsters.has(next_hamster): ## This will trigger if a hamster hasn't been added to damage
+				while damanged_hamsters.has(next_hamster): ## This will trigger if a hamster hasn't been added to damage
 					next_hamster = Hamsters.get_random_hamster()
 				damanged_hamsters[next_hamster] = true
 		
