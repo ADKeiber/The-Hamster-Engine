@@ -16,7 +16,7 @@ func _ready() -> void:
 	cage = get_node("/root/Main/Cage/InteractableComponent")
 
 
-func check_building(draggable : DraggableComponent) -> void:
+func check_building() -> void:
 	var building : Area2D = null
 	var size : Vector2 = Vector2(9999, 9999)
 	var overlapped : Array = area.get_overlapping_areas()
@@ -31,28 +31,31 @@ func check_building(draggable : DraggableComponent) -> void:
 		interactable = building.get_parent().interactable_component
 		reparent_hamster(interactable)
 	elif building == null and hamster.get_parent() is InteractableComponent:
-		reparent_hamster(hamster.get_parent())
-	else: reparent_hamster(cage)
+		interactable = hamster.get_parent()
+		reparent_hamster(interactable)
+	else: 
+		interactable = cage
+		reparent_hamster(interactable)
 
 
-func reparent_hamster(interactable) -> void:
-	if not interactable.is_in_group("Cage"):
-		hamster.reparent(interactable)
+func reparent_hamster(parent) -> void:
+	if not parent.is_in_group("Cage"):
+		hamster.reparent(parent)
 		animation.invisible()
-		hamster.global_position = interactable.global_position
-		interactable.entered()
+		hamster.global_position = parent.global_position
+		#parent.entered()
 		hamster.velocity = Vector2.ZERO
-	elif interactable.is_in_group("Cage") && cage.cage_hovered == false:
+	elif parent.is_in_group("Cage") && cage.cage_hovered == false:
 		hamster.reparent(cage)
 		hamster.global_position = Vector2(
 			randf_range(cage.start_pos.x, cage.end_pos.x),
 		 randf_range(cage.start_pos.y, cage.end_pos.y))
-		interactable.entered()
+		#parent.entered()
 		hamster.velocity = Vector2.ZERO
-	elif interactable.is_in_group("Cage") && cage.cage_hovered == true:
+	elif parent.is_in_group("Cage") && cage.cage_hovered == true:
 		hamster.reparent(cage)
 		hamster.global_position = get_global_mouse_position()
-		interactable.entered()
+		#parent.entered()
 		hamster.velocity = Vector2.ZERO
 
 func merge_rect2(h_area : Area2D, building_area) -> Vector2:
@@ -69,7 +72,6 @@ func merge_rect2(h_area : Area2D, building_area) -> Vector2:
 	var rect_size = new_rect.size
 	return rect_size
 	
-func picked_up(draggable : DraggableComponent) -> void:
+func picked_up() -> void:
 	animation.visible()
-	if hamster.get_parent() is InteractableComponent:
-		hamster.get_parent().exited()
+	draggable.draggable = true

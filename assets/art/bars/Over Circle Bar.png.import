@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu22r6kb3p41i"
-path="res://.godot/imported/Wheel Animation.png-07f68f7579947eb72fcae8f151f1a168.ctex"
+uid="uid://dwexbeqfw7odi"
+path="res://.godot/imported/Over Circle Bar.png-c1aee8b1eab687e4406b5ffb17a074fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/building/Wheel Animation.png"
-dest_files=["res://.godot/imported/Wheel Animation.png-07f68f7579947eb72fcae8f151f1a168.ctex"]
+source_file="res://assets/art/bars/Over Circle Bar.png"
+dest_files=["res://.godot/imported/Over Circle Bar.png-c1aee8b1eab687e4406b5ffb17a074fe.ctex"]
 
 [params]
 

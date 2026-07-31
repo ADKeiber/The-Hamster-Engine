@@ -7,3 +7,7 @@ extends Resource
 	Vector2i(0,1),
 	Vector2i(1,1)
 ] 
+
+@export_group("Size")
+@export var x : int
+@export var y : int

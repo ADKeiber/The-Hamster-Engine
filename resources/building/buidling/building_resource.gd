@@ -1,5 +1,6 @@
+class_name BuildingResource
 extends Resource
-class_name ModuleResource
+
 
 @export var building_name : String
 @export_multiline("Description") var description : String
@@ -11,6 +12,8 @@ class_name ModuleResource
 
 @export_group("Interactable")
 @export var interactable_on : bool
+@export var interactale_locked : bool
+@export var locked_in_time : float
 
 @export_group("Power Producer")
 @export var power_producer_on : bool
@@ -24,5 +27,14 @@ class_name ModuleResource
 
 
 
-func attach() -> void:
+func turn_on(hamster : Hamster, cage : CageInteractableComponent) -> void:
 	pass
+
+func turn_off(hamster : Hamster, cage : CageInteractableComponent) -> void:
+	hamster.interactor.reparent_hamster(cage)
+	hamster.interactor.picked_up()
+	hamster.interactor.interactable = cage
+
+#func return_hamster(node) -> void:
+	##var cage = node.get_node("/root/Main/Cage/InteractableComponent")
+	##
