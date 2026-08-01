@@ -8,10 +8,10 @@ extends Resource
 @export_multiline var description: String
 #Add more fields later
 var applied: bool = false
-
+var origin: Node
 ##Note that this method has the potential to continually be reapplied and the effect 
 ##can decide if it wants to actually do anything about it
-func apply_effect() -> void:
+func apply_effect(origin: Node) -> void:
 	pass
 func remove_effect() -> void:
 	pass

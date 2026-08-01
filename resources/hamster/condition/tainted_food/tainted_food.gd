@@ -4,7 +4,8 @@ extends Condition
 
 @export var speed_decrease: int
 
-func apply(hamster: Hamster) -> void:
+func apply(hamster: Hamster, origin:Node) -> void:
+	self.origin = origin
 	self.hamster = hamster
 	var stats_component: HamsterStatsComponent = hamster.hamster_stats_component
 	var speed: = stats_component.StatType.SPEED
@@ -14,7 +15,8 @@ func remove() -> void:
 	var stats_component: HamsterStatsComponent = hamster.hamster_stats_component
 	var speed: = stats_component.StatType.SPEED
 	stats_component.set_stat_value(speed, stats_component.get_stat(speed) + speed_decrease)
+	hamster.remove_condition(self)
 	self.hamster = null
 
-func tick() -> void:
-	pass
+func handle_event(event: Event) -> void:
+	pass ## Isn't a reactive condition

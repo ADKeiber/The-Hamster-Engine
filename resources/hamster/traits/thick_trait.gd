@@ -1,4 +1,4 @@
 class_name ThickTrait extends TraitResource
 
-func handle_event(event: TraitEvent, stats: HamsterStatsComponent) -> void:
+func handle_event(event: Event, stats: HamsterStatsComponent) -> void:
 	print("SHOULD I LISTEN TO THIS EVENT?")

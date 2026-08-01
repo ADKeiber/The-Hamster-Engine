@@ -4,7 +4,7 @@ class_name TimedDifficulty extends VisitorResource
 @export var effect: GlobalEffect
 @export var started: bool
 
-func apply_difficulty() -> void:
+func apply_difficulty(node: Node) -> void:
 	pass
 
 func remove_difficulty() -> void:

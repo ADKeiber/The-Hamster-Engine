@@ -37,3 +37,8 @@ func _on_start_machine_pressed() -> void:
 func win() -> void:
 	you_win_screen.visible = true
 	get_tree().paused = true
+
+
+func _on_world_timer_timeout() -> void:
+	for hamster in Hamsters.hamsters:
+		hamster.handle_event(Event.new(Event.Type.TICK, world_timer, hamster, {}))

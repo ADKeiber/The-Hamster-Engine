@@ -6,10 +6,11 @@ extends GlobalEffect
 ##NOTE: This one keeps getting applied.. Its not a one and done thing :)
 ## also this should probably only apply it to hamsters who are in the cage... but 
 ## we will figure out how to determine that later
-func apply_effect() -> void:
+func apply_effect(origin: Node) -> void:
+	self.origin = origin
 	##Applied tainted food condition to hamsters
 	for hamster in Hamsters.hamsters:
-		hamster.condition_component.add_condition(condition)
+		hamster.condition_component.add_condition(condition, null) #apply effect should take in a node?
 	
 
 func remove_effect() -> void:

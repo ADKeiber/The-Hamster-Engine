@@ -60,15 +60,21 @@ func update_stamina_bar(current: int, max: int) -> void:
 	stamina_bar.value = current
 
 func activate_traits_and_type() -> void:
-	traits_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, self, {}))
-	hamster_type_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, self, {}))
+	traits_component.on_event(Event.new(Event.Type.CREATED, self, self, {}))
+	hamster_type_component.on_event(Event.new(Event.Type.CREATED, self, self, {}))
 
 func hide_bars() -> void:
 	stamina_bar.visible = false
 	health_bar.visible = false
 
-func add_condition(condition: Condition) -> void:
-	condition_component.add_condition(condition)
+func handle_event(event: Event) -> void:
+	## Order is Type, Trait, Condition
+	hamster_type_component.on_event(event)
+	traits_component.on_event(event)
+	condition_component.on_event(event)
+
+func add_condition(condition: Condition, origin:Node) -> void:
+	condition_component.add_condition(condition, origin)
 
 func remove_condition(condition: Condition) -> void:
 	condition_component.remove_condition(condition)
@@ -78,10 +84,10 @@ func add_trait(new_trait: TraitResource) -> void:
 
 func remove_trait(remove_trait: TraitResource) -> void:
 	print("removed trait %s" % remove_trait)
+
 ##################################
 ## Movement and physics ##########
 ##################################
-
 @onready var interactor : InteractorComponent = $InteractorComponent
 var target_pos : Vector2
 var move : bool = false

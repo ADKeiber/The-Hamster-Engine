@@ -1,7 +1,8 @@
 class_name PowerDrainEffect extends GlobalEffect
 
 @export var amount: int = 0
-func apply_effect() -> void:
+func apply_effect(origin: Node) -> void:
+	self.origin = origin
 	if not applied:
 		print("DRAINING MORE POWER!!")
 		Power.min_power += amount

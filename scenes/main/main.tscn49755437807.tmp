@@ -143,7 +143,6 @@ unique_name_in_owner = true
 autostart = true
 
 [node name="StartMachine" type="Button" parent="." unique_id=1369879553]
-visible = false
 layout_mode = 0
 offset_left = 496.0
 offset_top = 193.0
@@ -170,5 +169,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="timeout" from="WorldTimer" to="." method="_on_world_timer_timeout"]
 [connection signal="pressed" from="StartMachine" to="." method="_on_start_machine_pressed"]

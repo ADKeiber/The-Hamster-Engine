@@ -10,8 +10,8 @@ var calculated_ticks: bool = false
 var total_ticks: int = 0
 var ticks_remaining: int = 0
 ##NOTE: This one keeps getting applied.. Its not a one and done thing :)
-func apply_effect() -> void:
-	
+func apply_effect(origin: Node) -> void:
+	self.origin = origin
 	if not calculated_ticks:
 		total_ticks = int(time_between_impact / Effects.timer.wait_time)
 		ticks_remaining = total_ticks

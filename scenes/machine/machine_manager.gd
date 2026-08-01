@@ -88,7 +88,7 @@ func pass_time() -> void:
 
 func add_global_effect(effect: GlobalEffect) -> void:
 	current_effects.append(effect)
-	effect.apply_effect()
+	effect.apply_effect(self)
 	var timer: Timer = get_tree().get_first_node_in_group("WorldTimer")
 	global_effects.set_current_effect(effect)
 	timer.timeout.connect(effect.apply_effect)

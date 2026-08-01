@@ -5,7 +5,8 @@ extends GlobalEffect
 @export var applied_trait: TraitResource
 @export var amt_to_give: int = 5
 
-func apply_effect() -> void:
+func apply_effect(origin: Node) -> void:
+	self.origin = origin
 	if not applied:
 		var hamsters_with_traits: Dictionary[Hamster, bool]
 		if amt_to_give >= Hamsters.hamsters.size():

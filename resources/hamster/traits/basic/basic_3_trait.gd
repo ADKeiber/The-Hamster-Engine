@@ -2,9 +2,9 @@ class_name Basic3Trait extends TraitResource
 
 @export var increase: int = 0
 
-func handle_event(event: TraitEvent, stats: HamsterStatsComponent) -> void:
+func handle_event(event: Event, stats: HamsterStatsComponent) -> void:
 	match event.type:
-		TraitEvent.EventType.CREATED:
+		Event.Type.CREATED:
 			var type: HamsterStatsComponent.StatType
 			match randi_range(0, 2):
 				0: type = HamsterStatsComponent.StatType.MAX_HEALTH

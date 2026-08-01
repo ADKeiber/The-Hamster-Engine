@@ -2,10 +2,11 @@ class_name PollutionMutation extends GlobalEffect
 
 @export var applied_condition: Condition
 
-func apply_effect() -> void:
+func apply_effect(origin: Node) -> void:
+	self.origin = origin
 	if not applied:
 		for hamster in Hamsters.hamsters:
-			hamster.condition_component.add_condition(applied_condition)
+			hamster.condition_component.add_condition(applied_condition, null) ## can't access a node here... maybe update apply_effect to take in a node
 		applied = true
 
 func remove_effect() -> void:
