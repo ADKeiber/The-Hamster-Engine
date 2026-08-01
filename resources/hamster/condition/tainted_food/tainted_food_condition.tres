@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TaintedFoodCondition" format=3 uid="uid://bgknmoljeljgh"]
+
+[ext_resource type="Script" uid="uid://bi3xuewu6sopj" path="res://resources/hamster/condition/tainted_food/tainted_food.gd" id="1_irnpl"]
+
+[resource]
+script = ExtResource("1_irnpl")
+speed_decrease = 2
+name = "Tainted Food"
+description = "Hamster speed decreases by 2"
+metadata/_custom_type_script = "uid://bi3xuewu6sopj"

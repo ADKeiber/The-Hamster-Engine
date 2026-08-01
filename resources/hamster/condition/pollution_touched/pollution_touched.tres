@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PollutionTouched" format=3 uid="uid://c0wq5ogexe6qw"]
+
+[ext_resource type="Script" uid="uid://cp14issmks3j8" path="res://resources/hamster/condition/pollution_touched/pollution_touched.gd" id="1_0o5e5"]
+
+[resource]
+script = ExtResource("1_0o5e5")
+health_increase = 5
+speed_increase = 1
+name = "Pollution Touched"
+description = "Hardened by pollution, this hamster has permanently increased health and speed"
+metadata/_custom_type_script = "uid://cp14issmks3j8"

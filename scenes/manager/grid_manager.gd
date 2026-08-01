@@ -24,7 +24,6 @@ func update_highlight():
 	var cells: Array[Vector2i] = []
 	parent.global_position = tile_map.map_to_local(tl) + extents/2.0
 	cells = registered_node.footprint.get_occupied_cells(tl)
-		
 	highlight_cells(cells)
 
 func highlight_cells(cells: Array[Vector2i]) -> void:

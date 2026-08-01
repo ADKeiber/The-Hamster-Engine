@@ -1,0 +1,15 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://brpcjtp8hebxf"]
+
+[ext_resource type="Texture2D" uid="uid://h6auh7kqjr55" path="res://assets/art/machine/minor/Pollutionator.png" id="1_hifc0"]
+
+[resource]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hifc0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

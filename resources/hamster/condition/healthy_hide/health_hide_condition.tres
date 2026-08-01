@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HealthyHideCondition" format=3 uid="uid://dlokxqvbkohyn"]
+
+[ext_resource type="Script" uid="uid://bkakgt0h6nb5" path="res://resources/hamster/condition/healthy_hide/healthy_hide.gd" id="1_wpvwn"]
+
+[resource]
+script = ExtResource("1_wpvwn")
+health_burn_decrease = 5
+name = "Healthy Hide"
+description = "Decreases how quickly a hamster's health burns"
+metadata/_custom_type_script = "uid://bkakgt0h6nb5"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="GutHardeningEvent" format=3 uid="uid://56o21vct0fs2"]
+
+[ext_resource type="Resource" uid="uid://bbprbhm4aqanx" path="res://resources/hamster/traits/iron_stomach/iron_stomach_trait.tres" id="1_g66v5"]
+[ext_resource type="Script" uid="uid://damis55wcj14j" path="res://resources/global_effects/gut_hardening/gut_hardening.gd" id="1_yf7pf"]
+
+[resource]
+script = ExtResource("1_yf7pf")
+applied_trait = ExtResource("1_g66v5")
+effect_name = "Gut Hardening"
+short_description = "Can't gain bad conditions from eating and increases stamina gain while in the cage"
+description = "The Guts of several hamsters have hardened... Allowing them to not gain bad conditions from eating and increases stamina gain while in the cage"
+metadata/_custom_type_script = "uid://damis55wcj14j"

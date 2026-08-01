@@ -4,7 +4,7 @@ class_name MagicallyEnhanced extends Condition
 @export var health_increase: int
 @export var stamina_increase: int
 
-func apply(hamster: Hamster) -> void:
+func apply(hamster: Hamster, node:Node) -> void:
 	self.hamster = hamster
 	var stats: HamsterStatsComponent = hamster.hamster_stats_component
 	stats.set_stat_value(HamsterStatsComponent.StatType.SPEED, 
@@ -22,7 +22,5 @@ func remove() -> void:
 		stats.get_stat(HamsterStatsComponent.StatType.MAX_HEALTH) - health_increase)
 	stats.set_stat_value(HamsterStatsComponent.StatType.MAX_STAMINA, 
 		stats.get_stat(HamsterStatsComponent.StatType.MAX_STAMINA) - stamina_increase)
+	hamster.remove_condition(self)
 	hamster = null
-
-func tick() -> void:
-	pass

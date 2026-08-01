@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PowerDrainEffect" format=3 uid="uid://dhf3suvcmuo5o"]
+
+[ext_resource type="Script" uid="uid://d3rjgcjuc8ty3" path="res://resources/global_effects/power_drain/power_drain_effect.gd" id="1_bhcp1"]
+
+[resource]
+script = ExtResource("1_bhcp1")
+amount = 25
+effect_name = "Massive Power Consumption"
+short_description = "Need more energy! Increase minimum required power..."
+description = "Minimum power required is increased by %s for %s seconds"
+metadata/_custom_type_script = "uid://d3rjgcjuc8ty3"

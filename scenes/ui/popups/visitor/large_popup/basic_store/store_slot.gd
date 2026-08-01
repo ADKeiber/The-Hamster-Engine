@@ -1,5 +1,7 @@
 class_name StoreSlot
 extends PanelContainer
+
+@export var area: Area2D
 @onready var badge: Badge = $Wrapper/Badge
 @onready var wrapper: Control = $Wrapper
 @onready var purchase_popup: Node2D = %PurchasePopup
@@ -9,8 +11,6 @@ var cost: int = 0
 var bought: bool = false
 var enabled: bool = true
 
-func _ready() -> void:
-	purchase_popup.visible = false
 
 func _process(delta: float) -> void:
 	if not bought:

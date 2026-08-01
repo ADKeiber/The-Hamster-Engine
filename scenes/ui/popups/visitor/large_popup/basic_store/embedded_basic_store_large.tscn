@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://b3sl4dgkf3nvk"]
-
-[ext_resource type="Script" uid="uid://dfvvjn3vk27yc" path="res://scenes/ui/popups/visitor/large_popup/basic_store/embedded_basic_store_large.gd" id="1_o1mf6"]
-
-[node name="BasicStoreLargePopup" type="VBoxContainer" unique_id=1588177633]
-custom_minimum_size = Vector2(150, 150)
-script = ExtResource("1_o1mf6")

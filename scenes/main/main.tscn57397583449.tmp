@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://bo32t2dj8ghll"]
+
+[ext_resource type="PackedScene" uid="uid://bqjuwnvj2wu5g" path="res://scenes/building/cage.tscn" id="1_6q06x"]
+[ext_resource type="Script" uid="uid://b0itp83je22bl" path="res://scenes/main/main.gd" id="1_hujxm"]
+[ext_resource type="PackedScene" uid="uid://dx5dmin8d3pcr" path="res://scenes/building/buildings_area.tscn" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://dxncdpsw0qdep" path="res://scenes/building/tester.tscn" id="2_iuonh"]
+[ext_resource type="Script" uid="uid://cmkb25oqwd8vk" path="res://scenes/main/power_produced.gd" id="4_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://c4jxi4kmf16j5" path="res://scenes/visitor/visitor_manager.tscn" id="7_hujxm"]
+[ext_resource type="Texture2D" uid="uid://h6auh7kqjr55" path="res://assets/art/machine/minor/Pollutionator.png" id="8_b1x3f"]
+[ext_resource type="Script" uid="uid://cw7rg4ikqcf8n" path="res://scenes/machine/machine.gd" id="8_blune"]
+[ext_resource type="Script" uid="uid://fl7diixfe4mv" path="res://scripts/global/blackout.gd" id="8_yyfjg"]
+[ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="9_a8run"]
+[ext_resource type="Texture2D" uid="uid://bae5kj2jdu4x4" path="res://assets/art/machine/minor/CropCircler.png" id="10_ouso4"]
+[ext_resource type="Texture2D" uid="uid://bn7cw6ohwutv2" path="res://assets/art/machine/major/MoonDestroyer.png" id="11_blune"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyfjg"]
+bg_color = Color(0.19, 0.19, 0.19, 0.9137255)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujpuf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_b1x3f")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1f6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ouso4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1r3bj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_blune")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+
+[node name="Main" type="Control" unique_id=305830555]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_hujxm")
+
+[node name="BlackoutPanel" type="PanelContainer" parent="." unique_id=1686160267 groups=["Blackout"]]
+unique_name_in_owner = true
+visible = false
+z_index = 4000
+layout_mode = 0
+offset_left = -30.0
+offset_top = -29.0
+offset_right = 676.0
+offset_bottom = 386.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yyfjg")
+script = ExtResource("8_yyfjg")
+
+[node name="Cage" parent="." unique_id=480036686 instance=ExtResource("1_6q06x")]
+position = Vector2(166, 262)
+
+[node name="Tester2" parent="." unique_id=590711385 instance=ExtResource("2_iuonh")]
+position = Vector2(412, 207)
+
+[node name="Battery" parent="." unique_id=1258192808 groups=["Battery"] instance=ExtResource("2_iuonh")]
+position = Vector2(561, 313)
+
+[node name="BuildingsArea" parent="." unique_id=1218242002 instance=ExtResource("1_hyk8p")]
+
+[node name="PowerOutput" type="Control" parent="." unique_id=1915303001 node_paths=PackedStringArray("produced", "min", "total")]
+anchors_preset = 0
+offset_left = 19.0
+offset_top = 225.0
+offset_right = 146.0
+offset_bottom = 351.0
+script = ExtResource("4_l3cfh")
+produced = NodePath("VBoxContainer/PowerProduced")
+min = NodePath("VBoxContainer/PowerMin")
+total = NodePath("VBoxContainer/TotalPower")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PowerOutput" unique_id=524259318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PowerProduced" type="Label" parent="PowerOutput/VBoxContainer" unique_id=1874886666]
+layout_mode = 2
+size_flags_vertical = 3
+text = "pro"
+
+[node name="PowerMin" type="Label" parent="PowerOutput/VBoxContainer" unique_id=1530478295]
+layout_mode = 2
+size_flags_vertical = 3
+text = "min"
+
+[node name="TotalPower" type="Label" parent="PowerOutput/VBoxContainer" unique_id=1127726245]
+layout_mode = 2
+size_flags_vertical = 3
+text = "total"
+
+[node name="VisitorManager" parent="." unique_id=1358367874 instance=ExtResource("7_hujxm")]
+unique_name_in_owner = true
+z_index = 500
+
+[node name="WorldTimer" type="Timer" parent="." unique_id=243912178]
+unique_name_in_owner = true
+autostart = true
+
+[node name="Button" type="Button" parent="." unique_id=2079174763]
+visible = false
+layout_mode = 0
+offset_left = 268.0
+offset_top = 77.0
+offset_right = 361.0
+offset_bottom = 108.0
+text = "Start Event
+"
+
+[node name="MachineManager" type="Control" parent="." unique_id=202693680]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MachineZone" type="PanelContainer" parent="MachineManager" unique_id=1848724559]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.81100005
+anchor_bottom = 0.35500002
+offset_right = 0.95996094
+offset_bottom = 1.199997
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Machines" type="Node2D" parent="MachineManager" unique_id=1479961744]
+
+[node name="Machine" type="Node2D" parent="MachineManager/Machines" unique_id=846644697]
+script = ExtResource("8_blune")
+
+[node name="AnimationComponent" type="AnimatedSprite2D" parent="MachineManager/Machines/Machine" unique_id=2081620924]
+position = Vector2(91, 85)
+sprite_frames = SubResource("SpriteFrames_ujpuf")
+script = ExtResource("9_a8run")
+metadata/_custom_type_script = "uid://bkdxvbhn1krow"
+
+[node name="Node" type="Node" parent="MachineManager/Machines/Machine" unique_id=1513573996]
+
+[node name="Machine2" type="Node2D" parent="MachineManager/Machines" unique_id=395583674]
+
+[node name="AnimationComponent" type="AnimatedSprite2D" parent="MachineManager/Machines/Machine2" unique_id=254973251]
+position = Vector2(260, 88)
+sprite_frames = SubResource("SpriteFrames_h1f6q")
+script = ExtResource("9_a8run")
+metadata/_custom_type_script = "uid://bkdxvbhn1krow"
+
+[node name="Machine3" type="Node2D" parent="MachineManager/Machines" unique_id=1277904655]
+
+[node name="AnimationComponent" type="AnimatedSprite2D" parent="MachineManager/Machines/Machine3" unique_id=1547345010]
+position = Vector2(418, 74)
+sprite_frames = SubResource("SpriteFrames_1r3bj")
+script = ExtResource("9_a8run")
+metadata/_custom_type_script = "uid://bkdxvbhn1krow"
+
+[node name="Machine Effect Placeholder" type="PanelContainer" parent="MachineManager" unique_id=724347354 groups=["MachineEffects"]]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 105.0
+offset_bottom = 44.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MachineManager/Machine Effect Placeholder" unique_id=233039167]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 10
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[b]Effect:[/b]
+Something is happening
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

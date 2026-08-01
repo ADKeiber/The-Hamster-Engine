@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BasicStoreVisitor" format=3 uid="uid://d2xunjkruqawl"]
+
+[ext_resource type="Script" uid="uid://dyfeu8e1cpxua" path="res://resources/visitor/store/basic_store_visitor.gd" id="1_r1sil"]
+[ext_resource type="PackedScene" uid="uid://bl5exi6jkxldu" path="res://scenes/ui/popups/visitor/large_popup/embedded_basic_salesman_large.tscn" id="1_sr2mb"]
+[ext_resource type="Script" uid="uid://bnbn1t32707jh" path="res://resources/module/module_resource.gd" id="3_cq5mg"]
+[ext_resource type="SpriteFrames" uid="uid://dc1betbb7565f" path="res://resources/visitor/sprite_frames/witch_sprite_frames.tres" id="8_4eknx"]
+
+[resource]
+script = ExtResource("1_r1sil")
+sprite_frames = ExtResource("8_4eknx")
+visitor_name = "Steve Hamsterton"
+stick_around = true
+time_to_complete = 15.0
+small_information_text = "Do you want to buy something?"
+embedded_large_popup = ExtResource("1_sr2mb")
+metadata/_custom_type_script = "uid://dyfeu8e1cpxua"

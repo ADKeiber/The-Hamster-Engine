@@ -1,5 +1,6 @@
-extends Node2D
 class_name InteractableComponent
+extends Node2D
+
 
 signal on
 signal off

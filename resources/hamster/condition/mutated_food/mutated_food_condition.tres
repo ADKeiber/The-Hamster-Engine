@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MutatedFoodCondition" format=3 uid="uid://drpl6133wnvfr"]
+
+[ext_resource type="Script" uid="uid://v2ovdh3dvp60" path="res://resources/hamster/condition/mutated_food/mutated_food.gd" id="1_au7fa"]
+
+[resource]
+script = ExtResource("1_au7fa")
+stamina_gen_increase = 5
+name = "Mutated Food"
+description = "Mutated food has allowed hamsters to get back to work quicker!"
+metadata/_custom_type_script = "uid://v2ovdh3dvp60"

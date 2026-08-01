@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ToxicResilience" format=3 uid="uid://cjes66eowt5vv"]
+
+[ext_resource type="Script" uid="uid://88mjd428gs6p" path="res://resources/hamster/traits/toxic_resilience/toxic_resilience.gd" id="1_cv7mq"]
+
+[resource]
+script = ExtResource("1_cv7mq")
+name = "Toxic Resilience"
+description = "The continual onslaught of pollution has hardened this hamster and thickened their hide causing their health to increase dramatically"
+rank = 3
+metadata/_custom_type_script = "uid://88mjd428gs6p"

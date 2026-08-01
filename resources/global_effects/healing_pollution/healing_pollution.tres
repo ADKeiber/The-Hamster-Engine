@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HealingPollution" format=3 uid="uid://by5tj3ohl7ha5"]
+
+[ext_resource type="Script" uid="uid://dky1qw22sbcby" path="res://resources/global_effects/healing_pollution/healing_pollution.gd" id="1_h68wm"]
+
+[resource]
+script = ExtResource("1_h68wm")
+number_of_hamster = 5
+healing = 5
+chance_to_heal = 0.8
+effect_name = "Healing Pollution"
+short_description = "Hamsters with the 'polluted' condition have a chance to heal every 5 seconds"
+description = "Has a chance to heal hamsters at a specific interval"
+metadata/_custom_type_script = "uid://dky1qw22sbcby"

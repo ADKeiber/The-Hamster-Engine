@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoodMutation" format=3 uid="uid://dxa2jv88uum7x"]
+
+[ext_resource type="Resource" uid="uid://drpl6133wnvfr" path="res://resources/hamster/condition/mutated_food/mutated_food_condition.tres" id="1_hogwg"]
+[ext_resource type="Script" uid="uid://mpoj8aycv8t2" path="res://resources/global_effects/food_mutation/food_mutation.gd" id="1_i8xq7"]
+
+[resource]
+script = ExtResource("1_i8xq7")
+condition = ExtResource("1_hogwg")
+effect_name = "Food Mutation"
+short_description = "Food fed to hamsters have been genetically altered and have increased their speed"
+metadata/_custom_type_script = "uid://mpoj8aycv8t2"

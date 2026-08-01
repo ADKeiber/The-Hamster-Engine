@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PollutionEffect" format=3 uid="uid://dmsfj6hyww0ab"]
+
+[ext_resource type="Resource" uid="uid://iy5nj25uu31j" path="res://resources/hamster/condition/polluted/polluted.tres" id="1_5k36k"]
+[ext_resource type="Script" uid="uid://dj3pss856s1ef" path="res://resources/global_effects/pollution/pollution_effect.gd" id="2_4egln"]
+
+[resource]
+script = ExtResource("2_4egln")
+number_of_hamster = 5
+damage = 10
+condition = ExtResource("1_5k36k")
+effect_name = "Pollution Generation"
+short_description = "Gives all hamsters the 'polluted' condition and hurts 5 random hamsters every 5 seconds"
+description = "Generaets pollution and causes random hamsters to take damage"
+metadata/_custom_type_script = "uid://dj3pss856s1ef"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TaintedCropEffect" format=3 uid="uid://b0ai1axw7x26p"]
+
+[ext_resource type="Script" uid="uid://co5bjgp60vss0" path="res://resources/global_effects/tainted_crop/tainted_crop.gd" id="1_agq8y"]
+[ext_resource type="Resource" uid="uid://bgknmoljeljgh" path="res://resources/hamster/condition/tainted_food/tainted_food_condition.tres" id="1_tcp0w"]
+
+[resource]
+script = ExtResource("1_agq8y")
+condition = ExtResource("1_tcp0w")
+effect_name = "Tainted Crop"
+short_description = "Hamsters in the cage get the 'tainted food' condition"
+description = "Crops in the region have all been tainted by your machine! Hamsters in the cage get the 'tainted food' condition"
+metadata/_custom_type_script = "uid://co5bjgp60vss0"

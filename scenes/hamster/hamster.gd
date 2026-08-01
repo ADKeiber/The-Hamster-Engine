@@ -1,5 +1,6 @@
+class_name Hamster
 extends CharacterBody2D
-class_name Hamster 
+
 const BURN_CONDITION = preload("uid://gcxqiowkjugl")
 const MAGICALLY_ENHANCED_CONDITION = preload("uid://bt1lfv6w8tuxw")
 const REST_CONDITION = preload("uid://cbfcjl0pgym4l")
@@ -23,6 +24,8 @@ const REST_CONDITION = preload("uid://cbfcjl0pgym4l")
 func _ready() -> void:
 	#hamster_stats_component.set_stats(stats)
 	connect_stats()
+	#register hamster with global script
+	Hamsters.add_hamster(self)
 
 #func setup_hamster(new_stats: HamsterStatsResource) -> void:
 	#stats = new_stats
@@ -57,13 +60,34 @@ func update_stamina_bar(current: int, max: int) -> void:
 	stamina_bar.value = current
 
 func activate_traits_and_type() -> void:
-	traits_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, {}))
-	hamster_type_component.on_event(TraitEvent.new(TraitEvent.EventType.CREATED, self, {}))
+	traits_component.on_event(Event.new(Event.Type.CREATED, self, self, {}))
+	hamster_type_component.on_event(Event.new(Event.Type.CREATED, self, self, {}))
 
 func hide_bars() -> void:
 	stamina_bar.visible = false
 	health_bar.visible = false
 
+func handle_event(event: Event) -> void:
+	## Order is Type, Trait, Condition
+	hamster_type_component.on_event(event)
+	traits_component.on_event(event)
+	condition_component.on_event(event)
+
+func add_condition(condition: Condition, origin:Node) -> void:
+	condition_component.add_condition(condition, origin)
+
+func remove_condition(condition: Condition) -> void:
+	condition_component.remove_condition(condition)
+
+func add_trait(new_trait: TraitResource) -> void:
+	print("Add trait here")
+
+func remove_trait(remove_trait: TraitResource) -> void:
+	print("removed trait %s" % remove_trait)
+
+##################################
+## Movement and physics ##########
+##################################
 @onready var interactor : InteractorComponent = $InteractorComponent
 var target_pos : Vector2
 var move : bool = false
@@ -97,7 +121,6 @@ func _physics_process(delta: float) -> void:
 				timer_start = true
 			
 			State.WANDER:
-				
 				move_toward_target(delta)
 
 func pick_new_target() -> void:

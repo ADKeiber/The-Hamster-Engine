@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://bg0g0i0jsu7qw"]
+
+[ext_resource type="Script" uid="uid://dto2ghacoxflf" path="res://scenes/main/global_effects.gd" id="1_6x47r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmeic"]
+bg_color = Color(0.6, 0.42600003, 0.42600003, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lw0yu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxu8e"]
+bg_color = Color(0.6, 0.22200002, 0.22200002, 1)
+
+[sub_resource type="Theme" id="Theme_7smn1"]
+FoldableContainer/styles/panel = SubResource("StyleBoxFlat_xmeic")
+FoldableContainer/styles/title_collapsed_panel = SubResource("StyleBoxFlat_lw0yu")
+FoldableContainer/styles/title_panel = SubResource("StyleBoxFlat_hxu8e")
+
+[node name="GlobalEffects" type="PanelContainer" unique_id=1921158447 groups=["MachineEffects"]]
+process_mode = 3
+custom_maximum_size = Vector2(100, -1)
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 78.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
+script = ExtResource("1_6x47r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1772187989]
+propagate_maximum_size = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=86806693]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="CurrentEffectName" type="Label" parent="VBoxContainer/MarginContainer" unique_id=294486030]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(100, -1)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+text = "Current Effect:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=799115474]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="CurrentEffectDescription" type="Label" parent="VBoxContainer/MarginContainer2" unique_id=1918740551]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(100, -1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "None"
+autowrap_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer" unique_id=40487493]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="FoldableContainer" type="FoldableContainer" parent="VBoxContainer/MarginContainer3" unique_id=236581169]
+custom_maximum_size = Vector2(95, -1)
+layout_mode = 2
+theme = SubResource("Theme_7smn1")
+theme_override_font_sizes/font_size = 8
+folded = true
+title = "Other Effects"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer3/FoldableContainer" unique_id=1136121116]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="FoldableVBox" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/FoldableContainer/ScrollContainer" unique_id=370494716]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
