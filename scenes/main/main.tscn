@@ -120,6 +120,10 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "total"
 
+[node name="WorldTimer" type="Timer" parent="." unique_id=243912178 groups=["WorldTimer"]]
+unique_name_in_owner = true
+autostart = true
+
 [node name="VisitorManager" parent="." unique_id=1358367874 instance=ExtResource("7_hujxm")]
 unique_name_in_owner = true
 z_index = 500
@@ -137,10 +141,6 @@ text = "Start Event
 [node name="MachineManager" parent="." unique_id=1852752555 instance=ExtResource("11_ouso4")]
 unique_name_in_owner = true
 layout_mode = 1
-
-[node name="WorldTimer" type="Timer" parent="." unique_id=243912178 groups=["WorldTimer"]]
-unique_name_in_owner = true
-autostart = true
 
 [node name="StartMachine" type="Button" parent="." unique_id=1369879553]
 visible = false
@@ -169,6 +169,6 @@ text = "You Win!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="WorldTimer" to="." method="_on_world_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="StartMachine" to="." method="_on_start_machine_pressed"]

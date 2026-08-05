@@ -20,11 +20,13 @@ func _ready() -> void:
 func _on_child_entered_tree(node: Node) -> void:
 	if node is Hamster:
 		hamsters.append(node)
+		node.add_condition(condition, self)
 		print(hamsters)
 
 func _on_child_exiting_tree(node: Node) -> void:
 	if node is Hamster:
 		var leaver = hamsters.find(node)
+		node.remove_condition(condition)
 		hamsters.remove_at(leaver)
 		print(hamsters)
 

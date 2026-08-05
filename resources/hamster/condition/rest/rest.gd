@@ -3,6 +3,7 @@ class_name Rest extends Condition
 func apply(hamster: Hamster, origin: Node) -> void:
 	self.hamster = hamster
 	self.origin = origin
+	print("Rest added")
 
 func remove() -> void:
 	hamster.remove_condition(self)
@@ -17,4 +18,5 @@ func handle_event(event: Event) -> void:
 			"amount":stats.get_stat(HamsterStatsComponent.StatType.STAMINA_GEN)
 			})
 		hamster.handle_event(stamina_event)
-		hamster.stamina_component.rest(stamina_event["amount"])
+		hamster.stamina_component.rest(stamina_event.data["amount"])
+		print("rest")
