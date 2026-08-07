@@ -3,10 +3,12 @@ extends Node2D
 
 signal open_large_popup(visitor:VisitorResource)
 
-@onready var visitor_popup_small: VisitorPopupSmall = $VisitorPopupSmall
 @onready var visitor_popup_tiny: VisitorPopupTiny = %VisitorPopupTiny
 @onready var animation_component: AnimationComponent = $AnimationComponent
 @onready var mouth: Node2D = %Mouth
+@onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
+
+var visitor_popup_small
 
 var popups_disabled: bool
 var visit_started: bool
@@ -20,7 +22,12 @@ func _ready() -> void:
 func setup_visitor(visitor: VisitorResource) -> void:
 	self.visitor = visitor
 	animation_component.sprite_frames = visitor.sprite_frames
+	visitor_popup_small = visitor.small_popup.instantiate()
+	add_child(visitor_popup_small)
 	visitor_popup_small.set_popup_info(visitor)
+	var offset: Vector2 = visitor_popup_small.global_position - visitor_popup_small.entry_as_global()
+	var top_middle_of_visitor: Vector2 = Vector2(collision_shape_2d.global_position.x + (collision_shape_2d.shape.size.x/2), self.global_position.y)
+	visitor_popup_small.global_position = collision_shape_2d.global_position + offset - Vector2(0, collision_shape_2d.shape.size.y/2)
 	visitor_popup_small.visible = false
 	visitor_popup_tiny.visible = false
 	time_remaining = visitor.time_to_complete
@@ -59,7 +66,10 @@ func get_mouth_position() -> Vector2:
 	return mouth.global_position
 
 func exit() -> void:
+	popups_disabled = true
 	visitor_popup_tiny.visible = false
+	visitor_popup_small.visible = false
+	
 	if visitor is TimedDifficulty:
 		visitor.remove_difficulty()
 	get_parent().get_parent().leave.emit(self) ## yuck (maybe change later)

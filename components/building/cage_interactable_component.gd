@@ -13,7 +13,7 @@ func _ready() -> void:
 	var half : Vector2 = collision_shape.shape.extents
 	start_pos = collision_shape.global_position - half
 	end_pos = collision_shape.global_position + half
-	print(start_pos, end_pos)
+	#print(start_pos, end_pos)
 	cage_area.mouse_entered.connect(mouse_entered)
 	cage_area.mouse_exited.connect(mouse_exited)
 

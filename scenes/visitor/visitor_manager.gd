@@ -91,16 +91,15 @@ func animate_to_position(visitor_scene: VisitorScene, anchor_index: int, leaving
 	)
 	space_occupied[anchor_index] = not leaving ## basically If its leaving we want it false because its no longer occupied
 	## but if its not leaving (entering) then we want it true :)
+	await tween.finished
 	if not leaving:
-		tween.finished.connect(movement_finished,CONNECT_ONE_SHOT)
+		set_visitor_large_popup(active_visitor_scene.visitor)
+		door_animation.play_animation_once_and_stop(AnimationComponent.AnimationState.CLOSING)
+		visitor_scene.animation_component.update_animation(AnimationComponent.AnimationState.IDLE)
 	else:
-		await tween.finished
+		
 		visitor_scene.queue_free()
-
-func movement_finished()-> void:
-	set_visitor_large_popup(active_visitor_scene.visitor)
-	door_animation.play_animation_once_and_stop(AnimationComponent.AnimationState.CLOSING)
-
+		
 ##############################################
 ## Pop-up interactions #######################
 ##############################################

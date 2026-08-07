@@ -131,14 +131,14 @@ func pick_new_target() -> void:
 		target_pos = Vector2(
 					randf_range(cage.start_pos.x, cage.end_pos.x), 
 					randf_range(cage.start_pos.y, cage.end_pos.y))
-		print(target_pos)
+		#print(target_pos)
 		timer_start = false
 		current_state = State.WANDER
 
 func move_toward_target(delta) -> void:
 	if global_position.distance_to(target_pos) < ARRIVAL_DISTANCE:
 		current_state = State.IDLE
-		print("Target reached!")
+		#print("Target reached!")
 		velocity = Vector2.ZERO
 		return
 

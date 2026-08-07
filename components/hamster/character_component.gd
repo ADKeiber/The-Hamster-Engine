@@ -50,7 +50,7 @@ func pick_new_target() -> void:
 func move_toward_target(delta) -> void:
 	if global_position.distance_to(target_pos) < ARRIVAL_DISTANCE:
 		current_state = State.IDLE
-		print("Target reached!")
+		#print("Target reached!")
 		velocity = Vector2.ZERO
 		return
 

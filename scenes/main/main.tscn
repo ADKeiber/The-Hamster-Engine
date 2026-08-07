@@ -125,7 +125,6 @@ unique_name_in_owner = true
 z_index = 500
 
 [node name="Button" type="Button" parent="." unique_id=2079174763]
-visible = false
 layout_mode = 0
 offset_left = 268.0
 offset_top = 77.0

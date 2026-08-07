@@ -9,7 +9,7 @@ class_name VisitorResource extends Resource
 @export var waiting_position: Vector2
 
 @export_group("Small Popup")
-@export var embedded_small_popup: PackedScene
+@export var small_popup: PackedScene
 @export var small_information_text: String
 
 @export_group("Large Popup")

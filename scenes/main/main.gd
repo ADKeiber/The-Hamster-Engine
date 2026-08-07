@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 func _on_button_pressed() -> void:
 	visitor_manager.start_event()
 
-
 func _on_start_machine_pressed() -> void:
 	machine_manager.set_timer(world_timer)
 	machine_manager.spawn_next_machine()
@@ -37,7 +36,6 @@ func _on_start_machine_pressed() -> void:
 func win() -> void:
 	you_win_screen.visible = true
 	get_tree().paused = true
-
 
 func _on_world_timer_timeout() -> void:
 	for hamster in Hamsters.hamsters:
