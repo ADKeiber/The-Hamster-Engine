@@ -11,5 +11,5 @@ func handle_event(event: Event, stats: HamsterStatsComponent) -> void:
 				1: type = HamsterStatsComponent.StatType.MAX_STAMINA
 				2: type = HamsterStatsComponent.StatType.SPEED
 			stats.set_stat_value(type, stats.get_stat(type) + increase)
-		_:
-			print("Not handled")
+		#_:
+			#print("Not handled")

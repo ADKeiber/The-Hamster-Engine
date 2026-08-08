@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://be0iiky8lt3ee" path="res://scenes/building/cage.gd" id="1_iqsty"]
 [ext_resource type="PackedScene" uid="uid://babhijhxpgqs5" path="res://components/shared/interactable_component.tscn" id="1_uruuv"]
+[ext_resource type="Resource" uid="uid://cbfcjl0pgym4l" path="res://resources/hamster/condition/rest/rest_condition.tres" id="2_2pmnl"]
 [ext_resource type="Script" uid="uid://dnxh6ppbcf7fn" path="res://components/building/cage_interactable_component.gd" id="3_10k36"]
 [ext_resource type="PackedScene" uid="uid://ch8is50ni4kn8" path="res://components/shared/power_consumer_component.tscn" id="4_gvfbu"]
 [ext_resource type="Script" uid="uid://dpv8dyefd0wpa" path="res://components/building/cage_power_consumer_component.gd" id="5_gtkua"]
@@ -33,6 +34,7 @@ b = Vector2(324, 0)
 z_index = 1
 script = ExtResource("1_iqsty")
 interactable_component = NodePath("InteractableComponent")
+condition = ExtResource("2_2pmnl")
 
 [node name="InteractableComponent" parent="." unique_id=1346976423 node_paths=PackedStringArray("cage_area", "collision_shape", "area") groups=["Cage"] instance=ExtResource("1_uruuv")]
 position = Vector2(137, 46)

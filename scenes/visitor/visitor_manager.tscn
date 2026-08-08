@@ -133,6 +133,8 @@ visible = false
 
 [node name="Timer" type="Timer" parent="." unique_id=246713199]
 
+[node name="KnockTimer" type="Timer" parent="." unique_id=409884686]
+
 [connection signal="animation_finished" from="Door/DoorAnimation" to="Door/DoorAnimation" method="_on_animation_finished"]
 [connection signal="animation_finished" from="Door/ExclamationAnimation" to="Door/ExclamationAnimation" method="_on_animation_finished"]
 [connection signal="input_event" from="Door/Area2D" to="." method="door_click_input"]

@@ -9,15 +9,16 @@ signal condition_removed(condition: Condition)
 func on_event(event: Event) -> void:
 	for condition in conditions:
 		condition.handle_event(event)
-
+		
 func add_condition(condition: Condition, origin:Node) -> void:
 	if has_condition(condition):
 		return
 	conditions.append(condition)
 	condition.apply(get_parent(), origin)
 	condition_added.emit(condition)
-	var timer: Timer = get_tree().get_first_node_in_group("WorldTimer")
-	#timer.timeout.connect(condition.tick)
+
+	print(condition)
+
 
 func remove_condition(condition: Condition) -> void:
 	if not has_condition(condition):
@@ -25,8 +26,7 @@ func remove_condition(condition: Condition) -> void:
 	conditions.erase(condition)
 	condition.remove()
 	condition_removed.emit(condition)
-	var timer: Timer = get_tree().get_first_node_in_group("WorldTimer")
-	#timer.timeout.disconnect(condition.tick)
+
 
 func has_condition(condition: Condition) -> bool:
 	for c in conditions:

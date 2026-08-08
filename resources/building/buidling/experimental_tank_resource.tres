@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b5u4laknqhd5" path="res://resources/building/buidling/experimental_tank_resource.gd" id="3_lnba7"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_lnba7")
 building_name = "Experimental Tank"
 description = "This is used to add traits to hamsters."
@@ -13,8 +14,6 @@ background_sprite_frames = ExtResource("1_lnba7")
 interactable_on = true
 interactale_locked = true
 locked_in_time = 3.0
-power_producer_on = null
-power = null
 power_consumer_on = true
 min_power_increase = 10
 on_min_power_increase = 10

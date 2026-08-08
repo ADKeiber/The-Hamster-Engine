@@ -1,15 +1,18 @@
-[gd_resource type="Resource" format=3 uid="uid://qglpckrf7gf1"]
+[gd_resource type="Resource" script_class="WheelResource" format=3 uid="uid://qglpckrf7gf1"]
 
 [ext_resource type="Resource" uid="uid://bw6q1wyq80eou" path="res://resources/building/footprint/4x4.tres" id="1_0xokr"]
 [ext_resource type="SpriteFrames" uid="uid://bbr75d5gpmfel" path="res://resources/building/sprite_frames/wheel_sprite_frames.tres" id="1_8eeam"]
+[ext_resource type="Resource" uid="uid://gcxqiowkjugl" path="res://resources/hamster/condition/burn/burn_condition.tres" id="2_gdeuu"]
 [ext_resource type="Script" uid="uid://ioka0yhjiibv" path="res://resources/building/buidling/wheel_resource.gd" id="3_8eeam"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_8eeam")
 building_name = "Wheel"
 description = "This generates power when a hamster is placed inside."
 footprint = ExtResource("1_0xokr")
 background_sprite_frames = ExtResource("1_8eeam")
 interactable_on = true
+condition = ExtResource("2_gdeuu")
 power_producer_on = true
 power = 1

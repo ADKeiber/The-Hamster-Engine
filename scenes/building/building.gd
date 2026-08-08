@@ -24,6 +24,7 @@ func _ready() -> void:
 	power_producer_component.power = resource.power
 	power_consumer_component.min_power_increase = resource.min_power_increase
 	power_consumer_component.on_min_power_increase = resource.on_min_power_increase
+	interactable_component.condition = resource.condition
 
 	if resource.interactable_on == false:
 		interactable_component.queue_free()

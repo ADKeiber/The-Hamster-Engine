@@ -14,6 +14,7 @@ extends Resource
 @export var interactable_on : bool
 @export var interactale_locked : bool
 @export var locked_in_time : float
+@export var condition : Condition
 
 @export_group("Power Producer")
 @export var power_producer_on : bool

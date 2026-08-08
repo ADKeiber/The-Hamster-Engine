@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cp5ylrqfthv3j" path="res://resources/building/buidling/gym_resource.gd" id="3_8qvgj"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_8qvgj")
 stat_upgrade = 10
 building_name = "Gym"

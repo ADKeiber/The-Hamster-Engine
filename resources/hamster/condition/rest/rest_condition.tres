@@ -3,5 +3,8 @@
 [ext_resource type="Script" uid="uid://gnl2jxykegki" path="res://resources/hamster/condition/rest/rest.gd" id="1_sl3t1"]
 
 [resource]
+resource_local_to_scene = true
+resource_name = "Rest"
 script = ExtResource("1_sl3t1")
+name = "Rest"
 metadata/_custom_type_script = "uid://gnl2jxykegki"
