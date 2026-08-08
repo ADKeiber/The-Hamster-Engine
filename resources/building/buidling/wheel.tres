@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://ioka0yhjiibv" path="res://resources/building/buidling/wheel_resource.gd" id="3_8eeam"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_8eeam")
 building_name = "Wheel"
 description = "This generates power when a hamster is placed inside."

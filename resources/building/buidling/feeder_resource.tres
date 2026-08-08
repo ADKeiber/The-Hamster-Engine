@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bjcvu86maoqlj" path="res://resources/building/buidling/feeder_resource.gd" id="3_60bw4"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_60bw4")
 building_name = "Feeder"
 description = "This handles the cage stuff."

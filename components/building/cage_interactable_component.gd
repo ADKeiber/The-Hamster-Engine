@@ -35,8 +35,12 @@ func exited(hamster : Hamster) -> void: #when hamster is removed
 	off.emit()
 	var leaver = hamsters.find(hamster)
 	hamsters.remove_at(leaver)
-	var rem_con = hamster.condition_component.conditions.find(Rest)
-	hamster.condition_component.conditions.remove_at(rem_con)
+	var rem_con = hamster.condition_component.conditions.find_custom(
+		func(current_condition) -> bool:
+			return current_condition is Rest
+	)
+	if rem_con != -1:
+		hamster.condition_component.conditions.remove_at(rem_con)
 
 	
 	print(hamsters)

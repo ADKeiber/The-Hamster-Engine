@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://bw6q1wyq80eou" path="res://resources/building/footprint/4x4.tres" id="2_qnuyc"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_l1m8i")
 building_name = "Spa"
 description = "This is used for healing hurt hamsters."

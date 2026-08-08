@@ -18,67 +18,67 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyfjg"]
 bg_color = Color(0.19, 0.19, 0.19, 0.9137255)
 
-[sub_resource type="Resource" id="Resource_nvumn"]
+[sub_resource type="Resource" id="Resource_7smn1"]
 resource_local_to_scene = true
 resource_name = "Rest"
 script = ExtResource("5_ouso4")
 name = "Rest"
 metadata/_custom_type_script = "uid://gnl2jxykegki"
 
-[sub_resource type="Resource" id="Resource_ou6is"]
+[sub_resource type="Resource" id="Resource_raeie"]
 resource_local_to_scene = true
 script = ExtResource("9_raeie")
 name = "Burn"
 description = "Ouchy"
 metadata/_custom_type_script = "uid://dlsx735st5y8k"
+
+[sub_resource type="Resource" id="Resource_hxu8e"]
+resource_local_to_scene = true
+script = ExtResource("7_ouso4")
+building_name = "Wheel"
+description = "This generates power when a hamster is placed inside."
+footprint = ExtResource("10_hxu8e")
+background_sprite_frames = ExtResource("8_7smn1")
+interactable_on = true
+condition = SubResource("Resource_raeie")
+power_producer_on = true
+power = 1
+
+[sub_resource type="Resource" id="Resource_nvumn"]
+resource_local_to_scene = true
+script = ExtResource("9_raeie")
+name = "Burn"
+description = "Ouchy"
+metadata/_custom_type_script = "uid://dlsx735st5y8k"
+
+[sub_resource type="Resource" id="Resource_ou6is"]
+resource_local_to_scene = true
+script = ExtResource("7_ouso4")
+building_name = "Wheel"
+description = "This generates power when a hamster is placed inside."
+footprint = ExtResource("10_hxu8e")
+background_sprite_frames = ExtResource("8_7smn1")
+interactable_on = true
+condition = SubResource("Resource_nvumn")
+power_producer_on = true
+power = 1
 
 [sub_resource type="Resource" id="Resource_necax"]
 resource_local_to_scene = true
-script = ExtResource("7_ouso4")
-building_name = "Wheel"
-description = "This generates power when a hamster is placed inside."
-footprint = ExtResource("10_hxu8e")
-background_sprite_frames = ExtResource("8_7smn1")
-interactable_on = true
-condition = SubResource("Resource_ou6is")
-power_producer_on = true
-power = 1
+script = ExtResource("9_raeie")
+name = "Burn"
+description = "Ouchy"
+metadata/_custom_type_script = "uid://dlsx735st5y8k"
 
 [sub_resource type="Resource" id="Resource_r4lks"]
 resource_local_to_scene = true
-script = ExtResource("9_raeie")
-name = "Burn"
-description = "Ouchy"
-metadata/_custom_type_script = "uid://dlsx735st5y8k"
-
-[sub_resource type="Resource" id="Resource_pg34l"]
-resource_local_to_scene = true
 script = ExtResource("7_ouso4")
 building_name = "Wheel"
 description = "This generates power when a hamster is placed inside."
 footprint = ExtResource("10_hxu8e")
 background_sprite_frames = ExtResource("8_7smn1")
 interactable_on = true
-condition = SubResource("Resource_r4lks")
-power_producer_on = true
-power = 1
-
-[sub_resource type="Resource" id="Resource_m4h2d"]
-resource_local_to_scene = true
-script = ExtResource("9_raeie")
-name = "Burn"
-description = "Ouchy"
-metadata/_custom_type_script = "uid://dlsx735st5y8k"
-
-[sub_resource type="Resource" id="Resource_p8abn"]
-resource_local_to_scene = true
-script = ExtResource("7_ouso4")
-building_name = "Wheel"
-description = "This generates power when a hamster is placed inside."
-footprint = ExtResource("10_hxu8e")
-background_sprite_frames = ExtResource("8_7smn1")
-interactable_on = true
-condition = SubResource("Resource_m4h2d")
+condition = SubResource("Resource_necax")
 power_producer_on = true
 power = 1
 
@@ -115,7 +115,7 @@ script = ExtResource("8_yyfjg")
 
 [node name="Cage" parent="." unique_id=480036686 instance=ExtResource("1_6q06x")]
 position = Vector2(166, 262)
-condition = SubResource("Resource_nvumn")
+condition = SubResource("Resource_7smn1")
 
 [node name="Tester2" parent="." unique_id=590711385 instance=ExtResource("2_iuonh")]
 position = Vector2(412, 207)
@@ -127,15 +127,15 @@ position = Vector2(561, 313)
 
 [node name="Building" parent="." unique_id=675608980 instance=ExtResource("2_iuonh")]
 position = Vector2(186, 118)
-resource = SubResource("Resource_necax")
+resource = SubResource("Resource_hxu8e")
 
 [node name="Building2" parent="." unique_id=1231596859 instance=ExtResource("2_iuonh")]
 position = Vector2(384, 135)
-resource = SubResource("Resource_pg34l")
+resource = SubResource("Resource_ou6is")
 
 [node name="Building3" parent="." unique_id=1534136842 instance=ExtResource("2_iuonh")]
 position = Vector2(278, 123)
-resource = SubResource("Resource_p8abn")
+resource = SubResource("Resource_r4lks")
 
 [node name="Control" type="Control" parent="." unique_id=1915303001]
 anchors_preset = 0
