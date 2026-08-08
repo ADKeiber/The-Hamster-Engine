@@ -17,27 +17,29 @@ func _ready() -> void:
 	cage_area.mouse_entered.connect(mouse_entered)
 	cage_area.mouse_exited.connect(mouse_exited)
 
-func _on_child_entered_tree(node: Node) -> void:
-	if node is Hamster:
-		hamsters.append(node)
-		node.add_condition(condition, self)
-		print(hamsters)
 
-func _on_child_exiting_tree(node: Node) -> void:
-	if node is Hamster:
-		var leaver = hamsters.find(node)
-		node.remove_condition(condition)
-		hamsters.remove_at(leaver)
-		print(hamsters)
 
-func entered() -> void:
+
+func entered(hamster : Hamster) -> void:
 	on.emit()
+	condition = Rest.new()
+	hamsters.append(hamster)
+	hamster.add_condition(condition, self)
+	print(hamsters)
+
 	if locked_in == true:
 		hamster.draggable_component.draggable = false
 	print("entered")
 
-func exited() -> void: #when hamster is removed
+func exited(hamster : Hamster) -> void: #when hamster is removed
 	off.emit()
+	var leaver = hamsters.find(hamster)
+	hamsters.remove_at(leaver)
+	var rem_con = hamster.condition_component.conditions.find(Rest)
+	hamster.condition_component.conditions.remove_at(rem_con)
+
+	
+	print(hamsters)
 	print("exited")
 
 

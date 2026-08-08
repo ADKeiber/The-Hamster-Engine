@@ -43,19 +43,19 @@ func reparent_hamster(parent) -> void:
 		hamster.reparent(parent)
 		animation.invisible()
 		hamster.global_position = parent.global_position
-		#parent.entered()
+		parent.entered(hamster)
 		hamster.velocity = Vector2.ZERO
 	elif parent.is_in_group("Cage") && cage.cage_hovered == false:
 		hamster.reparent(cage)
 		hamster.global_position = Vector2(
 			randf_range(cage.start_pos.x, cage.end_pos.x),
 		 randf_range(cage.start_pos.y, cage.end_pos.y))
-		#parent.entered()
+		parent.entered(hamster)
 		hamster.velocity = Vector2.ZERO
 	elif parent.is_in_group("Cage") && cage.cage_hovered == true:
 		hamster.reparent(cage)
 		hamster.global_position = get_global_mouse_position()
-		#parent.entered()
+		parent.entered(hamster)
 		hamster.velocity = Vector2.ZERO
 
 func merge_rect2(h_area : Area2D, building_area) -> Vector2:
@@ -73,5 +73,7 @@ func merge_rect2(h_area : Area2D, building_area) -> Vector2:
 	return rect_size
 	
 func picked_up() -> void:
+	if interactable != null:
+		interactable.exited(hamster)
 	animation.visible()
 	draggable.draggable = true

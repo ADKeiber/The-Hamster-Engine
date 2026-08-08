@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bmmrdj8on22yq" path="res://resources/hamster/condition/magically_enhanced/magically_enhanced.gd" id="1_y8ute"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_y8ute")
 speed_increase = 100
 health_increase = 100

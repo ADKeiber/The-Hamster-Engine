@@ -6,17 +6,22 @@ func apply(hamster: Hamster, origin: Node) -> void:
 	print("Rest added")
 
 func remove() -> void:
-	hamster.remove_condition(self)
-	hamster = null 
+	if hamster != null:
+		hamster.remove_condition(self)
+		hamster = null 
 
 func handle_event(event: Event) -> void:
 	if event.type == Event.Type.TICK:
-		var stats: HamsterStatsComponent = hamster.hamster_stats_component
-		hamster.health_component.heal(stats.get_stat(HamsterStatsComponent.StatType.HEALING))
-		hamster.stamina_component.rest(stats.get_stat(HamsterStatsComponent.StatType.STAMINA_GEN))
-		var stamina_event: Event = Event.new(Event.Type.STAMINA_REGEN, origin, hamster, {
-			"amount":stats.get_stat(HamsterStatsComponent.StatType.STAMINA_GEN)
-			})
-		hamster.handle_event(stamina_event)
-		hamster.stamina_component.rest(stamina_event.data["amount"])
-		print("rest")
+		if hamster != null:
+			var stats: HamsterStatsComponent = hamster.hamster_stats_component
+			var stamina_event: Event = Event.new(Event.Type.STAMINA_REGEN, origin, hamster, {
+				"amount":stats.get_stat(HamsterStatsComponent.StatType.STAMINA_GEN)
+				})
+			hamster.handle_event(stamina_event)
+			hamster.stamina_component.rest(stamina_event.data["amount"])
+			var health_event: Event = Event.new(Event.Type.HEAL, origin, hamster, {
+				"amount":stats.get_stat(HamsterStatsComponent.StatType.HEALING)
+				})
+			hamster.handle_event(health_event)
+			hamster.health_component.heal(health_event.data["amount"])
+			prints("rest", hamster)

@@ -2,12 +2,8 @@
 
 [ext_resource type="Resource" uid="uid://bw6q1wyq80eou" path="res://resources/building/footprint/4x4.tres" id="1_0xokr"]
 [ext_resource type="SpriteFrames" uid="uid://bbr75d5gpmfel" path="res://resources/building/sprite_frames/wheel_sprite_frames.tres" id="1_8eeam"]
-[ext_resource type="Script" uid="uid://dlsx735st5y8k" path="res://resources/hamster/condition/burn/burn.gd" id="2_gdeuu"]
+[ext_resource type="Resource" uid="uid://gcxqiowkjugl" path="res://resources/hamster/condition/burn/burn_condition.tres" id="2_gdeuu"]
 [ext_resource type="Script" uid="uid://ioka0yhjiibv" path="res://resources/building/buidling/wheel_resource.gd" id="3_8eeam"]
-
-[sub_resource type="Resource" id="Resource_aowhe"]
-script = ExtResource("2_gdeuu")
-metadata/_custom_type_script = "uid://dlsx735st5y8k"
 
 [resource]
 script = ExtResource("3_8eeam")
@@ -16,6 +12,6 @@ description = "This generates power when a hamster is placed inside."
 footprint = ExtResource("1_0xokr")
 background_sprite_frames = ExtResource("1_8eeam")
 interactable_on = true
-condition = SubResource("Resource_aowhe")
+condition = ExtResource("2_gdeuu")
 power_producer_on = true
 power = 1

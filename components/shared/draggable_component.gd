@@ -48,10 +48,13 @@ func _on_area_input_event(_viewport, event, _shape_idx):
 				return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT:
 		if event.pressed:
-			var traits = area.get_parent().hamster_stats_component._stats.traits
-			for current_trait in traits:
-				prints(current_trait.name, current_trait.description, current_trait.rank)
-
+			if area.get_parent() is Hamster:
+				var traits = area.get_parent().hamster_stats_component._stats.traits
+				for current_trait in traits:
+					prints(current_trait.name, current_trait.description, current_trait.rank)
+				var conditions = area.get_parent().condition_component.conditions
+				for c in conditions:
+					prints(c)
 
 #returns to pickup position.. Procs if hamster either "fails to be placed" or "fails to interact" something along those lines
 func failed_to_drop() -> void:
