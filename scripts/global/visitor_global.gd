@@ -2,6 +2,7 @@ class_name VisitorGlobal
 extends Node
 
 signal pass_time
+signal condition_added(hamster:Hamster, condition: Condition)
 
 func set_timer(timer: Timer) -> void:
 	timer.timeout.connect(reduce_event_time)

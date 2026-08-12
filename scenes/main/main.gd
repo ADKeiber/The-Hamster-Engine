@@ -19,8 +19,6 @@ func _ready() -> void:
 	Visitor.set_timer(world_timer)
 	Effects.set_timer(world_timer)
 	win_game.connect(win)
-	#machine_manager.set_timer(world_timer)
-	#machine_manager.spawn_next_machine()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

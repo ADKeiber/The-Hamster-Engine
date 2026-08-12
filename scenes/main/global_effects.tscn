@@ -73,7 +73,7 @@ layout_mode = 2
 theme = SubResource("Theme_7smn1")
 theme_override_font_sizes/font_size = 8
 folded = true
-title = "Other Effects"
+title = "All Effects"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer3/FoldableContainer" unique_id=1136121116]
 visible = false

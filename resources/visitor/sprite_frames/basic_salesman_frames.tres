@@ -1,28 +1,32 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://cdbso3m6chh62"]
 
-[ext_resource type="Texture2D" uid="uid://blqjg34q2cax5" path="res://assets/art/character/BasicSalesman-Sheet.png" id="1_owerg"]
+[ext_resource type="Texture2D" uid="uid://cdgl0rjqef82x" path="res://assets/art/character/basic_salesman_sheet.png" id="1_owerg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8821w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_owerg"]
 atlas = ExtResource("1_owerg")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55g8e"]
 atlas = ExtResource("1_owerg")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jy228"]
 atlas = ExtResource("1_owerg")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y0xju"]
 atlas = ExtResource("1_owerg")
-region = Rect2(96, 0, 32, 32)
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qfh8a"]
 atlas = ExtResource("1_owerg")
-region = Rect2(128, 0, 32, 32)
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxs2o"]
+atlas = ExtResource("1_owerg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl6d6"]
 atlas = ExtResource("1_owerg")
 region = Rect2(160, 0, 32, 32)
 
@@ -30,16 +34,13 @@ region = Rect2(160, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8821w")
+"texture": SubResource("AtlasTexture_owerg")
 }],
 "loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8821w")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_55g8e")
 }, {
@@ -54,6 +55,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fxs2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl6d6")
 }],
 "loop": 1,
 "name": &"walking",

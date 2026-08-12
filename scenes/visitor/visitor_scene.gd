@@ -7,6 +7,7 @@ signal open_large_popup(visitor:VisitorResource)
 @onready var animation_component: AnimationComponent = $AnimationComponent
 @onready var mouth: Node2D = %Mouth
 @onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var visitor_popup_goodbye: VisitorPopupGoodbye = %VisitorPopupGoodbye
 
 var visitor_popup_small
 
@@ -17,7 +18,8 @@ var visitor: VisitorResource
 var time_remaining: int = 0 ## in seconds
 
 func _ready() -> void:
-	Visitor.pass_time.connect(reduce_time_left)
+	##This is connecting world timer.timeout with reducing time
+	Visitor.pass_time.connect(reduce_time_left) 
 
 func setup_visitor(visitor: VisitorResource) -> void:
 	self.visitor = visitor
@@ -26,7 +28,7 @@ func setup_visitor(visitor: VisitorResource) -> void:
 	add_child(visitor_popup_small)
 	visitor_popup_small.set_popup_info(visitor)
 	var offset: Vector2 = visitor_popup_small.global_position - visitor_popup_small.entry_as_global()
-	var top_middle_of_visitor: Vector2 = Vector2(collision_shape_2d.global_position.x + (collision_shape_2d.shape.size.x/2), self.global_position.y)
+	visitor.setup() ## does any sort of hooking up that is required for a visitor EX: PETH needs to connect to VISITOR.
 	visitor_popup_small.global_position = collision_shape_2d.global_position + offset - Vector2(0, collision_shape_2d.shape.size.y/2)
 	visitor_popup_small.visible = false
 	visitor_popup_tiny.visible = false
@@ -69,7 +71,19 @@ func exit() -> void:
 	popups_disabled = true
 	visitor_popup_tiny.visible = false
 	visitor_popup_small.visible = false
-	
+	visitor.complete()
 	if visitor is TimedDifficulty:
 		visitor.remove_difficulty()
+	## should display a goodbye Popup and wait a couple seconds then leave
+	visitor_popup_goodbye.set_message(visitor)
+	visitor_popup_goodbye.visible = true
+	var tween := create_tween()
+	tween.parallel().tween_property(
+		visitor_popup_goodbye,
+		"global_position",
+		visitor_popup_goodbye.global_position,
+		5.0
+	)
+	await tween.finished
+	visitor_popup_goodbye.visible = false
 	get_parent().get_parent().leave.emit(self) ## yuck (maybe change later)

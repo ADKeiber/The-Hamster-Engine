@@ -52,6 +52,7 @@ func set_visitor_large_popup(visitor: VisitorResource) -> void:
 
 func spawn_visitor() -> void:
 	var visitor: VisitorScene = VISITOR_SCENE.instantiate()
+	## use visitorspawner instead of this to get a resource
 	var vis_resource:VisitorResource = potential_visitors[randi_range(0, potential_visitors.size() - 1)].duplicate(true)
 	active_visitors.add_child(visitor)
 	visitor.setup_visitor(vis_resource)
@@ -97,9 +98,8 @@ func animate_to_position(visitor_scene: VisitorScene, anchor_index: int, leaving
 		door_animation.play_animation_once_and_stop(AnimationComponent.AnimationState.CLOSING)
 		visitor_scene.animation_component.update_animation(AnimationComponent.AnimationState.IDLE)
 	else:
-		
 		visitor_scene.queue_free()
-		
+
 ##############################################
 ## Pop-up interactions #######################
 ##############################################

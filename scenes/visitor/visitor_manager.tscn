@@ -4,8 +4,8 @@
 [ext_resource type="SpriteFrames" uid="uid://cw27oci17gf8s" path="res://assets/art/building/sprite_frames/wood_door_frames.tres" id="2_22y6y"]
 [ext_resource type="Script" uid="uid://bn182sargnkg" path="res://resources/visitor/visitor_resource.gd" id="2_ctil1"]
 [ext_resource type="PackedScene" uid="uid://cufdcjxmqqsui" path="res://scenes/ui/popups/visitor/large_popup/visitor_popup_large.tscn" id="2_mpjc4"]
+[ext_resource type="Resource" uid="uid://w1k412w5dnw" path="res://resources/visitor/quest/objective/peth/peth_visitor.tres" id="3_pyfnl"]
 [ext_resource type="Script" uid="uid://c7os8kwwyi3e7" path="res://scenes/visitor/visitor_spawner.gd" id="4_pyfnl"]
-[ext_resource type="Resource" uid="uid://d2xunjkruqawl" path="res://resources/visitor/store/basic_store_visitor.tres" id="4_tyyos"]
 [ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="5_6k8mm"]
 [ext_resource type="Texture2D" uid="uid://bxxotc7ei1kay" path="res://assets/art/misc/Exclamation.png" id="6_6k8mm"]
 
@@ -93,7 +93,7 @@ size = Vector2(20, 85)
 [node name="VisitorManager" type="Node2D" unique_id=1358367874 groups=["FocusedVisitor"]]
 script = ExtResource("1_4i717")
 visitor_anchors = Array[Vector2]([Vector2(-25, 30), Vector2(10, 30), Vector2(45, 30)])
-potential_visitors = Array[ExtResource("2_ctil1")]([ExtResource("4_tyyos")])
+potential_visitors = Array[ExtResource("2_ctil1")]([ExtResource("3_pyfnl")])
 
 [node name="VisitorSpawner" type="Node" parent="." unique_id=932692764]
 script = ExtResource("4_pyfnl")

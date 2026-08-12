@@ -4,6 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dbnej63mege1j" path="res://resources/visitor/sprite_frames/scientist_sprite_frames.tres" id="2_1iukj"]
 [ext_resource type="Script" uid="uid://bkdxvbhn1krow" path="res://components/shared/animation_component.gd" id="3_y8uh8"]
 [ext_resource type="PackedScene" uid="uid://18gqsrcf74wr" path="res://scenes/ui/popups/visitor/tiny/visitor_popup_tiny.tscn" id="5_1iukj"]
+[ext_resource type="PackedScene" uid="uid://dl4vfananvcql" path="res://scenes/ui/popups/visitor/goodbye_popup/visitor_popup_goodbye.tscn" id="5_y8uh8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(27, 32)
@@ -21,6 +22,7 @@ metadata/_custom_type_script = "uid://bkdxvbhn1krow"
 
 [node name="VisitorPopupTiny" parent="." unique_id=1283529055 instance=ExtResource("5_1iukj")]
 unique_name_in_owner = true
+visible = false
 offset_left = -12.0
 offset_top = -72.0
 offset_right = 13.0
@@ -35,7 +37,15 @@ shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Mouth" type="Node2D" parent="." unique_id=1918086409]
 unique_name_in_owner = true
-position = Vector2(0, -15)
+position = Vector2(0, -25)
+
+[node name="VisitorPopupGoodbye" parent="." unique_id=956766461 instance=ExtResource("5_y8uh8")]
+unique_name_in_owner = true
+visible = false
+offset_left = -34.0
+offset_top = -57.0
+offset_right = -34.0
+offset_bottom = -57.0
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

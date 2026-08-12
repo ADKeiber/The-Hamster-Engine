@@ -1,0 +1,58 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ox1g237xc35t"]
+
+[ext_resource type="Texture2D" uid="uid://dubkiksxvr5ug" path="res://assets/art/character/peth_advocate_sheet.png" id="1_2foyr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lu7y"]
+atlas = ExtResource("1_2foyr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwoh3"]
+atlas = ExtResource("1_2foyr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i664d"]
+atlas = ExtResource("1_2foyr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kolsb"]
+atlas = ExtResource("1_2foyr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wap6"]
+atlas = ExtResource("1_2foyr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuvh6"]
+atlas = ExtResource("1_2foyr")
+region = Rect2(128, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lu7y")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwoh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i664d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kolsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wap6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuvh6")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 8.0
+}]

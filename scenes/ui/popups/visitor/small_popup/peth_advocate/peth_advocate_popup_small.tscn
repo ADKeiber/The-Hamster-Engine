@@ -1,21 +1,21 @@
-[gd_scene format=3 uid="uid://cpjuye6722rab"]
+[gd_scene format=3 uid="uid://c2m11agj4odl8"]
 
-[ext_resource type="Script" uid="uid://dc08k4u1vpfst" path="res://scenes/ui/popups/visitor/small_popup/visitor_popup_small.gd" id="1_j3xdv"]
-[ext_resource type="Texture2D" uid="uid://ctdrluqjqy2eq" path="res://assets/art/misc/speech_box3.png" id="1_o41hu"]
-[ext_resource type="Texture2D" uid="uid://d0vda0n55cwch" path="res://assets/art/misc/speech_box_entry_small.png" id="2_o41hu"]
+[ext_resource type="Script" uid="uid://bvt7k6a58wq05" path="res://scenes/ui/popups/visitor/small_popup/peth_advocate/peth_advocate_popup_small.gd" id="1_3y54m"]
+[ext_resource type="Texture2D" uid="uid://ctdrluqjqy2eq" path="res://assets/art/misc/speech_box3.png" id="2_yciw7"]
+[ext_resource type="Texture2D" uid="uid://d0vda0n55cwch" path="res://assets/art/misc/speech_box_entry_small.png" id="3_dfqfb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odrm8"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(79, 38)
+size = Vector2(108, 48)
 
-[node name="VisitorPopupSmall" type="Control" unique_id=956766461]
+[node name="PethAdvocatePopupSmall" type="Control" unique_id=956766461]
 custom_maximum_size = Vector2(250, 90)
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
-script = ExtResource("1_j3xdv")
+script = ExtResource("1_3y54m")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1003330170]
 layout_mode = 1
@@ -30,7 +30,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_odrm8")
 [node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer" unique_id=779798237]
 layout_mode = 2
 mouse_filter = 1
-texture = ExtResource("1_o41hu")
+texture = ExtResource("2_yciw7")
 patch_margin_left = 8
 patch_margin_top = 8
 patch_margin_right = 8
@@ -74,15 +74,10 @@ theme_override_font_sizes/bold_font_size = 4
 theme_override_font_sizes/bold_italics_font_size = 4
 theme_override_font_sizes/italics_font_size = 4
 theme_override_font_sizes/mono_font_size = 4
+text = "Don't allow for hamsters to gain the \"Burn\" condition"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="EmbeddedHolder" type="PanelContainer" parent="PanelContainer/PopupContents/VBoxContainer" unique_id=925089254]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-mouse_filter = 1
 
 [node name="VisitorName" type="RichTextLabel" parent="PanelContainer/PopupContents/VBoxContainer" unique_id=1432669034]
 unique_name_in_owner = true
@@ -96,7 +91,7 @@ theme_override_font_sizes/bold_font_size = 6
 theme_override_font_sizes/bold_italics_font_size = 6
 theme_override_font_sizes/italics_font_size = 6
 theme_override_font_sizes/mono_font_size = 6
-text = "Mad Scientist (Quest) "
+text = "Peth Advocate"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -104,22 +99,21 @@ vertical_alignment = 1
 [node name="SpeechBubbleEntry" type="TextureRect" parent="." unique_id=1256711912]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 21.0
-offset_top = 19.0
-offset_right = 44.0
-offset_bottom = 27.0
-texture = ExtResource("2_o41hu")
+offset_left = 20.0
+offset_top = 24.0
+offset_right = 43.0
+offset_bottom = 32.0
+texture = ExtResource("3_dfqfb")
 expand_mode = 2
 
 [node name="ClickableArea" type="Area2D" parent="." unique_id=570787093]
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea" unique_id=491209510]
-position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="SpeechBubbleEntryPoint" type="Node2D" parent="." unique_id=1377122489]
 unique_name_in_owner = true
-position = Vector2(32, 25)
+position = Vector2(31, 31)
 
 [connection signal="input_event" from="ClickableArea" to="." method="_on_clickable_area_input_event"]

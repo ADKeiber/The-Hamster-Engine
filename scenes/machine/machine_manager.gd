@@ -57,7 +57,8 @@ func spawn_next_machine() -> void:
 	current_time_remaining = machine_durations[current_machine_index]
 	remaining_time.text = str(current_time_remaining)
 	await pass_time()
-	add_global_effect(new_machine.initial_effect)
+	global_effects.current_effect = new_machine.initial_effect
+	Effects.add_global_effect(new_machine.initial_effect, machine_scene)
 	
 
 func set_timer(world_timer: Timer) -> void:
@@ -86,34 +87,12 @@ func pass_time() -> void:
 ## Global Effect Handling ############
 ######################################
 
-func add_global_effect(effect: GlobalEffect) -> void:
-	current_effects.append(effect)
-	effect.apply_effect(self)
-	var timer: Timer = get_tree().get_first_node_in_group("WorldTimer")
-	global_effects.set_current_effect(effect)
-	timer.timeout.connect(effect.apply_effect)
-
-func remove_global_effect(effect: GlobalEffect) -> void:
-	if not has_effect(effect):
-		return
-	current_effects.erase(effect)
-	var timer: Timer = get_tree().get_first_node_in_group("WorldTimer")
-	timer.timeout.disconnect(effect.apply_effect)
-	effect.remove_effect()
-
-func has_effect(effect: GlobalEffect) -> bool:
-	for e in current_effects:
-		if e.get_script() == effect.get_script():
-			return true
-	return false
-
 ##Should add 2 positive effects AND maintain the negative effect
 func reward_1_pressed() -> void:
 	var machine: MachineResource = machines[current_machine_index]
-	global_effects.add_effect_to_other(machine.initial_effect)
 	for effect in machine.reward_1_effects:
-		global_effects.add_effect_to_other(effect)
-		add_global_effect(effect)
+		var machine_scene: Machine = machines_holder.get_child(current_machine_index)
+		Effects.add_global_effect(effect, machine_scene)
 	current_machine_index += 1
 	current_time_remaining = machine_durations[current_machine_index]
 	remaining_time.text = str(current_time_remaining)
@@ -121,16 +100,15 @@ func reward_1_pressed() -> void:
 	get_tree().paused = false
 	var blackout_curtain: Blackout = get_tree().get_first_node_in_group("Blackout")
 	blackout_curtain.hide_dark_overlay()
-	
 	spawn_next_machine()
 
 ##Should add a single positive effect and remove the negative one
 func reward_2_pressed() -> void:
 	var machine: MachineResource = machines[current_machine_index]
 	for effect in machine.reward_2_effects:
-		global_effects.add_effect_to_other(effect)
-		add_global_effect(effect)
-	remove_global_effect(machine.initial_effect)
+		var machine_scene: Machine = machines_holder.get_child(current_machine_index)
+		Effects.add_global_effect(effect, machine_scene)
+	Effects.remove_global_effect(machine.initial_effect)
 	current_machine_index += 1
 	current_time_remaining = machine_durations[current_machine_index]
 	remaining_time.text = str(current_time_remaining)

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PethVisitor" format=3 uid="uid://w1k412w5dnw"]
+
+[ext_resource type="Script" uid="uid://c3jb67j1ni0sj" path="res://resources/visitor/quest/objective/peth/peth_visitor.gd" id="1_a2kfi"]
+[ext_resource type="PackedScene" uid="uid://ddwx8ux27oaj7" path="res://scenes/ui/popups/visitor/large_popup/peth_advocate/peth_advocate_large_embedded.tscn" id="1_b3woy"]
+[ext_resource type="Texture2D" uid="uid://cduinne62qgo6" path="res://assets/art/character/peth_advocate_head1.png" id="1_tr5u6"]
+[ext_resource type="PackedScene" uid="uid://c2m11agj4odl8" path="res://scenes/ui/popups/visitor/small_popup/peth_advocate/peth_advocate_popup_small.tscn" id="2_1jy2t"]
+[ext_resource type="SpriteFrames" uid="uid://ox1g237xc35t" path="res://resources/visitor/sprite_frames/peth_advocate_sprite_frames.tres" id="2_24aw6"]
+
+[resource]
+script = ExtResource("1_a2kfi")
+goodbye_message_fail = "TSK TSK TSK [br] What an unethical operation... [br] You will be hearing from us..."
+sprite_frames = ExtResource("2_24aw6")
+visitor_name = "PETH Advocate"
+stick_around = true
+time_to_complete = 120.0
+type = 2
+goodbye_messages_pass = "Everything here seems ethical... [br] for now... [br] I'll be back to make sure..."
+small_popup = ExtResource("2_1jy2t")
+small_information_text = "Don't allow for hamsters to gain the \"Burn\" condition"
+embedded_large_popup = ExtResource("1_b3woy")
+large_popup_art = ExtResource("1_tr5u6")
+metadata/_custom_type_script = "uid://c3jb67j1ni0sj"

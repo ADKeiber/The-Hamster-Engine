@@ -15,6 +15,7 @@ func set_popup_info(visitor_scene: VisitorScene) -> void:
 	self.visitor_scene = visitor_scene
 	visitor_name_text.text = visitor_resource.visitor_name
 	if visitor_resource.large_popup_art != null:
+		header_art.set_v_size_flags(Control.SIZE_EXPAND | Control.SIZE_FILL)
 		header_art.texture = visitor_resource.large_popup_art
 	else:
 		header_art.texture = null

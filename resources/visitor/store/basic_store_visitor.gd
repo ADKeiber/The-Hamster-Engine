@@ -6,6 +6,10 @@ class_name BasicStoreVisitor extends VisitorResource
 
 enum ItemTypes {BUILDING, HAMSTER, MODULE}
 
+
+#func setup() -> void:
+	#super.setup()
+
 ## this will handle the buying functionality.. It puts it in different area depending on 
 ## what the type is
 func buy_item(item: Resource) -> void: #idk the type yet TBH... subject to change
