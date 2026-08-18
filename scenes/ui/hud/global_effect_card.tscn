@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bkxfoimcq6gof"]
+
+[ext_resource type="Script" uid="uid://c7aiwhbn58qux" path="res://scenes/ui/hud/global_effect_card.gd" id="1_jk0hf"]
+
+[node name="GlobalEffectCard" type="PanelContainer" unique_id=1466482708]
+custom_maximum_size = Vector2(100, 100)
+size_flags_vertical = 4
+script = ExtResource("1_jk0hf")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1098709540]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1270803620]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="EffectName" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1769828387]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(90, -1)
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 8
+text = "Borrowing your grid!"
+horizontal_alignment = 1
+text_overrun_behavior = 4
+
+[node name="EffectShortDescription" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=2035818076]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 6
+theme_override_font_sizes/bold_font_size = 6
+theme_override_font_sizes/bold_italics_font_size = 6
+theme_override_font_sizes/italics_font_size = 6
+theme_override_font_sizes/mono_font_size = 6
+text = "Increase minimum required power"
+fit_content = true
+
+[node name="EntireInformation" type="Node2D" parent="." unique_id=1663841649]
+unique_name_in_owner = true
+position = Vector2(97, 19)
+
+[node name="PanelContainer" type="PanelContainer" parent="EntireInformation" unique_id=1671971005]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -50.0
+offset_right = 153.0
+offset_bottom = 50.0
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="EntireInformation/PanelContainer" unique_id=1577989261]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EntireInformation/PanelContainer/MarginContainer" unique_id=1755360573]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EntireInformation/PanelContainer/MarginContainer/VBoxContainer" unique_id=101922437]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 8
+text = "Borrowing your grid!"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="EntireInformation/PanelContainer/MarginContainer/VBoxContainer" unique_id=1937803100]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EntireInformation/PanelContainer/MarginContainer/VBoxContainer" unique_id=2062085245]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
+theme_override_font_sizes/bold_italics_font_size = 8
+theme_override_font_sizes/italics_font_size = 8
+theme_override_font_sizes/mono_font_size = 8
+text = "Minimum power required is increased by %s for %s seconds"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

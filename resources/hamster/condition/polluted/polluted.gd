@@ -6,9 +6,12 @@ extends Condition
 func apply(hamster: Hamster, origin: Node) -> void:
 	self.origin = origin
 	self.hamster = hamster
+	self.hamster.add_condition(self, origin)
 	
 func remove() -> void:
-	hamster.remove_condition(self)
+	#LEaving this here.. BUT DO NOT DO THIS! Don't call remove_condition inside the remove
+	# Will create infinite recursion.. just undo effects if needed otherwise do nothing
+	#hamster.condition_component.remove_condition(self) 
 	self.hamster = null
 
 func handle_event(event: Event) -> void:

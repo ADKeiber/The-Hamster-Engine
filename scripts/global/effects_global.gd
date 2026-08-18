@@ -2,6 +2,8 @@ class_name GlobalEffects
 extends Node
 
 signal effects_updated
+signal show_more_effect_details(show:bool, effect: GlobalEffect)
+
 var timer: Timer
 
 var all_effects: Array[GlobalEffect]

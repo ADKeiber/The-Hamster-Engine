@@ -38,3 +38,10 @@ func win() -> void:
 func _on_world_timer_timeout() -> void:
 	for hamster in Hamsters.hamsters:
 		hamster.handle_event(Event.new(Event.Type.TICK, world_timer, hamster, {}))
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		var pos :Vector2 = event.position
+		var control := get_viewport().gui_get_hovered_control()
+
+		print("Hovered Control: ", control)

@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_4vwsi")
+name = "Polluted"
+description = "Spent too much time near machines that produce pollution"
 metadata/_custom_type_script = "uid://reur1qlnkp37"

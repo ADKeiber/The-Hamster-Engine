@@ -6,5 +6,6 @@
 script = ExtResource("1_q2vkb")
 amount = 5
 effect_name = "Borrowing your grid!"
-description = "Minimum power required is increased by %s for %s seconds"
+short_description = "Increase minimum required power"
+description = "Minimum power required is increased by %s while this effect is active"
 metadata/_custom_type_script = "uid://d3rjgcjuc8ty3"

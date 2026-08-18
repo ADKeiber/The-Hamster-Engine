@@ -18,7 +18,7 @@ func apply_effect(origin: Node) -> void:
 	
 	##Applied polluted condition to hamsters
 	for hamster in Hamsters.hamsters:
-		hamster.condition_component.add_condition(condition, origin) ## Should probably pass in the machine that put this effect
+		hamster.condition_component.add_condition(condition, origin)
 		
 	ticks_remaining -= 1
 	if ticks_remaining == 0:

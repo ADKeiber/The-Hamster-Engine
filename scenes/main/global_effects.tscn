@@ -5,7 +5,6 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmeic"]
-bg_color = Color(0.6, 0.42600003, 0.42600003, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lw0yu"]
 
@@ -17,13 +16,20 @@ FoldableContainer/styles/panel = SubResource("StyleBoxFlat_xmeic")
 FoldableContainer/styles/title_collapsed_panel = SubResource("StyleBoxFlat_lw0yu")
 FoldableContainer/styles/title_panel = SubResource("StyleBoxFlat_hxu8e")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
+bg_color = Color(0.5413637, 0.61525756, 0.6403865, 1)
+
+[sub_resource type="Theme" id="Theme_g4v7s"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_yf5fn")
+
 [node name="GlobalEffects" type="PanelContainer" unique_id=1921158447 groups=["MachineEffects"]]
 process_mode = 3
 custom_maximum_size = Vector2(100, -1)
 offset_left = 10.0
 offset_top = 8.0
 offset_right = 110.0
-offset_bottom = 78.0
+offset_bottom = 63.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g4v7s")
 script = ExtResource("1_6x47r")
 
@@ -36,7 +42,6 @@ layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
 
 [node name="CurrentEffectName" type="Label" parent="VBoxContainer/MarginContainer" unique_id=294486030]
 unique_name_in_owner = true
@@ -45,13 +50,12 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 8
 text = "Current Effect:"
+text_overrun_behavior = 5
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=799115474]
 layout_mode = 2
 theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
 
 [node name="CurrentEffectDescription" type="Label" parent="VBoxContainer/MarginContainer2" unique_id=1918740551]
 unique_name_in_owner = true
@@ -70,19 +74,69 @@ theme_override_constants/margin_bottom = 5
 [node name="FoldableContainer" type="FoldableContainer" parent="VBoxContainer/MarginContainer3" unique_id=236581169]
 custom_maximum_size = Vector2(95, -1)
 layout_mode = 2
+mouse_filter = 1
 theme = SubResource("Theme_7smn1")
 theme_override_font_sizes/font_size = 8
-folded = true
 title = "All Effects"
+title_text_overrun_behavior = 4
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer3/FoldableContainer" unique_id=1136121116]
-visible = false
-custom_minimum_size = Vector2(100, 100)
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 200)
+custom_maximum_size = Vector2(-1, 200)
 layout_mode = 2
+size_flags_vertical = 0
 
 [node name="FoldableVBox" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/FoldableContainer/ScrollContainer" unique_id=370494716]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(90, 100)
+custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="MoreInformationPopup" type="Node2D" parent="." unique_id=385072762]
+unique_name_in_owner = true
+visible = false
+position = Vector2(102, 0)
+
+[node name="PanelContainer" type="PanelContainer" parent="MoreInformationPopup" unique_id=1544618465]
+z_index = 500
+offset_right = 150.0
+offset_bottom = 100.0
+grow_vertical = 2
+mouse_filter = 1
+theme = SubResource("Theme_g4v7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="MoreInformationPopup/PanelContainer" unique_id=1995220025]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MoreInformationPopup/PanelContainer/MarginContainer" unique_id=1680093354]
+layout_mode = 2
+
+[node name="MoreInfoName" type="Label" parent="MoreInformationPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=1927246924]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 8
+text = "Borrowing your grid!"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MoreInformationPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=1070905507]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MoreinfoDescription" type="RichTextLabel" parent="MoreInformationPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=57290089]
+unique_name_in_owner = true
+layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 8
+theme_override_font_sizes/bold_italics_font_size = 8
+theme_override_font_sizes/italics_font_size = 8
+theme_override_font_sizes/mono_font_size = 8
+text = "Minimum power required is increased by %s for %s seconds"

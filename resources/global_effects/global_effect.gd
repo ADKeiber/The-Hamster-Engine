@@ -15,3 +15,6 @@ func apply_effect(origin: Node) -> void:
 	pass
 func remove_effect() -> void:
 	pass
+
+func get_long_description() -> String:
+	return ""

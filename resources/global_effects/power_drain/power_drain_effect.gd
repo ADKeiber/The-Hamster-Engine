@@ -11,3 +11,7 @@ func apply_effect(origin: Node) -> void:
 func remove_effect() -> void:
 	print("Finished effect... power minimum returned to normal")
 	Power.min_power -= amount
+
+
+func get_long_description() -> String:
+	return description % [amount]

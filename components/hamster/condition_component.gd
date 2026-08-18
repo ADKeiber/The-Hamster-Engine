@@ -22,8 +22,8 @@ func add_condition(condition: Condition, origin:Node) -> void:
 func remove_condition(condition: Condition) -> void:
 	if not has_condition(condition):
 		return
-	conditions.erase(condition)
 	condition.remove()
+	conditions.erase(condition)
 	condition_removed.emit(condition)
 	var timer: Timer = get_tree().get_first_node_in_group("WorldTimer")
 	#timer.timeout.disconnect(condition.tick)

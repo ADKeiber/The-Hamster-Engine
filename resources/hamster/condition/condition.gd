@@ -5,6 +5,7 @@ extends Resource
 @export_multiline var description: String
 var hamster: Hamster
 var origin: Node
+
 func apply(hamster: Hamster, origin: Node) -> void:
 	pass
 func remove() -> void:
