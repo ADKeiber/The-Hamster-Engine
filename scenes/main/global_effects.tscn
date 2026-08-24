@@ -72,17 +72,20 @@ theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 5
 
 [node name="FoldableContainer" type="FoldableContainer" parent="VBoxContainer/MarginContainer3" unique_id=236581169]
+unique_name_in_owner = true
 custom_maximum_size = Vector2(95, -1)
 layout_mode = 2
 mouse_filter = 1
 theme = SubResource("Theme_7smn1")
 theme_override_font_sizes/font_size = 8
+folded = true
 title = "All Effects"
 title_text_overrun_behavior = 4
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer3/FoldableContainer" unique_id=1136121116]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(100, 200)
+visible = false
+custom_minimum_size = Vector2(100, 0)
 custom_maximum_size = Vector2(-1, 200)
 layout_mode = 2
 size_flags_vertical = 0
