@@ -4,18 +4,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmeic"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lw0yu"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxu8e"]
-bg_color = Color(0.6, 0.22200002, 0.22200002, 1)
-
-[sub_resource type="Theme" id="Theme_7smn1"]
-FoldableContainer/styles/panel = SubResource("StyleBoxFlat_xmeic")
-FoldableContainer/styles/title_collapsed_panel = SubResource("StyleBoxFlat_lw0yu")
-FoldableContainer/styles/title_panel = SubResource("StyleBoxFlat_hxu8e")
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf5fn"]
 bg_color = Color(0.5413637, 0.61525756, 0.6403865, 1)
 
@@ -71,31 +59,26 @@ theme_override_constants/margin_left = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 5
 
-[node name="FoldableContainer" type="FoldableContainer" parent="VBoxContainer/MarginContainer3" unique_id=236581169]
-unique_name_in_owner = true
-custom_maximum_size = Vector2(95, -1)
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3" unique_id=480547181]
 layout_mode = 2
-mouse_filter = 1
-theme = SubResource("Theme_7smn1")
-theme_override_font_sizes/font_size = 8
-folded = true
-title = "All Effects"
-title_text_overrun_behavior = 4
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer3/FoldableContainer" unique_id=1136121116]
+[node name="ShowEffectsButton" type="Button" parent="VBoxContainer/MarginContainer3/VBoxContainer" unique_id=343008508]
 unique_name_in_owner = true
-visible = false
-custom_minimum_size = Vector2(100, 0)
-custom_maximum_size = Vector2(-1, 200)
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="FoldableVBox" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/FoldableContainer/ScrollContainer" unique_id=370494716]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "Show All Effects "
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer" unique_id=1770285761]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 0)
+custom_maximum_size = Vector2(95, 200)
+layout_mode = 2
+
+[node name="AllEffectsArea" type="VBoxContainer" parent="VBoxContainer/MarginContainer3/VBoxContainer/ScrollContainer" unique_id=1606630940]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="MoreInformationPopup" type="Node2D" parent="." unique_id=385072762]
 unique_name_in_owner = true
@@ -143,3 +126,5 @@ theme_override_font_sizes/bold_italics_font_size = 8
 theme_override_font_sizes/italics_font_size = 8
 theme_override_font_sizes/mono_font_size = 8
 text = "Minimum power required is increased by %s for %s seconds"
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer3/VBoxContainer/ShowEffectsButton" to="." method="_on_show_effects_button_pressed"]

@@ -7,7 +7,8 @@ var effect: GlobalEffect
 func set_effect(effect:GlobalEffect) -> void:
 	self.effect = effect
 	effect_name.text = effect.effect_name
-	effect_short_description.text = effect.short_description
+	#IDK if this should be visible or not
+	#effect_short_description.text = effect.short_description 
 
 func _on_mouse_entered() -> void:
 	Effects.show_more_effect_details.emit(true,effect)
